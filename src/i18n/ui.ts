@@ -27,7 +27,7 @@ export const ui = {
     // Main page meta
     mainTitle: 'Adaptive Studio — Wellbeing studio · Zlín',
     mainDescription:
-      'Adaptive Studio kombinuje silový trénink, dechové techniky a polyvagální teorii. Naučíme tě vědomě regulovat nervový systém — pro silné tělo i klidnou mysl.',
+      'Adaptive Studio kombinuje kondiční trénink, dechové techniky a longevity protokoly. Naučíme tě vědomě regulovat nervový systém — pro dlouhověkost, silné tělo i klidnou mysl.',
 
     // Nav
     navHome: 'Domů',
@@ -48,7 +48,7 @@ export const ui = {
     heroH1b: 'je dovednost.',
     heroSubline: 'Naučíme tě zotavovat se ze stresu rychleji, než tě stihne srazit.',
     heroBody:
-      'Kombinujeme silový trénink, dechové techniky s moderní technologií — metodicky a vědecky i alternativně.',
+      'Kombinujeme fyzický trénink, dechové techniky a osvědčené praktiky pro dlouhověkost.',
     heroCta: 'Zarezervovat konzultaci',
     heroSecondary: 'Jak to funguje',
 
@@ -81,7 +81,7 @@ export const ui = {
     whyTag: 'VĚDA ZA METODOU',
     whyH2: 'Proč to funguje.',
     whyP1:
-      'Autonomní nervový systém řídí vše — od tepové frekvence po schopnost soustředit se. Chronický stres ho zamkne v aktivaci.',
+      'Autonomní nervový systém řídí vše — od tepové frekvence po dlouhověkost. Chronický stres ho zamkne v aktivaci a urychluje stárnutí.',
     whyP2:
       'Polyvagální teorie Stephena Porgese ukazuje, že přechod do regenerace není automatický — je to dovednost, kterou lze vědomě trénovat.',
     whyP3: 'Přesně tohle trénujeme.',
@@ -91,7 +91,7 @@ export const ui = {
     servicesH2: 'Jak můžeme pracovat společně.',
     s1Title: 'Spolupráce 1:1',
     s1Body:
-      'Balíček 10 komplexních tréninků. Analýza tvého systému, individuální plán a vedení přes všechny tři fáze — aktivaci, silový trénink a regeneraci.',
+      'Balíček 10 komplexních tréninků. Analýza tvého systému, individuální plán a vedení přes všechny tři fáze — aktivaci, kondiční trénink a regeneraci.',
     s2Title: 'Spolupráce 1:2–3',
     s2Body: 'Přijdete společně — s partnerem, kamarádem nebo kolegou. Stejný přístup, sdílený prostor. Lekce vedená pro celou skupinu najednou.',
     s3Title: 'Walk-in',
@@ -160,7 +160,7 @@ export const ui = {
     // Main page meta
     mainTitle: 'Adaptive Studio — Wellbeing Studio · Zlín',
     mainDescription:
-      'Adaptive Studio combines strength training, breathwork and polyvagal theory. We teach you to consciously regulate your nervous system — for a strong body and calm mind.',
+      'Adaptive Studio combines conditioning training, breathwork and longevity protocols. We teach you to consciously regulate your nervous system — for longevity, a strong body and calm mind.',
 
     // Nav
     navHome: 'Home',
@@ -181,7 +181,7 @@ export const ui = {
     heroH1b: 'is a skill.',
     heroSubline: 'We teach you to recover from stress faster than it can knock you down.',
     heroBody:
-      'We combine strength training, breathwork and modern technology — methodically, grounded in science and open to what works.',
+      'We combine physical training, breathwork and proven longevity practices.',
     heroCta: 'Book a consultation',
     heroSecondary: 'How it works',
 
@@ -214,7 +214,7 @@ export const ui = {
     whyTag: 'THE SCIENCE',
     whyH2: 'Why it works.',
     whyP1:
-      'The autonomic nervous system governs everything — from heart rate to the ability to focus. Chronic stress locks it in activation.',
+      'The autonomic nervous system governs everything — from heart rate to longevity. Chronic stress locks it in activation and accelerates ageing.',
     whyP2:
       "Stephen Porges' polyvagal theory shows that the shift into recovery is not automatic — it is a skill that can be consciously trained.",
     whyP3: 'That is exactly what we train.',
@@ -224,7 +224,7 @@ export const ui = {
     servicesH2: 'How we can work together.',
     s1Title: 'Collaboration 1:1',
     s1Body:
-      'Package of 10 comprehensive sessions. System analysis, individual plan and guidance through all three phases — activation, strength training and recovery.',
+      'Package of 10 comprehensive sessions. System analysis, individual plan and guidance through all three phases — activation, conditioning training and recovery.',
     s2Title: 'Collaboration 1:2–3',
     s2Body: 'Come together — with a partner, friend or colleague. Same approach, shared space. The session is led for the whole group at once.',
     s3Title: 'Walk-in',
