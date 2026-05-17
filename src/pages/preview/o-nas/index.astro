@@ -1,0 +1,205 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import StudioModal from '../../../components/StudioModal.astro';
+---
+
+<Layout
+  title="O nás — Adaptive Studio"
+  description="Mise, vize a tým za Adaptive Studiem. Zjistěte, kdo stojí za studiem a co nás pohání."
+  lang="cs"
+>
+  <StudioModal lang="cs" />
+  <Nav lang="cs" />
+
+  <main>
+
+    <!-- Hero -->
+    <section class="min-h-screen flex flex-col justify-center px-6 sm:px-10 lg:px-20 py-24">
+      <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-10">ADAPTIVE STUDIO</p>
+      <h1 class="font-heading font-bold leading-[0.9] tracking-tight text-zinc-900 mb-10 reveal"
+          style="font-size: clamp(4rem, 12vw, 10rem)">
+        O nás
+      </h1>
+      <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-xl reveal reveal-delay-1">
+        Nejsme jen studio.<br>
+        Jsme metodika, tým a přesvědčení, že regenerace je dovednost — ne luxus.
+      </p>
+    </section>
+
+    <!-- Mise a vize — dark -->
+    <section class="min-h-screen bg-[#111110] flex flex-col justify-center px-6 sm:px-10 lg:px-20 py-24">
+
+      <div class="grid lg:grid-cols-2 gap-20 lg:gap-32">
+
+        <div class="flex flex-col reveal">
+          <h2 class="font-heading font-bold text-white leading-none tracking-tight mb-6"
+              style="font-size: clamp(4rem, 8vw, 7rem)">Mise</h2>
+          <p class="text-white text-xl sm:text-2xl font-light leading-snug mb-6 max-w-md">
+            Naučit každého vědomě regulovat svůj nervový systém.
+          </p>
+          <p class="text-zinc-400 text-sm leading-relaxed max-w-md mb-10">
+            Stres není problém. Neschopnost se z něj zotavit — to je problém. Naší misí je dát lidem nástroje, metody a prostředí, kde se regulace stane přirozenou součástí jejich výkonu i života.
+          </p>
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-900 mt-auto">
+            <!-- Replace: <img src="/images/mise.jpg" alt="Mise Adaptive Studio" class="w-full h-full object-cover" /> -->
+            <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-50"></div>
+            <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-50"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <p class="text-[9px] tracking-[0.3em] text-zinc-600 uppercase">foto</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col reveal reveal-delay-1">
+          <h2 class="font-heading font-bold text-white leading-none tracking-tight mb-6"
+              style="font-size: clamp(4rem, 8vw, 7rem)">Vize</h2>
+          <p class="text-white text-xl sm:text-2xl font-light leading-snug mb-6 max-w-md">
+            Studio, kde silové tělo a klidná mysl nejsou protiklady.
+          </p>
+          <p class="text-zinc-400 text-sm leading-relaxed max-w-md mb-10">
+            Chceme být místem, kde se trénovatelné věci trénují — vědomě, metodicky, s měřitelným výsledkem. Kde věda a praxe jdou ruku v ruce a kde každý klient odchází s konkrétní dovedností, ne jen pocitem.
+          </p>
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-900 mt-auto">
+            <!-- Replace: <img src="/images/vize.jpg" alt="Vize Adaptive Studio" class="w-full h-full object-cover" /> -->
+            <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-50"></div>
+            <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-50"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <p class="text-[9px] tracking-[0.3em] text-zinc-600 uppercase">foto</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Tým — light -->
+    <section class="min-h-screen flex flex-col px-6 sm:px-10 lg:px-20 py-24">
+
+      <div class="mb-12 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">TÝM</p>
+        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+          Lidé za Adaptive Studiem.
+        </h2>
+      </div>
+
+      <div class="flex-1 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+
+        <!-- Jiří -->
+        <div class="flex flex-col reveal reveal-delay-1">
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mb-5">
+            <!-- Replace: <img src="/images/jiri-stodulka.jpg" alt="Jiří J. Stodůlka" class="w-full h-full object-cover" /> -->
+            <div class="absolute top-0 left-0 w-5 h-5 border-t border-l border-sage"></div>
+            <div class="absolute bottom-0 right-0 w-5 h-5 border-b border-r border-sage"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <p class="text-[9px] tracking-[0.3em] text-zinc-400 uppercase">foto</p>
+            </div>
+          </div>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-2">ZAKLADATEL & TRENÉR</p>
+          <h3 class="font-heading text-lg font-bold text-zinc-900 tracking-tight mb-3">Jiří J. Stodůlka</h3>
+          <p class="text-zinc-500 text-xs leading-relaxed mb-4">
+            Zakladatel studia a autor metodiky. Skombinoval polyvagální teorii, vědomý pohyb a vlastní zkušenost s vyhoření do funkčního systému regulace.
+          </p>
+          <a
+            href="/preview/pribeh/"
+            class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors duration-200"
+          >
+            Celý příběh <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <!-- DNS Trenér -->
+        <div class="flex flex-col reveal reveal-delay-2">
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-50 mb-5">
+            <div class="absolute top-0 left-0 w-5 h-5 border-t border-l border-zinc-200"></div>
+            <div class="absolute bottom-0 right-0 w-5 h-5 border-b border-r border-zinc-200"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <p class="text-[9px] tracking-[0.3em] text-zinc-300 uppercase">foto</p>
+            </div>
+          </div>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-zinc-300 mb-2">HLEDÁME</p>
+          <h3 class="font-heading text-lg font-bold text-zinc-900 tracking-tight mb-3">DNS Trenér</h3>
+          <p class="text-zinc-400 text-xs leading-relaxed">
+            Certifikovaný DNS specialista se zkušenostmi s pohybovou diagnostikou a prací s klienty s historií zranění nebo chronického přetížení.
+          </p>
+        </div>
+
+        <!-- Rehabilitační Trenér -->
+        <div class="flex flex-col reveal reveal-delay-3">
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-50 mb-5">
+            <div class="absolute top-0 left-0 w-5 h-5 border-t border-l border-zinc-200"></div>
+            <div class="absolute bottom-0 right-0 w-5 h-5 border-b border-r border-zinc-200"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <p class="text-[9px] tracking-[0.3em] text-zinc-300 uppercase">foto</p>
+            </div>
+          </div>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-zinc-300 mb-2">HLEDÁME</p>
+          <h3 class="font-heading text-lg font-bold text-zinc-900 tracking-tight mb-3">Rehabilitační Trenér</h3>
+          <p class="text-zinc-400 text-xs leading-relaxed">
+            Fyzioterapeut nebo rehabilitační specialista, který rozumí pohybu v kontextu nervového systému a práci s klienty v návratu k výkonu.
+          </p>
+        </div>
+
+        <!-- Terapeut -->
+        <div class="flex flex-col reveal reveal-delay-4">
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-50 mb-5">
+            <div class="absolute top-0 left-0 w-5 h-5 border-t border-l border-zinc-200"></div>
+            <div class="absolute bottom-0 right-0 w-5 h-5 border-b border-r border-zinc-200"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <p class="text-[9px] tracking-[0.3em] text-zinc-300 uppercase">foto</p>
+            </div>
+          </div>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-zinc-300 mb-2">HLEDÁME</p>
+          <h3 class="font-heading text-lg font-bold text-zinc-900 tracking-tight mb-3">Terapeut</h3>
+          <p class="text-zinc-400 text-xs leading-relaxed">
+            Terapeut se zaměřením na somatické přístupy nebo traumaterapii, který sdílí přesvědčení, že regulace nervového systému je základ odolnosti.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="min-h-[50vh] bg-[#111110] flex flex-col items-center justify-center px-6 text-center py-24">
+      <div class="reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-8">PRVNÍ KROK</p>
+        <h2 class="font-heading font-bold leading-tight tracking-tight text-white mb-8"
+            style="font-size: clamp(2rem, 6vw, 4rem)">
+          Chceš začít trénovat regulaci?
+        </h2>
+        <a
+          href="/preview/#booking"
+          class="inline-flex items-center justify-center px-12 py-5 bg-white text-zinc-900 text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-100 transition-colors duration-200"
+        >
+          Zarezervovat konzultaci
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer lang="cs" />
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    },
+    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
+</script>

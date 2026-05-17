@@ -1,0 +1,24 @@
+---
+import { useTranslations, type Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="min-h-screen bg-[#111110] flex items-center px-6 sm:px-10 lg:px-20 py-32">
+  <div class="max-w-4xl reveal">
+    <h2 class="font-heading font-bold leading-[0.92] tracking-tight text-white mb-8"
+        style="font-size: clamp(2.5rem, 7vw, 6rem)">
+      {t('problemP1').split('.')[0]}.<br>
+      <span class="text-zinc-500 font-light">{t('problemP1').split('.')[1]?.trim()}.</span>
+    </h2>
+
+    <p class="text-zinc-400 text-base md:text-lg leading-relaxed max-w-xl mt-12 border-l border-sage pl-6">
+      {t('problemP3')}
+    </p>
+  </div>
+</section>

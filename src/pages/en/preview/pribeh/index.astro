@@ -1,0 +1,85 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import Nav from '../../../../components/Nav.astro';
+import Footer from '../../../../components/Footer.astro';
+import StudioModal from '../../../../components/StudioModal.astro';
+---
+
+<Layout
+  title="Full Story — Jiří J. Stodůlka · Adaptive Studio"
+  description="The personal story of the Adaptive Studio founder. From a wheelchair through sport and burnout to a methodology for nervous system regulation."
+  lang="en"
+>
+  <StudioModal lang="en" />
+  <Nav lang="en" />
+
+  <main>
+
+    <!-- Hero -->
+    <section class="min-h-screen flex flex-col justify-center px-6 sm:px-10 lg:px-20 py-24">
+      <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-10">FOUNDER'S STORY</p>
+      <h1 class="font-heading font-bold leading-[0.9] tracking-tight text-zinc-900 mb-10 reveal"
+          style="font-size: clamp(4rem, 12vw, 10rem)">
+        Full Story
+      </h1>
+      <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-xl reveal reveal-delay-1">
+        Jiří J. Stodůlka<br>
+        <span class="text-sm text-zinc-400">Founder, Adaptive Studio</span>
+      </p>
+    </section>
+
+    <!-- Story — dark, long-form text -->
+    <section class="bg-[#111110] px-6 sm:px-10 lg:px-20 py-24">
+      <div class="max-w-2xl reveal">
+
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-12">CHAPTER 01</p>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight mb-8">
+          TODO — Chapter title
+        </h2>
+        <div class="space-y-6 text-zinc-400 text-sm leading-relaxed">
+          <p>TODO — Add story text here.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="min-h-[50vh] flex flex-col items-center justify-center px-6 text-center py-24">
+      <div class="reveal">
+        <h2 class="font-heading font-bold leading-tight tracking-tight text-zinc-900 mb-8"
+            style="font-size: clamp(2rem, 6vw, 4rem)">
+          Ready to train your regulation?
+        </h2>
+        <a
+          href="/en/preview/#booking"
+          class="inline-flex items-center justify-center px-12 py-5 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200"
+        >
+          Book a consultation
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer lang="en" />
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    },
+    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
+</script>

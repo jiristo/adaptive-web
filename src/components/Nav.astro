@@ -1,0 +1,151 @@
+---
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const currentFlag = lang === 'cs' ? '🇨🇿' : '🇺🇸';
+const otherFlag = lang === 'cs' ? '🇺🇸' : '🇨🇿';
+const otherLangHref = lang === 'cs' ? '/en/preview/' : '/preview/';
+const basePath = lang === 'cs' ? '/preview/' : '/en/preview/';
+
+// TODO: Replace with actual provider URLs
+const CALENDLY_URL = 'https://calendly.com/jiri-adaptivestudio/30min';
+const RESERVANTO_URL = '#';
+---
+
+<nav
+  class="fixed top-0 inset-x-0 z-[200] bg-white/90 backdrop-blur-sm border-b border-zinc-100"
+  id="main-nav"
+>
+  <div class="px-6 sm:px-10 lg:px-20 flex items-center justify-between h-16">
+
+    <!-- Logo -->
+    <a
+      href={lang === 'cs' ? '/preview/' : '/en/preview/'}
+      class="font-heading font-semibold text-sm tracking-[0.2em] uppercase text-zinc-900 hover:text-zinc-600 transition-colors"
+    >
+      Adaptive Studio
+    </a>
+
+    <!-- Desktop nav links -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href={basePath} class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
+        {t('navHome')}
+      </a>
+      <a href={`${basePath}#how-it-works`} class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
+        {t('navHowItWorks')}
+      </a>
+      <button data-studio-open class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors cursor-pointer">
+        {t('navStudio')}
+      </button>
+      <a href={t('approachHref')} class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
+        {t('navApproach')}
+      </a>
+      <a href={`${basePath}#services`} class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
+        {t('navServices')}
+      </a>
+      <a href={`${basePath}o-nas/`} class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
+        {t('navAbout')}
+      </a>
+    </div>
+
+    <!-- Right side: CTAs + lang switcher + mobile menu -->
+    <div class="flex items-center gap-3">
+      <a
+        href={CALENDLY_URL}
+        class="hidden sm:inline-flex px-5 py-2 text-xs font-semibold tracking-[0.12em] uppercase bg-zinc-900 text-white hover:bg-zinc-700 transition-colors"
+      >
+        {t('navBook')}
+      </a>
+      <a
+        href={RESERVANTO_URL}
+        class="hidden sm:inline-flex px-5 py-2 text-xs font-semibold tracking-[0.12em] uppercase border border-zinc-900 text-zinc-900 hover:bg-zinc-900 hover:text-white transition-colors"
+      >
+        {t('navReservation')}
+      </a>
+
+      <!-- Lang switcher -->
+      <div class="flex items-center gap-2">
+        <span class="text-lg leading-none" aria-label={lang === 'cs' ? 'Čeština' : 'English'}>{currentFlag}</span>
+        <span class="text-zinc-300 text-xs" aria-hidden="true">|</span>
+        <a href={otherLangHref} class="text-lg leading-none opacity-40 hover:opacity-100 transition-opacity" aria-label={lang === 'cs' ? 'Switch to English' : 'Přepnout do češtiny'}>
+          {otherFlag}
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button
+        id="nav-toggle"
+        class="md:hidden flex flex-col gap-[5px] p-1"
+        aria-label="Menu"
+        aria-expanded="false"
+      >
+        <span class="block w-5 h-[1.5px] bg-zinc-900 transition-all" id="bar1"></span>
+        <span class="block w-5 h-[1.5px] bg-zinc-900 transition-all" id="bar2"></span>
+        <span class="block w-5 h-[1.5px] bg-zinc-900 transition-all" id="bar3"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-zinc-100 bg-white px-6 pb-6 pt-4 flex flex-col gap-5"
+  >
+    <a href={basePath} class="text-sm text-zinc-700 mobile-nav-link">{t('navHome')}</a>
+    <a href={`${basePath}#how-it-works`} class="text-sm text-zinc-700 mobile-nav-link">{t('navHowItWorks')}</a>
+    <button data-studio-open class="text-sm text-zinc-700 mobile-nav-link text-left cursor-pointer">{t('navStudio')}</button>
+    <a href={t('approachHref')} class="text-sm text-zinc-700 mobile-nav-link">{t('navApproach')}</a>
+    <a href={`${basePath}#services`} class="text-sm text-zinc-700 mobile-nav-link">{t('navServices')}</a>
+    <a href={`${basePath}o-nas/`} class="text-sm text-zinc-700 mobile-nav-link">{t('navAbout')}</a>
+    <a
+      href={CALENDLY_URL}
+      class="mt-2 inline-flex px-5 py-3 text-xs font-semibold tracking-[0.12em] uppercase bg-zinc-900 text-white text-center justify-center mobile-nav-link"
+    >
+      {t('navBook')}
+    </a>
+    <a
+      href={RESERVANTO_URL}
+      class="inline-flex px-5 py-3 text-xs font-semibold tracking-[0.12em] uppercase border border-zinc-900 text-zinc-900 text-center justify-center mobile-nav-link"
+    >
+      {t('navReservation')}
+    </a>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const bar1 = document.getElementById('bar1');
+  const bar2 = document.getElementById('bar2');
+  const bar3 = document.getElementById('bar3');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = menu?.classList.contains('hidden') === false;
+    menu?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+    if (!isOpen) {
+      bar1?.classList.add('rotate-45', 'translate-y-[6.5px]');
+      bar2?.classList.add('opacity-0');
+      bar3?.classList.add('-rotate-45', '-translate-y-[6.5px]');
+    } else {
+      bar1?.classList.remove('rotate-45', 'translate-y-[6.5px]');
+      bar2?.classList.remove('opacity-0');
+      bar3?.classList.remove('-rotate-45', '-translate-y-[6.5px]');
+    }
+  });
+
+  document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      menu?.classList.add('hidden');
+      toggle?.setAttribute('aria-expanded', 'false');
+      bar1?.classList.remove('rotate-45', 'translate-y-[6.5px]');
+      bar2?.classList.remove('opacity-0');
+      bar3?.classList.remove('-rotate-45', '-translate-y-[6.5px]');
+    });
+  });
+</script>

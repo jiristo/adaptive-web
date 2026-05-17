@@ -1,0 +1,101 @@
+---
+import { useTranslations, type Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const phases = [
+  {
+    numKey: 'phase1Num',
+    titleKey: 'phase1Title',
+    bodyKey: 'phase1Body',
+    padding: 'md:pr-12',
+    delay: 'reveal-delay-1',
+    // Replace src with real image path, e.g. /images/aktivace.jpg
+    img: null,
+    imgAlt: 'Aktivace nervové soustavy',
+  },
+  {
+    numKey: 'phase2Num',
+    titleKey: 'phase2Title',
+    bodyKey: 'phase2Body',
+    padding: 'md:px-12',
+    delay: 'reveal-delay-2',
+    img: null,
+    imgAlt: 'Silový trénink',
+  },
+  {
+    numKey: 'phase3Num',
+    titleKey: 'phase3Title',
+    bodyKey: 'phase3Body',
+    padding: 'md:pl-12',
+    delay: 'reveal-delay-3',
+    img: null,
+    imgAlt: 'Regenerace a meditace',
+  },
+] as const;
+---
+
+<section id="how-it-works" class="min-h-screen flex flex-col px-6 sm:px-10 lg:px-20 py-24">
+
+  <div class="mb-16 reveal">
+    <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+      {t('howTag')}
+    </h2>
+  </div>
+
+  <div class="flex-1 grid md:grid-cols-3 md:divide-x divide-zinc-200 gap-16 md:gap-0">
+
+    {phases.map((phase) => (
+      <div class={`flex flex-col ${phase.padding} reveal ${phase.delay}`}>
+
+        <!-- Number + text -->
+        <div class="mb-8">
+          <p class="font-heading font-bold text-zinc-100 leading-none mb-8 select-none"
+             style="font-size: clamp(5rem, 10vw, 9rem)">
+            {t(phase.numKey)}
+          </p>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-zinc-900 mb-5">
+            {t(phase.titleKey)}
+          </p>
+          <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
+            {t(phase.bodyKey)}
+          </p>
+        </div>
+
+        <!-- Image — replace null with '/images/your-photo.jpg' above -->
+        <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mt-auto">
+          {phase.img
+            ? <img src={phase.img} alt={phase.imgAlt} class="w-full h-full object-cover" />
+            : (
+              <>
+                <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-50"></div>
+                <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-50"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <p class="text-[9px] tracking-[0.3em] text-zinc-400 uppercase">{phase.imgAlt}</p>
+                </div>
+              </>
+            )
+          }
+        </div>
+
+      </div>
+    ))}
+
+  </div>
+
+  <div class="flex items-center justify-between mt-10">
+    <p class="text-[10px] tracking-[0.2em] text-zinc-400 hidden md:block">
+      Polyvagální teorie · S. Porges
+    </p>
+    <a href={t('approachHref')}
+       class="inline-flex items-center gap-2 text-xs tracking-[0.15em] text-zinc-500 hover:text-zinc-900 transition-colors duration-200">
+      {t('howApproachLink')} <span aria-hidden="true">→</span>
+    </a>
+  </div>
+
+</section>

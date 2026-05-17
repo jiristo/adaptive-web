@@ -1,0 +1,111 @@
+---
+import { useTranslations, type Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const services = [
+  {
+    num: '01',
+    titleKey: 's1Title',
+    bodyKey: 's1Body',
+    ctaKey: 'servicesCtaLabel',
+    ctaHref: '#booking',
+    padding: 'lg:pr-8',
+    delay: 'reveal-delay-1',
+    img: null,
+    imgAlt: '1:1 Koučink',
+  },
+  {
+    num: '02',
+    titleKey: 's2Title',
+    bodyKey: 's2Body',
+    ctaKey: 'servicesCtaLabel',
+    ctaHref: '#booking',
+    padding: 'lg:px-8',
+    delay: 'reveal-delay-2',
+    img: null,
+    imgAlt: 'Spolupráce 1:2–3',
+  },
+  {
+    num: '03',
+    titleKey: 'lekceTitle',
+    bodyKey: 'lekceBody',
+    ctaKey: 'lekceCtaLabel',
+    ctaHref: '#',
+    padding: 'lg:px-8',
+    delay: 'reveal-delay-3',
+    img: null,
+    imgAlt: 'Lekce',
+  },
+  {
+    num: '04',
+    titleKey: 's3Title',
+    bodyKey: 's3Body',
+    ctaKey: 'walkInCtaLabel',
+    ctaHref: '#',
+    padding: 'lg:pl-8',
+    delay: 'reveal-delay-4',
+    img: null,
+    imgAlt: 'Walk-in',
+  },
+] as const;
+---
+
+<section id="services" class="min-h-screen flex flex-col px-6 sm:px-10 lg:px-20 py-24">
+
+  <div class="mb-16 reveal">
+    <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+      {t('servicesH2')}
+    </h2>
+  </div>
+
+  <div class="flex-1 grid md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-0 md:divide-x divide-zinc-200">
+
+    {services.map((s) => (
+      <div class={`flex flex-col ${s.padding} reveal ${s.delay}`}>
+
+        <!-- Title + text -->
+        <div class="mb-8">
+          <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">
+            {t(s.titleKey)}
+          </h3>
+          <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
+            {t(s.bodyKey)}
+          </p>
+        </div>
+
+        <!-- Image placeholder — replace img: null with '/images/your-photo.jpg' above -->
+        <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mt-auto mb-8">
+          {s.img
+            ? <img src={s.img} alt={s.imgAlt} class="w-full h-full object-cover" />
+            : (
+              <>
+                <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-50"></div>
+                <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-50"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <p class="text-[9px] tracking-[0.3em] text-zinc-400 uppercase">{s.imgAlt}</p>
+                </div>
+              </>
+            )
+          }
+        </div>
+
+        <!-- CTA link -->
+        <a
+          href={s.ctaHref}
+          class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors duration-200"
+        >
+          {t(s.ctaKey)} <span aria-hidden="true">→</span>
+        </a>
+
+      </div>
+    ))}
+
+  </div>
+
+</section>

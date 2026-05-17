@@ -1,0 +1,73 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import Nav from '../../../../components/Nav.astro';
+import Footer from '../../../../components/Footer.astro';
+import StudioModal from '../../../../components/StudioModal.astro';
+---
+
+<Layout
+  title="Neuroscience — Pillars of our approach · Adaptive Studio"
+  description="How the brain controls the body. The neuroscientific foundation of Adaptive Studio's approach to nervous system regulation."
+  lang="en"
+>
+  <StudioModal lang="en" />
+  <Nav lang="en" />
+
+  <main>
+
+    <section class="min-h-screen flex flex-col justify-center px-6 sm:px-10 lg:px-20 py-24">
+      <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-10">PILLAR 01</p>
+      <h1 class="font-heading font-bold leading-[0.9] tracking-tight text-zinc-900 mb-10 reveal"
+          style="font-size: clamp(4rem, 12vw, 10rem)">
+        Neuroscience
+      </h1>
+      <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-xl reveal reveal-delay-1">
+        How the brain controls the body.<br>
+        <span class="text-sm text-zinc-400">And how to consciously influence it.</span>
+      </p>
+    </section>
+
+    <section class="bg-[#111110] px-6 sm:px-10 lg:px-20 py-24">
+      <div class="max-w-2xl reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-12">CONTENT</p>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight mb-8">
+          TODO — Chapter title
+        </h2>
+        <div class="space-y-6 text-zinc-400 text-sm leading-relaxed">
+          <p>TODO — Add content about the neuroscientific foundation here.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="min-h-[50vh] flex flex-col items-center justify-center px-6 text-center py-24">
+      <div class="reveal">
+        <a href="/en/preview/pristup/" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-400 hover:text-zinc-900 transition-colors duration-200 mb-10">
+          <span aria-hidden="true">←</span> Back to Approach
+        </a>
+        <h2 class="font-heading font-bold leading-tight tracking-tight text-zinc-900 mb-8"
+            style="font-size: clamp(2rem, 6vw, 4rem)">
+          Ready to train your regulation?
+        </h2>
+        <a
+          href="https://calendly.com/jiri-adaptivestudio/30min"
+          class="inline-flex items-center justify-center px-12 py-5 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200"
+        >
+          Book a consultation
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer lang="en" />
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => { entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('visible'); }); },
+    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+  );
+  document.querySelectorAll('.reveal').forEach((el) => {
+    el.getBoundingClientRect().top < window.innerHeight ? el.classList.add('visible') : observer.observe(el);
+  });
+</script>

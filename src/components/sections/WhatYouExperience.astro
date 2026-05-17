@@ -1,0 +1,118 @@
+---
+import type { Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const cs = {
+  heading: 'Co konkrétně u nás zažijete.',
+  ctaLabel: 'Zarezervovat konzultaci',
+  ctaHref: '/preview/#booking',
+  items: [
+    {
+      tag: 'Regenerace',
+      title: 'Odpočinete si — opravdově',
+      body: 'Červené světlo a kryokomora nejsou gadgety. Jsou to přímé vstupy do parasympatického stavu. Odejdete s pocitem, který si tělo zapamatuje — a bude chtít znovu.',
+      imgAlt: 'Regenerace',
+    },
+    {
+      tag: 'Dechová práce',
+      title: 'Naučíte se pracovat s dechem',
+      body: 'Dech je jediná autonomní funkce, kterou lze vědomě ovládat. Odejdete s nástrojem, který funguje okamžitě — kdekoliv. Žádné vybavení, žádná podmínka.',
+      imgAlt: 'Dechová práce',
+    },
+    {
+      tag: 'Vědomý pohyb',
+      title: 'Pohnete tělem záměrně',
+      body: 'Silový trénink s důrazem na neurosvalovou kontrolu a propriocepci. Trénujete svaly i mozek — pohyb jako dialog mezi tělem a myslí, ne jen mechanická zátěž.',
+      imgAlt: 'Vědomý pohyb',
+    },
+    {
+      tag: 'Meditace & stretching',
+      title: 'Zpomalíte — vědomě',
+      body: 'Klid není absence aktivity. Je to dovednost. Vedená meditace a stretching vás naučí rozpoznat stav klidu, záměrně do něj vstoupit — a udržet ho i mimo studio.',
+      imgAlt: 'Meditace & stretching',
+    },
+  ],
+};
+
+const en = {
+  heading: 'What you will experience with us.',
+  ctaLabel: 'Book a consultation',
+  ctaHref: '/en/preview/#booking',
+  items: [
+    {
+      tag: 'Recovery',
+      title: 'You will truly rest',
+      body: 'Red light therapy and cryotherapy are not gadgets. They are direct entries into the parasympathetic state. You will leave with a feeling your body will remember — and want again.',
+      imgAlt: 'Recovery',
+    },
+    {
+      tag: 'Breathwork',
+      title: 'You will learn to work with your breath',
+      body: 'Breath is the only autonomic function that can be consciously controlled. You will leave with a tool that works instantly — anywhere. No equipment, no conditions.',
+      imgAlt: 'Breathwork',
+    },
+    {
+      tag: 'Conscious movement',
+      title: 'You will move with intention',
+      body: 'Strength training with an emphasis on neuromuscular control and proprioception. You train muscles and brain together — movement as dialogue between body and mind, not just mechanical load.',
+      imgAlt: 'Conscious movement',
+    },
+    {
+      tag: 'Meditation & stretching',
+      title: 'You will slow down — consciously',
+      body: 'Calm is not the absence of activity. It is a skill. Guided meditation and stretching will teach you to recognise the state of calm, enter it intentionally — and carry it beyond the studio.',
+      imgAlt: 'Meditation & stretching',
+    },
+  ],
+};
+
+const content = lang === 'cs' ? cs : en;
+const paddings = ['lg:pr-8', 'lg:px-8', 'lg:px-8', 'lg:pl-8'];
+const delays = ['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3', 'reveal-delay-4'];
+---
+
+<section class="min-h-screen bg-[#111110] flex flex-col px-6 sm:px-10 lg:px-20 py-24">
+
+  <div class="mb-16 reveal">
+    <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white">
+      {content.heading}
+    </h2>
+  </div>
+
+  <div class="flex-1 grid md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-0 md:divide-x divide-zinc-800">
+
+    {content.items.map((item, i) => (
+      <div class={`flex flex-col ${paddings[i]} reveal ${delays[i]}`}>
+
+        <div class="mb-8">
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">{item.tag}</p>
+          <h3 class="font-heading text-2xl font-bold text-white tracking-tight mb-4">{item.title}</h3>
+          <p class="text-zinc-300 text-sm leading-relaxed max-w-xs">{item.body}</p>
+        </div>
+
+        <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-900 mt-auto mb-8">
+          <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-50"></div>
+          <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-50"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <p class="text-[9px] tracking-[0.3em] text-zinc-600 uppercase">{item.imgAlt}</p>
+          </div>
+        </div>
+
+        <a
+          href={content.ctaHref}
+          class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-white transition-colors duration-200"
+        >
+          {content.ctaLabel} <span aria-hidden="true">→</span>
+        </a>
+
+      </div>
+    ))}
+
+  </div>
+
+</section>

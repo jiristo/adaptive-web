@@ -1,0 +1,108 @@
+---
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const photos = [
+  { img: null, alt: 'Vstup do studia' },
+  { img: null, alt: 'Tréninkový prostor' },
+  { img: null, alt: 'Kryokomora' },
+  { img: null, alt: 'Zázemí' },
+  { img: null, alt: 'Regenerační zóna' },
+  { img: null, alt: 'Detail vybavení' },
+];
+---
+
+<div
+  id="studio-modal"
+  class="fixed inset-0 z-[100] bg-[#111110] flex flex-col opacity-0 pointer-events-none transition-opacity duration-300"
+  aria-modal="true"
+  role="dialog"
+  aria-label={t('navStudio')}
+>
+  <!-- Header -->
+  <div class="flex items-center justify-between px-6 sm:px-10 lg:px-20 py-8 border-b border-zinc-800 shrink-0">
+    <h2 class="font-heading text-4xl sm:text-5xl font-bold text-white tracking-tight">
+      {t('navStudio')}
+    </h2>
+    <button
+      id="studio-close"
+      class="text-zinc-500 hover:text-white transition-colors duration-200 p-1"
+      aria-label={t('studioClose')}
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Photo grid -->
+  <div class="flex-1 overflow-y-auto px-6 sm:px-10 lg:px-20 py-10">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+      {photos.map((p) => (
+        <div class="relative aspect-[4/3] overflow-hidden bg-zinc-900">
+          {p.img
+            ? <img src={p.img} alt={p.alt} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+            : (
+              <>
+                <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-40"></div>
+                <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-40"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <p class="text-[9px] tracking-[0.3em] text-zinc-600 uppercase">{p.alt}</p>
+                </div>
+              </>
+            )
+          }
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('studio-modal');
+  const closeBtn = document.getElementById('studio-close');
+  let historyPushed = false;
+
+  function isOpen() {
+    return modal && !modal.classList.contains('opacity-0');
+  }
+
+  function openModal() {
+    modal?.classList.remove('opacity-0', 'pointer-events-none');
+    document.body.style.overflow = 'hidden';
+    history.pushState({ studioOpen: true }, '');
+    historyPushed = true;
+  }
+
+  function closeModal(fromHistory = false) {
+    if (!isOpen()) return;
+    modal?.classList.add('opacity-0', 'pointer-events-none');
+    document.body.style.overflow = '';
+    if (!fromHistory && historyPushed) {
+      historyPushed = false;
+      history.back();
+    } else {
+      historyPushed = false;
+    }
+  }
+
+  document.querySelectorAll('[data-studio-open]').forEach((el) => {
+    el.addEventListener('click', openModal);
+  });
+
+  closeBtn?.addEventListener('click', () => closeModal(false));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal(false);
+  });
+
+  window.addEventListener('popstate', () => {
+    if (isOpen()) closeModal(true);
+  });
+</script>

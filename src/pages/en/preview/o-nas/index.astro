@@ -1,0 +1,205 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import Nav from '../../../../components/Nav.astro';
+import Footer from '../../../../components/Footer.astro';
+import StudioModal from '../../../../components/StudioModal.astro';
+---
+
+<Layout
+  title="About Us — Adaptive Studio"
+  description="Mission, vision and the team behind Adaptive Studio. Find out who we are and what drives us."
+  lang="en"
+>
+  <StudioModal lang="en" />
+  <Nav lang="en" />
+
+  <main>
+
+    <!-- Hero -->
+    <section class="min-h-screen flex flex-col justify-center px-6 sm:px-10 lg:px-20 py-24">
+      <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-10">ADAPTIVE STUDIO</p>
+      <h1 class="font-heading font-bold leading-[0.9] tracking-tight text-zinc-900 mb-10 reveal"
+          style="font-size: clamp(4rem, 12vw, 10rem)">
+        About Us
+      </h1>
+      <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-xl reveal reveal-delay-1">
+        We are not just a studio.<br>
+        We are a methodology, a team and a conviction that recovery is a skill — not a luxury.
+      </p>
+    </section>
+
+    <!-- Mission & Vision — dark -->
+    <section class="min-h-screen bg-[#111110] flex flex-col justify-center px-6 sm:px-10 lg:px-20 py-24">
+
+      <div class="grid lg:grid-cols-2 gap-20 lg:gap-32">
+
+        <div class="flex flex-col reveal">
+          <h2 class="font-heading font-bold text-white leading-none tracking-tight mb-6"
+              style="font-size: clamp(4rem, 8vw, 7rem)">Mission</h2>
+          <p class="text-white text-xl sm:text-2xl font-light leading-snug mb-6 max-w-md">
+            To teach everyone to consciously regulate their nervous system.
+          </p>
+          <p class="text-zinc-400 text-sm leading-relaxed max-w-md mb-10">
+            Stress is not the problem. The inability to recover from it — that is the problem. Our mission is to give people the tools, methods and environment where regulation becomes a natural part of their performance and life.
+          </p>
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-900 mt-auto">
+            <!-- Replace: <img src="/images/mise.jpg" alt="Adaptive Studio Mission" class="w-full h-full object-cover" /> -->
+            <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-50"></div>
+            <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-50"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <p class="text-[9px] tracking-[0.3em] text-zinc-600 uppercase">photo</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col reveal reveal-delay-1">
+          <h2 class="font-heading font-bold text-white leading-none tracking-tight mb-6"
+              style="font-size: clamp(4rem, 8vw, 7rem)">Vision</h2>
+          <p class="text-white text-xl sm:text-2xl font-light leading-snug mb-6 max-w-md">
+            A studio where a strong body and a calm mind are not opposites.
+          </p>
+          <p class="text-zinc-400 text-sm leading-relaxed max-w-md mb-10">
+            We want to be a place where trainable things are trained — consciously, methodically, with measurable results. Where science and practice go hand in hand and where every client leaves with a concrete skill, not just a feeling.
+          </p>
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-900 mt-auto">
+            <!-- Replace: <img src="/images/vize.jpg" alt="Adaptive Studio Vision" class="w-full h-full object-cover" /> -->
+            <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-50"></div>
+            <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-50"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <p class="text-[9px] tracking-[0.3em] text-zinc-600 uppercase">photo</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Team — light -->
+    <section class="min-h-screen flex flex-col px-6 sm:px-10 lg:px-20 py-24">
+
+      <div class="mb-12 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">TEAM</p>
+        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+          The people behind Adaptive Studio.
+        </h2>
+      </div>
+
+      <div class="flex-1 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+
+        <!-- Jiří -->
+        <div class="flex flex-col reveal reveal-delay-1">
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mb-5">
+            <!-- Replace: <img src="/images/jiri-stodulka.jpg" alt="Jiří J. Stodůlka" class="w-full h-full object-cover" /> -->
+            <div class="absolute top-0 left-0 w-5 h-5 border-t border-l border-sage"></div>
+            <div class="absolute bottom-0 right-0 w-5 h-5 border-b border-r border-sage"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <p class="text-[9px] tracking-[0.3em] text-zinc-400 uppercase">photo</p>
+            </div>
+          </div>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-2">FOUNDER & TRAINER</p>
+          <h3 class="font-heading text-lg font-bold text-zinc-900 tracking-tight mb-3">Jiří J. Stodůlka</h3>
+          <p class="text-zinc-500 text-xs leading-relaxed mb-4">
+            Studio founder and methodology author. He combined polyvagal theory, conscious movement and personal experience of burnout into a functional regulation system.
+          </p>
+          <a
+            href="/en/preview/pribeh/"
+            class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors duration-200"
+          >
+            Full story <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <!-- DNS Trainer -->
+        <div class="flex flex-col reveal reveal-delay-2">
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-50 mb-5">
+            <div class="absolute top-0 left-0 w-5 h-5 border-t border-l border-zinc-200"></div>
+            <div class="absolute bottom-0 right-0 w-5 h-5 border-b border-r border-zinc-200"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <p class="text-[9px] tracking-[0.3em] text-zinc-300 uppercase">photo</p>
+            </div>
+          </div>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-zinc-300 mb-2">WE'RE HIRING</p>
+          <h3 class="font-heading text-lg font-bold text-zinc-900 tracking-tight mb-3">DNS Trainer</h3>
+          <p class="text-zinc-400 text-xs leading-relaxed">
+            Certified DNS specialist with experience in movement diagnostics and working with clients with a history of injury or chronic overload.
+          </p>
+        </div>
+
+        <!-- Rehabilitation Trainer -->
+        <div class="flex flex-col reveal reveal-delay-3">
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-50 mb-5">
+            <div class="absolute top-0 left-0 w-5 h-5 border-t border-l border-zinc-200"></div>
+            <div class="absolute bottom-0 right-0 w-5 h-5 border-b border-r border-zinc-200"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <p class="text-[9px] tracking-[0.3em] text-zinc-300 uppercase">photo</p>
+            </div>
+          </div>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-zinc-300 mb-2">WE'RE HIRING</p>
+          <h3 class="font-heading text-lg font-bold text-zinc-900 tracking-tight mb-3">Rehabilitation Trainer</h3>
+          <p class="text-zinc-400 text-xs leading-relaxed">
+            Physiotherapist or rehabilitation specialist who understands movement in the context of the nervous system and works with clients returning to performance.
+          </p>
+        </div>
+
+        <!-- Therapist -->
+        <div class="flex flex-col reveal reveal-delay-4">
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-50 mb-5">
+            <div class="absolute top-0 left-0 w-5 h-5 border-t border-l border-zinc-200"></div>
+            <div class="absolute bottom-0 right-0 w-5 h-5 border-b border-r border-zinc-200"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <p class="text-[9px] tracking-[0.3em] text-zinc-300 uppercase">photo</p>
+            </div>
+          </div>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-zinc-300 mb-2">WE'RE HIRING</p>
+          <h3 class="font-heading text-lg font-bold text-zinc-900 tracking-tight mb-3">Therapist</h3>
+          <p class="text-zinc-400 text-xs leading-relaxed">
+            Therapist with a focus on somatic approaches or trauma therapy, who shares the belief that nervous system regulation is the foundation of resilience.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="min-h-[50vh] bg-[#111110] flex flex-col items-center justify-center px-6 text-center py-24">
+      <div class="reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-8">FIRST STEP</p>
+        <h2 class="font-heading font-bold leading-tight tracking-tight text-white mb-8"
+            style="font-size: clamp(2rem, 6vw, 4rem)">
+          Ready to train your regulation?
+        </h2>
+        <a
+          href="/en/preview/#booking"
+          class="inline-flex items-center justify-center px-12 py-5 bg-white text-zinc-900 text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-100 transition-colors duration-200"
+        >
+          Book a consultation
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer lang="en" />
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    },
+    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
+</script>

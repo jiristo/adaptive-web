@@ -1,0 +1,115 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import StudioModal from '../../../components/StudioModal.astro';
+
+const EMAIL = 'jiri@adaptivestudio.cz';
+const PHONE = '+420 736 445 942';
+const ADDRESS_LINE1 = 'TODO — ulice a číslo popisné';
+const ADDRESS_LINE2 = 'Zlín, Česká republika';
+const MAP_SRC = 'https://maps.google.com/maps?q=49.22536051197635,17.66685220772128&z=16&output=embed';
+---
+
+<Layout
+  title="Kontakt — Adaptive Studio"
+  description="Kontaktní údaje a adresa Adaptive Studia v Zlíně."
+  lang="cs"
+>
+  <StudioModal lang="cs" />
+  <Nav lang="cs" />
+
+  <main>
+
+    <section class="min-h-screen flex flex-col px-6 sm:px-10 lg:px-20 py-24">
+
+      <div class="mb-16 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">KONTAKT</p>
+        <h1 class="font-heading font-bold leading-[0.9] tracking-tight text-zinc-900"
+            style="font-size: clamp(4rem, 12vw, 10rem)">
+          Kontakt
+        </h1>
+      </div>
+
+      <div class="flex-1 grid lg:grid-cols-2 gap-16 lg:gap-24">
+
+        <!-- Kontaktní údaje -->
+        <div class="flex flex-col gap-10 reveal reveal-delay-1">
+
+          <div class="flex flex-col gap-2">
+            <span class="text-[10px] tracking-[0.3em] uppercase text-zinc-400">E-MAIL</span>
+            <a href={`mailto:${EMAIL}`}
+               class="font-heading text-2xl font-bold text-zinc-900 hover:text-sage transition-colors duration-200">
+              {EMAIL}
+            </a>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <span class="text-[10px] tracking-[0.3em] uppercase text-zinc-400">TELEFON</span>
+            <a href={`tel:${PHONE.replace(/\s/g, '')}`}
+               class="font-heading text-2xl font-bold text-zinc-900 hover:text-sage transition-colors duration-200">
+              {PHONE}
+            </a>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <span class="text-[10px] tracking-[0.3em] uppercase text-zinc-400">ADRESA</span>
+            <p class="font-heading text-2xl font-bold text-zinc-900 leading-snug">
+              {ADDRESS_LINE1}<br>
+              <span class="text-zinc-400 font-light">{ADDRESS_LINE2}</span>
+            </p>
+          </div>
+
+          <div class="mt-auto pt-10 border-t border-zinc-100">
+            <a
+              href="/preview/#booking"
+              class="inline-flex items-center justify-center px-10 py-4 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200"
+            >
+              Zarezervovat konzultaci
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Mapa -->
+        <div class="relative w-full aspect-[4/3] lg:aspect-auto lg:min-h-[480px] overflow-hidden bg-zinc-100 reveal reveal-delay-2">
+          <iframe
+            src={MAP_SRC}
+            width="100%"
+            height="100%"
+            style="border:0; position:absolute; inset:0; width:100%; height:100%;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Adaptive Studio — mapa"
+          ></iframe>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <Footer lang="cs" />
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    },
+    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
+</script>

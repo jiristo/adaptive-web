@@ -1,0 +1,53 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import Hero from '../../../components/sections/Hero.astro';
+import Problem from '../../../components/sections/Problem.astro';
+import HowItWorks from '../../../components/sections/HowItWorks.astro';
+import WhatYouExperience from '../../../components/sections/WhatYouExperience.astro';
+import Services from '../../../components/sections/Services.astro';
+import About from '../../../components/sections/About.astro';
+import BookingCTA from '../../../components/sections/BookingCTA.astro';
+import StudioModal from '../../../components/StudioModal.astro';
+import { useTranslations } from '../../../i18n/ui';
+
+const t = useTranslations('en');
+---
+
+<Layout title={t('mainTitle')} description={t('mainDescription')} lang="en">
+  <StudioModal lang="en" />
+  <Nav lang="en" />
+  <main>
+    <Hero lang="en" />
+    <Problem lang="en" />
+    <HowItWorks lang="en" />
+    <WhatYouExperience lang="en" />
+    <Services lang="en" />
+    <About lang="en" />
+    <BookingCTA lang="en" />
+  </main>
+  <Footer lang="en" />
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    },
+    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
+</script>

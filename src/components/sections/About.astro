@@ -1,0 +1,53 @@
+---
+import { useTranslations, type Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="about" class="min-h-screen grid lg:grid-cols-2">
+
+  <!-- Photo — full bleed left column -->
+  <!-- TODO: Replace placeholder src with /images/jiri-stodulka.jpg once photo is ready -->
+  <div class="relative min-h-[60vh] lg:min-h-screen order-2 lg:order-1 overflow-hidden">
+    <img
+      src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=80&fit=crop&crop=face"
+      alt="Jiří J. Stodůlka — zakladatel Adaptive Studio"
+      class="absolute inset-0 w-full h-full object-cover object-top grayscale"
+    />
+    <div class="absolute inset-0 bg-zinc-900/10"></div>
+  </div>
+
+  <!-- Text — right column, scrolls with content -->
+  <div class="flex flex-col justify-center bg-[#111110] px-6 sm:px-10 lg:px-20 py-24 order-1 lg:order-2 reveal">
+    <blockquote class="font-heading font-bold leading-tight tracking-tight text-white mb-10"
+                style="font-size: clamp(2.2rem, 4vw, 3.5rem)">
+      {t('aboutQuote')}
+    </blockquote>
+
+    <div class="space-y-4 text-zinc-400 text-sm leading-relaxed mb-12">
+      <p>{t('aboutP1')}</p>
+      <p>{t('aboutP2')}</p>
+      <p class="font-semibold text-white">{t('aboutP3')}</p>
+      <p>{t('aboutP4')}</p>
+      <p class="text-white font-medium">{t('aboutP5')}</p>
+    </div>
+
+    <div class="border-t border-zinc-800 pt-7">
+      <p class="font-heading font-semibold text-white">{t('aboutName')}</p>
+      <p class="text-xs text-zinc-500 mt-1">{t('aboutRole')}</p>
+      <p class="text-[10px] text-zinc-600 tracking-wider mt-2">{t('aboutCredentials')}</p>
+      <a
+        href={t('aboutStoryHref')}
+        class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-white transition-colors duration-200 mt-5"
+      >
+        {t('aboutStoryLabel')} <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+
+</section>
