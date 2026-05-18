@@ -36,7 +36,7 @@ const services = [
     titleKey: 'lekceTitle',
     bodyKey: 'lekceBody',
     ctaKey: 'lekceCtaLabel',
-    ctaHref: '#',
+    ctaHref: `/${lang === 'cs' ? '' : 'en/'}preview/rezervace/`,
     padding: 'lg:px-8',
     delay: 'reveal-delay-3',
     img: null,
@@ -47,13 +47,13 @@ const services = [
     titleKey: 's3Title',
     bodyKey: 's3Body',
     ctaKey: 'walkInCtaLabel',
-    ctaHref: '#',
+    ctaHref: `/${lang === 'cs' ? '' : 'en/'}preview/rezervace/`,
     padding: 'lg:pl-8',
     delay: 'reveal-delay-4',
     img: null,
     imgAlt: 'Walk-in',
   },
-] as const;
+];
 ---
 
 <section id="services" class="min-h-screen flex flex-col px-6 sm:px-10 lg:px-20 py-24">

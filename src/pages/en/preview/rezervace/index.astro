@@ -1,0 +1,59 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import Nav from '../../../../components/Nav.astro';
+import Footer from '../../../../components/Footer.astro';
+import StudioModal from '../../../../components/StudioModal.astro';
+---
+
+<Layout
+  title="Book — Adaptive Studio"
+  description="Book a session, walk-in or consultation at Adaptive Studio."
+  lang="en"
+>
+  <StudioModal lang="en" />
+  <Nav lang="en" />
+
+  <main>
+    <section class="min-h-screen flex flex-col px-6 sm:px-10 lg:px-20 py-24 pt-32">
+      <div class="mb-12 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">BOOKING</p>
+        <h1 class="font-heading font-bold leading-tight tracking-tight text-zinc-900"
+            style="font-size: clamp(2.5rem, 7vw, 5rem)">
+          Book a session
+        </h1>
+      </div>
+
+      <div class="w-full reveal reveal-delay-1">
+        <iframe
+          src="https://adaptive-studion-s-ro.reservio.com"
+          width="100%"
+          height="700px"
+          frameborder="0"
+          style="border: none;"
+        ></iframe>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang="en" />
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    },
+    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
+</script>
