@@ -40,7 +40,7 @@ export const ui = {
     navReservation: 'Rezervace',
     studioClose: 'Zavřít',
     howApproachLink: 'Více o našem přístupu',
-    approachHref: '/preview/pristup/',
+    approachHref: '/preview/sluzby/',
 
     // Hero
     heroTag: 'NOVÉ WELLBEING STUDIO · ZLÍN',
@@ -173,7 +173,7 @@ export const ui = {
     navReservation: 'Book',
     studioClose: 'Close',
     howApproachLink: 'More about our approach',
-    approachHref: '/en/preview/pristup/',
+    approachHref: '/en/preview/sluzby/',
 
     // Hero
     heroTag: 'NEW WELLBEING STUDIO · ZLÍN',
