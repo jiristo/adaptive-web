@@ -7,7 +7,7 @@ import StudioModal from '../../../components/StudioModal.astro';
 
 <Layout
   title="Celý příběh — Jiří J. Stodůlka · Adaptive Studio"
-  description="Osobní příběh zakladatele Adaptive Studia. Od vozíčku přes sport, vyhoření až po metodiku regulace nervového systému."
+  description="Osobní příběh zakladatele Adaptive Studia. Od nehody přes vyhoření až po vědomou regulaci nervového systému."
   lang="cs"
 >
   <StudioModal lang="cs" />
@@ -28,18 +28,81 @@ import StudioModal from '../../../components/StudioModal.astro';
       </p>
     </section>
 
-    <!-- Story — dark, long-form text -->
-    <section class="bg-[#111110] px-6 sm:px-10 lg:px-20 py-24">
-      <div class="max-w-2xl reveal">
-
-        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-12">KAPITOLA 01</p>
-        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight mb-8">
-          TODO — Název kapitoly
-        </h2>
-        <div class="space-y-6 text-zinc-400 text-sm leading-relaxed">
-          <p>TODO — Zde doplň text příběhu.</p>
+    <!-- Kapitola 01 -->
+    <section class="bg-[#111110] flex flex-col px-6 sm:px-10 lg:px-20 py-24">
+      <div class="grid lg:grid-cols-[1fr_2fr] gap-16 lg:gap-24">
+        <div class="reveal">
+          <p class="font-heading font-bold text-zinc-800 leading-none select-none"
+             style="font-size: clamp(6rem, 14vw, 12rem)">01</p>
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mt-4">KAPITOLA</p>
         </div>
+        <div class="reveal reveal-delay-1">
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight mb-10">
+            Nechtěl jsem zpomalit.
+          </h2>
+          <div class="space-y-5 text-zinc-400 text-sm leading-relaxed mb-10">
+            <p>Celý život jsem byl fyzicky aktivní. Vždy na hraně — a vždy přes ni. Deficity pozornosti mě vedly ke zbytečným zraněním. Signály vyčerpání jsem nerozuměl. A upřímně — nechtěl jsem je slyšet.</p>
+            <p>V mladém věku mě málem zabila nehoda na dirt bikeu. Přišel jsem o slezinu, zlomil jsem několik kostí, poškodil nervy na pravé ruce. Přesto — za dva roky jsem závodil znovu. Ochrnnutí se nikdy plně nezahojilo.</p>
+          </div>
+          <blockquote class="border-l-2 border-sage pl-6">
+            <p class="font-heading text-xl sm:text-2xl font-bold text-white leading-tight">
+              Hranice, které jsem překračoval, mi dávaly falešný pocit naplnění. Maskoval jsem tím destruktivní vzorec.
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
 
+    <!-- Kapitola 02 -->
+    <section class="bg-[#111110] flex flex-col px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-800">
+      <div class="grid lg:grid-cols-[1fr_2fr] gap-16 lg:gap-24">
+        <div class="reveal">
+          <p class="font-heading font-bold text-zinc-800 leading-none select-none"
+             style="font-size: clamp(6rem, 14vw, 12rem)">02</p>
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mt-4">KAPITOLA</p>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight mb-10">
+            Navenek funkční.<br>Uvnitř se rozpadající.
+          </h2>
+          <div class="space-y-5 text-zinc-400 text-sm leading-relaxed mb-10">
+            <p>Dokončil jsem dvě vysoké školy s nervovým systémem napjatým jako tětiva. Navenek: vysoce funkční. Uvnitř: tikající bomba.</p>
+            <p>V roce 2018 jsem emigroval do Kanady. Kariéra v AI jako datový vědec. Dva freelance projekty. Budování jedné z nejaktivnějších AI komunit v Severní Americe. COVID. Všechno najednou. Budit se v noci s kódem před očima. Stará zranění začala křičet.</p>
+            <p>Vrátili jsme se do Evropy. Přešel jsem na manažerskou roli. Nemohl jsem se ani podívat na obrazovku. Byl jsem úplně vyčerpaný. Ale teď jsem byl otec. Možnost přestat neexistovala.</p>
+            <p>V roce 2025 jsem se znovu zlomil. Tentokrát to vypadalo jako ohrožení života. Dysregulovaný autonomní nervový systém — nemohl jsem dýchat. Lidé kolem mě se mě začali ptát, jestli uvažuji o sebevraždě. To mě vyděsilo — ne proto, že bych o tom uvažoval, ale protože oni ztratili naději. A já taky.</p>
+          </div>
+          <blockquote class="border-l-2 border-sage pl-6">
+            <p class="font-heading text-xl sm:text-2xl font-bold text-white leading-tight">
+              Věděl jsem, že musím jednat jinak. Udělal jsem to, co jsem měl udělat dvanáct let dříve: zastavil jsem se.
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kapitola 03 -->
+    <section class="bg-[#111110] flex flex-col px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-800">
+      <div class="grid lg:grid-cols-[1fr_2fr] gap-16 lg:gap-24">
+        <div class="reveal">
+          <p class="font-heading font-bold text-zinc-800 leading-none select-none"
+             style="font-size: clamp(6rem, 14vw, 12rem)">03</p>
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mt-4">KAPITOLA</p>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight mb-10">
+            Naučil jsem se regulovat.
+          </h2>
+          <div class="space-y-5 text-zinc-400 text-sm leading-relaxed mb-10">
+            <p>Měl jsem štěstí. Potkal jsem lidi, kteří mě nenechali se utopit. Seznámili mě s jednoduchými, starými, ale silnými praktikami: dechová cvičení a meditace. Tři krát denně, měsíc. Pomalu jsem začal znovu dýchat — opravdově dýchat.</p>
+            <p>A pak jsem se naučil něco, co jsem nikdy neznal: seberegulaci. Základní lidská dovednost. Ale její absence mě stála všechno. Jak jsem se učil regulovat nervový systém, probouzely se smysly. Poprvé v životě jsem skutečně cítil své tělo.</p>
+            <p>Rozhodl jsem se nic víc nepotlačovat. Ať je to jakkoli těžké — jediná cesta z bolesti vede přes ni. Odolnost není jen vytrvalost. Je to umění znovu postavit život, který stojí za to žít.</p>
+          </div>
+          <blockquote class="border-l-2 border-sage pl-6">
+            <p class="font-heading text-xl sm:text-2xl font-bold text-white leading-tight">
+              Adaptive Studio je výsledek toho rozhodnutí. A teď jsem udělal další: pomáhat ostatním žít tak, aby nikdy nemuseli projít tím, čím jsem prošel já.
+            </p>
+          </blockquote>
+        </div>
       </div>
     </section>
 
@@ -51,7 +114,7 @@ import StudioModal from '../../../components/StudioModal.astro';
           Chceš začít trénovat regulaci?
         </h2>
         <a
-          href="/preview/#booking"
+          href="https://calendly.com/jiri-adaptivestudio/30min"
           class="inline-flex items-center justify-center px-12 py-5 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200"
         >
           Zarezervovat konzultaci

@@ -32,7 +32,7 @@ export const ui = {
     // Nav
     navHome: 'Domů',
     navHowItWorks: 'Jak to funguje',
-    navApproach: 'Přístup',
+    navApproach: 'Služby',
     navServices: 'Služby',
     navStudio: 'Studio',
     navAbout: 'O nás',
@@ -165,7 +165,7 @@ export const ui = {
     // Nav
     navHome: 'Home',
     navHowItWorks: 'How it works',
-    navApproach: 'Approach',
+    navApproach: 'Services',
     navServices: 'Services',
     navStudio: 'Studio',
     navAbout: 'About Us',
