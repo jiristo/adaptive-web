@@ -1,0 +1,226 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import StudioModal from '../../../components/StudioModal.astro';
+---
+
+<Layout
+  title="Dlouhověkost — Adaptive Studio"
+  description="Dlouhověkost není anti-aging. Je to schopnost fungovat naplno každý den — bez ztráty energie, zdraví a soustředění. Jak na to v Adaptive Studiu."
+  lang="cs"
+>
+  <StudioModal lang="cs" />
+  <Nav lang="cs" />
+
+  <main>
+
+    <!-- Hero -->
+    <section class="min-h-screen flex flex-col justify-center px-6 sm:px-10 lg:px-20 py-24">
+      <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-10">DLOUHOVĚKOST</p>
+      <h1 class="font-heading font-bold leading-[0.9] tracking-tight text-zinc-900 mb-10 reveal"
+          style="font-size: clamp(3rem, 9vw, 8rem)">
+        Dlouhověkost není<br>o tom žít déle.
+      </h1>
+      <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-xl reveal reveal-delay-1">
+        Je o tom neztrácet kvalitu života v každodenním stresu.
+      </p>
+    </section>
+
+    <!-- Co to vlastně je — světlá -->
+    <section class="min-h-screen flex flex-col px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100">
+      <div class="mb-16 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">CO TO VLASTNĚ JE</p>
+        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+          Věda mluví jasně.
+        </h2>
+      </div>
+
+      <div class="flex-1 grid md:grid-cols-3 md:divide-x divide-zinc-200 gap-16 md:gap-0">
+
+        <div class="flex flex-col md:pr-12 reveal reveal-delay-1">
+          <p class="font-heading font-bold text-zinc-100 leading-none mb-8 select-none"
+             style="font-size: clamp(5rem, 10vw, 9rem)">01</p>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Healthspan, ne lifespan</p>
+          <p class="font-heading text-lg font-bold text-zinc-900 mb-3">Nejde o počet let</p>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            Dlouhověkost neznamená žít do sta. Znamená fungovat naplno — fyzicky, mentálně i emocionálně — co nejdéle. Věda tomu říká healthspan: léta v plném zdraví, ne jen roky naživu.
+          </p>
+        </div>
+
+        <div class="flex flex-col md:px-12 reveal reveal-delay-2">
+          <p class="font-heading font-bold text-zinc-100 leading-none mb-8 select-none"
+             style="font-size: clamp(5rem, 10vw, 9rem)">02</p>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Geny nejsou osud</p>
+          <p class="font-heading text-lg font-bold text-zinc-900 mb-3">80 % záleží na tobě</p>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            Výzkumy ukazují, že genetika tvoří pouze 20–25 % toho, jak dlouho a jak dobře žijeme. Zbytek určuje životní styl — pohyb, stres, spánek, zánět. Věci, které lze vědomě ovlivnit.
+          </p>
+        </div>
+
+        <div class="flex flex-col md:pl-12 reveal reveal-delay-3">
+          <p class="font-heading font-bold text-zinc-100 leading-none mb-8 select-none"
+             style="font-size: clamp(5rem, 10vw, 9rem)">03</p>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Nervový systém jako základ</p>
+          <p class="font-heading text-lg font-bold text-zinc-900 mb-3">Chronický stres stárne</p>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            Chronický stres zkracuje telomery, zvyšuje systémový zánět a urychluje biologické stárnutí. Regulace autonomního nervového systému není wellness trend — je to základ dlouhověkosti.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Proč to většina center dělá špatně — tmavá -->
+    <section class="min-h-screen bg-[#111110] flex flex-col px-6 sm:px-10 lg:px-20 py-24">
+      <div class="mb-16 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">PROBLÉM S TRHEM</p>
+        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white">
+          Proč většina center nestačí.
+        </h2>
+      </div>
+
+      <div class="flex-1 grid md:grid-cols-2 gap-16 md:gap-0 md:divide-x divide-zinc-800">
+
+        <div class="flex flex-col md:pr-12 reveal reveal-delay-1">
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-6">Pasivní přístup</p>
+          <p class="font-heading text-2xl font-bold text-white mb-4">Lehneš si. Odejdeš. Nic ses nenaučil.</p>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Majority wellness a longevity center nabízí procedury které jsou příjemné — masáže, IV kapačky, kryoterapie, červené světlo. Efekt trvá hodiny nebo dny. Ale tvůj nervový systém zůstává stejný. Stále dysregulovaný. Stále v chronickém stresu. Příště přijdeš znovu — a zaplatíš znovu.
+          </p>
+        </div>
+
+        <div class="flex flex-col md:pl-12 reveal reveal-delay-2">
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-6">Optimalizace bez základu</p>
+          <p class="font-heading text-2xl font-bold text-white mb-4">Doplňky stravy nestačí, když základ chybí.</p>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Longevity trh roste — a s ním i příslib rychlých řešení. NMN, NAD+, peptidy, biohacking gadgety. Všechny tyto nástroje mohou mít hodnotu — ale bez regulovaného nervového systému jako základu jsou jako výkonný motor v autě bez řízení.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Jak to děláme my — světlá -->
+    <section class="min-h-screen flex flex-col px-6 sm:px-10 lg:px-20 py-24">
+      <div class="mb-16 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">NÁŠ PŘÍSTUP</p>
+        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+          Čtyři pilíře. Jeden protokol.
+        </h2>
+        <p class="text-zinc-400 text-sm mt-4">Co věda identifikuje jako klíčové prediktory dlouhověkosti — a jak je řešíme.</p>
+      </div>
+
+      <div class="flex-1 grid md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-0 md:divide-x divide-zinc-200">
+
+        <div class="flex flex-col lg:pr-8 reveal reveal-delay-1">
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Pohyb</p>
+          <p class="font-heading text-xl font-bold text-zinc-900 mb-3">Kondiční trénink je #1</p>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            Silová kondice je nejsilnější prediktor mortality ze všech měřitelných faktorů. Trénujeme pohyb vědomě — s důrazem na neurosvalovou kontrolu, ne jen zátěž.
+          </p>
+        </div>
+
+        <div class="flex flex-col lg:px-8 reveal reveal-delay-2">
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Nervový systém</p>
+          <p class="font-heading text-xl font-bold text-zinc-900 mb-3">Regulace jako dovednost</p>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            Chronický stres je biologický jed. Dech, pohyb a vědomá praxe jsou nástroje kterými trénujeme schopnost přepínat mezi aktivací a regenerací — kdykoli a kdekoli.
+          </p>
+        </div>
+
+        <div class="flex flex-col lg:px-8 reveal reveal-delay-3">
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Zánět</p>
+          <p class="font-heading text-xl font-bold text-zinc-900 mb-3">Přímé nástroje obnovy</p>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            Kryokomora a terapie červeným světlem nejsou gadgety — jsou to protokoly se solidním vědeckým základem pro snížení systémového zánětu a regeneraci tkání na buněčné úrovni.
+          </p>
+        </div>
+
+        <div class="flex flex-col lg:pl-8 reveal reveal-delay-4">
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Mysl</p>
+          <p class="font-heading text-xl font-bold text-zinc-900 mb-3">Vědomí jako nástroj</p>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            Meditace, stretching a dechová práce nejsou relaxace — jsou to trénovatelné dovednosti které mění strukturu mozku a posilují odolnost vůči stresu dlouhodobě.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Co si odneseš — tmavá -->
+    <section class="bg-[#111110] flex flex-col px-6 sm:px-10 lg:px-20 py-24">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div class="reveal">
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">CO NÁS ODLIŠUJE</p>
+          <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-white mb-8">
+            Odcházíš s dovedností.<br>Ne jen s pocitem.
+          </h2>
+          <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+            To je zásadní rozdíl mezi Adaptive Studiem a každým jiným wellness nebo longevity centrem. Neprodáváme ti procedury. Učíme tě schopnosti, které fungují bez nás — doma, v práci, v náročné situaci.
+          </p>
+          <p class="text-zinc-400 text-sm leading-relaxed">
+            Regulace nervového systému. Vědomý pohyb. Dechová praxe. Každá z těchto dovedností má přímý vliv na to, jak dlouho a jak dobře budeš fungovat.
+          </p>
+        </div>
+        <div class="reveal reveal-delay-1 space-y-6">
+          {[
+            'Reguluješ stres — ne ho jen přežíváš',
+            'Pohybuješ se vědomě — ne jen mechanicky',
+            'Regeneruješ rychleji — po tréninku i po náročném dni',
+            'Rozumíš svému tělu — a víš jak na něj reagovat',
+          ].map((item) => (
+            <div class="flex items-start gap-4 border-b border-zinc-800 pb-6">
+              <span class="text-sage text-lg mt-0.5">→</span>
+              <p class="text-white font-medium text-sm">{item}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="min-h-[60vh] flex flex-col items-center justify-center px-6 text-center py-24">
+      <div class="reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-8">PRVNÍ KROK</p>
+        <h2 class="font-heading font-bold leading-tight tracking-tight text-zinc-900 mb-8"
+            style="font-size: clamp(2.5rem, 7vw, 5rem)">
+          Začni žít déle — a lépe.
+        </h2>
+        <p class="text-zinc-500 text-sm leading-relaxed mb-3 max-w-sm mx-auto">
+          Prvním krokem je 30minutový rozhovor. Zjistíme, kde jsi, co potřebuješ a jak pro tebe sestavit protokol.
+        </p>
+        <p class="text-zinc-400 text-xs mb-12">Bez závazku.</p>
+        <a
+          href="https://calendly.com/jiri-adaptivestudio/30min"
+          class="inline-flex items-center justify-center px-12 py-5 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200"
+        >
+          Zarezervovat konzultaci
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer lang="cs" />
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    },
+    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
+</script>
