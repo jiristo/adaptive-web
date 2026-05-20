@@ -46,7 +46,7 @@ export const ui = {
 
     // Hero
     heroTag: 'NOVÉ WELLBEING STUDIO · ZLÍN',
-    heroH1: 'Regenerace',
+    heroH1: 'Dlouhověkost',
     heroH1b: 'je dovednost.',
     heroSubline: 'Naučíme tě zotavovat se ze stresu rychleji, než tě stihne srazit.',
     heroBody:
@@ -181,7 +181,7 @@ export const ui = {
 
     // Hero
     heroTag: 'NEW WELLBEING STUDIO · ZLÍN',
-    heroH1: 'Recovery',
+    heroH1: 'Longevity',
     heroH1b: 'is a skill.',
     heroSubline: 'We teach you to recover from stress faster than it can knock you down.',
     heroBody:
