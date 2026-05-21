@@ -7,6 +7,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const isCs = lang === 'cs';
 
 const services = [
   {
@@ -18,7 +19,7 @@ const services = [
     padding: 'lg:pr-8',
     delay: 'reveal-delay-1',
     img: null,
-    imgAlt: '1:1 Koučink',
+    imgAlt: isCs ? 'Individuální spolupráce' : 'Individual collaboration',
   },
   {
     num: '02',
@@ -29,7 +30,7 @@ const services = [
     padding: 'lg:px-8',
     delay: 'reveal-delay-2',
     img: null,
-    imgAlt: 'Spolupráce 1:2–3',
+    imgAlt: isCs ? 'Spolupráce 1:2–3' : 'Collaboration 1:2–3',
   },
   {
     num: '03',
@@ -40,7 +41,7 @@ const services = [
     padding: 'lg:px-8',
     delay: 'reveal-delay-3',
     img: null,
-    imgAlt: 'Lekce',
+    imgAlt: isCs ? 'Lekce' : 'Sessions',
   },
   {
     num: '04',
@@ -51,7 +52,7 @@ const services = [
     padding: 'lg:pl-8',
     delay: 'reveal-delay-4',
     img: null,
-    imgAlt: 'Walk-in',
+    imgAlt: isCs ? 'Samostatná návštěva' : 'Solo visit',
   },
 ];
 ---

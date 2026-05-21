@@ -3,11 +3,11 @@ export const defaultLang = 'cs' as const;
 export const ui = {
   cs: {
     // Coming soon
-    tagline: 'BRZY OTEVÍRÁME NOVÉ WELLBEING STUDIO V CENTRU ZLÍNA',
+    tagline: 'BRZY OTEVÍRÁME NOVÉ STUDIO V CENTRU ZLÍNA',
     headline1: 'Klidnější systém.',
     headline2: 'Plnější výkon.',
     description:
-      'Adaptive Studio tě naučí vědomě přecházet mezi aktivací a regenerací autonomního nervového systému — tak aby ti výkon sloužil, ne ničil.',
+      'Adaptive Studio tě naučí lépe rozpoznat, kdy je tělo v napětí a kdy potřebuje zklidnit. Tak, aby ti výkon pomáhal, ne tě postupně vyčerpával.',
     days: 'DNÍ',
     hours: 'HODIN',
     minutes: 'MINUT',
@@ -18,16 +18,16 @@ export const ui = {
     emailSuccess: 'Zapsal jsem tě na seznam. Brzy se ozvu.',
     title: 'Adaptive Studio — Brzy otevíráme',
     metaDescription:
-      'Adaptive Studio — Wellbeing studio zaměřené na vědomou regulaci autonomního nervového systému pro klidnější, ale plnější výkon.',
+      'Adaptive Studio — studio zaměřené na vědomou práci s autonomním nervovým systémem pro klidnější a plnější výkon.',
     langSwitchLabel: 'EN',
     langSwitchHref: '/en/',
     previewLink: 'Na stránky studia',
     previewHref: '/preview/',
 
     // Main page meta
-    mainTitle: 'Adaptive Studio — Wellbeing studio · Zlín',
+    mainTitle: 'Adaptive Studio — Studio dlouhověkosti · Zlín',
     mainDescription:
-      'Adaptive Studio kombinuje kondiční trénink, dechové techniky a longevity protokoly. Naučíme tě vědomě regulovat nervový systém — pro dlouhověkost, silné tělo i klidnou mysl.',
+      'Adaptive Studio kombinuje fyzický trénink, dechové techniky a ověřené postupy pro dlouhověkost. Naučíme tě lépe pracovat s nervovým systémem — pro silnější tělo, klidnější mysl a vyšší odolnost.',
 
     // Nav
     navHome: 'Domů',
@@ -45,7 +45,7 @@ export const ui = {
     approachHref: '/preview/sluzby/',
 
     // Hero
-    heroTag: 'NOVÉ WELLBEING STUDIO · ZLÍN',
+    heroTag: 'NOVÉ STUDIO · ZLÍN',
     heroH1: 'Dlouhověkost',
     heroH1b: 'je dovednost.',
     heroSubline: 'Naučíme tě zotavovat se ze stresu rychleji, než tě stihne srazit.',
@@ -57,9 +57,9 @@ export const ui = {
     // Problem
     problemTag: 'PROČ TO ŘEŠIT',
     problemH2: 'Nikdo tě neučil zotavovat se.',
-    problemP1: 'Fungující člověk v chronickém stresu není slabý. Je nepříučený.',
+    problemP1: 'Člověk, který dlouho funguje pod tlakem, není slabý. Jen se nikdy nenaučil opravdu zotavit.',
     problemP2:
-      'Trénuješ. Pracuješ. Vydáváš energii — ale tělo neumí přepnout zpátky. Zůstává v aktivaci. Unavené, napjaté, na hraně.',
+      'Trénuješ. Pracuješ. Vydáváš energii. Jenže tělo pak neumí samo přepnout zpět do klidu. Zůstává napjaté, unavené a pořád ve střehu.',
     problemP3: 'Problém není výkon. Problém je absence regenerace jako dovednosti.',
 
     // How it works
@@ -69,21 +69,21 @@ export const ui = {
     phase1Num: '01',
     phase1Title: 'AKTIVACE',
     phase1Body:
-      'Probudíme nervovou soustavu záměrně. Kryokomora nebo dechové techniky — krátká, řízená aktivace, která tělo připraví na výkon.',
+      'Tělo nejdřív vědomě probudíme. Kryokomora nebo dechové techniky přinesou krátké, řízené povzbuzení, které tě připraví na zátěž.',
     phase2Num: '02',
     phase2Title: 'TRÉNINK',
     phase2Body:
-      'Silový trénink s důrazem na vědomý pohyb. Trénujeme svaly i mozkové centrum koordinace — pohyb jako dialog mezi tělem a myslí.',
+      'Silový trénink s důrazem na přesný a vědomý pohyb. Posiluješ tělo a zároveň zlepšuješ koordinaci, stabilitu a vnímání vlastního těla.',
     phase3Num: '03',
     phase3Title: 'REGENERACE',
     phase3Body:
-      'Vědomý návrat do homeostázy. Statický stretching kombinovaný s meditací — naučíme tělo i mysl rozpoznat stav klidu a prohloubit ho. Pomůžeme regeneraci buňek červeným světlem.',
+      'Na závěr tělo vracíme do klidu. Protažení, meditace a červené světlo pomáhají uvolnit napětí, podpořit obnovu a naučit tělo lépe odpočívat.',
 
     // Why it works
     whyTag: 'VĚDA ZA METODOU',
     whyH2: 'Proč to funguje.',
     whyP1:
-      'Autonomní nervový systém řídí vše — od tepové frekvence po dlouhověkost. Chronický stres ho zamkne v aktivaci a urychluje stárnutí.',
+      'Autonomní nervový systém řídí mnoho důležitých funkcí v těle — od dechu a tepu až po to, jak rychle se zotavuješ. Dlouhodobý stres ho drží ve stavu pohotovosti a tělo se pak hůř obnovuje.',
     whyP2:
       'Polyvagální teorie Stephena Porgese ukazuje, že přechod do regenerace není automatický — je to dovednost, kterou lze vědomě trénovat.',
     whyP3: 'Přesně tohle trénujeme.',
@@ -93,16 +93,16 @@ export const ui = {
     servicesH2: 'Jak můžeme pracovat společně.',
     s1Title: 'Spolupráce 1:1',
     s1Body:
-      'Balíček 10 komplexních tréninků. Analýza tvého systému, individuální plán a vedení přes všechny tři fáze — aktivaci, kondiční trénink a regeneraci.',
+      'Balíček 10 vedených setkání. Nejprve zjistíme, jak na tom teď jsi, a potom nastavíme osobní plán, který tě provede aktivací, tréninkem i regenerací.',
     s2Title: 'Spolupráce 1:2–3',
-    s2Body: 'Přijdete společně — s partnerem, kamarádem nebo kolegou. Stejný přístup, sdílený prostor. Lekce vedená pro celou skupinu najednou.',
-    s3Title: 'Walk-in',
+    s2Body: 'Přijďte ve dvou nebo ve třech. Ať už s partnerem, kamarádem nebo kolegou, povedeme vás společně a přizpůsobíme lekci celé malé skupině.',
+    s3Title: 'Samostatná návštěva',
     s3Body:
-      'Přijďte sami — na terapii červeným světlem, kryokomoru nebo tiché sezení. Bez trenéra, bez programu. Jen vy, prostor a čas na zotavení.',
+      'Přijďte sami na červené světlo, do kryokomory nebo na klidné posezení. Bez vedení, bez pevného programu. Jen prostor a čas na obnovu.',
     s4Title: 'Firemní programy',
-    s4Body: 'Regulace nervového systému jako nástroj výkonu týmu. Formát na míru.',
+    s4Body: 'Program pro firmy, které chtějí, aby jejich lidé lépe zvládali stres, soustředění i obnovu sil. Připravíme ho na míru vašemu týmu.',
     lekceTitle: 'Lekce',
-    lekceBody: 'Malé lekce pro 2–3 lidi zaměřené na relaxaci, vedenou meditaci a regeneraci nervového systému. Ideální pro ty, kteří chtějí zpomalit ve skupině.',
+    lekceBody: 'Malé lekce pro 2 až 3 lidi zaměřené na uvolnění, vedenou meditaci a celkové zklidnění. Vhodné pro ty, kdo chtějí zpomalit a regenerovat společně.',
     lekceCtaLabel: 'Rezervace Lekce',
     walkInCtaLabel: 'Rezervace',
     servicesCtaLabel: 'Zarezervovat konzultaci',
@@ -112,10 +112,10 @@ export const ui = {
     aboutQuote: 'Nebyla to teorie. Byla to nutnost.',
     aboutP1: 'V dětství jsem skončil na vozíčku. Vrátil jsem se. Vrátil se ke sportu.',
     aboutP2:
-      'Ale přišla za to cena: přestal jsem cítit vlastní tělo. Ubližoval jsem si dál — jen jinak, pomaleji. A co jsem ztratil jako první, jsem si vůbec nevšiml: schopnost seberegulace.',
+      'Ale mělo to svou cenu: přestal jsem dobře vnímat vlastní tělo. Ubližoval jsem si dál, jen méně nápadně. A o první důležitou věc jsem přišel dřív, než jsem si to uvědomil: o schopnost se zklidnit a vrátit do rovnováhy.',
     aboutP3: 'Doplatil jsem na to vyhořením. Roky.',
     aboutP4:
-      'Cestu zpátky jsem sestavil metodicky — jako každý systém, který jsem kdy opravoval. Polyvagální teorie. Vědomý pohyb. Dech. Chlad.',
+      'Cestu zpátky jsem skládal krok za krokem. Pomohlo mi porozumění tomu, jak tělo reaguje na stres, vědomý pohyb, dech a práce s chladem.',
     aboutP5: 'Adaptive Studio je výsledek toho, co skutečně fungovalo.',
     aboutName: 'Jiří J. Stodůlka',
     aboutRole: 'Zakladatel, Adaptive Studio',
@@ -125,9 +125,9 @@ export const ui = {
 
     // Booking CTA
     ctaTag: 'PRVNÍ KROK',
-    ctaH2: 'Chceš začít trénovat regulaci?',
+    ctaH2: 'Chceš se naučit lépe zvládat stres a regeneraci?',
     ctaBody:
-      'Prvním krokem je 30minutový rozhovor. Zjistíme, kde jsi, co potřebuješ a jestli jsme pro tebe to pravé místo.',
+      'Prvním krokem je 30minutový rozhovor. Podíváme se, jak na tom teď jsi, co potřebuješ a jestli je pro tebe Adaptive Studio správná cesta.',
     ctaNote: 'Bez závazku.',
     ctaButton: 'Zarezervovat konzultaci',
 
@@ -138,11 +138,11 @@ export const ui = {
 
   en: {
     // Coming soon
-    tagline: 'COMING SOON — NEW WELLBEING STUDIO IN ZLÍN',
+    tagline: 'COMING SOON — NEW STUDIO IN ZLIN',
     headline1: 'Calmer system.',
     headline2: 'Fuller performance.',
     description:
-      'Adaptive Studio teaches you to consciously shift between nervous system activation and recovery — so performance works for you, not against you.',
+      'Adaptive Studio teaches you to better recognise when your body is under tension and when it needs to settle. So performance supports you instead of slowly draining you.',
     days: 'DAYS',
     hours: 'HOURS',
     minutes: 'MINUTES',
@@ -153,16 +153,16 @@ export const ui = {
     emailSuccess: "You're on the list. We'll be in touch.",
     title: 'Adaptive Studio — Coming Soon',
     metaDescription:
-      'Adaptive Studio — A wellbeing studio focused on conscious autonomic nervous system regulation for calmer, fuller performance.',
+      'Adaptive Studio — A studio focused on working with the autonomic nervous system for calmer, fuller performance.',
     langSwitchLabel: 'CS',
     langSwitchHref: '/',
     previewLink: 'Visit studio website',
     previewHref: '/en/preview/',
 
     // Main page meta
-    mainTitle: 'Adaptive Studio — Wellbeing Studio · Zlín',
+    mainTitle: 'Adaptive Studio — Longevity Studio · Zlin',
     mainDescription:
-      'Adaptive Studio combines conditioning training, breathwork and longevity protocols. We teach you to consciously regulate your nervous system — for longevity, a strong body and calm mind.',
+      'Adaptive Studio combines physical training, breathwork and proven longevity practices. We teach you to work with your nervous system more effectively — for a stronger body, a calmer mind and greater resilience.',
 
     // Nav
     navHome: 'Home',
@@ -180,7 +180,7 @@ export const ui = {
     approachHref: '/en/preview/sluzby/',
 
     // Hero
-    heroTag: 'NEW WELLBEING STUDIO · ZLÍN',
+    heroTag: 'NEW STUDIO · ZLIN',
     heroH1: 'Longevity',
     heroH1b: 'is a skill.',
     heroSubline: 'We teach you to recover from stress faster than it can knock you down.',
@@ -192,9 +192,9 @@ export const ui = {
     // Problem
     problemTag: 'WHY THIS MATTERS',
     problemH2: 'Nobody taught you how to recover.',
-    problemP1: 'A high-functioning person in chronic stress is not weak. They are undertrained.',
+    problemP1: 'A person who functions for a long time under pressure is not weak. They were simply never taught how to recover well.',
     problemP2:
-      'You train. You work. You output energy — but your body cannot switch off. It stays in activation. Exhausted, tense, on edge.',
+      'You train. You work. You use up energy. But your body does not know how to switch back into calm. It stays tense, tired and on alert.',
     problemP3: 'The problem is not performance. The problem is the absence of recovery as a skill.',
 
     // How it works
@@ -204,21 +204,21 @@ export const ui = {
     phase1Num: '01',
     phase1Title: 'ACTIVATION',
     phase1Body:
-      'We wake the nervous system intentionally. Cryotherapy or breathwork — a short, controlled activation that prepares the body for performance.',
+      'We wake the body up on purpose. Cryotherapy or breathwork bring a short, controlled boost that prepares you for effort.',
     phase2Num: '02',
     phase2Title: 'TRAINING',
     phase2Body:
-      'Strength training with an emphasis on conscious movement. We train muscles and brain coordination centres — movement as a dialogue between body and mind.',
+      'Strength training with an emphasis on precise, conscious movement. You build strength while improving coordination, stability and awareness of your body.',
     phase3Num: '03',
     phase3Title: 'RECOVERY',
     phase3Body:
-      'A conscious return to homeostasis. Static stretching combined with meditation — we teach body and mind to recognise and deepen the state of calm. We support cell recovery with red light therapy.',
+      'At the end, we guide the body back into calm. Stretching, meditation and red light help release tension, support recovery and teach the body how to rest more effectively.',
 
     // Why it works
     whyTag: 'THE SCIENCE',
     whyH2: 'Why it works.',
     whyP1:
-      'The autonomic nervous system governs everything — from heart rate to longevity. Chronic stress locks it in activation and accelerates ageing.',
+      'The autonomic nervous system controls many important functions in the body — from breathing and heart rate to how quickly you recover. Long-term stress keeps it on alert and makes recovery harder.',
     whyP2:
       "Stephen Porges' polyvagal theory shows that the shift into recovery is not automatic — it is a skill that can be consciously trained.",
     whyP3: 'That is exactly what we train.',
@@ -228,16 +228,16 @@ export const ui = {
     servicesH2: 'How we can work together.',
     s1Title: 'Collaboration 1:1',
     s1Body:
-      'Package of 10 comprehensive sessions. System analysis, individual plan and guidance through all three phases — activation, conditioning training and recovery.',
+      'A package of 10 guided sessions. First we assess where you are, then we build a personal plan that leads you through activation, training and recovery.',
     s2Title: 'Collaboration 1:2–3',
-    s2Body: 'Come together — with a partner, friend or colleague. Same approach, shared space. The session is led for the whole group at once.',
-    s3Title: 'Walk-in',
+    s2Body: 'Come as a pair or a small group of three. Whether with a partner, friend or colleague, we guide you together and adapt the session to the whole group.',
+    s3Title: 'Solo visit',
     s3Body:
-      'Come on your own — red light therapy, cryotherapy or a quiet space for meditation. No coach, no programme. Just you, the space and time to recover.',
+      'Come on your own for red light, cryotherapy or quiet time. No guidance, no fixed programme. Just space and time to recover.',
     s4Title: 'Corporate Programmes',
-    s4Body: 'Nervous system regulation as a team performance tool. Format tailored to your organisation.',
+    s4Body: 'A programme for teams that want to handle stress, focus and recovery better. We tailor it to your organisation.',
     lekceTitle: 'Sessions',
-    lekceBody: 'Small sessions for 2–3 people focused on relaxation, guided meditation and nervous system recovery. Ideal for those who want to slow down together.',
+    lekceBody: 'Small sessions for 2 to 3 people focused on release, guided meditation and overall calm. Ideal for those who want to slow down and recover together.',
     lekceCtaLabel: 'Book a Session',
     walkInCtaLabel: 'Book now',
     servicesCtaLabel: 'Book a consultation',
@@ -247,10 +247,10 @@ export const ui = {
     aboutQuote: 'It was not theory. It was necessity.',
     aboutP1: 'As a child, I ended up in a wheelchair. I recovered. I returned to sport.',
     aboutP2:
-      'But there was a price: I stopped feeling my own body. I kept hurting myself — just differently, more slowly. And what I lost first, I did not even notice: the ability to self-regulate.',
+      'But there was a price: I stopped sensing my own body clearly. I kept hurting myself, just in quieter ways. And I lost something important before I even realised it: the ability to calm down and return to balance.',
     aboutP3: 'I paid for it with burnout. For years.',
     aboutP4:
-      'I rebuilt the path back methodically — like every system I had ever repaired. Polyvagal theory. Conscious movement. Breath. Cold.',
+      'I rebuilt the way back step by step. What helped was understanding how the body responds to stress, conscious movement, breath and work with cold.',
     aboutP5: 'Adaptive Studio is the result of what actually worked.',
     aboutName: 'Jiří J. Stodůlka',
     aboutRole: 'Founder, Adaptive Studio',
@@ -260,9 +260,9 @@ export const ui = {
 
     // Booking CTA
     ctaTag: 'FIRST STEP',
-    ctaH2: 'Ready to train your regulation?',
+    ctaH2: 'Want to handle stress and recovery better?',
     ctaBody:
-      'The first step is a 30-minute conversation. We find out where you are, what you need, and whether we are the right place for you.',
+      'The first step is a 30-minute conversation. We look at where you are now, what you need, and whether Adaptive Studio is the right fit for you.',
     ctaNote: 'No commitment.',
     ctaButton: 'Book a consultation',
 
