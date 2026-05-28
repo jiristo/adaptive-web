@@ -9,21 +9,25 @@ interface Props {
 
 const { lang, launchDate = '2026-09-15T00:00:00' } = Astro.props;
 const t = useTranslations(lang);
+const previewHref = lang === 'cs' ? '/preview/' : '/en/preview/';
 ---
 
-<div class="min-h-screen bg-[#111110] flex flex-col px-6 sm:px-10 lg:px-20 animate-page-in">
+<div class="min-h-screen bg-zinc-50 flex flex-col px-6 sm:px-10 lg:px-20 animate-page-in">
 
   <!-- Header -->
   <header class="flex items-center justify-between py-8 md:py-10">
-    <span class="font-heading font-semibold text-sm tracking-[0.25em] uppercase text-white">
+    <a
+      href={previewHref}
+      class="font-heading font-semibold text-sm tracking-[0.25em] uppercase text-zinc-900 hover:text-zinc-600 transition-colors duration-200"
+    >
       Adaptive Studio
-    </span>
+    </a>
     <nav class="flex items-center gap-3 text-sm font-medium tracking-wider" aria-label="Language switcher">
-      <span class="text-white font-semibold">{lang.toUpperCase()}</span>
-      <span class="text-zinc-600 select-none" aria-hidden="true">|</span>
+      <span class="text-zinc-900 font-semibold">{lang.toUpperCase()}</span>
+      <span class="text-zinc-300 select-none" aria-hidden="true">|</span>
       <a
         href={t('langSwitchHref')}
-        class="text-zinc-500 hover:text-white transition-colors duration-200"
+        class="text-zinc-400 hover:text-zinc-900 transition-colors duration-200"
       >
         {t('langSwitchLabel')}
       </a>
@@ -31,11 +35,11 @@ const t = useTranslations(lang);
   </header>
 
   <!-- Announcement ticker — full width -->
-  <div class="w-screen -mx-6 sm:-mx-10 lg:-mx-20 overflow-hidden border-y border-zinc-800 py-3.5 mb-2">
+  <div class="w-screen -mx-6 sm:-mx-10 lg:-mx-20 overflow-hidden border-y border-zinc-200 py-3.5 mb-2">
     <div class="flex whitespace-nowrap animate-ticker">
       {Array(8).fill(null).map(() => (
-        <span class="inline-flex items-center text-[11px] font-semibold tracking-[0.35em] uppercase px-10" style="color: #d4c5a9">
-          {t('tagline')}<span class="mx-8" style="color: #5a5040" aria-hidden="true">·</span>
+        <span class="inline-flex items-center text-[11px] font-semibold tracking-[0.35em] uppercase px-10 text-zinc-700">
+          {t('tagline')}<span class="mx-8 text-zinc-300" aria-hidden="true">·</span>
         </span>
       ))}
     </div>
@@ -46,11 +50,11 @@ const t = useTranslations(lang);
 
     <!-- Headline -->
     <div class="mb-10 md:mb-14">
-      <h1 class="font-heading font-bold leading-[0.92] tracking-tight text-white"
+      <h1 class="font-heading font-bold leading-[0.92] tracking-tight text-zinc-900"
           style="font-size: clamp(3.5rem, 10vw, 8rem)">
         {t('headline1')}
       </h1>
-      <h2 class="font-heading font-light leading-[0.92] tracking-tight text-zinc-500"
+      <h2 class="font-heading font-light leading-[0.92] tracking-tight text-zinc-400"
           style="font-size: clamp(3.5rem, 10vw, 8rem)">
         {t('headline2')}
       </h2>
@@ -70,7 +74,7 @@ const t = useTranslations(lang);
           d="M0 30 C50 10,100 10,150 30 C200 50,250 50,300 30 C350 10,400 10,450 30 C500 50,550 50,600 30 C650 10,700 10,750 30 C800 50,850 50,900 30 C950 10,1000 10,1050 30 C1100 50,1150 50,1200 30 C1250 10,1300 10,1350 30 C1400 50,1450 50,1500 30 C1550 10,1600 10,1650 30 C1700 50,1750 50,1800 30 C1850 10,1900 10,1950 30 C2000 50,2050 50,2100 30 C2150 10,2200 10,2250 30 C2300 50,2350 50,2400 30 C2450 10,2500 10,2550 30 C2600 50,2650 50,2700 30 C2750 10,2800 10,2850 30 C2900 50,2950 50,3000 30 C3050 10,3100 10,3150 30 C3200 50,3250 50,3300 30 C3350 10,3400 10,3450 30 C3500 50,3550 50,3600 30 C3650 10,3700 10,3750 30 C3800 50,3850 50,3900 30 C3950 10,4000 10,4050 30 C4100 50,4150 50,4200 30 C4250 10,4300 10,4350 30 C4400 50,4450 50,4500 30 C4550 10,4600 10,4650 30 C4700 50,4750 50,4800 30 C4850 10,4900 10,4950 30 C5000 50,5050 50,5100 30 C5150 10,5200 10,5250 30 C5300 50,5350 50,5400 30 C5450 10,5500 10,5550 30 C5600 50,5650 50,5700 30 C5750 10,5800 10,5850 30 C5900 50,5950 50,6000 30"
           stroke="#6b8f71"
           stroke-width="1.5"
-          stroke-opacity="0.4"
+          stroke-opacity="0.5"
         />
       </svg>
       <svg
@@ -85,7 +89,7 @@ const t = useTranslations(lang);
           d="M0 30 C50 42,100 42,150 30 C200 18,250 18,300 30 C350 42,400 42,450 30 C500 18,550 18,600 30 C650 42,700 42,750 30 C800 18,850 18,900 30 C950 42,1000 42,1050 30 C1100 18,1150 18,1200 30 C1250 42,1300 42,1350 30 C1400 18,1450 18,1500 30 C1550 42,1600 42,1650 30 C1700 18,1750 18,1800 30 C1850 42,1900 42,1950 30 C2000 18,2050 18,2100 30 C2150 42,2200 42,2250 30 C2300 18,2350 18,2400 30 C2450 42,2500 42,2550 30 C2600 18,2650 18,2700 30 C2750 42,2800 42,2850 30 C2900 18,2950 18,3000 30 C3050 42,3100 42,3150 30 C3200 18,3250 18,3300 30 C3350 42,3400 42,3450 30 C3500 18,3550 18,3600 30 C3650 42,3700 42,3750 30 C3800 18,3850 18,3900 30 C3950 42,4000 42,4050 30 C4100 18,4150 18,4200 30 C4250 42,4300 42,4350 30 C4400 18,4450 18,4500 30 C4550 42,4600 42,4650 30 C4700 18,4750 18,4800 30 C4850 42,4900 42,4950 30 C5000 18,5050 18,5100 30 C5150 42,5200 42,5250 30 C5300 18,5350 18,5400 30 C5450 42,5500 42,5550 30 C5600 18,5650 18,5700 30 C5750 42,5800 42,5850 30 C5900 18,5950 18,6000 30"
           stroke="#6b8f71"
           stroke-width="1"
-          stroke-opacity="0.2"
+          stroke-opacity="0.3"
         />
       </svg>
     </div>
@@ -100,12 +104,12 @@ const t = useTranslations(lang);
       ].map(({ id, labelKey }) => (
         <div class="flex flex-col items-center gap-3">
           <span
-            class="font-heading font-bold text-white tabular-nums leading-none"
+            class="font-heading font-bold text-zinc-900 tabular-nums leading-none"
             style="font-size: clamp(3.5rem, 8vw, 6rem)"
             id={id}
             aria-label={labelKey}
           >--</span>
-          <span class="text-[9px] tracking-[0.35em] uppercase text-zinc-600">{t(labelKey as any)}</span>
+          <span class="text-[9px] tracking-[0.35em] uppercase text-zinc-400">{t(labelKey as any)}</span>
         </div>
       ))}
     </div>
@@ -113,7 +117,7 @@ const t = useTranslations(lang);
     <!-- Primary CTA — prominent -->
     <a
       href={t('previewHref')}
-      class="inline-flex items-center justify-center gap-3 px-12 py-5 bg-white text-zinc-900 text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-100 transition-colors duration-200 mb-14"
+      class="inline-flex items-center justify-center gap-3 px-12 py-5 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200 mb-14"
     >
       {t('previewLink')} <span aria-hidden="true">→</span>
     </a>
@@ -134,16 +138,16 @@ const t = useTranslations(lang);
           name="email"
           required
           placeholder={t('emailPlaceholder')}
-          class="flex-1 px-4 py-3.5 text-sm bg-zinc-900 border border-zinc-700 border-r-0 outline-none focus:border-zinc-400 text-white transition-colors placeholder:text-zinc-600"
+          class="flex-1 px-4 py-3.5 text-sm bg-white border border-zinc-300 border-r-0 outline-none focus:border-zinc-700 text-zinc-900 transition-colors placeholder:text-zinc-400"
         />
         <button
           type="submit"
-          class="px-7 py-3.5 text-xs font-semibold tracking-[0.15em] uppercase bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white active:bg-zinc-600 transition-colors duration-150 whitespace-nowrap border border-zinc-700 border-l-0"
+          class="px-7 py-3.5 text-xs font-semibold tracking-[0.15em] uppercase bg-zinc-900 text-white hover:bg-zinc-700 active:bg-zinc-800 transition-colors duration-150 whitespace-nowrap border border-zinc-900 border-l-0"
         >
           {t('emailSubmit')}
         </button>
       </form>
-      <p class="text-[11px] text-zinc-600 tracking-wide">
+      <p class="text-[11px] text-zinc-400 tracking-wide">
         {t('emailNote')}
       </p>
     </div>
@@ -151,8 +155,8 @@ const t = useTranslations(lang);
   </main>
 
   <!-- Footer -->
-  <footer class="py-6 md:py-8 border-t border-zinc-800">
-    <p class="text-[11px] text-zinc-700 tracking-wide text-center">
+  <footer class="py-6 md:py-8 border-t border-zinc-200">
+    <p class="text-[11px] text-zinc-400 tracking-wide text-center">
       © 2026 Adaptive Studio
     </p>
   </footer>
@@ -210,7 +214,7 @@ const t = useTranslations(lang);
           body: new URLSearchParams(data).toString(),
         });
         wrapper.innerHTML = `
-          <p class="text-sm text-zinc-400 tracking-wide">${successMsg}</p>
+          <p class="text-sm text-zinc-500 tracking-wide">${successMsg}</p>
         `;
       } catch {
         form.submit();

@@ -1,0 +1,679 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import Nav from '../../../../components/Nav.astro';
+import Footer from '../../../../components/Footer.astro';
+import StudioModal from '../../../../components/StudioModal.astro';
+---
+
+<Layout
+  title="Kortizolový rytmus — Adaptive Studio"
+  description="Zjistěte svůj odhadovaný kortizolový profil. Interaktivní nástroj pro pochopení vlivu stresu, spánku a denních událostí na hladinu kortizolu."
+  lang="cs"
+>
+  <StudioModal lang="cs" />
+  <Nav lang="cs" />
+
+  <main>
+
+    <!-- HERO -->
+    <section class="min-h-screen flex flex-col justify-center px-6 sm:px-10 lg:px-20 py-24">
+      <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-10">APLIKACE · KORTIZOL</p>
+      <h1 class="font-heading font-bold leading-[0.9] tracking-tight text-zinc-900 mb-10 reveal"
+          style="font-size: clamp(3rem, 9vw, 8rem)">
+        Váš kortizol<br>pracuje za vás?
+      </h1>
+      <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-xl reveal reveal-delay-1">
+        Nebo vy pracujete pro něj.
+      </p>
+      <p class="text-sm text-zinc-400 leading-relaxed max-w-lg mt-4 reveal reveal-delay-2">
+        Kortizol řídí váš výkon, regeneraci i spánek. Zjistěte, kde se na křivce nacházíte — a co s tím dělat.
+      </p>
+      <div class="mt-12 flex flex-wrap gap-4 reveal reveal-delay-3">
+        <a href="#nastroj"
+           class="inline-flex items-center justify-center px-10 py-4 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200">
+          Zjistit svůj rytmus
+        </a>
+        <a href="#co-je-kortizol"
+           class="inline-flex items-center justify-center px-10 py-4 border border-zinc-300 text-zinc-700 text-xs font-semibold tracking-[0.2em] uppercase hover:border-zinc-900 transition-colors duration-200">
+          Proč na tom záleží
+        </a>
+      </div>
+    </section>
+
+    <!-- CO JE KORTIZOL — světlá -->
+    <section id="co-je-kortizol" class="border-t border-zinc-100 px-6 sm:px-10 lg:px-20 py-24">
+      <div class="mb-16 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">CO JE KORTIZOL</p>
+        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+          Hormon, který řídí vše.
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-3 md:divide-x divide-zinc-200 gap-16 md:gap-0">
+        <div class="flex flex-col md:pr-12 reveal reveal-delay-1">
+          <p class="font-heading font-bold text-zinc-100 leading-none mb-8 select-none"
+             style="font-size: clamp(5rem, 10vw, 9rem)">24</p>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Hodinový cyklus</p>
+          <p class="font-heading text-lg font-bold text-zinc-900 mb-3">Každá hodina má svou funkci</p>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            Kortizol sleduje přesný cirkadiánní rytmus. Ráno vás probouzí, odpoledne klesá, večer se vypíná. Problém nastává, když ho vyčerpáte nebo zdeformujete chronickým stresem.
+          </p>
+        </div>
+        <div class="flex flex-col md:px-12 reveal reveal-delay-2">
+          <p class="font-heading font-bold text-zinc-100 leading-none mb-8 select-none"
+             style="font-size: clamp(5rem, 10vw, 9rem)">3×</p>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Chronický stres</p>
+          <p class="font-heading text-lg font-bold text-zinc-900 mb-3">Vyšší hladiny ničí zdraví</p>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            Dlouhodobě zvýšený kortizol poškozuje imunitu, paměť i srdeční zdraví. Zkracuje telomery a urychluje biologické stárnutí. Nejde o únavu — jde o systémové poškození.
+          </p>
+        </div>
+        <div class="flex flex-col md:pl-12 reveal reveal-delay-3">
+          <p class="font-heading font-bold text-zinc-100 leading-none mb-8 select-none"
+             style="font-size: clamp(5rem, 10vw, 9rem)">48h</p>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Regenerace osy</p>
+          <p class="font-heading text-lg font-bold text-zinc-900 mb-3">Obnova trvá dny, ne hodiny</p>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            Po intenzivním stresu se kortizolová osa plně neobnoví za pár hodin spánku. Správná regenerace je načasovaný proces — a přesně to trénujeme.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERAKTIVNÍ NÁSTROJ — tmavá -->
+    <section id="nastroj" class="bg-[#111110] px-6 sm:px-10 lg:px-20 py-24">
+      <div class="mb-12 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">INTERAKTIVNÍ NÁSTROJ</p>
+        <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-white">
+          Sestavte svůj dnešní den.
+        </h2>
+        <p class="text-zinc-400 text-sm mt-4 max-w-lg">
+          Přidejte události, ke kterým dnes došlo. Křivka se dynamicky přizpůsobí — s biologicky realistickým nástupem a pomalým poklesem.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-[300px_1fr] gap-6 items-start">
+
+        <!-- LEFT: controls -->
+        <div class="flex flex-col gap-4">
+
+          <!-- Baseline -->
+          <div class="border border-zinc-700 bg-zinc-900 p-5">
+            <p class="text-[9px] tracking-[0.2em] uppercase text-zinc-300 font-semibold mb-4 pb-3 border-b border-zinc-700">Výchozí stav</p>
+            <div class="space-y-4">
+              <div>
+                <label class="text-[9px] tracking-[0.12em] uppercase text-zinc-500 block mb-2">Kvalita spánku minulá noc</label>
+                <select class="k-select" id="sleep">
+                  <option value="-1">Špatná — méně než 5 h</option>
+                  <option value="0" selected>Průměrná — 6–7 h</option>
+                  <option value="1">Dobrá — 7–9 h</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-[9px] tracking-[0.12em] uppercase text-zinc-500 block mb-2">Spánkový dluh (počet nocí)</label>
+                <select class="k-select" id="sleepdebt">
+                  <option value="0" selected>Žádný</option>
+                  <option value="1">1–2 noci</option>
+                  <option value="2">3–5 nocí</option>
+                  <option value="3">Chronická insomnie</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-[9px] tracking-[0.12em] uppercase text-zinc-500 block mb-2">Stresová zátěž týdne</label>
+                <select class="k-select" id="weekstress">
+                  <option value="0">Klidný týden</option>
+                  <option value="1" selected>Běžný pracovní týden</option>
+                  <option value="2">Náročný týden</option>
+                  <option value="3">Extrémní zátěž</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Events -->
+          <div class="border border-zinc-700 bg-zinc-900 p-5">
+            <p class="text-[9px] tracking-[0.2em] uppercase text-zinc-300 font-semibold mb-4 pb-3 border-b border-zinc-700">Události dne</p>
+            <div class="grid grid-cols-[1fr_44px_32px] gap-1.5 mb-3">
+              <select class="k-select text-[11px]" id="event-type-select">
+                <optgroup label="⚡ Stresory">
+                  <option value="conflict">⚡ Hádka / konflikt</option>
+                  <option value="deadline">📌 Deadline / prezentace</option>
+                  <option value="badnews">📰 Špatná zpráva</option>
+                  <option value="publicsp">🎤 Veřejné vystoupení</option>
+                  <option value="hiit">🏋 Intenzivní trénink</option>
+                  <option value="traffic">🚗 Stres v dopravě</option>
+                  <option value="coldshower">🚿 Studená sprcha</option>
+                  <option value="overload">📋 Přetížení / multitasking</option>
+                </optgroup>
+                <optgroup label="🌿 Uklidnění">
+                  <option value="cryo">❄ Kryokomora</option>
+                  <option value="redlight">🔴 Červené světlo</option>
+                  <option value="breathwork">💬 Dechová práce</option>
+                  <option value="yoga">🧘 Jóga / meditace</option>
+                  <option value="walk">🚶 Procházka v přírodě</option>
+                  <option value="nap">😴 Krátký spánek (20 min)</option>
+                  <option value="social">🤝 Příjemné setkání</option>
+                </optgroup>
+                <optgroup label="○ Ostatní">
+                  <option value="caffeine_am">☕ Káva ráno (do 11:00)</option>
+                  <option value="caffeine_pm">☕ Káva po 14:00</option>
+                  <option value="alcohol">🍷 Alkohol (večer)</option>
+                  <option value="skippedmeal">🍽 Vynechané jídlo</option>
+                  <option value="screen">📱 Obrazovky před spaním</option>
+                </optgroup>
+              </select>
+              <input type="number" class="k-select text-center text-[11px]" id="event-hour-input" min="0" max="23" value="9" title="Hodina (0–23)">
+              <button onclick="addEventFromUI()"
+                class="bg-white text-zinc-900 text-lg font-bold hover:bg-sage hover:text-white transition-colors duration-150 flex items-center justify-center">+</button>
+            </div>
+            <p class="text-[10px] text-zinc-400 mb-3">Vyberte událost, zadejte hodinu, stiskněte +</p>
+            <div id="events-list">
+              <p class="text-[11px] text-zinc-600 leading-relaxed py-2">Zatím žádné události. Přidejte co se vám dnes stalo.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: chart area -->
+        <div class="border border-zinc-800 p-6">
+
+          <!-- Metrics -->
+          <div class="grid grid-cols-4 gap-px bg-zinc-800 border border-zinc-800 mb-5">
+            <div class="bg-[#111110] px-3 py-3">
+              <div class="font-heading text-lg font-bold text-white mb-1" id="m-now">—</div>
+              <div class="text-[10px] text-zinc-500">Aktuální (nmol/L)</div>
+            </div>
+            <div class="bg-[#111110] px-3 py-3">
+              <div class="font-heading text-lg font-bold text-white mb-1" id="m-peak">—</div>
+              <div class="text-[10px] text-zinc-500">Denní maximum</div>
+            </div>
+            <div class="bg-[#111110] px-3 py-3">
+              <div class="font-heading text-lg font-bold text-white mb-1" id="m-min">—</div>
+              <div class="text-[10px] text-zinc-500">Noční minimum</div>
+            </div>
+            <div class="bg-[#111110] px-3 py-3">
+              <div class="font-heading text-[11px] font-bold text-white mb-1 leading-tight" id="m-phase">—</div>
+              <div class="text-[10px] text-zinc-500">Fáze dne</div>
+            </div>
+          </div>
+
+          <!-- Gauge -->
+          <div class="mb-5">
+            <p class="text-[9px] tracking-[0.15em] uppercase text-zinc-500 mb-3">Míra kortizolu — aktuální hodina</p>
+            <div class="relative h-2.5 rounded-full overflow-visible mb-2"
+                 style="background: linear-gradient(to right, #2a7d4f 0%, #2a7d4f 40%, #185FA5 40%, #185FA5 73%, #C4603A 73%, #C4603A 100%);">
+
+              <div id="gauge-marker" class="absolute top-[-4px] w-[18px] h-[18px] rounded-full bg-white border-[2.5px] border-zinc-900 -translate-x-1/2 shadow-md z-10 transition-all duration-500" style="left:35%;"></div>
+            </div>
+            <div class="flex justify-between text-[9px] uppercase tracking-wide mt-2">
+              <span style="color:#2a7d4f;" class="font-semibold">Homeostáza</span>
+              <span style="color:#185FA5;">Normální</span>
+              <span style="color:#C4603A;" class="font-semibold">⚠ Nadměrná</span>
+            </div>
+          </div>
+
+          <!-- Chart -->
+          <div class="relative h-[200px] mb-3">
+            <canvas id="mainChart" role="img" aria-label="Dynamický kortizolový profil dne"></canvas>
+          </div>
+
+          <!-- Time slider -->
+          <div class="flex items-center gap-3 pt-3 border-t border-zinc-800">
+            <span class="text-[11px] text-zinc-500 whitespace-nowrap">čas:</span>
+            <input type="range" min="0" max="23" value="8" id="hour-slider" step="1" class="k-slider flex-1">
+            <span class="text-sm font-semibold text-white min-w-[40px]" id="hour-out">08:00</span>
+          </div>
+
+          <!-- Phase tip -->
+          <div id="phase-tip" class="mt-3 p-3 bg-zinc-900 border-l-2 border-sage text-[12px] text-zinc-400 leading-relaxed"></div>
+
+          <!-- Sleep indicator -->
+          <div class="mt-4 border border-zinc-800">
+            <div class="flex items-center gap-3 px-4 py-3 bg-zinc-900 border-b border-zinc-800">
+              <span class="text-base">🌙</span>
+              <div>
+                <div class="text-[11px] font-semibold text-white">Kortizol před spaním (22:00)</div>
+                <div class="text-[10px] text-zinc-500">Ideál pro hluboký spánek: 7–9 nmol/L</div>
+              </div>
+            </div>
+            <div class="px-4 py-3">
+              <div class="flex justify-between items-end mb-2">
+                <div>
+                  <div class="text-[9px] uppercase tracking-widest text-zinc-600 mb-1">Vaše odhadovaná hladina</div>
+                  <div id="sleep-val" class="font-heading text-2xl font-bold" style="color:#C4603A;">—</div>
+                </div>
+                <div class="text-right">
+                  <div class="text-sm font-semibold" style="color:#2a7d4f;">7–9 nmol/L</div>
+                  <div class="text-[9px] uppercase tracking-widest text-zinc-600">Ideál pro spánek</div>
+                </div>
+              </div>
+              <div class="relative h-1.5 bg-zinc-800 rounded-full mb-2 overflow-visible">
+                <div id="sleep-bar" class="h-full rounded-full transition-all duration-500" style="width:0%;background:#C4603A;"></div>
+                <div class="absolute top-[-3px] w-[2px] h-[12px] rounded-sm" style="left:16%;background:#2a7d4f;"></div>
+              </div>
+              <div id="sleep-msg" class="text-[11px] text-zinc-500 leading-relaxed pt-2 border-t border-zinc-800">—</div>
+            </div>
+          </div>
+
+          <!-- Intervention panel -->
+          <div id="intervention-panel" class="mt-4 border border-zinc-700" style="display:none;">
+            <div id="intv-header" class="flex items-center gap-3 px-4 py-3">
+              <div id="intv-icon" class="w-6 h-6 rounded-full flex items-center justify-center text-[11px] text-white font-bold flex-shrink-0" style="background:#C4603A;">!</div>
+              <div>
+                <strong id="intv-title" class="block text-[12px] font-semibold"></strong>
+                <span id="intv-sub" class="text-[11px] text-zinc-500"></span>
+              </div>
+            </div>
+            <div id="intv-tags" class="px-4 pb-3 flex flex-wrap gap-2"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <p class="text-[10px] text-zinc-600 mt-6 leading-relaxed">⚠ Edukativní model, nikoliv lékařský test. Hodnoty jsou orientační a vychází z cirkadiánní fyziologie. Pro diagnostiku HPA osy je nutný klinický test.</p>
+    </section>
+
+    <!-- INTERVENCE — světlá -->
+    <section id="sluzby" class="px-6 sm:px-10 lg:px-20 py-24">
+      <div class="mb-16 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">INTERVENCE V ADAPTIVE STUDIU</p>
+        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+          Každá metoda cílí<br>na konkrétní zónu.
+        </h2>
+        <p class="text-zinc-400 text-sm mt-4 max-w-lg">Kryokomora, červené světlo, dechová práce a nervový trénink — každá intervence má přesný mechanismus účinku na kortizolovou osu.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-0 md:divide-x divide-zinc-200">
+        <div class="flex flex-col lg:pr-8 reveal reveal-delay-1">
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Kortizol ↓↓ po zátěži</p>
+          <p class="font-heading text-xl font-bold text-zinc-900 mb-3">Kryokomora</p>
+          <p class="text-zinc-500 text-sm leading-relaxed mb-4">
+            Krátkodobý extrémní chlad (−110 °C) spouští adaptivní stresovou odpověď a následně hluboký parasympatický útlum. Kortizol klesá, endorfiny stoupají.
+          </p>
+          <p class="text-[10px] text-zinc-400 mt-auto"><strong class="text-zinc-700">Optimální čas:</strong> odpoledne 14–18 h nebo po intenzivní zátěži.</p>
+        </div>
+        <div class="flex flex-col lg:px-8 reveal reveal-delay-2">
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Kortizol ↓ rytmus &amp; osa</p>
+          <p class="font-heading text-xl font-bold text-zinc-900 mb-3">Červené světlo</p>
+          <p class="text-zinc-500 text-sm leading-relaxed mb-4">
+            Red light therapy (630–850 nm) podporuje mitochondriální funkci a cirkadiánní synchronizaci. Přirozeně nastavuje denní kortizolový vzorec.
+          </p>
+          <p class="text-[10px] text-zinc-400 mt-auto"><strong class="text-zinc-700">Optimální čas:</strong> ráno 6–9 h pro synchronizaci, večer pro zklidnění osy.</p>
+        </div>
+        <div class="flex flex-col lg:px-8 reveal reveal-delay-3">
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">HRV ↑ &amp; parasympatikus</p>
+          <p class="font-heading text-xl font-bold text-zinc-900 mb-3">Dechová práce</p>
+          <p class="text-zinc-500 text-sm leading-relaxed mb-4">
+            Vědomé dechové techniky aktivují parasympatický nervový systém a snižují cirkulující kortizol. Dovednost, kterou si odnesete a použijete kdykoli.
+          </p>
+          <p class="text-[10px] text-zinc-400 mt-auto"><strong class="text-zinc-700">Optimální čas:</strong> kdykoli — zvláště při nadměrné hladině. Efekt do 10 minut.</p>
+        </div>
+        <div class="flex flex-col lg:pl-8 reveal reveal-delay-4">
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Adaptabilita &amp; odolnost</p>
+          <p class="font-heading text-xl font-bold text-zinc-900 mb-3">Nervový trénink</p>
+          <p class="text-zinc-500 text-sm leading-relaxed mb-4">
+            1:1 program zaměřený na vědomou regulaci autonomního nervového systému. Trénujeme schopnost přecházet mezi aktivací a regenerací — dlouhodobě.
+          </p>
+          <p class="text-[10px] text-zinc-400 mt-auto"><strong class="text-zinc-700">Výsledky:</strong> viditelné do 4 týdnů.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CITÁT — tmavá -->
+    <section class="bg-[#111110] px-6 sm:px-10 lg:px-20 py-24">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div class="reveal">
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">VĚDA ZA METODOU</p>
+          <blockquote class="border-l-2 border-sage pl-8">
+            <p class="font-heading text-2xl sm:text-3xl font-bold text-white leading-tight mb-6">
+              "Kortizol není nepřítel. Je to nejpřesnější biologický časovač, který máte. Problém nastává, když ho ignorujete."
+            </p>
+            <cite class="text-[10px] tracking-[0.2em] uppercase text-zinc-500 not-italic">Adaptivní fyziologie — základ přístupu studia</cite>
+          </blockquote>
+        </div>
+        <div class="reveal reveal-delay-1 space-y-6">
+          {[
+            { title: 'CAR reakce — nejdůležitější okamžik dne', body: '30–45 minut po probuzení kortizol přirozeně vrcholí. To, jak ho využijete, určuje výkon na celý den.' },
+            { title: 'Chronický stres deformuje celou osu', body: 'Při opakovaném přetížení se profil zplošťuje — přestáváte mít rána s energií i noci s odpočinkem.' },
+            { title: 'Regenerace je načasovaný proces', body: 'Správné načasování intervence násobí výsledek. Kryokomora ve 14:00 účinkuje jinak než ve 20:00.' },
+            { title: 'HRV jako zrcadlo kortizolové osy', body: 'Variabilita srdeční frekvence koreluje s rovnováhou HPA osy. Sledujeme oboje — a trénujeme oboje.' },
+          ].map(f => (
+            <div class="flex items-start gap-4 border-b border-zinc-800 pb-6">
+              <span class="text-sage text-lg mt-0.5">→</span>
+              <div>
+                <p class="text-white font-semibold text-sm mb-1">{f.title}</p>
+                <p class="text-zinc-500 text-sm leading-relaxed">{f.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="min-h-[60vh] flex flex-col items-center justify-center px-6 text-center py-24">
+      <div class="reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-8">PRVNÍ KROK</p>
+        <h2 class="font-heading font-bold leading-tight tracking-tight text-zinc-900 mb-8"
+            style="font-size: clamp(2.5rem, 7vw, 5rem)">
+          Začněte číst svůj rytmus.
+        </h2>
+        <p class="text-zinc-500 text-sm leading-relaxed mb-3 max-w-sm mx-auto">
+          Prvním krokem je 30minutový rozhovor. Zjistíme, kde vaše kortizolová osa potřebuje podporu.
+        </p>
+        <p class="text-zinc-400 text-xs mb-10">Bez závazku.</p>
+        <form
+          name="kortizol-lead"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="flex flex-col sm:flex-row gap-0 max-w-md mx-auto mb-4"
+          id="lead-form"
+        >
+          <input type="hidden" name="form-name" value="kortizol-lead" />
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="sleep" id="f-sleep" />
+          <input type="hidden" name="sleepdebt" id="f-sleepdebt" />
+          <input type="hidden" name="weekstress" id="f-weekstress" />
+          <input type="hidden" name="events" id="f-events" />
+          <input type="hidden" name="cortizol-now" id="f-cortizol-now" />
+          <input type="hidden" name="cortizol-sleep" id="f-cortizol-sleep" />
+          <input
+            type="email"
+            name="email"
+            placeholder="váš@email.cz"
+            required
+            class="flex-1 px-6 py-4 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900"
+          />
+          <button type="submit"
+            class="px-8 py-4 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200 whitespace-nowrap">
+            Chci konzultaci
+          </button>
+        </form>
+        <p class="text-zinc-400 text-xs">Bez spamu. Pouze jeden kontakt od nás.</p>
+        <p id="submit-msg" class="text-sage text-sm mt-4" style="display:none;">✓ Výborně — ozveme se vám do 24 hodin.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer lang="cs" />
+</Layout>
+
+<style>
+  .k-select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #52525b;
+    background: #27272a;
+    color: #f4f4f5;
+    font-size: 12px;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23a1a1aa'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+  .k-select:focus { outline: 1px solid #5C7A5E; }
+
+  .k-slider {
+    -webkit-appearance: none;
+    height: 3px;
+    background: #3f3f46;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .k-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #5C7A5E;
+    cursor: pointer;
+  }
+
+
+  .k-intv-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 500;
+    border: 1px solid #3f3f46;
+    color: #a1a1aa;
+  }
+  .k-tag-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+  .k-event-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 8px;
+    border: 1px solid #52525b;
+    background: #27272a;
+    margin-bottom: 4px;
+  }
+  .k-event-bar { width: 3px; height: 20px; border-radius: 1px; flex-shrink: 0; }
+  .k-event-label { flex: 1; font-size: 11px; color: #f4f4f5; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .k-event-del { width: 20px; height: 20px; border: none; background: none; color: #71717a; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: color 0.1s; }
+  .k-event-del:hover { color: #ef4444; }
+  .k-event-hour { width: 36px; padding: 3px 4px; border: 1px solid #52525b; background: #27272a; color: #f4f4f5; font-size: 11px; text-align: center; -moz-appearance: textfield; }
+  .k-event-hour::-webkit-inner-spin-button { -webkit-appearance: none; }
+</style>
+
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+<script is:inline>
+const BASE_CURVE = [18,16,14,13,12,14,22,32,28,24,20,18,16,15,14,13,12,11,10,9,8,7,7,7];
+
+const EVENT_TYPES = [
+  { value:'conflict',    label:'Hádka / konflikt',         icon:'⚡', delta:+18, rise:0.3, decay:2.5, type:'stress'   },
+  { value:'deadline',    label:'Deadline / prezentace',    icon:'📌', delta:+14, rise:0.5, decay:2.0, type:'stress'   },
+  { value:'badnews',     label:'Špatná zpráva',            icon:'📰', delta:+12, rise:0.4, decay:3.0, type:'stress'   },
+  { value:'publicsp',    label:'Veřejné vystoupení',       icon:'🎤', delta:+16, rise:0.3, decay:2.0, type:'stress'   },
+  { value:'hiit',        label:'Intenzivní trénink',       icon:'🏋', delta:+20, rise:0.5, decay:1.5, type:'stress'   },
+  { value:'traffic',     label:'Stres v dopravě',          icon:'🚗', delta:+8,  rise:0.2, decay:1.5, type:'stress'   },
+  { value:'coldshower',  label:'Studená sprcha',           icon:'🚿', delta:+10, rise:0.1, decay:0.8, type:'stress'   },
+  { value:'overload',    label:'Přetížení / multitasking', icon:'📋', delta:+11, rise:0.6, decay:2.5, type:'stress'   },
+  { value:'cryo',        label:'Kryokomora',               icon:'❄',  delta:-14, rise:0.2, decay:1.0, type:'positive' },
+  { value:'redlight',    label:'Červené světlo',           icon:'🔴', delta:-6,  rise:0.5, decay:2.0, type:'positive' },
+  { value:'breathwork',  label:'Dechová práce',            icon:'💬', delta:-8,  rise:0.2, decay:1.2, type:'positive' },
+  { value:'yoga',        label:'Jóga / meditace',          icon:'🧘', delta:-7,  rise:0.7, decay:2.0, type:'positive' },
+  { value:'walk',        label:'Procházka v přírodě',      icon:'🚶', delta:-5,  rise:0.5, decay:2.0, type:'positive' },
+  { value:'nap',         label:'Krátký spánek (20 min)',   icon:'😴', delta:-9,  rise:0.3, decay:1.5, type:'positive' },
+  { value:'social',      label:'Příjemné setkání',         icon:'🤝', delta:-4,  rise:0.5, decay:2.0, type:'positive' },
+  { value:'caffeine_am', label:'Káva ráno (do 11:00)',     icon:'☕', delta:+4,  rise:0.3, decay:1.5, type:'neutral'  },
+  { value:'caffeine_pm', label:'Káva po 14:00',            icon:'☕', delta:+7,  rise:0.3, decay:4.5, type:'neutral'  },
+  { value:'alcohol',     label:'Alkohol (večer)',          icon:'🍷', delta:+9,  rise:2.0, decay:4.0, type:'neutral'  },
+  { value:'skippedmeal', label:'Vynechané jídlo',          icon:'🍽', delta:+7,  rise:1.0, decay:3.0, type:'neutral'  },
+  { value:'screen',      label:'Obrazovky před spaním',    icon:'📱', delta:+5,  rise:0.5, decay:3.0, type:'neutral'  },
+];
+
+const TYPE_COLOR = { stress:'#C4603A', positive:'#5C7A5E', neutral:'#B8962E' };
+
+const PHASES = ["Hluboký spánek","Hluboký spánek","Hluboký spánek","Hluboký spánek","Příprava na probuzení","Příprava na probuzení","Ranní vrchol","Ranní vrchol","Ranní aktivita","Dopoledne — výkon","Dopoledne — výkon","Poledne","Odpoledne","Odpoledne","Mírný pokles","Odpoledne","Večerní pokles","Večerní pokles","Večer","Večer","Noční odpočinek","Noční odpočinek","Noční odpočinek","Noční odpočinek"];
+
+const TIPS = [
+  "Kortizol je na minimu — tělo se hluboce regeneruje.",
+  "Tělo se připravuje na probuzení. Kortizol pomalu stoupá.",
+  "Ranní maximum (CAR) — výborný čas na náročné úkoly a rozhodnutí.",
+  "Stále vysoké hladiny — využijte na kreativní práci a plánování.",
+  "Dopolední výkonnostní okno — soustředění, analýza, jednání.",
+  "Hladina klesá — ideální pro lehčí jídlo a krátkou procházku.",
+  "Odpolední pokles — administrativní úkoly, lehčí práce.",
+  "Kortizol klesá — čas na zklidnění, vyhněte se stresorům.",
+  "Nízký kortizol — připravte se na spánek, omezte obrazovky.",
+  "Noční minimum — regenerační procesy probíhají naplno."
+];
+
+const ZONE_COLORS = { homeo:'#2a7d4f', normal:'#185FA5', high:'#C4603A' };
+const ZONE_LABELS = { homeo:'Homeostáza', normal:'Normální', high:'Nadměrná' };
+
+const INTERVENTIONS = {
+  elevated: [{label:'Dechová práce',dot:'#5C7A5E'},{label:'Procházka',dot:'#5C7A5E'},{label:'Červené světlo',dot:'#B8962E'},{label:'Meditace',dot:'#5C7A5E'}],
+  high:     [{label:'Kryokomora',dot:'#185FA5'},{label:'Nervový trénink',dot:'#C4603A'},{label:'Dechová práce',dot:'#5C7A5E'},{label:'Konzultace — Adaptive Studio',dot:'#C4603A'}]
+};
+
+let events = [], eventIdCounter = 0, currentHour = 8, lastCurve = BASE_CURVE.slice();
+
+function getTipIdx(h) {
+  if(h<4)return 0;if(h<6)return 1;if(h<8)return 2;if(h<10)return 3;
+  if(h<12)return 4;if(h<14)return 5;if(h<17)return 6;if(h<20)return 7;
+  if(h<22)return 8;return 9;
+}
+function getZone(v) {
+  if(v<22)return'homeo';if(v<40)return'normal';return'high';
+}
+function valToGaugePct(v) {
+  const c=Math.min(Math.max(v,0),60);
+  if(c<=22)return(c/22)*40;
+  if(c<=40)return 40+((c-22)/18)*33;
+  return 73+((c-40)/20)*27;
+}
+function getBaseMult() {
+  const s=[-0.10,0,0.06][+document.getElementById('sleep').value+1];
+  const d=[0,0.08,0.16,0.28][+document.getElementById('sleepdebt').value];
+  const w=[0,0.06,0.15,0.26][+document.getElementById('weekstress').value];
+  return 1+s+d+w;
+}
+function computeCurve() {
+  const mult=getBaseMult();
+  const base=BASE_CURVE.map(v=>v*mult);
+  const delta=new Array(24).fill(0);
+  events.forEach(ev=>{
+    const def=EVENT_TYPES.find(t=>t.value===ev.typeValue);
+    if(!def)return;
+    const peakH=ev.hour+def.rise;
+    for(let h=0;h<24;h++){
+      if(h<ev.hour)continue;
+      let c=h<=peakH?def.delta*((h-ev.hour)/Math.max(def.rise,0.01)):def.delta*Math.exp(-(h-peakH)*Math.LN2/def.decay);
+      delta[h]+=c;
+    }
+  });
+  return base.map((b,i)=>Math.max(4,+(b+delta[i]).toFixed(1)));
+}
+
+const labels24=Array.from({length:24},(_,i)=>`${String(i).padStart(2,'0')}:00`);
+
+let mainChart;
+function buildMainChart(curve) {
+  mainChart=new Chart(document.getElementById('mainChart'),{
+    type:'line',
+    data:{labels:labels24,datasets:[
+      {label:'Kortizol',data:curve,borderColor:'#5C7A5E',backgroundColor:'rgba(92,122,94,0.12)',borderWidth:2.5,fill:true,tension:0.4,pointRadius:0,pointHoverRadius:4,order:2},
+      {label:'Homeostáza horní',data:Array(24).fill(22),borderColor:'rgba(42,125,79,0)',borderWidth:0,pointRadius:0,fill:'+1',backgroundColor:'rgba(42,125,79,0.12)',order:4},
+      {label:'Homeostáza dolní',data:Array(24).fill(10),borderColor:'rgba(42,125,79,0.4)',borderWidth:1,borderDash:[3,3],pointRadius:0,fill:false,order:5},
+      {label:'Nadměrná zóna',data:Array(24).fill(40),borderColor:'rgba(196,96,58,0.5)',borderWidth:1.5,borderDash:[4,3],pointRadius:0,fill:false,order:3},
+      {label:'Spánkový ideál',data:Array(24).fill(null).map((_,i)=>i>=20?8:null),borderColor:'rgba(42,125,79,0.7)',borderWidth:1.5,borderDash:[2,2],pointRadius:0,fill:false,order:6},
+      {label:'Teď',data:Array(24).fill(null),borderColor:'rgba(196,96,58,0.7)',borderWidth:2,borderDash:[5,4],pointRadius:0,fill:false,order:1},
+      {label:'Eventy',data:Array(24).fill(null),borderColor:'transparent',backgroundColor:'transparent',pointRadius:Array(24).fill(0),fill:false,order:0}
+    ]},
+    options:{
+      responsive:true,maintainAspectRatio:false,animation:{duration:350},
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>{
+        if(c.datasetIndex===0)return`${c.parsed.y.toFixed(1)} nmol/L`;
+        if(c.datasetIndex===4)return'Ideál před spaním: 7–9 nmol/L';
+        return null;
+      }}}},
+      scales:{
+        x:{ticks:{maxTicksLimit:8,color:'#71717a',font:{size:10},autoSkip:true},grid:{color:'rgba(255,255,255,0.04)'}},
+        y:{min:0,max:65,ticks:{color:'#71717a',font:{size:10},callback:v=>v+' nmol/L'},grid:{color:'rgba(255,255,255,0.04)'}}
+      }
+    }
+  });
+}
+
+function updateNowLine(h){const d=Array(24).fill(null);d[h]=65;mainChart.data.datasets[5].data=d;}
+function updateEventDots(curve){
+  const r=Array(24).fill(0),bg=Array(24).fill('transparent'),bc=Array(24).fill('transparent');
+  events.forEach(ev=>{const def=EVENT_TYPES.find(t=>t.value===ev.typeValue);if(!def)return;r[ev.hour]=Math.max(r[ev.hour],7);bg[ev.hour]=TYPE_COLOR[def.type];bc[ev.hour]='white';});
+  const dotData=Array(24).fill(null).map((_,i)=>r[i]>0?curve[i]:null);
+  const ds=mainChart.data.datasets[6];
+  ds.data=dotData;ds.pointRadius=r;ds.pointBackgroundColor=bg;ds.pointBorderColor=bc;ds.pointBorderWidth=Array(24).fill(2);ds.pointHoverRadius=r.map(x=>x+2);
+}
+
+function updateSleepIndicator(curve){
+  const val=curve[22];
+  const el=document.getElementById('sleep-val'),bar=document.getElementById('sleep-bar'),msg=document.getElementById('sleep-msg');
+  let color,msgText;
+  if(val<=10){color='#5C7A5E';msgText='✓ Výborně — hladina kortizolu je ideální pro nástup hlubokého spánku a noční regeneraci.';}
+  else if(val<=14){color='#B8962E';msgText=`↑ Mírně zvýšená (${val.toFixed(1)} nmol/L). Doporučujeme dechovou práci nebo 20minutový odpočinek bez obrazovek před ulehnutím.`;}
+  else if(val<=22){color='#C4603A';msgText=`⚠ Zvýšená (${val.toFixed(1)} nmol/L) — nástup spánku bude obtížnější. Vyzkoušejte kryokomoru odpoledne nebo dechovou práci večer.`;}
+  else{color='#ef4444';msgText=`⚠ Výrazně zvýšená (${val.toFixed(1)} nmol/L) — kortizol naruší architekturu spánku. Okamžitá intervence doporučena.`;}
+  el.textContent=val.toFixed(1)+' nmol/L';el.style.color=color;
+  bar.style.width=Math.min(100,(val/30)*100)+'%';bar.style.background=color;
+  msg.textContent=msgText;
+}
+
+function updateAll(){
+  const curve=computeCurve();lastCurve=curve;
+  mainChart.data.datasets[0].data=curve;
+  updateNowLine(currentHour);updateEventDots(curve);mainChart.update();
+  const val=curve[currentHour],zone=getZone(val),col=ZONE_COLORS[zone],lbl=ZONE_LABELS[zone];
+  document.getElementById('m-now').innerHTML=`${val.toFixed(1)} <span style="font-size:9px;padding:1px 6px;background:${col}25;color:${col};font-family:sans-serif;letter-spacing:0.06em;text-transform:uppercase;">${lbl}</span>`;
+  document.getElementById('m-peak').textContent=Math.max(...curve).toFixed(1);
+  document.getElementById('m-min').textContent=Math.min(...curve).toFixed(1);
+  document.getElementById('m-phase').textContent=PHASES[currentHour];
+  document.getElementById('phase-tip').textContent=TIPS[getTipIdx(currentHour)];
+  document.getElementById('gauge-marker').style.left=valToGaugePct(val)+'%';
+  updateSleepIndicator(curve);
+  const panel=document.getElementById('intervention-panel');
+  if(zone==='homeo'||zone==='normal'){panel.style.display='none';return;}
+  panel.style.display='block';
+  const items=INTERVENTIONS.high;
+  const hdr=document.getElementById('intv-header'),icon=document.getElementById('intv-icon'),title=document.getElementById('intv-title'),sub=document.getElementById('intv-sub'),tags=document.getElementById('intv-tags');
+  hdr.style.background='rgba(196,96,58,0.1)';icon.style.background='#C4603A';title.style.color='#C4603A';title.textContent='Nadměrná hladina — okamžitá intervence';sub.textContent='Hladina překračuje zdravé maximum — doporučujeme intervenci ihned';
+  tags.innerHTML=items.map(i=>`<span class="k-intv-tag"><span class="k-tag-dot" style="background:${i.dot}"></span>${i.label}</span>`).join('');
+}
+
+window.addEventFromUI=function(){
+  const typeValue=document.getElementById('event-type-select').value;
+  const hour=Math.min(23,Math.max(0,+document.getElementById('event-hour-input').value));
+  events.push({id:++eventIdCounter,hour,typeValue});renderActiveEvents();updateAll();
+};
+window.removeEvent=function(id){events=events.filter(e=>e.id!==id);renderActiveEvents();updateAll();};
+window.updateEventHour=function(id,val){const ev=events.find(e=>e.id===id);if(ev){ev.hour=Math.min(23,Math.max(0,+val));updateAll();}};
+
+function renderActiveEvents(){
+  const list=document.getElementById('events-list');
+  if(events.length===0){list.innerHTML='<p class="text-[11px] text-zinc-400 leading-relaxed py-2">Klikněte na událost výše pro přidání do denního profilu.</p>';return;}
+  list.innerHTML=events.map(ev=>{
+    const def=EVENT_TYPES.find(t=>t.value===ev.typeValue);
+    const col=def?TYPE_COLOR[def.type]:'#888';
+    const sign=def&&def.delta>0?'+':'';
+    return`<div class="k-event-row">
+      <div class="k-event-bar" style="background:${col};"></div>
+      <input type="number" min="0" max="23" value="${ev.hour}" class="k-event-hour" title="Hodina události" onchange="updateEventHour(${ev.id},this.value)" style="border-color:${col}60;">
+      <span class="k-event-label">${def?def.icon+' '+def.label:'—'} <span style="color:${col};font-size:10px;">${sign}${def?def.delta:0}</span></span>
+      <button class="k-event-del" onclick="removeEvent(${ev.id})">×</button>
+    </div>`;
+  }).join('');
+}
+
+['sleep','sleepdebt','weekstress'].forEach(id=>document.getElementById(id).addEventListener('change',updateAll));
+document.getElementById('hour-slider').addEventListener('input',function(){
+  currentHour=+this.value;document.getElementById('hour-out').textContent=String(currentHour).padStart(2,'0')+':00';updateAll();
+});
+
+document.getElementById('lead-form').addEventListener('submit',function(){
+  document.getElementById('f-sleep').value=document.getElementById('sleep').value;
+  document.getElementById('f-sleepdebt').value=document.getElementById('sleepdebt').value;
+  document.getElementById('f-weekstress').value=document.getElementById('weekstress').value;
+  document.getElementById('f-events').value=JSON.stringify(events.map(e=>({type:e.typeValue,hour:e.hour})));
+  document.getElementById('f-cortizol-now').value=lastCurve[currentHour];
+  document.getElementById('f-cortizol-sleep').value=lastCurve[22];
+});
+
+buildMainChart(computeCurve());
+updateNowLine(currentHour);
+renderActiveEvents();
+updateAll();
+</script>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => { entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); },
+    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+  );
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) { el.classList.add('visible'); } else { observer.observe(el); }
+  });
+</script>
