@@ -3,11 +3,11 @@ export const defaultLang = 'cs' as const;
 export const ui = {
   cs: {
     // Coming soon
-    tagline: 'BRZY OTEVÍRÁME NOVÉ STUDIO V CENTRU ZLÍNA',
+    tagline: 'BRZY OTEVÍRÁME NOVÉ STUDIO DLOUHOVĚKOSTI A REGENERACE V CENTRU ZLÍNA',
     headline1: 'Klidnější systém.',
     headline2: 'Plnější výkon.',
     description:
-      'Adaptive Studio tě naučí lépe rozpoznat, kdy je tělo v napětí a kdy potřebuje zklidnit. Tak, aby ti výkon pomáhal, ne tě postupně vyčerpával.',
+      'Nežít jen déle. Fungovat déle dobře.',
     days: 'DNÍ',
     hours: 'HODIN',
     minutes: 'MINUT',
@@ -57,7 +57,7 @@ export const ui = {
     // Problem
     problemTag: 'PROČ TO ŘEŠIT',
     problemH2: 'Nikdo tě neučil zotavovat se.',
-    problemP1: 'Člověk, který dlouho funguje pod tlakem, není slabý. Jen se nikdy nenaučil opravdu zotavit.',
+    problemP1: 'Dlouhodobý výkon stojí na schopnosti obnovy. Bez obnovy se tlak v těle jen hromadí.',
     problemP2:
       'Trénuješ. Pracuješ. Vydáváš energii. Jenže tělo pak neumí samo přepnout zpět do klidu. Zůstává napjaté, unavené a pořád ve střehu.',
     problemP3: 'Problém není výkon. Problém je absence regenerace jako dovednosti.',
@@ -138,11 +138,11 @@ export const ui = {
 
   en: {
     // Coming soon
-    tagline: 'COMING SOON — NEW STUDIO IN ZLIN',
+    tagline: 'COMING SOON — NEW LONGEVITY AND RECOVERY STUDIO IN ZLIN',
     headline1: 'Calmer system.',
     headline2: 'Fuller performance.',
     description:
-      'Adaptive Studio teaches you to better recognise when your body is under tension and when it needs to settle. So performance supports you instead of slowly draining you.',
+      'Not just live longer. Function well for longer.',
     days: 'DAYS',
     hours: 'HOURS',
     minutes: 'MINUTES',
@@ -192,7 +192,7 @@ export const ui = {
     // Problem
     problemTag: 'WHY THIS MATTERS',
     problemH2: 'Nobody taught you how to recover.',
-    problemP1: 'A person who functions for a long time under pressure is not weak. They were simply never taught how to recover well.',
+    problemP1: 'Long-term performance depends on the ability to recover. Without recovery, pressure just keeps building in the body.',
     problemP2:
       'You train. You work. You use up energy. But your body does not know how to switch back into calm. It stays tense, tired and on alert.',
     problemP3: 'The problem is not performance. The problem is the absence of recovery as a skill.',

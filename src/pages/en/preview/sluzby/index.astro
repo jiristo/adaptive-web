@@ -29,6 +29,91 @@ import StudioModal from '../../../../components/StudioModal.astro';
       </p>
     </section>
 
+    <!-- Who it is for -->
+    <section class="min-h-screen flex flex-col px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100">
+      <div class="mb-16 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">WHO THE STUDIO IS FOR</p>
+        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+          What people most often come to us for.
+        </h2>
+        <p class="text-zinc-400 text-sm mt-4 max-w-2xl leading-relaxed">
+          We are not only for athletes and not only for exhausted people. Adaptive Studio is for those who want to function better for longer and work with performance, stress, movement and recovery more consciously.
+        </p>
+      </div>
+
+      <div class="flex-1 grid md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-0 md:divide-x divide-zinc-200 reveal reveal-delay-1">
+
+        <div class="flex flex-col lg:pr-8">
+          <div class="mb-8">
+            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Overload and fatigue</p>
+            <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">When your body keeps going, but your capacity does not.</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
+              For people who have been under pressure for a long time, feel tired, sleep poorly or cannot truly switch off. We help the body regain calm, capacity and the ability to recover.
+            </p>
+          </div>
+          <div class="mt-auto flex flex-wrap gap-2 max-w-xs">
+            {['stress', 'fatigue', 'tension', 'sleep'].map((item) => (
+              <span class="px-3 py-1.5 border border-zinc-200 text-[10px] tracking-[0.18em] uppercase text-zinc-500">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div class="flex flex-col lg:px-8">
+          <div class="mb-8">
+            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Starting with movement</p>
+            <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">When you want to start, but not burn out on day one.</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
+              For people who want to build strength, stability and confidence in their body without chaos and without chasing performance at any cost. For us, movement is not an extra. It is a pillar of longevity.
+            </p>
+          </div>
+          <div class="mt-auto flex flex-wrap gap-2 max-w-xs">
+            {['strength', 'stability', 'movement', 'longevity'].map((item) => (
+              <span class="px-3 py-1.5 border border-zinc-200 text-[10px] tracking-[0.18em] uppercase text-zinc-500">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div class="flex flex-col lg:px-8">
+          <div class="mb-8">
+            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Sport and performance</p>
+            <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">When you train hard and need to recover better.</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
+              For athletes and active people who want to support training, off-season recovery and the return from heavy load or injury. Cryotherapy, red light and breath-based recovery all have a clear role here.
+            </p>
+          </div>
+          <div class="mt-auto flex flex-wrap gap-2 max-w-xs">
+            {['performance', 'recovery', 'off-season', 'return'].map((item) => (
+              <span class="px-3 py-1.5 border border-zinc-200 text-[10px] tracking-[0.18em] uppercase text-zinc-500">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div class="flex flex-col lg:pl-8">
+          <div class="mb-8">
+            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Targeted support</p>
+            <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">When you are not chasing performance, but supporting the body directly.</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
+              Some people come for breath, some for recovery after strain, some for calm or skin support. We do not start with the technology. We start with what the body needs most right now.
+            </p>
+          </div>
+          <div class="mt-auto flex flex-wrap gap-2 max-w-xs">
+            {['breath', 'calm', 'recovery', 'skin'].map((item) => (
+              <span class="px-3 py-1.5 border border-zinc-200 text-[10px] tracking-[0.18em] uppercase text-zinc-500">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Technologies — dark, 4 columns -->
     <section class="min-h-screen bg-[#111110] flex flex-col px-6 sm:px-10 lg:px-20 py-24">
 
