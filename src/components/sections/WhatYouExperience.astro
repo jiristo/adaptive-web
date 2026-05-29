@@ -16,24 +16,28 @@ const cs = {
       tag: 'Regenerace',
       title: 'Odpočinete si — opravdově',
       body: 'Červené světlo a kryokomora nejsou jen příjemný doplněk. Pomáhají tělu rychleji se zklidnit, uvolnit a nastartovat obnovu. Odejdete s pocitem úlevy, který tělo dobře pozná.',
+      img: '/images/relaxed-woman-work.webp',
       imgAlt: 'Regenerace',
     },
     {
       tag: 'Dechová práce',
       title: 'Naučíte se pracovat s dechem',
       body: 'Dech je jeden z nejrychlejších způsobů, jak ovlivnit vlastní stav. Odnesete si jednoduchý postup, který můžete použít hned, kdykoliv budete potřebovat zklidnění nebo soustředění.',
+      img: '/images/man-breath-class.webp',
       imgAlt: 'Dechová práce',
     },
     {
       tag: 'Vědomý pohyb',
       title: 'Pohnete tělem záměrně',
       body: 'Silový trénink u nás není jen o výkonu. Učíte se lépe vnímat tělo, pohybovat se přesněji a zapojovat správné svaly ve správný čas.',
+      img: '/images/woman-pulling-weights.webp',
       imgAlt: 'Vědomý pohyb',
     },
     {
       tag: 'Meditace a protažení',
       title: 'Zpomalíte — vědomě',
       body: 'Klid není náhoda, ale dovednost. Vedená meditace a protažení vám pomohou poznat, kdy se tělo opravdu uvolňuje, a naučí vás do tohoto stavu vracet i mimo studio.',
+      img: '/images/woman-stretching-minful.webp',
       imgAlt: 'Meditace a protažení',
     },
   ],
@@ -48,24 +52,28 @@ const en = {
       tag: 'Recovery',
       title: 'You will truly rest',
       body: 'Red light therapy and cryotherapy are more than pleasant add-ons. They help the body settle faster, release tension and begin recovery. You leave with a sense of relief your body clearly recognises.',
+      img: '/images/relaxed-woman-work.webp',
       imgAlt: 'Recovery',
     },
     {
       tag: 'Breathwork',
       title: 'You will learn to work with your breath',
       body: 'Breath is one of the fastest ways to influence your state. You will leave with a simple method you can use right away whenever you need calm or focus.',
+      img: '/images/man-breath-class.webp',
       imgAlt: 'Breathwork',
     },
     {
       tag: 'Conscious movement',
       title: 'You will move with intention',
       body: 'Our strength training is not just about performance. You learn to feel your body more clearly, move with more precision and engage the right muscles at the right time.',
+      img: '/images/woman-pulling-weights.webp',
       imgAlt: 'Conscious movement',
     },
     {
       tag: 'Meditation & stretching',
       title: 'You will slow down — consciously',
       body: 'Calm is not an accident. It is a skill. Guided meditation and stretching help you recognise when the body is truly letting go and teach you how to return to that state outside the studio too.',
+      img: '/images/woman-stretching-minful.webp',
       imgAlt: 'Meditation & stretching',
     },
   ],
@@ -96,11 +104,18 @@ const delays = ['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3', 'reveal-de
         </div>
 
         <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-900 mt-auto mb-8">
-          <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-50"></div>
-          <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-50"></div>
-          <div class="absolute inset-0 flex items-center justify-center">
-            <p class="text-[9px] tracking-[0.3em] text-zinc-600 uppercase">{item.imgAlt}</p>
-          </div>
+          {item.img
+            ? <img src={item.img} alt={item.imgAlt} class="w-full h-full object-cover" loading="lazy" />
+            : (
+              <>
+                <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-50"></div>
+                <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-50"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <p class="text-[9px] tracking-[0.3em] text-zinc-600 uppercase">{item.imgAlt}</p>
+                </div>
+              </>
+            )
+          }
         </div>
 
         <a
