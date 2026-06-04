@@ -30,7 +30,7 @@ import StudioModal from '../../../../components/StudioModal.astro';
     </section>
 
     <!-- Studio equipment -->
-    <section class="min-h-screen flex flex-col px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100">
+    <section class="min-h-screen flex flex-col px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100 bg-zinc-50/70">
 
       <div class="mb-16 reveal">
         <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">STUDIO TOOLS</p>
@@ -42,74 +42,158 @@ import StudioModal from '../../../../components/StudioModal.astro';
         </p>
       </div>
 
-      <div class="flex-1 grid md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-0 md:divide-x divide-zinc-200">
+      <div class="flex-1 grid md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-0 md:divide-x divide-zinc-200 items-stretch">
 
-        <div class="flex flex-col lg:pr-8 reveal reveal-delay-1">
-          <div class="mb-8">
+        <div class="flex h-full flex-col lg:pr-8 reveal reveal-delay-1">
+          <div>
             <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">For calm and better recovery</p>
             <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">Red Light Therapy</h3>
             <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
               Suitable for people under pressure, after demanding training, or in phases when the body struggles to switch off. We use red light where the goal is to support recovery, release tension, and restore deeper rest.
             </p>
           </div>
-          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mt-auto mb-8">
-            <img src="/images/red-light-therapy.webp" alt="Red Light Therapy" class="w-full h-full object-cover" loading="lazy" />
+          <div class="mt-10 space-y-5">
+            <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100">
+              <img src="/images/red-light-therapy.webp" alt="Red Light Therapy" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div class="max-w-xs space-y-4">
+              <div>
+                <p class="text-[10px] tracking-[0.24em] uppercase text-zinc-400 mb-2">Solves</p>
+                <div class="flex flex-wrap gap-2">
+                  {['stress', 'tension', 'fatigue', 'poor sleep'].map((item) => (
+                    <span class="px-3 py-2 border border-zinc-200 bg-zinc-50 text-sm font-medium text-zinc-700">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p class="text-[10px] tracking-[0.24em] uppercase text-zinc-400 mb-2">Goal</p>
+                <div class="flex flex-wrap gap-2">
+                  {['recovery', 'relaxation', 'better sleep', 'faster recovery'].map((item) => (
+                    <span class="px-3 py-2 border border-zinc-200 bg-white text-sm font-medium text-zinc-900">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-          <a href="/en/preview/#booking" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors duration-200">
-            Book a consultation <span aria-hidden="true">→</span>
-          </a>
         </div>
 
-        <div class="flex flex-col lg:px-8 reveal reveal-delay-2">
-          <div class="mb-8">
+        <div class="flex h-full flex-col lg:px-8 reveal reveal-delay-2">
+          <div>
             <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">For resilience and post-load recovery</p>
             <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">Cryotherapy</h3>
             <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
               Suitable for active people, athletes, and anyone who wants to improve how the body responds to stress. We use cold when we want to wake the system up, support post-effort recovery, and train the shift from tension back into calm.
             </p>
           </div>
-          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mt-auto mb-8">
-            <img src="/images/cryo-chamber.webp" alt="Cryotherapy" class="w-full h-full object-cover object-top" loading="lazy" />
+          <div class="mt-10 space-y-5">
+            <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100">
+              <img src="/images/cryo-chamber.webp" alt="Cryotherapy" class="w-full h-full object-cover object-top" loading="lazy" />
+            </div>
+            <div class="max-w-xs space-y-4">
+              <div>
+                <p class="text-[10px] tracking-[0.24em] uppercase text-zinc-400 mb-2">Solves</p>
+                <div class="flex flex-wrap gap-2">
+                  {['overload', 'muscle fatigue', 'slow recovery', 'low resilience'].map((item) => (
+                    <span class="px-3 py-2 border border-zinc-200 bg-zinc-50 text-sm font-medium text-zinc-700">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p class="text-[10px] tracking-[0.24em] uppercase text-zinc-400 mb-2">Goal</p>
+                <div class="flex flex-wrap gap-2">
+                  {['resilience', 'energy', 'sports recovery', 'faster recovery'].map((item) => (
+                    <span class="px-3 py-2 border border-zinc-200 bg-white text-sm font-medium text-zinc-900">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-          <a href="/en/preview/#booking" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors duration-200">
-            Book a consultation <span aria-hidden="true">→</span>
-          </a>
         </div>
 
-        <div class="flex flex-col lg:px-8 reveal reveal-delay-3">
-          <div class="mb-8">
+        <div class="flex h-full flex-col lg:px-8 reveal reveal-delay-3">
+          <div>
             <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">For targeted body recovery</p>
             <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">Magnetotherapy</h3>
             <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
               Suitable for those who do not need more output, but more support for recovery. We use magnetotherapy when it makes sense to work more deeply with tissue recovery and the body’s return to balance.
             </p>
           </div>
-          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mt-auto mb-8">
-            <img src="/images/magnetic-stimulation.webp" alt="Magnetotherapy" class="w-full h-full object-cover" loading="lazy" />
+          <div class="mt-10 space-y-5">
+            <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100">
+              <img src="/images/magnetic-stimulation.webp" alt="Magnetotherapy" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div class="max-w-xs space-y-4">
+              <div>
+                <p class="text-[10px] tracking-[0.24em] uppercase text-zinc-400 mb-2">Solves</p>
+                <div class="flex flex-wrap gap-2">
+                  {['muscle pain', 'overworked body', 'tissue recovery', 'overall fatigue'].map((item) => (
+                    <span class="px-3 py-2 border border-zinc-200 bg-zinc-50 text-sm font-medium text-zinc-700">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p class="text-[10px] tracking-[0.24em] uppercase text-zinc-400 mb-2">Goal</p>
+                <div class="flex flex-wrap gap-2">
+                  {['body recovery', 'relief', 'healing', 'balance'].map((item) => (
+                    <span class="px-3 py-2 border border-zinc-200 bg-white text-sm font-medium text-zinc-900">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-          <a href="/en/preview/#booking" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors duration-200">
-            Book a consultation <span aria-hidden="true">→</span>
-          </a>
         </div>
 
-        <div class="flex flex-col lg:pl-8 reveal reveal-delay-4">
-          <div class="mb-8">
+        <div class="flex h-full flex-col lg:pl-8 reveal reveal-delay-4">
+          <div>
             <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">For strength and confidence in movement</p>
             <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">Strength Training</h3>
             <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
               For people who want to start intelligently, improve movement quality, or support long-term performance without chaos. We build training to develop strength, stability, and body control without unnecessary nervous-system overload.
             </p>
           </div>
-          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mt-auto mb-8">
-            <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-50"></div>
-            <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-50"></div>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <p class="text-[9px] tracking-[0.3em] text-zinc-400 uppercase">Strength Training</p>
+          <div class="mt-10 space-y-5">
+            <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100">
+              <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-50"></div>
+              <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-50"></div>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <p class="text-[9px] tracking-[0.3em] text-zinc-400 uppercase">Strength Training</p>
+              </div>
+            </div>
+            <div class="max-w-xs space-y-4">
+              <div>
+                <p class="text-[10px] tracking-[0.24em] uppercase text-zinc-400 mb-2">Solves</p>
+                <div class="flex flex-wrap gap-2">
+                  {['weak core', 'instability', 'poor posture', 'movement insecurity'].map((item) => (
+                    <span class="px-3 py-2 border border-zinc-200 bg-zinc-50 text-sm font-medium text-zinc-700">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p class="text-[10px] tracking-[0.24em] uppercase text-zinc-400 mb-2">Goal</p>
+                <div class="flex flex-wrap gap-2">
+                  {['strength', 'stability', 'better fitness', 'healthy movement'].map((item) => (
+                    <span class="px-3 py-2 border border-zinc-200 bg-white text-sm font-medium text-zinc-900">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-          <a href="/en/preview/#booking" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors duration-200">
-            Book a consultation <span aria-hidden="true">→</span>
-          </a>
         </div>
 
       </div>

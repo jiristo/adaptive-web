@@ -44,7 +44,7 @@ import StudioModal from '../../../components/StudioModal.astro';
     </section>
 
     <!-- Studio equipment -->
-    <section class="min-h-screen flex flex-col px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100">
+    <section class="min-h-screen flex flex-col px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100 bg-zinc-50/70">
 
       <div class="mb-16 reveal">
         <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">NÁSTROJE STUDIA</p>
@@ -56,75 +56,159 @@ import StudioModal from '../../../components/StudioModal.astro';
         </p>
       </div>
 
-      <div class="flex-1 grid md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-0 md:divide-x divide-zinc-200">
+      <div class="flex-1 grid md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-0 md:divide-x divide-zinc-200 items-stretch">
 
-        <div class="flex flex-col lg:pr-8 reveal reveal-delay-1">
-          <div class="mb-8">
+        <div class="flex h-full flex-col lg:pr-8 reveal reveal-delay-1">
+          <div>
             <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Pro zklidnění a lepší obnovu</p>
             <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">Červené světlo</h3>
             <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
               Vhodné pro lidi pod tlakem, po náročném tréninku i ve fázi, kdy tělo hůř vypíná. Červené světlo využíváme tam, kde je cílem podpořit regeneraci, uvolnit napětí a vrátit tělu kvalitnější odpočinek.
             </p>
           </div>
-          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mt-auto mb-8">
-            <img src="/images/red-light-therapy.webp" alt="Červené světlo" class="w-full h-full object-cover" loading="lazy" />
+          <div class="mt-10 space-y-5">
+            <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100">
+              <img src="/images/red-light-therapy.webp" alt="Červené světlo" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div class="max-w-xs space-y-4">
+              <div>
+                <p class="text-[10px] tracking-[0.24em] uppercase text-zinc-400 mb-2">Řeší</p>
+                <div class="flex flex-wrap gap-2">
+                  {['stres', 'napětí', 'únava', 'horší spánek'].map((item) => (
+                    <span class="px-3 py-2 border border-zinc-200 bg-zinc-50 text-sm font-medium text-zinc-700">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p class="text-[10px] tracking-[0.24em] uppercase text-zinc-400 mb-2">Cíl</p>
+                <div class="flex flex-wrap gap-2">
+                  {['regenerace', 'uvolnění', 'lepší spánek', 'rychlejší obnova'].map((item) => (
+                    <span class="px-3 py-2 border border-zinc-200 bg-white text-sm font-medium text-zinc-900">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-          <a href="/preview/#booking" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors duration-200">
-            Zarezervovat konzultaci <span aria-hidden="true">→</span>
-          </a>
         </div>
 
-        <div class="flex flex-col lg:px-8 reveal reveal-delay-2">
-          <div class="mb-8">
+        <div class="flex h-full flex-col lg:px-8 reveal reveal-delay-2">
+          <div>
             <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Pro odolnost a regeneraci po zátěži</p>
             <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">Kryokomora</h3>
             <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
               Vhodná pro aktivní lidi, sportovce i ty, kdo chtějí zlepšit reakci těla na zátěž. Chlad využíváme, když potřebujeme probudit systém, podpořit regeneraci po výkonu a trénovat schopnost vracet se z napětí zpět do klidu.
             </p>
           </div>
-          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mt-auto mb-8">
-            <img src="/images/cryo-chamber.webp" alt="Kryokomora" class="w-full h-full object-cover object-top" loading="lazy" />
+          <div class="mt-10 space-y-5">
+            <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100">
+              <img src="/images/cryo-chamber.webp" alt="Kryokomora" class="w-full h-full object-cover object-top" loading="lazy" />
+            </div>
+            <div class="max-w-xs space-y-4">
+              <div>
+                <p class="text-[10px] tracking-[0.24em] uppercase text-zinc-400 mb-2">Řeší</p>
+                <div class="flex flex-wrap gap-2">
+                  {['přetížení', 'svalová únava', 'pomalá regenerace', 'nízká odolnost'].map((item) => (
+                    <span class="px-3 py-2 border border-zinc-200 bg-zinc-50 text-sm font-medium text-zinc-700">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p class="text-[10px] tracking-[0.24em] uppercase text-zinc-400 mb-2">Cíl</p>
+                <div class="flex flex-wrap gap-2">
+                  {['odolnost', 'energie', 'sportovní regenerace', 'rychlejší zotavení'].map((item) => (
+                    <span class="px-3 py-2 border border-zinc-200 bg-white text-sm font-medium text-zinc-900">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-          <a href="/preview/#booking" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors duration-200">
-            Zarezervovat konzultaci <span aria-hidden="true">→</span>
-          </a>
         </div>
 
-        <div class="flex flex-col lg:px-8 reveal reveal-delay-3">
-          <div class="mb-8">
+        <div class="flex h-full flex-col lg:px-8 reveal reveal-delay-3">
+          <div>
             <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Pro cílenou obnovu těla</p>
             <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">Magnetoterapie</h3>
             <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
               Vhodná pro ty, kdo nepotřebují další výkon, ale spíš podpořit tělo v obnově. Magnetoterapii zařazujeme ve chvíli, kdy dává smysl pracovat hlouběji s regenerací tkání a celkovým návratem do rovnováhy.
             </p>
           </div>
-          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mt-auto mb-8">
-            <img src="/images/magnetic-stimulation.webp" alt="Magnetoterapie" class="w-full h-full object-cover" loading="lazy" />
+          <div class="mt-10 space-y-5">
+            <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100">
+              <img src="/images/magnetic-stimulation.webp" alt="Magnetoterapie" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div class="max-w-xs space-y-4">
+              <div>
+                <p class="text-[10px] tracking-[0.24em] uppercase text-zinc-400 mb-2">Řeší</p>
+                <div class="flex flex-wrap gap-2">
+                  {['bolest svalů', 'přetížené tělo', 'regenerace tkání', 'celková únava'].map((item) => (
+                    <span class="px-3 py-2 border border-zinc-200 bg-zinc-50 text-sm font-medium text-zinc-700">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p class="text-[10px] tracking-[0.24em] uppercase text-zinc-400 mb-2">Cíl</p>
+                <div class="flex flex-wrap gap-2">
+                  {['obnova těla', 'úleva', 'hojení', 'návrat do rovnováhy'].map((item) => (
+                    <span class="px-3 py-2 border border-zinc-200 bg-white text-sm font-medium text-zinc-900">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-          <a href="/preview/#booking" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors duration-200">
-            Zarezervovat konzultaci <span aria-hidden="true">→</span>
-          </a>
         </div>
 
-        <div class="flex flex-col lg:pl-8 reveal reveal-delay-4">
-          <div class="mb-8">
+        <div class="flex h-full flex-col lg:pl-8 reveal reveal-delay-4">
+          <div>
             <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Pro sílu a jistotu v pohybu</p>
             <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">Silový trénink</h3>
             <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
               Pro ty, kdo chtějí začít chytře, zlepšit kvalitu pohybu nebo podpořit dlouhodobý výkon bez chaosu. Trénink stavíme tak, aby budoval sílu, stabilitu a kontrolu těla bez zbytečného přepětí nervového systému.
             </p>
           </div>
-          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mt-auto mb-8">
-            <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-50"></div>
-            <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-50"></div>
-            <!-- Replace: <img src="/images/silovy-trenink.jpg" alt="Silový trénink" class="w-full h-full object-cover" /> -->
-            <div class="absolute inset-0 flex items-center justify-center">
-              <p class="text-[9px] tracking-[0.3em] text-zinc-400 uppercase">Silový trénink</p>
+          <div class="mt-10 space-y-5">
+            <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100">
+              <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-50"></div>
+              <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-50"></div>
+              <!-- Replace: <img src="/images/silovy-trenink.jpg" alt="Silový trénink" class="w-full h-full object-cover" /> -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <p class="text-[9px] tracking-[0.3em] text-zinc-400 uppercase">Silový trénink</p>
+              </div>
+            </div>
+            <div class="max-w-xs space-y-4">
+              <div>
+                <p class="text-[10px] tracking-[0.24em] uppercase text-zinc-400 mb-2">Řeší</p>
+                <div class="flex flex-wrap gap-2">
+                  {['slabý střed těla', 'nestabilita', 'špatné držení těla', 'nejistota v pohybu'].map((item) => (
+                    <span class="px-3 py-2 border border-zinc-200 bg-zinc-50 text-sm font-medium text-zinc-700">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p class="text-[10px] tracking-[0.24em] uppercase text-zinc-400 mb-2">Cíl</p>
+                <div class="flex flex-wrap gap-2">
+                  {['síla', 'stabilita', 'lepší kondice', 'zdravý pohyb'].map((item) => (
+                    <span class="px-3 py-2 border border-zinc-200 bg-white text-sm font-medium text-zinc-900">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-          <a href="/preview/#booking" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors duration-200">
-            Zarezervovat konzultaci <span aria-hidden="true">→</span>
-          </a>
         </div>
 
       </div>
@@ -182,20 +266,47 @@ import StudioModal from '../../../components/StudioModal.astro';
       <div class="px-6 sm:px-10 lg:px-20 pb-24">
         <div class="grid md:grid-cols-3 md:divide-x divide-zinc-200 gap-0">
           <div class="md:pr-12 reveal reveal-delay-1">
-            <div class="w-full aspect-[3/4] bg-transparent flex items-center justify-center overflow-hidden">
+            <div class="w-full max-w-[18rem] aspect-[3/4] bg-transparent flex items-center justify-center overflow-hidden">
               <img src="/images/nebezpeci.webp" alt="Uvolníme přetížení" class="w-full h-full object-contain" loading="lazy" />
+            </div>
+            <div class="mt-5 max-w-[18rem]">
+              <div class="flex flex-wrap gap-2">
+                {['dechové cvičení', 'relaxace', 'stretching'].map((item) => (
+                  <span class="px-3 py-2 border border-zinc-200 bg-zinc-50 text-sm font-medium text-zinc-700">
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
           <div class="md:px-12 reveal reveal-delay-2">
-            <div class="w-full aspect-[3/4] bg-transparent flex items-center justify-center overflow-hidden">
+            <div class="w-full max-w-[18rem] aspect-[3/4] bg-transparent flex items-center justify-center overflow-hidden">
               <img src="/images/bezpeci.webp" alt="Nastartujeme regeneraci" class="w-full h-full object-contain" loading="lazy" />
+            </div>
+            <div class="mt-5 max-w-[18rem]">
+              <div class="flex flex-wrap gap-2">
+                {['meditace', 'zvědomění', 'dechové cvičení', 'relaxace', 'stretching'].map((item) => (
+                  <span class="px-3 py-2 border border-zinc-200 bg-zinc-50 text-sm font-medium text-zinc-700">
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
           <div class="md:pl-12 reveal reveal-delay-3">
-            <div class="w-full aspect-[3/4] bg-transparent flex items-center justify-center overflow-hidden">
+            <div class="w-full max-w-[18rem] aspect-[3/4] bg-transparent flex items-center justify-center overflow-hidden">
               <img src="/images/odolnost.webp" alt="Vybudujeme odolnost" class="w-full h-full object-contain" loading="lazy" />
+            </div>
+            <div class="mt-5 max-w-[18rem]">
+              <div class="flex flex-wrap gap-2">
+                {['silový trénink', 'funkční cvičení', 'meditace', 'zvědomění', 'dechové cvičení', 'relaxace', 'stretching'].map((item) => (
+                  <span class="px-3 py-2 border border-zinc-200 bg-zinc-50 text-sm font-medium text-zinc-700">
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
