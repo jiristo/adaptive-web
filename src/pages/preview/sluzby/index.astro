@@ -17,8 +17,8 @@ import StudioModal from '../../../components/StudioModal.astro';
 
     <!-- Hero -->
     <section class="min-h-screen flex items-center px-6 sm:px-10 lg:px-20 py-24">
-      <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(320px,34rem)] gap-12 lg:gap-20 items-center w-full">
-        <div>
+      <div class="w-full">
+        <div class="max-w-4xl">
           <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-10">NAŠE FILOZOFIE</p>
           <h1 class="font-heading font-bold leading-[0.9] tracking-tight text-zinc-900 mb-10 reveal"
               style="font-size: clamp(4rem, 12vw, 10rem)">
@@ -29,9 +29,8 @@ import StudioModal from '../../../components/StudioModal.astro';
             Pomáháme ji rozvíjet pomocí pohybu, dechu a ověřených postupů, které mají v těle jasný účinek.
           </p>
         </div>
-
-        <div class="reveal reveal-delay-2">
-          <div class="relative w-full aspect-[4/5] overflow-hidden bg-zinc-100">
+        <div class="reveal reveal-delay-2 mt-12 lg:mt-16">
+          <div class="relative w-full max-w-5xl mx-auto aspect-[16/10] overflow-hidden bg-zinc-100">
             <img
               src="/images/reaching-hands.webp"
               alt="Dvě ruce směřující k sobě"

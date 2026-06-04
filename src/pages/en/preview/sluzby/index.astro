@@ -16,17 +16,31 @@ import StudioModal from '../../../../components/StudioModal.astro';
   <main>
 
     <!-- Hero -->
-    <section class="min-h-screen flex flex-col justify-center px-6 sm:px-10 lg:px-20 py-24">
-      <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-10">OUR PHILOSOPHY</p>
-      <h1 class="font-heading font-bold leading-[0.9] tracking-tight text-zinc-900 mb-10 reveal"
-          style="font-size: clamp(4rem, 12vw, 10rem)">
-        Approach
-      </h1>
-      <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-xl reveal reveal-delay-1">
-        Working consciously with the nervous system is not just rest or temporary relief.<br>
-        It is a skill that can be learned.<br>
-        We help build it through movement, breath and proven methods that have a clear effect on the body.
-      </p>
+    <section class="min-h-screen flex items-center px-6 sm:px-10 lg:px-20 py-24">
+      <div class="w-full">
+        <div class="max-w-4xl">
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-10">OUR PHILOSOPHY</p>
+          <h1 class="font-heading font-bold leading-[0.9] tracking-tight text-zinc-900 mb-10 reveal"
+              style="font-size: clamp(4rem, 12vw, 10rem)">
+            Approach
+          </h1>
+          <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-xl reveal reveal-delay-1">
+            Working consciously with the nervous system is not just rest or temporary relief.<br>
+            It is a skill that can be learned.<br>
+            We help build it through movement, breath and proven methods that have a clear effect on the body.
+          </p>
+        </div>
+        <div class="reveal reveal-delay-2 mt-12 lg:mt-16">
+          <div class="relative w-full max-w-5xl mx-auto aspect-[16/10] overflow-hidden bg-zinc-100">
+            <img
+              src="/images/reaching-hands.webp"
+              alt="Two hands reaching toward each other"
+              class="w-full h-full object-cover object-center"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Studio equipment -->
@@ -251,20 +265,47 @@ import StudioModal from '../../../../components/StudioModal.astro';
       <div class="px-6 sm:px-10 lg:px-20 pb-24">
         <div class="grid md:grid-cols-3 md:divide-x divide-zinc-200 gap-0">
           <div class="md:pr-12 reveal reveal-delay-1">
-            <div class="w-full aspect-[3/4] bg-transparent flex items-center justify-center overflow-hidden">
+            <div class="w-full max-w-[18rem] aspect-[3/4] bg-transparent flex items-center justify-center overflow-hidden">
               <img src="/images/nebezpeci.webp" alt="Release overload" class="w-full h-full object-contain" loading="lazy" />
+            </div>
+            <div class="mt-5 max-w-[18rem]">
+              <div class="flex flex-wrap gap-2">
+                {['breathwork', 'relaxation', 'stretching'].map((item) => (
+                  <span class="px-3 py-2 border border-zinc-200 bg-zinc-50 text-sm font-medium text-zinc-700">
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
           <div class="md:px-12 reveal reveal-delay-2">
-            <div class="w-full aspect-[3/4] bg-transparent flex items-center justify-center overflow-hidden">
+            <div class="w-full max-w-[18rem] aspect-[3/4] bg-transparent flex items-center justify-center overflow-hidden">
               <img src="/images/bezpeci.webp" alt="Restart recovery" class="w-full h-full object-contain" loading="lazy" />
+            </div>
+            <div class="mt-5 max-w-[18rem]">
+              <div class="flex flex-wrap gap-2">
+                {['meditation', 'body awareness', 'breathwork', 'relaxation', 'stretching'].map((item) => (
+                  <span class="px-3 py-2 border border-zinc-200 bg-zinc-50 text-sm font-medium text-zinc-700">
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
           <div class="md:pl-12 reveal reveal-delay-3">
-            <div class="w-full aspect-[3/4] bg-transparent flex items-center justify-center overflow-hidden">
+            <div class="w-full max-w-[18rem] aspect-[3/4] bg-transparent flex items-center justify-center overflow-hidden">
               <img src="/images/odolnost.webp" alt="Build resilience" class="w-full h-full object-contain" loading="lazy" />
+            </div>
+            <div class="mt-5 max-w-[18rem]">
+              <div class="flex flex-wrap gap-2">
+                {['strength training', 'functional training', 'meditation', 'body awareness', 'breathwork', 'relaxation', 'stretching'].map((item) => (
+                  <span class="px-3 py-2 border border-zinc-200 bg-zinc-50 text-sm font-medium text-zinc-700">
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
