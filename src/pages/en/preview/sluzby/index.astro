@@ -29,179 +29,85 @@ import StudioModal from '../../../../components/StudioModal.astro';
       </p>
     </section>
 
-    <!-- Who it is for -->
+    <!-- Studio equipment -->
     <section class="min-h-screen flex flex-col px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100">
+
       <div class="mb-16 reveal">
-        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">WHO THE STUDIO IS FOR</p>
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">STUDIO TOOLS</p>
         <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
-          What people most often come to us for.
+          What kind of support we offer in the studio.
         </h2>
-        <p class="text-zinc-400 text-sm mt-4 max-w-2xl leading-relaxed">
-          We are not only for athletes and not only for exhausted people. Adaptive Studio is for those who want to function better for longer and work with performance, stress, movement and recovery more consciously.
+        <p class="text-zinc-500 text-sm mt-4 max-w-2xl leading-relaxed">
+          Every tool in the studio has a clear role. You are not choosing technology for its own sake, but the kind of support that makes sense for your body, your load, and your goal.
         </p>
       </div>
 
-      <div class="flex-1 grid md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-0 md:divide-x divide-zinc-200 reveal reveal-delay-1">
-
-        <div class="flex flex-col lg:pr-8">
-          <div class="mb-8">
-            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Overload and fatigue</p>
-            <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">When your body keeps going, but your capacity does not.</h3>
-            <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
-              For people who have been under pressure for a long time, feel tired, sleep poorly or cannot truly switch off. We help the body regain calm, capacity and the ability to recover.
-            </p>
-          </div>
-          <div class="mt-auto flex flex-wrap gap-2 max-w-xs">
-            {['stress', 'fatigue', 'tension', 'sleep'].map((item) => (
-              <span class="px-3 py-1.5 border border-zinc-200 text-[10px] tracking-[0.18em] uppercase text-zinc-500">
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div class="flex flex-col lg:px-8">
-          <div class="mb-8">
-            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Starting with movement</p>
-            <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">When you want to start, but not burn out on day one.</h3>
-            <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
-              For people who want to build strength, stability and confidence in their body without chaos and without chasing performance at any cost. For us, movement is not an extra. It is a pillar of longevity.
-            </p>
-          </div>
-          <div class="mt-auto flex flex-wrap gap-2 max-w-xs">
-            {['strength', 'stability', 'movement', 'longevity'].map((item) => (
-              <span class="px-3 py-1.5 border border-zinc-200 text-[10px] tracking-[0.18em] uppercase text-zinc-500">
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div class="flex flex-col lg:px-8">
-          <div class="mb-8">
-            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Sport and performance</p>
-            <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">When you train hard and need to recover better.</h3>
-            <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
-              For athletes and active people who want to support training, off-season recovery and the return from heavy load or injury. Cryotherapy, red light and breath-based recovery all have a clear role here.
-            </p>
-          </div>
-          <div class="mt-auto flex flex-wrap gap-2 max-w-xs">
-            {['performance', 'recovery', 'off-season', 'return'].map((item) => (
-              <span class="px-3 py-1.5 border border-zinc-200 text-[10px] tracking-[0.18em] uppercase text-zinc-500">
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div class="flex flex-col lg:pl-8">
-          <div class="mb-8">
-            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Targeted support</p>
-            <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">When you are not chasing performance, but supporting the body directly.</h3>
-            <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
-              Some people come for breath, some for recovery after strain, some for calm or skin support. We do not start with the technology. We start with what the body needs most right now.
-            </p>
-          </div>
-          <div class="mt-auto flex flex-wrap gap-2 max-w-xs">
-            {['breath', 'calm', 'recovery', 'skin'].map((item) => (
-              <span class="px-3 py-1.5 border border-zinc-200 text-[10px] tracking-[0.18em] uppercase text-zinc-500">
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Technologies — dark, 4 columns -->
-    <section class="min-h-screen bg-[#111110] flex flex-col px-6 sm:px-10 lg:px-20 py-24">
-
-      <div class="mb-16 reveal">
-        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">STUDIO EQUIPMENT</p>
-        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white">
-          Studio equipment.
-        </h2>
-      </div>
-
-      <div class="flex-1 grid md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-0 md:divide-x divide-zinc-800">
+      <div class="flex-1 grid md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-0 md:divide-x divide-zinc-200">
 
         <div class="flex flex-col lg:pr-8 reveal reveal-delay-1">
           <div class="mb-8">
-            <h3 class="font-heading text-2xl font-bold text-white tracking-tight mb-4">Red Light Therapy</h3>
-            <p class="text-zinc-300 text-sm leading-relaxed max-w-xs">
-              Red light helps the body recover after strain. It supports recovery, calm and better rest. We use it after training and whenever the body needs help returning to a calmer state.
+            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">For calm and better recovery</p>
+            <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">Red Light Therapy</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
+              Suitable for people under pressure, after demanding training, or in phases when the body struggles to switch off. We use red light where the goal is to support recovery, release tension, and restore deeper rest.
             </p>
           </div>
-          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-900 mt-auto mb-8">
-            <!-- Replace: <img src="/images/cervene-svetlo.jpg" alt="Red Light Therapy" class="w-full h-full object-cover" /> -->
-            <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-50"></div>
-            <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-50"></div>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <p class="text-[9px] tracking-[0.3em] text-zinc-600 uppercase">Red Light</p>
-            </div>
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mt-auto mb-8">
+            <img src="/images/red-light-therapy.webp" alt="Red Light Therapy" class="w-full h-full object-cover" loading="lazy" />
           </div>
-          <a href="/en/preview/#booking" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-white transition-colors duration-200">
+          <a href="/en/preview/#booking" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors duration-200">
             Book a consultation <span aria-hidden="true">→</span>
           </a>
         </div>
 
         <div class="flex flex-col lg:px-8 reveal reveal-delay-2">
           <div class="mb-8">
-            <h3 class="font-heading text-2xl font-bold text-white tracking-tight mb-4">Cryotherapy</h3>
-            <p class="text-zinc-300 text-sm leading-relaxed max-w-xs">
-              A short stay in intense cold wakes the body up quickly. It teaches the body to handle stress, recover faster and move from tension back into calm more effectively. That is why we use cryotherapy for both resilience and recovery.
+            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">For resilience and post-load recovery</p>
+            <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">Cryotherapy</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
+              Suitable for active people, athletes, and anyone who wants to improve how the body responds to stress. We use cold when we want to wake the system up, support post-effort recovery, and train the shift from tension back into calm.
             </p>
           </div>
-          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-900 mt-auto mb-8">
-            <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-50"></div>
-            <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-50"></div>
-            <!-- Replace: <img src="/images/kryokomora.jpg" alt="Cryotherapy" class="w-full h-full object-cover" /> -->
-            <div class="absolute inset-0 flex items-center justify-center">
-              <p class="text-[9px] tracking-[0.3em] text-zinc-600 uppercase">Cryotherapy</p>
-            </div>
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mt-auto mb-8">
+            <img src="/images/cryo-chamber.webp" alt="Cryotherapy" class="w-full h-full object-cover object-top" loading="lazy" />
           </div>
-          <a href="/en/preview/#booking" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-white transition-colors duration-200">
+          <a href="/en/preview/#booking" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors duration-200">
             Book a consultation <span aria-hidden="true">→</span>
           </a>
         </div>
 
         <div class="flex flex-col lg:px-8 reveal reveal-delay-3">
           <div class="mb-8">
-            <h3 class="font-heading text-2xl font-bold text-white tracking-tight mb-4">Magnetotherapy</h3>
-            <p class="text-zinc-300 text-sm leading-relaxed max-w-xs">
-              Pulsed magnetic field works deep in the tissues and supports recovery. It helps calm an overworked body, ease irritation and support healing. We see it as another way to help the body return to balance.
+            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">For targeted body recovery</p>
+            <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">Magnetotherapy</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
+              Suitable for those who do not need more output, but more support for recovery. We use magnetotherapy when it makes sense to work more deeply with tissue recovery and the body’s return to balance.
             </p>
           </div>
-          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-900 mt-auto mb-8">
-            <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-50"></div>
-            <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-50"></div>
-            <!-- Replace: <img src="/images/magnetoterapie.jpg" alt="Magnetotherapy" class="w-full h-full object-cover" /> -->
-            <div class="absolute inset-0 flex items-center justify-center">
-              <p class="text-[9px] tracking-[0.3em] text-zinc-600 uppercase">Magnetotherapy</p>
-            </div>
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mt-auto mb-8">
+            <img src="/images/magnetic-stimulation.webp" alt="Magnetotherapy" class="w-full h-full object-cover" loading="lazy" />
           </div>
-          <a href="/en/preview/#booking" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-white transition-colors duration-200">
+          <a href="/en/preview/#booking" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors duration-200">
             Book a consultation <span aria-hidden="true">→</span>
           </a>
         </div>
 
         <div class="flex flex-col lg:pl-8 reveal reveal-delay-4">
           <div class="mb-8">
-            <h3 class="font-heading text-2xl font-bold text-white tracking-tight mb-4">Strength Training</h3>
-            <p class="text-zinc-300 text-sm leading-relaxed max-w-xs">
-              Our training is not only about strength, but also about quality of movement. We also use holds without movement to improve stability, body control and the ability to handle effort without unnecessary tension.
+            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">For strength and confidence in movement</p>
+            <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">Strength Training</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
+              For people who want to start intelligently, improve movement quality, or support long-term performance without chaos. We build training to develop strength, stability, and body control without unnecessary nervous-system overload.
             </p>
           </div>
-          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-900 mt-auto mb-8">
+          <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mt-auto mb-8">
             <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-50"></div>
             <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-50"></div>
-            <!-- Replace: <img src="/images/silovy-trenink.jpg" alt="Strength Training" class="w-full h-full object-cover" /> -->
             <div class="absolute inset-0 flex items-center justify-center">
-              <p class="text-[9px] tracking-[0.3em] text-zinc-600 uppercase">Strength Training</p>
+              <p class="text-[9px] tracking-[0.3em] text-zinc-400 uppercase">Strength Training</p>
             </div>
           </div>
-          <a href="/en/preview/#booking" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-white transition-colors duration-200">
+          <a href="/en/preview/#booking" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors duration-200">
             Book a consultation <span aria-hidden="true">→</span>
           </a>
         </div>
@@ -211,71 +117,73 @@ import StudioModal from '../../../../components/StudioModal.astro';
     </section>
 
     <!-- Process — three columns -->
-    <section class="min-h-screen bg-[#111110] flex flex-col px-6 sm:px-10 lg:px-20 py-24">
-      <div class="mb-16 reveal">
-        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white">
-          How to restart your body’s recovery.
-        </h2>
-        <p class="text-zinc-400 text-sm mt-4 max-w-xl leading-relaxed">
-          We designed practical training of breath, mind, and movement that consciously teach the nervous system to change tone and rhythm.
-        </p>
+    <section class="min-h-screen border-t border-zinc-100">
+      <div class="bg-[#111110] px-6 sm:px-10 lg:px-20 pt-24 pb-16">
+        <div class="mb-16 reveal">
+          <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white">
+            How to restart your body’s recovery.
+          </h2>
+          <p class="text-zinc-400 text-sm mt-4 max-w-xl leading-relaxed">
+            We designed practical training of breath, mind, and movement that consciously teach the nervous system to change tone and rhythm.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 md:divide-x divide-zinc-800 gap-16 md:gap-0">
+          <div class="md:pr-12 reveal reveal-delay-1">
+            <p class="font-heading font-bold text-zinc-800 leading-none mb-8 select-none"
+               style="font-size: clamp(5rem, 10vw, 9rem)">01</p>
+            <p class="font-heading text-2xl font-bold text-white tracking-tight mb-8">
+              Release overload
+            </p>
+            <p class="text-zinc-400 text-sm leading-relaxed max-w-xs">
+              We teach breath and meditation techniques that help the body and nervous system come out of survival mode.
+            </p>
+          </div>
+
+          <div class="md:px-12 reveal reveal-delay-2">
+            <p class="font-heading font-bold text-zinc-800 leading-none mb-8 select-none"
+               style="font-size: clamp(5rem, 10vw, 9rem)">02</p>
+            <p class="font-heading text-2xl font-bold text-white tracking-tight mb-8">
+              Restart recovery
+            </p>
+            <p class="text-zinc-400 text-sm leading-relaxed max-w-xs">
+              We move into a parasympathetic state where the nervous system feels safe, recovers, and rebuilds strength.
+            </p>
+          </div>
+
+          <div class="md:pl-12 reveal reveal-delay-3">
+            <p class="font-heading font-bold text-zinc-800 leading-none mb-8 select-none"
+               style="font-size: clamp(5rem, 10vw, 9rem)">03</p>
+            <p class="font-heading text-2xl font-bold text-white tracking-tight mb-8">
+              Build resilience
+            </p>
+            <p class="text-zinc-400 text-sm leading-relaxed max-w-xs">
+              The goal is not to live without stress, but to step out of it consciously and allow both body and mind to restore their energy. That is the resilience we want to build.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div class="flex-1 grid md:grid-cols-3 md:divide-x divide-zinc-800 gap-16 md:gap-0">
+      <div class="px-6 sm:px-10 lg:px-20 pb-24">
+        <div class="grid md:grid-cols-3 md:divide-x divide-zinc-200 gap-0">
+          <div class="md:pr-12 reveal reveal-delay-1">
+            <div class="w-full aspect-[3/4] bg-transparent flex items-center justify-center overflow-hidden">
+              <img src="/images/nebezpeci.webp" alt="Release overload" class="w-full h-full object-contain" loading="lazy" />
+            </div>
+          </div>
 
-        <div class="flex flex-col md:pr-12 reveal reveal-delay-1">
-          <p class="font-heading font-bold text-zinc-800 leading-none mb-8 select-none"
-             style="font-size: clamp(5rem, 10vw, 9rem)">01</p>
-          <p class="font-heading text-2xl font-bold text-white tracking-tight mb-8">
-            Release overload
-          </p>
-          <div class="w-full aspect-[3/4] mt-auto bg-zinc-900 flex items-center justify-center overflow-hidden">
-            <img src="/images/nebezpeci.webp" alt="Release overload" class="w-full h-full object-contain" loading="lazy" />
+          <div class="md:px-12 reveal reveal-delay-2">
+            <div class="w-full aspect-[3/4] bg-transparent flex items-center justify-center overflow-hidden">
+              <img src="/images/bezpeci.webp" alt="Restart recovery" class="w-full h-full object-contain" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="md:pl-12 reveal reveal-delay-3">
+            <div class="w-full aspect-[3/4] bg-transparent flex items-center justify-center overflow-hidden">
+              <img src="/images/odolnost.webp" alt="Build resilience" class="w-full h-full object-contain" loading="lazy" />
+            </div>
           </div>
         </div>
-
-        <div class="flex flex-col md:px-12 reveal reveal-delay-2">
-          <p class="font-heading font-bold text-zinc-800 leading-none mb-8 select-none"
-             style="font-size: clamp(5rem, 10vw, 9rem)">02</p>
-          <p class="font-heading text-2xl font-bold text-white tracking-tight mb-8">
-            Restart recovery
-          </p>
-          <div class="w-full aspect-[3/4] mt-auto bg-zinc-900 flex items-center justify-center overflow-hidden">
-            <img src="/images/bezpeci.webp" alt="Restart recovery" class="w-full h-full object-contain" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="flex flex-col md:pl-12 reveal reveal-delay-3">
-          <p class="font-heading font-bold text-zinc-800 leading-none mb-8 select-none"
-             style="font-size: clamp(5rem, 10vw, 9rem)">03</p>
-          <p class="font-heading text-2xl font-bold text-white tracking-tight mb-8">
-            Build resilience
-          </p>
-          <div class="w-full aspect-[3/4] mt-auto bg-zinc-900 flex items-center justify-center overflow-hidden">
-            <img src="/images/odolnost.webp" alt="Build resilience" class="w-full h-full object-contain" loading="lazy" />
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="min-h-[60vh] bg-[#111110] flex flex-col items-center justify-center px-6 text-center py-24">
-      <div class="reveal">
-        <h2 class="font-heading font-bold leading-tight tracking-tight text-white mb-8"
-            style="font-size: clamp(2.5rem, 7vw, 5rem)">
-          Want to handle stress and recovery better?
-        </h2>
-        <p class="text-zinc-400 text-sm leading-relaxed mb-3 max-w-sm mx-auto">
-          The first step is a 30-minute conversation. We look at where you are now, what you need and whether we are the right fit for you.
-        </p>
-        <p class="text-zinc-600 text-xs mb-12">No commitment.</p>
-        <a
-          href="https://calendly.com/jiri-adaptivestudio/30min"
-          class="inline-flex items-center justify-center px-12 py-5 bg-white text-zinc-900 text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-100 transition-colors duration-200"
-        >
-          Book a consultation
-        </a>
       </div>
     </section>
 

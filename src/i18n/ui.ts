@@ -65,19 +65,19 @@ export const ui = {
     // How it works
     howTag: 'JAK TO FUNGUJE',
     howH2: 'Tři fáze. Jedna lekce.',
-    howSubline: 'Každá lekce je navržena tak, aby tě provedla celým cyklem — vědomě.',
+    howSubline: 'Každá spolupráce stojí na stejném principu: pochopit, co tělo potřebuje, cíleně s tím pracovat a vrátit mu kapacitu k výkonu i klidu.',
     phase1Num: '01',
     phase1Title: 'AKTIVACE',
     phase1Body:
-      'Tělo nejdřív vědomě probudíme. Kryokomora nebo dechové techniky přinesou krátké, řízené povzbuzení, které tě připraví na zátěž.',
+      'Nejdřív zjistíme, v jakém stavu přicházíš a co je potřeba podpořit. Podle toho volíme vstup do lekce nebo návštěvy: dech, chlad, zklidnění nebo jemnou aktivaci.',
     phase2Num: '02',
     phase2Title: 'TRÉNINK',
     phase2Body:
-      'Silový trénink s důrazem na přesný a vědomý pohyb. Posiluješ tělo a zároveň zlepšuješ koordinaci, stabilitu a vnímání vlastního těla.',
+      'Pak přichází cílená práce s tělem. Někdy formou vedeného pohybu a tréninku, jindy skrze konkrétní regenerační nástroj. Cíl je stejný: zvýšit odolnost, sílu nebo schopnost obnovy bez zbytečného přetížení.',
     phase3Num: '03',
     phase3Title: 'REGENERACE',
     phase3Body:
-      'Na závěr tělo vracíme do klidu. Protažení, meditace a červené světlo pomáhají uvolnit napětí, podpořit obnovu a naučit tělo lépe odpočívat.',
+      'Na závěr tělo vracíme do stavu, ve kterém umí skutečně regenerovat. Právě tady se učíš nejen zvládat zátěž, ale i přepnout zpět do klidu, který dlouhodobý výkon drží pohromadě.',
 
     // Why it works
     whyTag: 'VĚDA ZA METODOU',
@@ -200,19 +200,19 @@ export const ui = {
     // How it works
     howTag: 'HOW IT WORKS',
     howH2: 'Three phases. One session.',
-    howSubline: 'Every session is designed to guide you through the full cycle — consciously.',
+    howSubline: 'Every way of working together follows the same principle: understand what the body needs, work with it deliberately, and restore its capacity for both performance and calm.',
     phase1Num: '01',
     phase1Title: 'ACTIVATION',
     phase1Body:
-      'We wake the body up on purpose. Cryotherapy or breathwork bring a short, controlled boost that prepares you for effort.',
+      'We start by understanding the state you arrive in and what needs support. From there we choose the right entry point: breathwork, cold, downregulation or gentle activation.',
     phase2Num: '02',
     phase2Title: 'TRAINING',
     phase2Body:
-      'Strength training with an emphasis on precise, conscious movement. You build strength while improving coordination, stability and awareness of your body.',
+      'Then comes targeted work with the body. Sometimes through guided movement and training, sometimes through a specific recovery tool. The goal is the same: build resilience, strength or recovery capacity without unnecessary overload.',
     phase3Num: '03',
     phase3Title: 'RECOVERY',
     phase3Body:
-      'At the end, we guide the body back into calm. Stretching, meditation and red light help release tension, support recovery and teach the body how to rest more effectively.',
+      'At the end, we bring the body back into a state where it can truly recover. This is where you learn not only to handle stress, but also to shift back into the calm that makes long-term performance sustainable.',
 
     // Why it works
     whyTag: 'THE SCIENCE',

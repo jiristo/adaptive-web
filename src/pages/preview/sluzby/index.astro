@@ -16,120 +16,54 @@ import StudioModal from '../../../components/StudioModal.astro';
   <main>
 
     <!-- Hero -->
-    <section class="min-h-screen flex flex-col justify-center px-6 sm:px-10 lg:px-20 py-24">
-      <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-10">NAŠE FILOZOFIE</p>
-      <h1 class="font-heading font-bold leading-[0.9] tracking-tight text-zinc-900 mb-10 reveal"
-          style="font-size: clamp(4rem, 12vw, 10rem)">
-        Přístup
-      </h1>
-      <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-xl reveal reveal-delay-1">
-        Vědomá práce s nervovým systémem není jen odpočinek nebo krátkodobá úleva. Je to dovednost, kterou se lze naučit.<br>
-        Pomáháme ji rozvíjet pomocí pohybu, dechu a ověřených postupů, které mají v těle jasný účinek.
-      </p>
-    </section>
-
-    <!-- Who it is for -->
-    <section class="min-h-screen bg-[#111110] flex flex-col px-6 sm:px-10 lg:px-20 py-24">
-      <div class="mb-16 reveal">
-        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">PRO KOHO JE STUDIO</p>
-        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white">
-          S čím k nám lidé nejčastěji přicházejí.
-        </h2>
-        <p class="text-zinc-400 text-sm mt-4 max-w-2xl leading-relaxed">
-          Nejsme jen pro sportovce ani jen pro lidi v únavě. Adaptive Studio je pro ty, kdo chtějí dlouhodobě fungovat lépe a vědomě pracovat s výkonem, stresem, pohybem a regenerací.
-        </p>
-      </div>
-
-      <div class="flex-1 grid md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-0 md:divide-x divide-zinc-800 reveal reveal-delay-1">
-
-        <div class="flex flex-col lg:pr-8">
-          <div class="mb-8">
-            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Přetížení a únava</p>
-            <h3 class="font-heading text-2xl font-bold text-white tracking-tight mb-4">Když tělo jede dál, ale kapacita už ne.</h3>
-            <p class="text-zinc-400 text-sm leading-relaxed max-w-xs">
-              Pro lidi, kteří dlouho fungují pod tlakem, jsou unavení, hůř spí nebo neumí opravdu vypnout. Pomáháme vracet tělu klid, kapacitu a schopnost obnovy.
-            </p>
-          </div>
-          <div class="mt-auto flex flex-wrap gap-2 max-w-xs">
-            {['stres', 'únava', 'napětí', 'spánek'].map((item) => (
-              <span class="px-3 py-1.5 border border-zinc-800 text-[10px] tracking-[0.18em] uppercase text-zinc-400">
-                {item}
-              </span>
-            ))}
-          </div>
+    <section class="min-h-screen flex items-center px-6 sm:px-10 lg:px-20 py-24">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_minmax(320px,34rem)] gap-12 lg:gap-20 items-center w-full">
+        <div>
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-10">NAŠE FILOZOFIE</p>
+          <h1 class="font-heading font-bold leading-[0.9] tracking-tight text-zinc-900 mb-10 reveal"
+              style="font-size: clamp(4rem, 12vw, 10rem)">
+            Přístup
+          </h1>
+          <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-xl reveal reveal-delay-1">
+            Vědomá práce s nervovým systémem není jen odpočinek nebo krátkodobá úleva. Je to dovednost, kterou se lze naučit.<br>
+            Pomáháme ji rozvíjet pomocí pohybu, dechu a ověřených postupů, které mají v těle jasný účinek.
+          </p>
         </div>
 
-        <div class="flex flex-col lg:px-8">
-          <div class="mb-8">
-            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Začátek s pohybem</p>
-            <h3 class="font-heading text-2xl font-bold text-white tracking-tight mb-4">Když chceš začít, ale ne přepálit start.</h3>
-            <p class="text-zinc-400 text-sm leading-relaxed max-w-xs">
-              Pro ty, kdo chtějí budovat sílu, stabilitu a jistotu v těle bez chaosu a bez tlaku na výkon za každou cenu. Pohyb pro nás není doplněk. Je to základ dlouhověkosti.
-            </p>
-          </div>
-          <div class="mt-auto flex flex-wrap gap-2 max-w-xs">
-            {['síla', 'stabilita', 'pohyb', 'dlouhověkost'].map((item) => (
-              <span class="px-3 py-1.5 border border-zinc-800 text-[10px] tracking-[0.18em] uppercase text-zinc-400">
-                {item}
-              </span>
-            ))}
+        <div class="reveal reveal-delay-2">
+          <div class="relative w-full aspect-[4/5] overflow-hidden bg-zinc-100">
+            <img
+              src="/images/reaching-hands.webp"
+              alt="Dvě ruce směřující k sobě"
+              class="w-full h-full object-cover object-center"
+              loading="lazy"
+            />
           </div>
         </div>
-
-        <div class="flex flex-col lg:px-8">
-          <div class="mb-8">
-            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Sport a výkon</p>
-            <h3 class="font-heading text-2xl font-bold text-white tracking-tight mb-4">Když trénuješ naplno a potřebuješ lépe obnovovat.</h3>
-            <p class="text-zinc-400 text-sm leading-relaxed max-w-xs">
-              Pro sportovce a aktivní lidi, kteří chtějí podpořit přípravu, regeneraci mimo sezonu i návrat po vysoké zátěži nebo zranění. Kryokomora, červené světlo i práce s dechem tu mají jasné místo.
-            </p>
-          </div>
-          <div class="mt-auto flex flex-wrap gap-2 max-w-xs">
-            {['výkon', 'regenerace', 'mimo sezonu', 'návrat'].map((item) => (
-              <span class="px-3 py-1.5 border border-zinc-800 text-[10px] tracking-[0.18em] uppercase text-zinc-400">
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div class="flex flex-col lg:pl-8">
-          <div class="mb-8">
-            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Cílená obnova</p>
-            <h3 class="font-heading text-2xl font-bold text-white tracking-tight mb-4">Když nehledáš jen výkon, ale konkrétní podporu těla.</h3>
-            <p class="text-zinc-400 text-sm leading-relaxed max-w-xs">
-              Někdo řeší dech, někdo obnovu po zátěži, někdo celkové zklidnění nebo péči o pleť. Nezačínáme technologií, ale tím, co tělo právě potřebuje podpořit.
-            </p>
-          </div>
-          <div class="mt-auto flex flex-wrap gap-2 max-w-xs">
-            {['dech', 'zklidnění', 'obnova', 'pleť'].map((item) => (
-              <span class="px-3 py-1.5 border border-zinc-800 text-[10px] tracking-[0.18em] uppercase text-zinc-400">
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-
       </div>
     </section>
 
-    <!-- Technologies — dark, 3 columns -->
+    <!-- Studio equipment -->
     <section class="min-h-screen flex flex-col px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100">
 
       <div class="mb-16 reveal">
-        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">VYBAVENÍ STUDIA</p>
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">NÁSTROJE STUDIA</p>
         <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
-          Vybavení studia.
+          Jakou podporu ve studiu nabízíme.
         </h2>
+        <p class="text-zinc-500 text-sm mt-4 max-w-2xl leading-relaxed">
+          Každý nástroj ve studiu má jasnou roli. Nevybíráš technologii pro technologii, ale typ podpory, který dává smysl pro tvoje tělo, zátěž a cíl.
+        </p>
       </div>
 
       <div class="flex-1 grid md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-0 md:divide-x divide-zinc-200">
 
         <div class="flex flex-col lg:pr-8 reveal reveal-delay-1">
           <div class="mb-8">
+            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Pro zklidnění a lepší obnovu</p>
             <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">Červené světlo</h3>
             <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
-              Červené světlo pomáhá tělu s obnovou po zátěži. Podporuje regeneraci, zklidnění a lepší odpočinek. Využíváme ho po tréninku i ve chvílích, kdy potřebuješ tělo vrátit do většího klidu.
+              Vhodné pro lidi pod tlakem, po náročném tréninku i ve fázi, kdy tělo hůř vypíná. Červené světlo využíváme tam, kde je cílem podpořit regeneraci, uvolnit napětí a vrátit tělu kvalitnější odpočinek.
             </p>
           </div>
           <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mt-auto mb-8">
@@ -142,9 +76,10 @@ import StudioModal from '../../../components/StudioModal.astro';
 
         <div class="flex flex-col lg:px-8 reveal reveal-delay-2">
           <div class="mb-8">
+            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Pro odolnost a regeneraci po zátěži</p>
             <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">Kryokomora</h3>
             <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
-              Krátký pobyt v silném chladu tělo výrazně probudí. Učí ho zvládat zátěž, rychleji se zotavovat a lépe přecházet z napětí zpět do klidu. Proto kryokomoru používáme jako nástroj odolnosti i regenerace.
+              Vhodná pro aktivní lidi, sportovce i ty, kdo chtějí zlepšit reakci těla na zátěž. Chlad využíváme, když potřebujeme probudit systém, podpořit regeneraci po výkonu a trénovat schopnost vracet se z napětí zpět do klidu.
             </p>
           </div>
           <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mt-auto mb-8">
@@ -157,9 +92,10 @@ import StudioModal from '../../../components/StudioModal.astro';
 
         <div class="flex flex-col lg:px-8 reveal reveal-delay-3">
           <div class="mb-8">
+            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Pro cílenou obnovu těla</p>
             <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">Magnetoterapie</h3>
             <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
-              Pulzní magnetické pole působí hluboko v tkáních a podporuje jejich obnovu. Pomáhá zklidnit přetížené tělo, tlumit podráždění a podpořit hojení. Vnímáme ji jako další cestu, jak tělu usnadnit návrat do rovnováhy.
+              Vhodná pro ty, kdo nepotřebují další výkon, ale spíš podpořit tělo v obnově. Magnetoterapii zařazujeme ve chvíli, kdy dává smysl pracovat hlouběji s regenerací tkání a celkovým návratem do rovnováhy.
             </p>
           </div>
           <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mt-auto mb-8">
@@ -172,9 +108,10 @@ import StudioModal from '../../../components/StudioModal.astro';
 
         <div class="flex flex-col lg:pl-8 reveal reveal-delay-4">
           <div class="mb-8">
+            <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Pro sílu a jistotu v pohybu</p>
             <h3 class="font-heading text-2xl font-bold text-zinc-900 tracking-tight mb-4">Silový trénink</h3>
             <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
-              Trénink není zaměřený jen na sílu, ale i na kvalitu pohybu. Pracujeme také s výdrží v pozici bez pohybu, která zlepšuje stabilitu, kontrolu těla a schopnost zvládat zátěž bez zbytečného přepětí.
+              Pro ty, kdo chtějí začít chytře, zlepšit kvalitu pohybu nebo podpořit dlouhodobý výkon bez chaosu. Trénink stavíme tak, aby budoval sílu, stabilitu a kontrolu těla bez zbytečného přepětí nervového systému.
             </p>
           </div>
           <div class="relative w-full aspect-[4/3] overflow-hidden bg-zinc-100 mt-auto mb-8">
@@ -195,80 +132,73 @@ import StudioModal from '../../../components/StudioModal.astro';
     </section>
 
     <!-- Process — three columns -->
-    <section class="min-h-screen bg-[#111110] flex flex-col px-6 sm:px-10 lg:px-20 py-24">
-      <div class="mb-16 reveal">
-        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white">
-          Jak znovu nastartovat regeneraci těla.
-        </h2>
-        <p class="text-zinc-400 text-sm mt-4 max-w-xl leading-relaxed">
-          Navrhli jsme praktický trénink dechu, mysli a pohybu, který vědomě učí nervový systém měnit tón a rytmus.
-        </p>
+    <section class="min-h-screen border-t border-zinc-100">
+      <div class="bg-[#111110] px-6 sm:px-10 lg:px-20 pt-24 pb-16">
+        <div class="mb-16 reveal">
+          <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white">
+            Jak znovu nastartovat regeneraci těla.
+          </h2>
+          <p class="text-zinc-400 text-sm mt-4 max-w-xl leading-relaxed">
+            Navrhli jsme praktický trénink dechu, mysli a pohybu, který vědomě učí nervový systém měnit tón a rytmus.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 md:divide-x divide-zinc-800 gap-16 md:gap-0">
+          <div class="md:pr-12 reveal reveal-delay-1">
+            <p class="font-heading font-bold text-zinc-800 leading-none mb-8 select-none"
+               style="font-size: clamp(5rem, 10vw, 9rem)">01</p>
+            <p class="font-heading text-2xl font-bold text-white tracking-tight mb-8">
+              Uvolníme přetížení
+            </p>
+            <p class="text-zinc-400 text-sm leading-relaxed max-w-xs">
+              Naučíme se dechové a meditační techniky, které pomáhají tělu i nervovému systému vystoupit ze stavu přežití.
+            </p>
+          </div>
+
+          <div class="md:px-12 reveal reveal-delay-2">
+            <p class="font-heading font-bold text-zinc-800 leading-none mb-8 select-none"
+               style="font-size: clamp(5rem, 10vw, 9rem)">02</p>
+            <p class="font-heading text-2xl font-bold text-white tracking-tight mb-8">
+              Nastartujeme regeneraci
+            </p>
+            <p class="text-zinc-400 text-sm leading-relaxed max-w-xs">
+              Dostaneme se do klidového tonu parasympatiku, ve kterém se nervová soustava cítí bezpečně, regeneruje a znovu nabírá sílu.
+            </p>
+          </div>
+
+          <div class="md:pl-12 reveal reveal-delay-3">
+            <p class="font-heading font-bold text-zinc-800 leading-none mb-8 select-none"
+               style="font-size: clamp(5rem, 10vw, 9rem)">03</p>
+            <p class="font-heading text-2xl font-bold text-white tracking-tight mb-8">
+              Vybudujeme odolnost
+            </p>
+            <p class="text-zinc-400 text-sm leading-relaxed max-w-xs">
+              Cílem není žít bez stresu, ale umět z něj vědomě vystoupit a umožnit tělu i mysli obnovu sil. Právě to je odolnost, kterou chceme budovat.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div class="flex-1 grid md:grid-cols-3 md:divide-x divide-zinc-800 gap-16 md:gap-0">
+      <div class="px-6 sm:px-10 lg:px-20 pb-24">
+        <div class="grid md:grid-cols-3 md:divide-x divide-zinc-200 gap-0">
+          <div class="md:pr-12 reveal reveal-delay-1">
+            <div class="w-full aspect-[3/4] bg-transparent flex items-center justify-center overflow-hidden">
+              <img src="/images/nebezpeci.webp" alt="Uvolníme přetížení" class="w-full h-full object-contain" loading="lazy" />
+            </div>
+          </div>
 
-        <div class="flex flex-col md:pr-12 reveal reveal-delay-1">
-          <p class="font-heading font-bold text-zinc-800 leading-none mb-8 select-none"
-             style="font-size: clamp(5rem, 10vw, 9rem)">01</p>
-          <p class="font-heading text-2xl font-bold text-white tracking-tight mb-8">
-            Uvolníme přetížení
-          </p>
-          <p class="text-zinc-400 text-sm leading-relaxed max-w-xs mb-8">
-            Naučíme se dechové a meditační techniky, které pomáhají tělu i nervovému systému vystoupit ze stavu přežití.
-          </p>
-          <div class="w-full aspect-[3/4] mt-auto bg-zinc-900 flex items-center justify-center overflow-hidden">
-            <img src="/images/nebezpeci.webp" alt="Uvolníme přetížení" class="w-full h-full object-contain" loading="lazy" />
+          <div class="md:px-12 reveal reveal-delay-2">
+            <div class="w-full aspect-[3/4] bg-transparent flex items-center justify-center overflow-hidden">
+              <img src="/images/bezpeci.webp" alt="Nastartujeme regeneraci" class="w-full h-full object-contain" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="md:pl-12 reveal reveal-delay-3">
+            <div class="w-full aspect-[3/4] bg-transparent flex items-center justify-center overflow-hidden">
+              <img src="/images/odolnost.webp" alt="Vybudujeme odolnost" class="w-full h-full object-contain" loading="lazy" />
+            </div>
           </div>
         </div>
-
-        <div class="flex flex-col md:px-12 reveal reveal-delay-2">
-          <p class="font-heading font-bold text-zinc-800 leading-none mb-8 select-none"
-             style="font-size: clamp(5rem, 10vw, 9rem)">02</p>
-          <p class="font-heading text-2xl font-bold text-white tracking-tight mb-8">
-            Nastartujeme regeneraci
-          </p>
-          <p class="text-zinc-400 text-sm leading-relaxed max-w-xs mb-8">
-            Dostaneme se do klidového tonu parasympatiku, ve kterém se nervová soustava cítí bezpečně, regeneruje a znovu nabírá sílu.
-          </p>
-          <div class="w-full aspect-[3/4] mt-auto bg-zinc-900 flex items-center justify-center overflow-hidden">
-            <img src="/images/bezpeci.webp" alt="Nastartujeme regeneraci" class="w-full h-full object-contain" loading="lazy" />
-          </div>
-        </div>
-
-        <div class="flex flex-col md:pl-12 reveal reveal-delay-3">
-          <p class="font-heading font-bold text-zinc-800 leading-none mb-8 select-none"
-             style="font-size: clamp(5rem, 10vw, 9rem)">03</p>
-          <p class="font-heading text-2xl font-bold text-white tracking-tight mb-8">
-            Vybudujeme odolnost
-          </p>
-          <p class="text-zinc-400 text-sm leading-relaxed max-w-xs mb-8">
-            Cílem není žít bez stresu, ale umět z něj vědomě vystoupit a umožnit tělu i mysli obnovu sil. Právě to je odolnost, kterou chceme budovat.
-          </p>
-          <div class="w-full aspect-[3/4] mt-auto bg-zinc-900 flex items-center justify-center overflow-hidden">
-            <img src="/images/odolnost.webp" alt="Vybudujeme odolnost" class="w-full h-full object-contain" loading="lazy" />
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="min-h-[60vh] flex flex-col items-center justify-center px-6 text-center py-24 border-t border-zinc-100">
-      <div class="reveal">
-        <h2 class="font-heading font-bold leading-tight tracking-tight text-zinc-900 mb-8"
-            style="font-size: clamp(2.5rem, 7vw, 5rem)">
-          Chceš se naučit lépe zvládat stres a regeneraci?
-        </h2>
-        <p class="text-zinc-500 text-sm leading-relaxed mb-3 max-w-sm mx-auto">
-          Prvním krokem je 30minutový rozhovor. Zjistíme, kde jsi, co potřebuješ a jestli jsme pro tebe to pravé místo.
-        </p>
-        <p class="text-zinc-400 text-xs mb-12">Bez závazku.</p>
-        <a
-          href="https://calendly.com/jiri-adaptivestudio/30min"
-          class="inline-flex items-center justify-center px-12 py-5 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200"
-        >
-          Zarezervovat konzultaci
-        </a>
       </div>
     </section>
 
