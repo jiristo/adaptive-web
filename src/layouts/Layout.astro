@@ -12,6 +12,11 @@ const {
   description = 'Adaptive Studio — Wellbeing studio zaměřené na regulaci autonomního nervového systému.',
   lang = 'cs',
 } = Astro.props;
+
+const siteUrl = 'https://adaptivestudio.cz';
+const pageUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const previewImage = new URL('/images/athlete-relax-mindfulness.webp', siteUrl).toString();
+const locale = lang === 'en' ? 'en_US' : 'cs_CZ';
 ---
 
 <!doctype html>
@@ -22,6 +27,18 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Adaptive Studio" />
+    <meta property="og:locale" content={locale} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={previewImage} />
+    <meta property="og:image:alt" content="Adaptive Studio preview" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={previewImage} />
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
