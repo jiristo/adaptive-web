@@ -48,6 +48,25 @@ const RESERVANTO_URL = lang === 'cs' ? '/preview/rezervace/' : '/en/preview/reze
       <a href={t('longevityHref')} class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
         {t('navLongevity')}
       </a>
+      <div class="relative group">
+        <button
+          class="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-zinc-900 transition-colors cursor-pointer"
+          aria-haspopup="true"
+        >
+          {t('navApps')}
+          <span class="text-[10px] transition-transform duration-200 group-hover:rotate-180">▾</span>
+        </button>
+        <div class="absolute left-0 top-full pt-3 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto transition-opacity duration-200">
+          <div class="min-w-[180px] border border-zinc-200 bg-white shadow-sm">
+            <a
+              href={t('appCortisolHref')}
+              class="block px-4 py-3 text-sm text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900 transition-colors"
+            >
+              {t('navAppCortisol')}
+            </a>
+          </div>
+        </div>
+      </div>
       <a href={`${basePath}o-nas/`} class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
         {t('navAbout')}
       </a>
@@ -101,6 +120,19 @@ const RESERVANTO_URL = lang === 'cs' ? '/preview/rezervace/' : '/en/preview/reze
     <button data-studio-open class="text-sm text-zinc-700 mobile-nav-link text-left cursor-pointer">{t('navStudio')}</button>
     <a href={t('approachHref')} class="text-sm text-zinc-700 mobile-nav-link">{t('navApproach')}</a>
     <a href={t('longevityHref')} class="text-sm text-zinc-700 mobile-nav-link">{t('navLongevity')}</a>
+    <div class="flex flex-col gap-3">
+      <button
+        id="mobile-apps-toggle"
+        class="text-sm text-zinc-700 text-left flex items-center justify-between"
+        aria-expanded="false"
+      >
+        <span>{t('navApps')}</span>
+        <span id="mobile-apps-arrow" class="text-[10px] transition-transform duration-200">▾</span>
+      </button>
+      <div id="mobile-apps-menu" class="hidden pl-4 border-l border-zinc-200">
+        <a href={t('appCortisolHref')} class="text-sm text-zinc-700 mobile-nav-link block py-1.5">{t('navAppCortisol')}</a>
+      </div>
+    </div>
     <a href={`${basePath}o-nas/`} class="text-sm text-zinc-700 mobile-nav-link">{t('navAbout')}</a>
     <a
       href={CALENDLY_URL}
@@ -123,6 +155,9 @@ const RESERVANTO_URL = lang === 'cs' ? '/preview/rezervace/' : '/en/preview/reze
   const bar1 = document.getElementById('bar1');
   const bar2 = document.getElementById('bar2');
   const bar3 = document.getElementById('bar3');
+  const mobileAppsToggle = document.getElementById('mobile-apps-toggle');
+  const mobileAppsMenu = document.getElementById('mobile-apps-menu');
+  const mobileAppsArrow = document.getElementById('mobile-apps-arrow');
 
   toggle?.addEventListener('click', () => {
     const isOpen = menu?.classList.contains('hidden') === false;
@@ -146,6 +181,16 @@ const RESERVANTO_URL = lang === 'cs' ? '/preview/rezervace/' : '/en/preview/reze
       bar1?.classList.remove('rotate-45', 'translate-y-[6.5px]');
       bar2?.classList.remove('opacity-0');
       bar3?.classList.remove('-rotate-45', '-translate-y-[6.5px]');
+      mobileAppsMenu?.classList.add('hidden');
+      mobileAppsToggle?.setAttribute('aria-expanded', 'false');
+      mobileAppsArrow?.classList.remove('rotate-180');
     });
+  });
+
+  mobileAppsToggle?.addEventListener('click', () => {
+    const isOpen = mobileAppsMenu?.classList.contains('hidden') === false;
+    mobileAppsMenu?.classList.toggle('hidden');
+    mobileAppsToggle.setAttribute('aria-expanded', String(!isOpen));
+    mobileAppsArrow?.classList.toggle('rotate-180', !isOpen);
   });
 </script>
