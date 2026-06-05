@@ -1,0 +1,164 @@
+---
+import Layout from '../../../../../../layouts/Layout.astro';
+import Nav from '../../../../../../components/Nav.astro';
+import Footer from '../../../../../../components/Footer.astro';
+import StudioModal from '../../../../../../components/StudioModal.astro';
+
+const rules = [
+  {
+    number: '01',
+    title: 'Cortisol follows a daily rhythm.',
+    body: 'Cortisol is not random. It follows a circadian rhythm and changes function across the day. In the morning it should activate you, during the day support performance, and in the evening step down so sleep and recovery can begin.',
+  },
+  {
+    number: '02',
+    title: 'The morning peak is normal and necessary.',
+    body: 'After waking, cortisol naturally rises. This morning peak helps the body start the day, increases alertness, prepares the brain for decision-making, and directs energy where it is needed most.',
+  },
+  {
+    number: '03',
+    title: 'The same value does not always mean the same thing.',
+    body: 'Cortisol must always be read in relation to the hour. A level that is healthy in the morning can be too high in the evening. The issue is not only the number, but the timing.',
+  },
+  {
+    number: '04',
+    title: 'Sleep sets up the next day.',
+    body: 'Sleep quality, sleep duration, and sleep debt directly shape what cortisol looks like the next day. A bad night often means more than fatigue. It usually means weaker stress regulation too.',
+  },
+  {
+    number: '05',
+    title: 'Chronic stress distorts the curve.',
+    body: 'Long-term overload can keep cortisol elevated for too long, or flatten the profile completely. People often lose morning energy while still being unable to calm down in the evening.',
+  },
+  {
+    number: '06',
+    title: 'Acute events create spikes.',
+    body: 'An argument, a deadline, intense training, coffee after lunch, or bad news can all push cortisol up quickly. The body reacts fast, but getting back down usually takes longer than the trigger itself.',
+  },
+  {
+    number: '07',
+    title: 'Cortisol is tightly linked to the nervous system.',
+    body: 'When the body cannot shift from activation back into recovery, cortisol stays elevated longer. That is why we do not only address stressors. We also train the system to return to calm.',
+  },
+  {
+    number: '08',
+    title: 'Cortisol should be low in the evening.',
+    body: 'Low evening cortisol is necessary for easier sleep onset, deep sleep, and night-time repair. If it stays high, the body may feel tired but still cannot truly switch off.',
+  },
+  {
+    number: '09',
+    title: 'Interventions work according to timing and context.',
+    body: 'Breathwork, meditation, walking, red light, or cryotherapy do not work the same way at every hour of the day. Their effect depends on when you use them and what state the body is already in.',
+  },
+  {
+    number: '10',
+    title: 'The goal is not suppression. It is regulation.',
+    body: 'Cortisol is not the enemy. It is a critical regulatory hormone. The goal is not to make it as low as possible, but to have the right level at the right time and recover well after stress.',
+  },
+];
+---
+
+<Layout
+  title="10 Rules of Cortisol — Adaptive Studio"
+  description="Ten core rules that govern cortisol. A practical framework for reading stress, performance, sleep, and recovery in context."
+  lang="en"
+>
+  <StudioModal lang="en" />
+  <Nav lang="en" />
+
+  <main>
+    <section class="min-h-screen flex flex-col justify-center px-6 sm:px-10 lg:px-20 py-24">
+      <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-10">CORTISOL · RULES</p>
+      <h1 class="font-heading font-bold leading-[0.9] tracking-tight text-zinc-900 mb-10 reveal"
+          style="font-size: clamp(3.5rem, 10vw, 8rem)">
+        10 rules<br>of cortisol
+      </h1>
+      <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-2xl reveal reveal-delay-1">
+        A practical framework for understanding stress, performance, sleep, and recovery.
+      </p>
+      <p class="text-sm text-zinc-400 leading-relaxed max-w-xl mt-5 reveal reveal-delay-2">
+        When you understand cortisol rhythm, you stop looking at fatigue or stress in isolation. You start seeing when activation is useful and when the body is losing the ability to come back.
+      </p>
+    </section>
+
+    <section class="bg-[#111110] px-6 sm:px-10 lg:px-20 py-24">
+      <div class="max-w-6xl">
+        <div class="mb-16 reveal">
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">RULES</p>
+          <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-white">
+            What you need to understand<br>before trying to change anything.
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-px bg-zinc-800 border border-zinc-800">
+          {rules.map((rule, index) => (
+            <article class="bg-[#111110] p-8 sm:p-10 reveal" style={`transition-delay:${index * 60}ms`}>
+              <p class="font-heading font-bold text-zinc-800 leading-none mb-6"
+                 style="font-size: clamp(3rem, 7vw, 5rem)">
+                {rule.number}
+              </p>
+              <h3 class="font-heading text-2xl font-bold text-white tracking-tight mb-4">
+                {rule.title}
+              </h3>
+              <p class="text-zinc-400 text-sm leading-relaxed max-w-xl">
+                {rule.body}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100">
+      <div class="max-w-3xl reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">WHAT THIS MEANS</p>
+        <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900 mb-8">
+          We do not only address stress.<br>We address timing and return.
+        </h2>
+        <div class="space-y-5 text-zinc-500 text-sm leading-relaxed">
+          <p>
+            At Adaptive Studio, we do not treat cortisol as an isolated problem. We look at when the body is overloaded, when it cannot sustain performance, and when it loses the ability to return to recovery.
+          </p>
+          <p>
+            That is why we combine breathwork, light, cryotherapy, conscious movement, and nervous system training. Each tool has its place depending on the phase of the day, the type of load, and the client's goal.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="min-h-[50vh] flex flex-col items-center justify-center px-6 text-center py-24">
+      <div class="reveal">
+        <a href="/en/preview/aplikace/kortizol/" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-400 hover:text-zinc-900 transition-colors duration-200 mb-10">
+          <span aria-hidden="true">←</span> Back to the Cortisol tool
+        </a>
+        <h2 class="font-heading font-bold leading-tight tracking-tight text-zinc-900 mb-8"
+            style="font-size: clamp(2rem, 6vw, 4rem)">
+          Want to see where your rhythm starts to break?
+        </h2>
+        <a
+          href="https://calendly.com/jiri-adaptivestudio/30min"
+          class="inline-flex items-center justify-center px-12 py-5 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200"
+        >
+          Book a consultation
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang="en" />
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => { entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); },
+    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+  );
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
+</script>

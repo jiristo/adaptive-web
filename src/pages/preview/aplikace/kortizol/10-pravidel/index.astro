@@ -1,0 +1,195 @@
+---
+import Layout from '../../../../../layouts/Layout.astro';
+import Nav from '../../../../../components/Nav.astro';
+import Footer from '../../../../../components/Footer.astro';
+import StudioModal from '../../../../../components/StudioModal.astro';
+
+const rules = [
+  {
+    number: '01',
+    title: 'Kortizol má svůj denní rytmus.',
+    body: 'Kortizol není náhodný. Řídí se cirkadiánním rytmem a během 24 hodin mění svou funkci. Ráno má tělo aktivovat, během dne udržet výkon a večer ustoupit, aby mohl nastoupit spánek a regenerace.',
+  },
+  {
+    number: '02',
+    title: 'Ranní peak je normální a potřebný.',
+    body: 'Po probuzení kortizol přirozeně stoupá. Tento ranní peak pomáhá tělu otevřít den, zvýšit bdělost, připravit mozek na rozhodování a dostat energii tam, kde je potřeba.',
+  },
+  {
+    number: '03',
+    title: 'Stejná hodnota neznamená vždy totéž.',
+    body: 'Kortizol se musí číst v kontextu konkrétní hodiny. Hodnota, která je ráno v normě, může být večer příliš vysoká. Nejde jen o výši, ale hlavně o timing.',
+  },
+  {
+    number: '04',
+    title: 'Spánek nastavuje celý následující den.',
+    body: 'Kvalita spánku, délka spánku a spánkový dluh přímo ovlivňují, jak bude kortizol vypadat další den. Špatná noc často neznamená jen únavu, ale i horší regulaci stresové odpovědi.',
+  },
+  {
+    number: '05',
+    title: 'Chronický stres křivku deformuje.',
+    body: 'Dlouhodobé přetížení může držet kortizol vysoko příliš dlouho, nebo naopak zploštit jeho profil. Člověk pak často ztrácí ranní energii, ale večer se stejně neumí zklidnit.',
+  },
+  {
+    number: '06',
+    title: 'Akutní události vytvářejí výkyvy.',
+    body: 'Hádka, deadline, intenzivní trénink, káva po obědě nebo špatná zpráva mohou kortizol rychle zvýšit. Tělo reaguje prudce, ale návrat zpět obvykle trvá déle než samotný podnět.',
+  },
+  {
+    number: '07',
+    title: 'Kortizol je úzce napojený na nervový systém.',
+    body: 'Když tělo neumí přepnout z aktivace do regenerace, kortizol zůstává déle nahoře. Proto neřešíme jen stresory, ale i schopnost nervového systému vracet se zpět do klidu.',
+  },
+  {
+    number: '08',
+    title: 'Večer má být kortizol nízko.',
+    body: 'Nízký večerní kortizol je podmínkou pro kvalitní usínání, hluboký spánek a noční obnovu. Pokud je večer stále vysoko, tělo sice může být unavené, ale neumí opravdu vypnout.',
+  },
+  {
+    number: '09',
+    title: 'Intervence fungují podle času a kontextu.',
+    body: 'Dechová práce, meditace, chůze, červené světlo nebo kryo nejsou univerzálně stejné v každou hodinu dne. Výsledek závisí na tom, kdy zásah provedete a v jakém stavu tělo je.',
+  },
+  {
+    number: '10',
+    title: 'Cílem není kortizol potlačit, ale řídit.',
+    body: 'Kortizol není nepřítel. Je to důležitý regulační hormon. Cílem není mít ho co nejméně, ale mít správnou hladinu ve správný čas a umět se po zátěži vracet zpět.',
+  },
+];
+---
+
+<Layout
+  title="10 pravidel kortizolu — Adaptive Studio"
+  description="Deset základních pravidel, podle kterých se řídí kortizol. Jak číst jeho rytmus v kontextu výkonu, stresu, spánku a regenerace."
+  lang="cs"
+>
+  <StudioModal lang="cs" />
+  <Nav lang="cs" />
+
+  <main>
+    <section class="px-6 sm:px-10 lg:px-20 pt-32 pb-20 border-b border-zinc-100">
+      <div class="max-w-4xl mx-auto">
+        <a href="/preview/aplikace/kortizol/" class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-400 hover:text-zinc-900 transition-colors duration-200 mb-10 reveal">
+          <span aria-hidden="true">←</span> Zpět na nástroj Kortizol
+        </a>
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-8 reveal">ČLÁNEK · KORTIZOL</p>
+        <h1 class="font-heading font-bold leading-[0.92] tracking-tight text-zinc-900 mb-8 reveal"
+            style="font-size: clamp(3rem, 8vw, 6.5rem)">
+          10 pravidel kortizolu,<br>kterým je dobré rozumět
+        </h1>
+        <p class="text-xl sm:text-2xl text-zinc-500 leading-relaxed max-w-3xl reveal reveal-delay-1">
+          Krátký článek o tom, proč kortizol neřešit jen jako „stresový hormon“, ale jako časový systém, který ovlivňuje výkon, regeneraci i spánek.
+        </p>
+        <div class="mt-10 grid gap-6 md:grid-cols-[1.4fr_0.8fr] reveal reveal-delay-2">
+          <div class="border-l-2 border-sage pl-6">
+            <p class="text-zinc-500 text-base leading-relaxed">
+              Když rozumíte rytmu kortizolu, přestanete řešit jen únavu nebo napětí izolovaně. Začnete chápat, kdy je tělo v aktivaci správně, kdy už se přetěžuje a proč se někdy neumí vrátit zpět.
+            </p>
+          </div>
+          <div class="border border-zinc-200 bg-zinc-50 p-6">
+            <p class="text-[10px] tracking-[0.22em] uppercase text-sage mb-3">V článku najdete</p>
+            <ul class="space-y-2 text-sm text-zinc-500 leading-relaxed">
+              <li>Ranní peak a role probuzení</li>
+              <li>Vztah kortizolu ke spánku</li>
+              <li>Rozdíl mezi akutním a chronickým stresem</li>
+              <li>Proč rozhoduje timing, ne jen absolutní hodnota</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 sm:px-10 lg:px-20 py-20">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-14 reveal">
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">HLAVNÍ PRINCIPY</p>
+          <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900 mb-6">
+            Co potřebujete vědět dřív,<br>než začnete něco měnit.
+          </h2>
+          <p class="text-zinc-500 text-base leading-relaxed">
+            Následujících deset pravidel není teorie pro teorii. Je to praktický rámec, podle kterého dává smysl číst vlastní energii, přetížení i regeneraci během dne.
+          </p>
+        </div>
+
+        <div class="space-y-14">
+          {rules.map((rule, index) => (
+            <article class="reveal border-t border-zinc-200 pt-8" style={`transition-delay:${index * 50}ms`}>
+              <div class="flex items-baseline gap-4 mb-5">
+                <p class="font-heading font-bold text-zinc-300 leading-none"
+                   style="font-size: clamp(1.75rem, 4vw, 2.5rem)">
+                  {rule.number}
+                </p>
+                <p class="text-[10px] tracking-[0.22em] uppercase text-sage">Pravidlo</p>
+              </div>
+              <h3 class="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 mb-4">
+                {rule.title}
+              </h3>
+              <p class="text-zinc-500 text-base leading-relaxed">
+                {rule.body}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100">
+      <div class="max-w-3xl mx-auto reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">CO Z TOHO PLYNE</p>
+        <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900 mb-8">
+          Neřešíme jen stres.<br>Řešíme načasování a návrat.
+        </h2>
+        <div class="space-y-5 text-zinc-500 text-base leading-relaxed">
+          <p>
+            V Adaptive Studiu nepracujeme s kortizolem jako s izolovaným problémem. Díváme se na to, kdy je tělo přetížené, kdy neumí udržet výkon a kdy ztrácí schopnost přepnout do regenerace.
+          </p>
+          <p>
+            Právě proto kombinujeme dechovou práci, světlo, kryo, vědomý pohyb a nervový trénink. Každý nástroj má své místo podle fáze dne, typu zátěže a cíle klienta.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 sm:px-10 lg:px-20 pb-28">
+      <div class="max-w-4xl mx-auto border border-zinc-200 bg-zinc-50 p-8 sm:p-10 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-5">DALŠÍ KROK</p>
+        <div class="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-end">
+          <div>
+            <h2 class="font-heading font-bold leading-tight tracking-tight text-zinc-900 mb-5"
+                style="font-size: clamp(2rem, 5vw, 3.5rem)">
+              Chcete zjistit, kde se váš rytmus láme?
+            </h2>
+            <p class="text-zinc-500 text-base leading-relaxed max-w-xl">
+              Kortizol dává největší smysl tehdy, když ho čtete v kontextu svého dne, spánku, zátěže a schopnosti regenerace. Přesně s tím ve studiu pracujeme.
+            </p>
+          </div>
+          <div class="md:justify-self-end">
+            <a
+              href="https://calendly.com/jiri-adaptivestudio/30min"
+              class="inline-flex items-center justify-center px-10 py-4 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200"
+            >
+              Zarezervovat konzultaci
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang="cs" />
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => { entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); },
+    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+  );
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
+</script>
