@@ -513,7 +513,7 @@ import StudioModal from '../../../../../components/StudioModal.astro';
 <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 
 <script is:inline>
-const BASE_CURVE = [18,16,14,13,12,14,22,32,28,24,20,18,16,15,14,13,12,11,10,9,8,7,7,7];
+const BASE_CURVE = [7,6,5,5,6,10,18,30,28,24,20,17,15,14,13,12,11,10,9,8,7,6,5,5];
 
 const EVENT_TYPES = [
   { value:'conflict',    label:'Argument or conflict',        icon:'⚡', delta:+18, rise:0.3, decay:2.5, type:'stress'   },
@@ -579,11 +579,48 @@ function getTipIdx(h) {
 }
 function getExpectedBand(baseCurve, hour) {
   const expected = baseCurve[hour];
-  const tolerance = expected >= 26 ? 6 : expected >= 18 ? 5 : expected >= 10 ? 4 : 3;
-  const low = Math.max(4, +(expected - tolerance).toFixed(1));
-  const high = Math.min(60, +(expected + tolerance).toFixed(1));
-  const floor = Math.max(4, +(low - Math.max(4, tolerance + 1)).toFixed(1));
-  const ceil = Math.min(60, +(high + Math.max(6, tolerance + 2)).toFixed(1));
+  let low;
+  let high;
+  let floor;
+  let ceil;
+
+  if (hour <= 4) {
+    low = 4;
+    high = 8;
+    floor = 3;
+    ceil = 10;
+  } else if (hour <= 6) {
+    low = 6;
+    high = 16;
+    floor = 4;
+    ceil = 19;
+  } else if (hour <= 9) {
+    low = 20;
+    high = 36;
+    floor = 14;
+    ceil = 42;
+  } else if (hour <= 13) {
+    low = 12;
+    high = 26;
+    floor = 8;
+    ceil = 31;
+  } else if (hour <= 17) {
+    low = 8;
+    high = 18;
+    floor = 5;
+    ceil = 22;
+  } else if (hour <= 20) {
+    low = 5;
+    high = 12;
+    floor = 3;
+    ceil = 15;
+  } else {
+    low = 4;
+    high = 9;
+    floor = 3;
+    ceil = 12;
+  }
+
   return { expected, low, high, floor, ceil };
 }
 function getZone(v, band) {
