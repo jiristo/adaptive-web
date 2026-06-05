@@ -1,0 +1,828 @@
+---
+import Layout from '../../../../../layouts/Layout.astro';
+import Nav from '../../../../../components/Nav.astro';
+import Footer from '../../../../../components/Footer.astro';
+import StudioModal from '../../../../../components/StudioModal.astro';
+---
+
+<Layout
+  title="Cortisol Rhythm — Adaptive Studio"
+  description="Estimate your cortisol profile. An interactive tool to understand how stress, sleep, and daily events shape your cortisol levels."
+  lang="en"
+>
+  <StudioModal lang="en" />
+  <Nav lang="en" />
+
+  <main>
+    <section class="min-h-screen flex flex-col justify-center px-6 sm:px-10 lg:px-20 py-24">
+      <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-10">TOOLS · CORTISOL</p>
+      <h1 class="font-heading font-bold leading-[0.9] tracking-tight text-zinc-900 mb-10 reveal"
+          style="font-size: clamp(3rem, 9vw, 8rem)">
+        Is your cortisol<br>working for you?
+      </h1>
+      <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-xl reveal reveal-delay-1">
+        Or are you working for it.
+      </p>
+      <p class="text-sm text-zinc-400 leading-relaxed max-w-lg mt-4 reveal reveal-delay-2">
+        Cortisol shapes your performance, recovery, and sleep. See where you are on the curve and what to do next.
+      </p>
+      <div class="mt-12 flex flex-wrap gap-4 reveal reveal-delay-3">
+        <a
+          href="#tool"
+          class="inline-flex items-center justify-center px-10 py-4 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200"
+        >
+          Check your rhythm
+        </a>
+        <a
+          href="#what-is-cortisol"
+          class="inline-flex items-center justify-center px-10 py-4 border border-zinc-300 text-zinc-700 text-xs font-semibold tracking-[0.2em] uppercase hover:border-zinc-900 transition-colors duration-200"
+        >
+          Why it matters
+        </a>
+      </div>
+    </section>
+
+    <section id="what-is-cortisol" class="border-t border-zinc-100 px-6 sm:px-10 lg:px-20 py-24">
+      <div class="mb-16 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">WHAT IS CORTISOL</p>
+        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+          The hormone that runs the system.
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-3 md:divide-x divide-zinc-200 gap-16 md:gap-0">
+        <div class="flex flex-col md:pr-12 reveal reveal-delay-1">
+          <p class="font-heading font-bold text-zinc-100 leading-none mb-8 select-none"
+             style="font-size: clamp(5rem, 10vw, 9rem)">24</p>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Hour cycle</p>
+          <p class="font-heading text-lg font-bold text-zinc-900 mb-3">Every hour has a role</p>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            Cortisol follows a precise circadian rhythm. It wakes you up in the morning, tapers through the afternoon, and should switch down in the evening. The problem starts when chronic stress distorts that curve.
+          </p>
+        </div>
+        <div class="flex flex-col md:px-12 reveal reveal-delay-2">
+          <p class="font-heading font-bold text-zinc-100 leading-none mb-8 select-none"
+             style="font-size: clamp(5rem, 10vw, 9rem)">3×</p>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Chronic stress</p>
+          <p class="font-heading text-lg font-bold text-zinc-900 mb-3">Higher levels damage health</p>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            Persistently elevated cortisol affects immunity, memory, and cardiovascular health. It shortens telomeres and accelerates biological aging. This is not just fatigue. It is system-wide overload.
+          </p>
+        </div>
+        <div class="flex flex-col md:pl-12 reveal reveal-delay-3">
+          <p class="font-heading font-bold text-zinc-100 leading-none mb-8 select-none"
+             style="font-size: clamp(5rem, 10vw, 9rem)">48h</p>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Axis recovery</p>
+          <p class="font-heading text-lg font-bold text-zinc-900 mb-3">Recovery takes days, not hours</p>
+          <p class="text-zinc-500 text-sm leading-relaxed">
+            After intense stress, the cortisol axis does not fully recover in one night of sleep. Good recovery is a timed process, and that is exactly what we train.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tool" class="bg-[#111110] px-6 sm:px-10 lg:px-20 py-24">
+      <div class="mb-12 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">INTERACTIVE TOOL</p>
+        <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-white">
+          Build your day.
+        </h2>
+        <p class="text-zinc-400 text-sm mt-4 max-w-lg">
+          Add the events that happened today. The curve updates dynamically with a biologically realistic rise and gradual decline.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-[300px_1fr] gap-6 items-start">
+        <div class="flex flex-col gap-4">
+          <div class="border border-zinc-700 bg-zinc-900 p-5">
+            <p class="text-[9px] tracking-[0.2em] uppercase text-zinc-300 font-semibold mb-4 pb-3 border-b border-zinc-700">Baseline state</p>
+            <div class="space-y-4">
+              <div>
+                <label class="text-[9px] tracking-[0.12em] uppercase text-zinc-500 block mb-2">Sleep quality last night</label>
+                <select class="k-select" id="sleep">
+                  <option value="-1">Poor, less than 5 h</option>
+                  <option value="0" selected>Average, 6 to 7 h</option>
+                  <option value="1">Good, 7 to 9 h</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-[9px] tracking-[0.12em] uppercase text-zinc-500 block mb-2">Sleep debt, number of nights</label>
+                <select class="k-select" id="sleepdebt">
+                  <option value="0" selected>None</option>
+                  <option value="1">1 to 2 nights</option>
+                  <option value="2">3 to 5 nights</option>
+                  <option value="3">Chronic insomnia</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-[9px] tracking-[0.12em] uppercase text-zinc-500 block mb-2">Stress load this week</label>
+                <select class="k-select" id="weekstress">
+                  <option value="0">Calm week</option>
+                  <option value="1" selected>Normal work week</option>
+                  <option value="2">Demanding week</option>
+                  <option value="3">Extreme load</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-[9px] tracking-[0.12em] uppercase text-zinc-500 block mb-2">When did you wake up</label>
+                <select class="k-select" id="wakehour">
+                  <option value="4">04:00 to 04:59</option>
+                  <option value="5">05:00 to 05:59</option>
+                  <option value="6" selected>06:00 to 06:59</option>
+                  <option value="7">07:00 to 07:59</option>
+                  <option value="8">08:00 to 08:59</option>
+                  <option value="9">09:00 to 09:59</option>
+                  <option value="10">10:00 to 10:59</option>
+                  <option value="11">11:00 to 11:59</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-[9px] tracking-[0.12em] uppercase text-zinc-500 block mb-2">How did you feel after waking up</label>
+                <select class="k-select" id="wakefeeling">
+                  <option value="-1">Exhausted, low energy</option>
+                  <option value="0" selected>Normal, neutral</option>
+                  <option value="1">Fresh, full of energy</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="border border-zinc-700 bg-zinc-900 p-5">
+            <p class="text-[9px] tracking-[0.2em] uppercase text-zinc-300 font-semibold mb-4 pb-3 border-b border-zinc-700">Events during the day</p>
+            <div class="grid grid-cols-[1fr_64px_36px] gap-1.5 mb-3">
+              <select class="k-select text-[11px]" id="event-type-select">
+                <optgroup label="⚡ Stressors">
+                  <option value="conflict">⚡ Argument or conflict</option>
+                  <option value="deadline">📌 Deadline or presentation</option>
+                  <option value="badnews">📰 Bad news</option>
+                  <option value="publicsp">🎤 Public speaking</option>
+                  <option value="hiit">🏋 Intense workout</option>
+                  <option value="traffic">🚗 Traffic stress</option>
+                  <option value="coldshower">🚿 Cold shower</option>
+                  <option value="overload">📋 Overload or multitasking</option>
+                </optgroup>
+                <optgroup label="🌿 Recovery">
+                  <option value="cryo">❄ Cryotherapy</option>
+                  <option value="redlight">🔴 Red light</option>
+                  <option value="breathwork">💬 Breathwork</option>
+                  <option value="yoga">🧘 Yoga or meditation</option>
+                  <option value="walk">🚶 Walk in nature</option>
+                  <option value="nap">😴 Short nap, 20 min</option>
+                  <option value="social">🤝 Pleasant social contact</option>
+                </optgroup>
+                <optgroup label="○ Other">
+                  <option value="caffeine_am">☕ Coffee in the morning, before 11:00</option>
+                  <option value="caffeine_pm">☕ Coffee after 14:00</option>
+                  <option value="alcohol">🍷 Alcohol in the evening</option>
+                  <option value="skippedmeal">🍽 Skipped meal</option>
+                  <option value="screen">📱 Screens before sleep</option>
+                </optgroup>
+              </select>
+              <input type="number" class="k-select k-hour-input text-center text-[11px]" id="event-hour-input" min="0" max="23" value="9" title="Hour, 0 to 23">
+              <button onclick="addEventFromUI()"
+                class="bg-white text-zinc-900 text-lg font-bold hover:bg-sage hover:text-white transition-colors duration-150 flex items-center justify-center">+</button>
+            </div>
+            <p class="text-[10px] text-zinc-400 mb-3">Choose an event, enter the hour, then press +</p>
+            <div id="events-list">
+              <p class="text-[11px] text-zinc-600 leading-relaxed py-2">No events yet. Add what happened to you today.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="border border-zinc-800 p-6">
+          <div class="grid grid-cols-4 gap-px bg-zinc-800 border border-zinc-800 mb-5">
+            <div class="bg-[#111110] px-3 py-3">
+              <div class="font-heading text-lg font-bold text-white mb-1" id="m-now">—</div>
+              <div class="text-[10px] text-zinc-500">Current, nmol/L</div>
+            </div>
+            <div class="bg-[#111110] px-3 py-3">
+              <div class="font-heading text-lg font-bold text-white mb-1" id="m-peak">—</div>
+              <div class="text-[10px] text-zinc-500">Daily peak</div>
+            </div>
+            <div class="bg-[#111110] px-3 py-3">
+              <div class="font-heading text-lg font-bold text-white mb-1" id="m-min">—</div>
+              <div class="text-[10px] text-zinc-500">Night minimum</div>
+            </div>
+            <div class="bg-[#111110] px-3 py-3">
+              <div class="font-heading text-[11px] font-bold text-white mb-1 leading-tight" id="m-phase">—</div>
+              <div class="text-[10px] text-zinc-500">Phase of the day</div>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <p class="text-[9px] tracking-[0.15em] uppercase text-zinc-500 mb-3">Cortisol level, current hour</p>
+            <div class="relative h-2.5 rounded-full overflow-visible mb-2"
+                 style="background: linear-gradient(to right, #2a7d4f 0%, #2a7d4f 40%, #185FA5 40%, #185FA5 73%, #C4603A 73%, #C4603A 100%);">
+              <div id="gauge-marker" class="absolute top-[-4px] w-[18px] h-[18px] rounded-full bg-white border-[2.5px] border-zinc-900 -translate-x-1/2 shadow-md z-10 transition-all duration-500" style="left:35%;"></div>
+            </div>
+            <div class="flex justify-between text-[9px] uppercase tracking-wide mt-2">
+              <span id="gauge-low-label" style="color:#2a7d4f;" class="font-semibold">Low</span>
+              <span id="gauge-mid-label" style="color:#185FA5;">In range</span>
+              <span id="gauge-high-label" style="color:#C4603A;" class="font-semibold">⚠ High</span>
+            </div>
+          </div>
+
+          <div class="relative h-[200px] mb-3">
+            <canvas id="mainChart" role="img" aria-label="Dynamic cortisol profile of the day"></canvas>
+          </div>
+
+          <div class="flex items-center gap-3 pt-3 border-t border-zinc-800">
+            <span class="text-[11px] text-zinc-500 whitespace-nowrap">time:</span>
+            <input type="range" min="0" max="23" value="8" id="hour-slider" step="1" class="k-slider flex-1">
+            <span class="text-sm font-semibold text-white min-w-[40px]" id="hour-out">08:00</span>
+          </div>
+
+          <div id="phase-tip" class="mt-3 p-3 bg-zinc-900 border-l-2 border-sage text-[12px] text-zinc-400 leading-relaxed"></div>
+
+          <div class="mt-4 border border-zinc-800">
+            <div class="flex items-center gap-3 px-4 py-3 bg-zinc-900 border-b border-zinc-800">
+              <span class="text-base">🌙</span>
+              <div>
+                <div class="text-[11px] font-semibold text-white">Cortisol before sleep, 22:00</div>
+                <div class="text-[10px] text-zinc-500">Ideal range for deep sleep: 7 to 9 nmol/L</div>
+              </div>
+            </div>
+            <div class="px-4 py-3">
+              <div class="flex justify-between items-end mb-2">
+                <div>
+                  <div class="text-[9px] uppercase tracking-widest text-zinc-600 mb-1">Your estimated level</div>
+                  <div id="sleep-val" class="font-heading text-2xl font-bold" style="color:#C4603A;">—</div>
+                </div>
+                <div class="text-right">
+                  <div class="text-sm font-semibold" style="color:#2a7d4f;">7 to 9 nmol/L</div>
+                  <div class="text-[9px] uppercase tracking-widest text-zinc-600">Sleep ideal</div>
+                </div>
+              </div>
+              <div class="relative h-1.5 bg-zinc-800 rounded-full mb-2 overflow-visible">
+                <div id="sleep-bar" class="h-full rounded-full transition-all duration-500" style="width:0%;background:#C4603A;"></div>
+                <div class="absolute top-[-3px] w-[2px] h-[12px] rounded-sm" style="left:16%;background:#2a7d4f;"></div>
+              </div>
+              <div id="sleep-msg" class="text-[11px] text-zinc-500 leading-relaxed pt-2 border-t border-zinc-800">—</div>
+            </div>
+          </div>
+
+          <div id="intervention-panel" class="mt-4 border border-zinc-700" style="display:none;">
+            <div id="intv-header" class="flex items-center gap-3 px-4 py-3">
+              <div id="intv-icon" class="w-6 h-6 rounded-full flex items-center justify-center text-[11px] text-white font-bold flex-shrink-0" style="background:#C4603A;">!</div>
+              <div>
+                <strong id="intv-title" class="block text-[12px] font-semibold"></strong>
+                <span id="intv-sub" class="text-[11px] text-zinc-500"></span>
+              </div>
+            </div>
+            <div id="intv-tags" class="px-4 pb-3 flex flex-wrap gap-2"></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-[10px] text-zinc-600 mt-6 leading-relaxed">⚠ Educational model, not a medical test. Values are directional and based on circadian physiology. Clinical testing is required for HPA-axis diagnostics.</p>
+    </section>
+
+    <section id="services" class="px-6 sm:px-10 lg:px-20 py-24">
+      <div class="mb-16 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">INTERVENTIONS AT ADAPTIVE STUDIO</p>
+        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+          Every method targets<br>a specific zone.
+        </h2>
+        <p class="text-zinc-400 text-sm mt-4 max-w-lg">Cryotherapy, red light, breathwork, and nervous system training. Each intervention has a precise mechanism of action on the cortisol axis.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-0 md:divide-x divide-zinc-200">
+        <div class="flex flex-col lg:pr-8 reveal reveal-delay-1">
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Cortisol ↓↓ after load</p>
+          <p class="font-heading text-xl font-bold text-zinc-900 mb-3">Cryotherapy</p>
+          <p class="text-zinc-500 text-sm leading-relaxed mb-4">
+            Short-term extreme cold, −110 °C, triggers an adaptive stress response followed by a deep parasympathetic shift. Cortisol drops and endorphins rise.
+          </p>
+          <p class="text-[10px] text-zinc-400 mt-auto"><strong class="text-zinc-700">Best timing:</strong> afternoon, 14:00 to 18:00, or after intense physical load.</p>
+        </div>
+        <div class="flex flex-col lg:px-8 reveal reveal-delay-2">
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Cortisol ↓ rhythm and axis</p>
+          <p class="font-heading text-xl font-bold text-zinc-900 mb-3">Red light</p>
+          <p class="text-zinc-500 text-sm leading-relaxed mb-4">
+            Red light therapy, 630 to 850 nm, supports mitochondrial function and circadian synchronisation. It helps reset a healthier daily cortisol pattern.
+          </p>
+          <p class="text-[10px] text-zinc-400 mt-auto"><strong class="text-zinc-700">Best timing:</strong> morning, 6:00 to 9:00, for synchronisation, or in the evening to calm the axis.</p>
+        </div>
+        <div class="flex flex-col lg:px-8 reveal reveal-delay-3">
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">HRV ↑ and parasympathetic tone</p>
+          <p class="font-heading text-xl font-bold text-zinc-900 mb-3">Breathwork</p>
+          <p class="text-zinc-500 text-sm leading-relaxed mb-4">
+            Deliberate breathing techniques activate the parasympathetic nervous system and reduce circulating cortisol. It is a practical skill you can use whenever you need it.
+          </p>
+          <p class="text-[10px] text-zinc-400 mt-auto"><strong class="text-zinc-700">Best timing:</strong> anytime, especially when levels are running high. Effect in about 10 minutes.</p>
+        </div>
+        <div class="flex flex-col lg:pl-8 reveal reveal-delay-4">
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">Adaptability and resilience</p>
+          <p class="font-heading text-xl font-bold text-zinc-900 mb-3">Nervous system training</p>
+          <p class="text-zinc-500 text-sm leading-relaxed mb-4">
+            A one-to-one programme focused on conscious regulation of the autonomic nervous system. We train the ability to move between activation and recovery, long term.
+          </p>
+          <p class="text-[10px] text-zinc-400 mt-auto"><strong class="text-zinc-700">Results:</strong> visible within 4 weeks.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#111110] px-6 sm:px-10 lg:px-20 py-24">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div class="reveal">
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">THE SCIENCE BEHIND THE METHOD</p>
+          <blockquote class="border-l-2 border-sage pl-8">
+            <p class="font-heading text-2xl sm:text-3xl font-bold text-white leading-tight mb-6">
+              "Cortisol is not the enemy. It is the most precise biological timer you have. The problem starts when you ignore it."
+            </p>
+            <cite class="text-[10px] tracking-[0.2em] uppercase text-zinc-500 not-italic">Adaptive physiology, the foundation of the studio approach</cite>
+          </blockquote>
+        </div>
+        <div class="reveal reveal-delay-1 space-y-6">
+          {[
+            { title: 'CAR response, the most important moment of the day', body: 'Thirty to forty-five minutes after waking, cortisol naturally peaks. How you use that window shapes performance for the rest of the day.' },
+            { title: 'Chronic stress distorts the whole axis', body: 'With repeated overload, the profile flattens. You stop having mornings with energy and nights with real recovery.' },
+            { title: 'Recovery is a timed process', body: 'Good timing multiplies the effect of an intervention. Cryotherapy at 14:00 works differently than at 20:00.' },
+            { title: 'HRV as a mirror of the cortisol axis', body: 'Heart rate variability correlates with HPA-axis balance. We monitor both and train both.' },
+          ].map((f) => (
+            <div class="flex items-start gap-4 border-b border-zinc-800 pb-6">
+              <span class="text-sage text-lg mt-0.5">→</span>
+              <div>
+                <p class="text-white font-semibold text-sm mb-1">{f.title}</p>
+                <p class="text-zinc-500 text-sm leading-relaxed">{f.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="min-h-[60vh] flex flex-col items-center justify-center px-6 text-center py-24">
+      <div class="reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-8">FIRST STEP</p>
+        <h2 class="font-heading font-bold leading-tight tracking-tight text-zinc-900 mb-8"
+            style="font-size: clamp(2.5rem, 7vw, 5rem)">
+          Start reading your rhythm.
+        </h2>
+        <p class="text-zinc-500 text-sm leading-relaxed mb-3 max-w-sm mx-auto">
+          The first step is a 30-minute conversation. We identify where your cortisol axis needs support.
+        </p>
+        <p class="text-zinc-400 text-xs mb-10">No commitment.</p>
+        <form
+          name="cortisol-lead"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="flex flex-col sm:flex-row gap-0 max-w-md mx-auto mb-4"
+          id="lead-form"
+        >
+          <input type="hidden" name="form-name" value="cortisol-lead" />
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="sleep" id="f-sleep" />
+          <input type="hidden" name="sleepdebt" id="f-sleepdebt" />
+          <input type="hidden" name="weekstress" id="f-weekstress" />
+          <input type="hidden" name="wakehour" id="f-wakehour" />
+          <input type="hidden" name="wakefeeling" id="f-wakefeeling" />
+          <input type="hidden" name="events" id="f-events" />
+          <input type="hidden" name="cortisol-now" id="f-cortisol-now" />
+          <input type="hidden" name="cortisol-sleep" id="f-cortisol-sleep" />
+          <input
+            type="email"
+            name="email"
+            placeholder="your@email.com"
+            required
+            class="flex-1 px-6 py-4 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900"
+          />
+          <button type="submit"
+            class="px-8 py-4 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200 whitespace-nowrap">
+            I want a consultation
+          </button>
+        </form>
+        <p class="text-zinc-400 text-xs">No spam. One contact from us only.</p>
+        <p id="submit-msg" class="text-sage text-sm mt-4" style="display:none;">✓ Great. We will get back to you within 24 hours.</p>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang="en" />
+</Layout>
+
+<style>
+  .k-select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #52525b;
+    background: #27272a;
+    color: #f4f4f5;
+    -webkit-text-fill-color: #f4f4f5;
+    font-size: 12px;
+    cursor: pointer;
+    appearance: none;
+    color-scheme: dark;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23a1a1aa'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+  .k-select:focus { outline: 1px solid #5C7A5E; }
+  .k-select option,
+  .k-select optgroup {
+    color: #f4f4f5;
+    background: #27272a;
+  }
+  .k-hour-input {
+    min-width: 64px;
+    padding-left: 6px;
+    padding-right: 6px;
+    background-image: none;
+  }
+
+  .k-slider {
+    -webkit-appearance: none;
+    height: 3px;
+    background: #3f3f46;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .k-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #5C7A5E;
+    cursor: pointer;
+  }
+
+  .k-intv-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 500;
+    border: 1px solid #3f3f46;
+    color: #a1a1aa;
+  }
+  .k-tag-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+  .k-event-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 8px;
+    border: 1px solid #52525b;
+    background: #27272a;
+    margin-bottom: 4px;
+  }
+  .k-event-bar { width: 3px; height: 20px; border-radius: 1px; flex-shrink: 0; }
+  .k-event-label {
+    flex: 1;
+    font-size: 11px;
+    color: #f4f4f5;
+    -webkit-text-fill-color: #f4f4f5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .k-event-del { width: 20px; height: 20px; border: none; background: none; color: #71717a; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: color 0.1s; }
+  .k-event-del:hover { color: #ef4444; }
+  .k-event-hour { width: 36px; padding: 3px 4px; border: 1px solid #52525b; background: #27272a; color: #f4f4f5; font-size: 11px; text-align: center; -moz-appearance: textfield; caret-color: #f4f4f5; }
+  .k-event-hour {
+    -webkit-text-fill-color: #f4f4f5;
+    color-scheme: dark;
+  }
+  .k-event-hour:focus,
+  .k-event-hour:hover,
+  .k-select:hover,
+  .k-select:focus {
+    color: #f4f4f5;
+    -webkit-text-fill-color: #f4f4f5;
+  }
+  .k-event-hour::-webkit-inner-spin-button { -webkit-appearance: none; }
+</style>
+
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+<script is:inline>
+const BASE_CURVE = [18,16,14,13,12,14,22,32,28,24,20,18,16,15,14,13,12,11,10,9,8,7,7,7];
+
+const EVENT_TYPES = [
+  { value:'conflict',    label:'Argument or conflict',        icon:'⚡', delta:+18, rise:0.3, decay:2.5, type:'stress'   },
+  { value:'deadline',    label:'Deadline or presentation',   icon:'📌', delta:+14, rise:0.5, decay:2.0, type:'stress'   },
+  { value:'badnews',     label:'Bad news',                   icon:'📰', delta:+12, rise:0.4, decay:3.0, type:'stress'   },
+  { value:'publicsp',    label:'Public speaking',            icon:'🎤', delta:+16, rise:0.3, decay:2.0, type:'stress'   },
+  { value:'hiit',        label:'Intense workout',            icon:'🏋', delta:+20, rise:0.5, decay:1.5, type:'stress'   },
+  { value:'traffic',     label:'Traffic stress',             icon:'🚗', delta:+8,  rise:0.2, decay:1.5, type:'stress'   },
+  { value:'coldshower',  label:'Cold shower',                icon:'🚿', delta:+10, rise:0.1, decay:0.8, type:'stress'   },
+  { value:'overload',    label:'Overload or multitasking',   icon:'📋', delta:+11, rise:0.6, decay:2.5, type:'stress'   },
+  { value:'cryo',        label:'Cryotherapy',                icon:'❄',  delta:-14, rise:0.2, decay:1.0, type:'positive' },
+  { value:'redlight',    label:'Red light',                  icon:'🔴', delta:-6,  rise:0.5, decay:2.0, type:'positive' },
+  { value:'breathwork',  label:'Breathwork',                 icon:'💬', delta:-8,  rise:0.2, decay:1.2, type:'positive' },
+  { value:'yoga',        label:'Yoga or meditation',         icon:'🧘', delta:-7,  rise:0.7, decay:2.0, type:'positive' },
+  { value:'walk',        label:'Walk in nature',             icon:'🚶', delta:-5,  rise:0.5, decay:2.0, type:'positive' },
+  { value:'nap',         label:'Short nap, 20 min',          icon:'😴', delta:-9,  rise:0.3, decay:1.5, type:'positive' },
+  { value:'social',      label:'Pleasant social contact',    icon:'🤝', delta:-4,  rise:0.5, decay:2.0, type:'positive' },
+  { value:'caffeine_am', label:'Morning coffee, before 11',  icon:'☕', delta:+4,  rise:0.3, decay:1.5, type:'neutral'  },
+  { value:'caffeine_pm', label:'Coffee after 14:00',         icon:'☕', delta:+7,  rise:0.3, decay:4.5, type:'neutral'  },
+  { value:'alcohol',     label:'Alcohol in the evening',     icon:'🍷', delta:+9,  rise:2.0, decay:4.0, type:'neutral'  },
+  { value:'skippedmeal', label:'Skipped meal',               icon:'🍽', delta:+7,  rise:1.0, decay:3.0, type:'neutral'  },
+  { value:'screen',      label:'Screens before sleep',       icon:'📱', delta:+5,  rise:0.5, decay:3.0, type:'neutral'  },
+];
+
+const TYPE_COLOR = { stress:'#C4603A', positive:'#5C7A5E', neutral:'#B8962E' };
+
+const PHASES = ["Deep sleep","Deep sleep","Deep sleep","Deep sleep","Preparing to wake","Preparing to wake","Morning peak","Morning peak","Morning activation","Late morning performance","Late morning performance","Midday","Afternoon","Afternoon","Mild decline","Afternoon","Evening decline","Evening decline","Evening","Evening","Night recovery","Night recovery","Night recovery","Night recovery"];
+
+const TIPS = [
+  "Cortisol is at its minimum. The body is in deep recovery mode.",
+  "The body is preparing to wake up. Cortisol is slowly rising.",
+  "Morning maximum, CAR. A strong window for demanding tasks and decision-making.",
+  "Levels are still high. Use them for creative work and planning.",
+  "Late morning performance window. Good for focus, analysis, and meetings.",
+  "Levels are dropping. A good time for a lighter meal and a short walk.",
+  "Afternoon dip. Better for admin tasks and lighter work.",
+  "Cortisol is dropping. Time to downshift and avoid extra stressors.",
+  "Low cortisol. Prepare for sleep and reduce screen exposure.",
+  "Night minimum. Recovery processes are running at full capacity."
+];
+
+const ZONE_COLORS = { low:'#2a7d4f', optimal:'#185FA5', high:'#C4603A' };
+const ZONE_LABELS = { low:'Low', optimal:'In range', high:'High' };
+
+const INTERVENTIONS = {
+  elevated: [{label:'Breathwork',dot:'#5C7A5E'},{label:'Walk',dot:'#5C7A5E'},{label:'Red light',dot:'#B8962E'},{label:'Meditation',dot:'#5C7A5E'}],
+  high:     [{label:'Cryotherapy',dot:'#185FA5'},{label:'Nervous system training',dot:'#C4603A'},{label:'Breathwork',dot:'#5C7A5E'},{label:'Consultation, Adaptive Studio',dot:'#C4603A'}]
+};
+
+let events = [], eventIdCounter = 0, currentHour = 8, lastCurve = BASE_CURVE.slice();
+
+function getTipIdx(h) {
+  if (h < 4) return 0;
+  if (h < 6) return 1;
+  if (h < 8) return 2;
+  if (h < 10) return 3;
+  if (h < 12) return 4;
+  if (h < 14) return 5;
+  if (h < 17) return 6;
+  if (h < 20) return 7;
+  if (h < 22) return 8;
+  return 9;
+}
+function getExpectedBand(baseCurve, hour) {
+  const expected = baseCurve[hour];
+  const tolerance = expected >= 26 ? 6 : expected >= 18 ? 5 : expected >= 10 ? 4 : 3;
+  const low = Math.max(4, +(expected - tolerance).toFixed(1));
+  const high = Math.min(60, +(expected + tolerance).toFixed(1));
+  const floor = Math.max(4, +(low - Math.max(4, tolerance + 1)).toFixed(1));
+  const ceil = Math.min(60, +(high + Math.max(6, tolerance + 2)).toFixed(1));
+  return { expected, low, high, floor, ceil };
+}
+function getZone(v, band) {
+  if (v < band.low) return 'low';
+  if (v <= band.high) return 'optimal';
+  return 'high';
+}
+function valToGaugePct(v, band) {
+  const c = Math.min(Math.max(v, band.floor), band.ceil);
+  if (c <= band.low) return ((c - band.floor) / Math.max(band.low - band.floor, 0.01)) * 40;
+  if (c <= band.high) return 40 + ((c - band.low) / Math.max(band.high - band.low, 0.01)) * 33;
+  return 73 + ((c - band.high) / Math.max(band.ceil - band.high, 0.01)) * 27;
+}
+function getBaseMult() {
+  const s = [-0.10, 0, 0.06][+document.getElementById('sleep').value + 1];
+  const d = [0, 0.08, 0.16, 0.28][+document.getElementById('sleepdebt').value];
+  const w = [0, 0.06, 0.15, 0.26][+document.getElementById('weekstress').value];
+  return 1 + s + d + w;
+}
+function getCircadianBase() {
+  const mult = getBaseMult();
+  const wakeHour = +document.getElementById('wakehour').value;
+  const wakeFeeling = +document.getElementById('wakefeeling').value;
+  const shift = wakeHour - 6;
+  const shifted = BASE_CURVE.map((_, h) => +(BASE_CURVE[(h - shift + 24) % 24] * mult).toFixed(1));
+
+  const carPeak = Math.min(23, wakeHour + 1);
+  const carProfile = [
+    { hour: wakeHour, add: 1 + wakeFeeling * 1.5 },
+    { hour: carPeak, add: 4 + wakeFeeling * 4 },
+    { hour: Math.min(23, wakeHour + 2), add: 2 + wakeFeeling * 2 },
+    { hour: Math.min(23, wakeHour + 3), add: wakeFeeling > 0 ? 1 : 0 },
+  ];
+
+  carProfile.forEach(({ hour, add }) => {
+    shifted[hour] = +(shifted[hour] + add).toFixed(1);
+  });
+
+  return shifted;
+}
+function computeCurve() {
+  const base = getCircadianBase();
+  const delta = new Array(24).fill(0);
+  events.forEach((ev) => {
+    const def = EVENT_TYPES.find((t) => t.value === ev.typeValue);
+    if (!def) return;
+    const peakH = ev.hour + def.rise;
+    for (let h = 0; h < 24; h += 1) {
+      if (h < ev.hour) continue;
+      const c = h <= peakH
+        ? def.delta * ((h - ev.hour) / Math.max(def.rise, 0.01))
+        : def.delta * Math.exp(-(h - peakH) * Math.LN2 / def.decay);
+      delta[h] += c;
+    }
+  });
+  return base.map((b, i) => Math.max(4, +(b + delta[i]).toFixed(1)));
+}
+
+const labels24 = Array.from({ length: 24 }, (_, i) => `${String(i).padStart(2, '0')}:00`);
+
+let mainChart;
+function buildMainChart(curve) {
+  mainChart = new Chart(document.getElementById('mainChart'), {
+    type: 'line',
+    data: { labels: labels24, datasets: [
+      { label: 'Cortisol', data: curve, borderColor: '#5C7A5E', backgroundColor: 'rgba(92,122,94,0.12)', borderWidth: 2.5, fill: true, tension: 0.4, pointRadius: 0, pointHoverRadius: 4, order: 2 },
+      { label: 'Homeostasis upper', data: Array(24).fill(22), borderColor: 'rgba(42,125,79,0)', borderWidth: 0, pointRadius: 0, fill: '+1', backgroundColor: 'rgba(42,125,79,0.12)', order: 4 },
+      { label: 'Homeostasis lower', data: Array(24).fill(10), borderColor: 'rgba(42,125,79,0.4)', borderWidth: 1, borderDash: [3, 3], pointRadius: 0, fill: false, order: 5 },
+      { label: 'Excess zone', data: Array(24).fill(40), borderColor: 'rgba(196,96,58,0.5)', borderWidth: 1.5, borderDash: [4, 3], pointRadius: 0, fill: false, order: 3 },
+      { label: 'Sleep ideal', data: Array(24).fill(null).map((_, i) => i >= 20 ? 8 : null), borderColor: 'rgba(42,125,79,0.7)', borderWidth: 1.5, borderDash: [2, 2], pointRadius: 0, fill: false, order: 6 },
+      { label: 'Now', data: Array(24).fill(null), borderColor: 'rgba(196,96,58,0.7)', borderWidth: 2, borderDash: [5, 4], pointRadius: 0, fill: false, order: 1 },
+      { label: 'Events', data: Array(24).fill(null), borderColor: 'transparent', backgroundColor: 'transparent', pointRadius: Array(24).fill(0), fill: false, order: 0 }
+    ]},
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: { duration: 350 },
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: (c) => {
+          if (c.datasetIndex === 0) return `${c.parsed.y.toFixed(1)} nmol/L`;
+          if (c.datasetIndex === 4) return 'Ideal before sleep: 7 to 9 nmol/L';
+          return null;
+        }}}
+      },
+      scales: {
+        x: { ticks: { maxTicksLimit: 8, color: '#71717a', font: { size: 10 }, autoSkip: true }, grid: { color: 'rgba(255,255,255,0.04)' } },
+        y: { min: 0, max: 65, ticks: { color: '#71717a', font: { size: 10 }, callback: (v) => `${v} nmol/L` }, grid: { color: 'rgba(255,255,255,0.04)' } }
+      }
+    }
+  });
+}
+
+function updateNowLine(h) {
+  const d = Array(24).fill(null);
+  d[h] = 65;
+  mainChart.data.datasets[5].data = d;
+}
+function updateEventDots(curve) {
+  const r = Array(24).fill(0);
+  const bg = Array(24).fill('transparent');
+  const bc = Array(24).fill('transparent');
+  events.forEach((ev) => {
+    const def = EVENT_TYPES.find((t) => t.value === ev.typeValue);
+    if (!def) return;
+    r[ev.hour] = Math.max(r[ev.hour], 7);
+    bg[ev.hour] = TYPE_COLOR[def.type];
+    bc[ev.hour] = 'white';
+  });
+  const dotData = Array(24).fill(null).map((_, i) => r[i] > 0 ? curve[i] : null);
+  const ds = mainChart.data.datasets[6];
+  ds.data = dotData;
+  ds.pointRadius = r;
+  ds.pointBackgroundColor = bg;
+  ds.pointBorderColor = bc;
+  ds.pointBorderWidth = Array(24).fill(2);
+  ds.pointHoverRadius = r.map((x) => x + 2);
+}
+
+function updateSleepIndicator(curve) {
+  const val = curve[22];
+  const el = document.getElementById('sleep-val');
+  const bar = document.getElementById('sleep-bar');
+  const msg = document.getElementById('sleep-msg');
+  let color;
+  let msgText;
+  if (val <= 10) {
+    color = '#5C7A5E';
+    msgText = '✓ Excellent. Cortisol is in a strong range for the onset of deep sleep and night-time recovery.';
+  } else if (val <= 14) {
+    color = '#B8962E';
+    msgText = `↑ Slightly elevated, ${val.toFixed(1)} nmol/L. We recommend breathwork or 20 minutes of screen-free rest before bed.`;
+  } else if (val <= 22) {
+    color = '#C4603A';
+    msgText = `⚠ Elevated, ${val.toFixed(1)} nmol/L. Falling asleep may be harder. Try afternoon cryotherapy or breathwork in the evening.`;
+  } else {
+    color = '#ef4444';
+    msgText = `⚠ Significantly elevated, ${val.toFixed(1)} nmol/L. Cortisol is likely to disrupt sleep architecture. Immediate intervention is recommended.`;
+  }
+  el.textContent = `${val.toFixed(1)} nmol/L`;
+  el.style.color = color;
+  bar.style.width = `${Math.min(100, (val / 30) * 100)}%`;
+  bar.style.background = color;
+  msg.textContent = msgText;
+}
+
+function updateAll() {
+  const curve = computeCurve();
+  lastCurve = curve;
+  const baseCurve = getCircadianBase();
+  mainChart.data.datasets[0].data = curve;
+  updateNowLine(currentHour);
+  updateEventDots(curve);
+  mainChart.update();
+  const val = curve[currentHour];
+  const band = getExpectedBand(baseCurve, currentHour);
+  const zone = getZone(val, band);
+  const col = ZONE_COLORS[zone];
+  const lbl = ZONE_LABELS[zone];
+  document.getElementById('m-now').innerHTML = `${val.toFixed(1)} <span style="font-size:9px;padding:1px 6px;background:${col}25;color:${col};font-family:sans-serif;letter-spacing:0.06em;text-transform:uppercase;">${lbl}</span>`;
+  document.getElementById('m-peak').textContent = Math.max(...curve).toFixed(1);
+  document.getElementById('m-min').textContent = Math.min(...curve).toFixed(1);
+  document.getElementById('m-phase').textContent = PHASES[currentHour];
+  document.getElementById('phase-tip').textContent = `${TIPS[getTipIdx(currentHour)]} The expected range for this hour is approximately ${band.low.toFixed(1)} to ${band.high.toFixed(1)} nmol/L.`;
+  document.getElementById('gauge-marker').style.left = `${valToGaugePct(val, band)}%`;
+  updateSleepIndicator(curve);
+  const panel = document.getElementById('intervention-panel');
+  if (zone !== 'high') {
+    panel.style.display = 'none';
+    return;
+  }
+  panel.style.display = 'block';
+  const items = INTERVENTIONS.high;
+  const hdr = document.getElementById('intv-header');
+  const icon = document.getElementById('intv-icon');
+  const title = document.getElementById('intv-title');
+  const sub = document.getElementById('intv-sub');
+  const tags = document.getElementById('intv-tags');
+  hdr.style.background = 'rgba(196,96,58,0.1)';
+  icon.style.background = '#C4603A';
+  title.style.color = '#C4603A';
+  title.textContent = 'Excessive level, immediate intervention';
+  sub.textContent = 'Your level is above the healthy maximum. We recommend intervention now.';
+  tags.innerHTML = items.map((i) => `<span class="k-intv-tag"><span class="k-tag-dot" style="background:${i.dot}"></span>${i.label}</span>`).join('');
+}
+
+window.addEventFromUI = function () {
+  const typeValue = document.getElementById('event-type-select').value;
+  const hour = Math.min(23, Math.max(0, +document.getElementById('event-hour-input').value));
+  events.push({ id: ++eventIdCounter, hour, typeValue });
+  renderActiveEvents();
+  updateAll();
+};
+window.removeEvent = function (id) {
+  events = events.filter((e) => e.id !== id);
+  renderActiveEvents();
+  updateAll();
+};
+window.updateEventHour = function (id, val) {
+  const ev = events.find((e) => e.id === id);
+  if (ev) {
+    ev.hour = Math.min(23, Math.max(0, +val));
+    updateAll();
+  }
+};
+
+function renderActiveEvents() {
+  const list = document.getElementById('events-list');
+  if (events.length === 0) {
+    list.innerHTML = '<p class="text-[11px] text-zinc-400 leading-relaxed py-2">Click an event above to add it to the daily profile.</p>';
+    return;
+  }
+  list.innerHTML = events.map((ev) => {
+    const def = EVENT_TYPES.find((t) => t.value === ev.typeValue);
+    const col = def ? TYPE_COLOR[def.type] : '#888';
+    const sign = def && def.delta > 0 ? '+' : '';
+    return `<div class="k-event-row">
+      <div class="k-event-bar" style="background:${col};"></div>
+      <input type="number" min="0" max="23" value="${ev.hour}" class="k-event-hour" title="Event hour" onchange="updateEventHour(${ev.id},this.value)" style="border-color:${col}60;color:#f4f4f5;-webkit-text-fill-color:#f4f4f5;">
+      <span class="k-event-label"><span style="color:#f4f4f5;-webkit-text-fill-color:#f4f4f5;">${def ? `${def.icon} ${def.label}` : '—'}</span> <span style="color:${col};font-size:10px;">${sign}${def ? def.delta : 0}</span></span>
+      <button class="k-event-del" onclick="removeEvent(${ev.id})">×</button>
+    </div>`;
+  }).join('');
+}
+
+['sleep', 'sleepdebt', 'weekstress', 'wakehour', 'wakefeeling'].forEach((id) => document.getElementById(id).addEventListener('change', updateAll));
+document.getElementById('hour-slider').addEventListener('input', function () {
+  currentHour = +this.value;
+  document.getElementById('hour-out').textContent = `${String(currentHour).padStart(2, '0')}:00`;
+  updateAll();
+});
+
+document.getElementById('lead-form').addEventListener('submit', function () {
+  document.getElementById('f-sleep').value = document.getElementById('sleep').value;
+  document.getElementById('f-sleepdebt').value = document.getElementById('sleepdebt').value;
+  document.getElementById('f-weekstress').value = document.getElementById('weekstress').value;
+  document.getElementById('f-wakehour').value = document.getElementById('wakehour').value;
+  document.getElementById('f-wakefeeling').value = document.getElementById('wakefeeling').value;
+  document.getElementById('f-events').value = JSON.stringify(events.map((e) => ({ type: e.typeValue, hour: e.hour })));
+  document.getElementById('f-cortisol-now').value = lastCurve[currentHour];
+  document.getElementById('f-cortisol-sleep').value = lastCurve[22];
+});
+
+buildMainChart(computeCurve());
+updateNowLine(currentHour);
+renderActiveEvents();
+updateAll();
+</script>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => { entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); },
+    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+  );
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) { el.classList.add('visible'); } else { observer.observe(el); }
+  });
+</script>
