@@ -1,0 +1,163 @@
+---
+import { useTranslations, type Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const EMAIL = 'jiri@adaptivestudio.cz';
+const contactHref = lang === 'cs' ? '/preview/kontakt/' : '/en/preview/kontakt/';
+
+const items = [
+  {
+    num: '01',
+    tagKey: 'spaceCard1Tag',
+    titleKey: 'spaceCard1Title',
+    bodyKey: 'spaceCard1Body',
+    padding: 'md:pr-12',
+    delay: 'reveal-delay-1',
+  },
+  {
+    num: '02',
+    tagKey: 'spaceCard2Tag',
+    titleKey: 'spaceCard2Title',
+    bodyKey: 'spaceCard2Body',
+    padding: 'md:px-12',
+    delay: 'reveal-delay-2',
+  },
+  {
+    num: '03',
+    tagKey: 'spaceCard3Tag',
+    titleKey: 'spaceCard3Title',
+    bodyKey: 'spaceCard3Body',
+    padding: 'md:pl-12',
+    delay: 'reveal-delay-3',
+  },
+] as const;
+---
+
+<section id="space-search" class="px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100 bg-zinc-50/70">
+  <div class="mb-16 reveal">
+    <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">{t('spaceTag')}</p>
+    <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+      {t('spaceH2a')}<br />{t('spaceH2b')}
+    </h2>
+    <p class="text-zinc-400 text-sm mt-4 max-w-2xl leading-relaxed">
+      {t('spaceIntro')}
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-3 md:divide-x divide-zinc-200 gap-16 md:gap-0 mb-16">
+    {items.map((item) => (
+      <div class={`flex flex-col ${item.padding} reveal ${item.delay}`}>
+        <p class="font-heading font-bold text-zinc-100 leading-none mb-8 select-none"
+           style="font-size: clamp(5rem, 10vw, 9rem)">
+          {item.num}
+        </p>
+        <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-zinc-900 mb-5">
+          {t(item.tagKey)}
+        </p>
+        <p class="font-heading text-xl font-bold text-zinc-900 mb-4 tracking-tight max-w-xs">
+          {t(item.titleKey)}
+        </p>
+        <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
+          {t(item.bodyKey)}
+        </p>
+      </div>
+    ))}
+  </div>
+
+  <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-6 items-stretch">
+    <div class="relative overflow-hidden bg-zinc-100 aspect-[16/10] reveal">
+      <img
+        src="/images/puppy-home.webp"
+        alt={lang === 'cs' ? 'Domácí a klidná atmosféra budoucího studia' : 'A calm, home-like atmosphere for the future studio'}
+        class="w-full h-full object-cover object-center"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-zinc-950/45 via-zinc-950/10 to-transparent"></div>
+      <div class="absolute left-0 bottom-0 p-8 sm:p-10 max-w-md">
+        <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">{t('spaceAsideTag')}</p>
+        <p class="font-heading text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight">
+          {t('spaceAsideTitle')}
+        </p>
+      </div>
+    </div>
+
+    <div class="border border-zinc-200 bg-white p-8 sm:p-10 reveal reveal-delay-1 flex flex-col">
+      <p class="text-zinc-500 text-sm leading-relaxed mb-8">
+        {t('spaceAsideBody')}
+      </p>
+
+      <form
+        name="space-lead"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="space-y-4 mt-auto"
+      >
+        <input type="hidden" name="form-name" value="space-lead" />
+        <input type="hidden" name="bot-field" />
+        <div>
+          <label class="block text-[10px] tracking-[0.18em] uppercase text-zinc-400 mb-2">{t('spaceFieldName')}</label>
+          <input
+            type="text"
+            name="name"
+            placeholder={t('spaceFieldNamePlaceholder')}
+            class="w-full px-4 py-3 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900"
+          />
+        </div>
+        <div>
+          <label class="block text-[10px] tracking-[0.18em] uppercase text-zinc-400 mb-2">{t('spaceFieldEmail')}</label>
+          <input
+            type="email"
+            name="email"
+            placeholder={t('spaceFieldEmailPlaceholder')}
+            required
+            class="w-full px-4 py-3 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900"
+          />
+        </div>
+        <div>
+          <label class="block text-[10px] tracking-[0.18em] uppercase text-zinc-400 mb-2">{t('spaceFieldLink')}</label>
+          <input
+            type="text"
+            name="space_link"
+            placeholder={t('spaceFieldLinkPlaceholder')}
+            class="w-full px-4 py-3 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900"
+          />
+        </div>
+        <div>
+          <label class="block text-[10px] tracking-[0.18em] uppercase text-zinc-400 mb-2">{t('spaceFieldMessage')}</label>
+          <textarea
+            name="message"
+            rows="4"
+            placeholder={t('spaceFieldMessagePlaceholder')}
+            class="w-full px-4 py-3 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 resize-y"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="inline-flex w-full items-center justify-center px-8 py-4 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200"
+        >
+          {t('spacePrimaryCta')}
+        </button>
+      </form>
+
+      <a
+        href={contactHref}
+        class="inline-flex w-full items-center justify-center px-8 py-4 border border-zinc-900 text-zinc-900 text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-900 hover:text-white transition-colors duration-200 mt-4"
+      >
+        {t('spaceSecondaryCta')}
+      </a>
+
+      <p class="text-zinc-400 text-xs leading-relaxed mt-6">
+        {t('spaceFormNote')}
+      </p>
+      <p class="text-zinc-400 text-xs leading-relaxed mt-3">
+        {t('spaceFootnote')} <span class="text-zinc-500">{EMAIL}</span>
+      </p>
+    </div>
+  </div>
+</section>
