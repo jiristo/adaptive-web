@@ -3,7 +3,9 @@ export const defaultLang = 'cs' as const;
 export const ui = {
   cs: {
     // Coming soon
-    tagline: 'BRZY OTEVÍRÁME NOVÉ STUDIO DLOUHOVĚKOSTI A REGENERACE V CENTRU ZLÍNA',
+    tagline: 'Adaptive Studio právě hledá prostor pro svůj první domov ve Zlíně.',
+    landingSpaceCta: 'Máte tip?',
+    landingSpaceHref: '/preview/#space-search',
     headline1: 'Klidnější systém.',
     headline2: 'Plnější výkon.',
     description:
@@ -181,9 +183,11 @@ export const ui = {
 
   en: {
     // Coming soon
-    tagline: 'COMING SOON — NEW LONGEVITY AND RECOVERY STUDIO IN ZLIN',
+    tagline: 'Adaptive Studio is looking for a space for its first home in Zlin.',
+    landingSpaceCta: 'Have a lead?',
+    landingSpaceHref: '/en/preview/#space-search',
     headline1: 'Calmer system.',
-    headline2: 'Fuller performance.',
+    headline2: 'Stronger performance.',
     description:
       'Not just live longer. Function well for longer.',
     days: 'DAYS',
@@ -196,7 +200,7 @@ export const ui = {
     emailSuccess: "You're on the list. We'll be in touch.",
     title: 'Adaptive Studio — Coming Soon',
     metaDescription:
-      'Adaptive Studio — A studio focused on working with the autonomic nervous system for calmer, fuller performance.',
+      'Adaptive Studio — A studio focused on working with the autonomic nervous system for calmer, stronger performance.',
     langSwitchLabel: 'CS',
     langSwitchHref: '/',
     previewLink: 'Visit studio website',
