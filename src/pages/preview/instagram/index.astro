@@ -1,0 +1,449 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import StudioModal from '../../../components/StudioModal.astro';
+
+const slides = [
+  {
+    number: '01',
+    eyebrow: 'ADAPTIVE STUDIO',
+    title: 'Dlouhověkost\nje dovednost.',
+    body: 'Nejen žít déle.\nFungovat déle dobře.',
+    image: '/images/athlete-relax-mindfulness.webp',
+    imageAlt: 'Adaptive Studio — vědomý pohyb a regenerace',
+    theme: 'image-hero',
+  },
+  {
+    number: '02',
+    eyebrow: 'PROBLÉM',
+    title: 'Výkon bez regenerace\nnevydrží.',
+    body: 'Tělo zvládne stres.\nProblém je, když se neumí vrátit zpět do klidu.',
+    theme: 'text-light',
+  },
+  {
+    number: '03',
+    eyebrow: 'REALITA',
+    title: 'Nikdo nás neučil\nzotavovat se.',
+    body: 'Umíme zabrat.\nAle často neumíme vědomě vypnout napětí, dech a přetížený nervový systém.',
+    image: '/images/relaxed-work.webp',
+    imageAlt: 'Napětí a únava v běžném dni',
+    theme: 'split',
+  },
+  {
+    number: '04',
+    eyebrow: 'ZMĚNA',
+    title: 'Právě tady\nzačíná změna.',
+    body: 'Dech.\nPohyb.\nRegenerace.\nNervový systém.',
+    image: '/images/man-breath-class.webp',
+    imageAlt: 'Dechová práce',
+    theme: 'image-bottom',
+  },
+  {
+    number: '05',
+    eyebrow: 'PŘÍSTUP',
+    title: 'Nejde jen\no úlevu.',
+    body: 'Jde o dovednost,\nkterou si odnášíš i mimo studio.',
+    theme: 'text-accent',
+  },
+  {
+    number: '06',
+    eyebrow: 'ODOLNOST',
+    title: 'Skutečná odolnost\nnení vydržet víc.',
+    body: 'Je to schopnost\nvracet se zpět do rovnováhy.',
+    image: '/images/man-meditate-home.webp',
+    imageAlt: 'Meditace a návrat do klidu',
+    theme: 'quote',
+  },
+  {
+    number: '07',
+    eyebrow: 'CTA',
+    title: 'Učíme tělo\nzvládat stres.\nVrátit se. Obnovit se.',
+    body: 'adaptivestudio.cz',
+    image: '/images/sadhu-board.webp',
+    imageAlt: 'Práce s tělem a vědomým nepohodlím',
+    theme: 'closing',
+  },
+] as const;
+
+const caption = `Dlouhověkost nezačíná biohackem.
+Začíná schopností těla zvládat zátěž a vracet se zpět do klidu.
+
+Právě to v Adaptive Studio trénujeme:
+dech, pohyb, regeneraci a práci s nervovým systémem.
+
+Nejen žít déle.
+Fungovat déle dobře.`;
+
+const hashtags = ['#dlouhovekost', '#regenerace', '#dech', '#nervovysystem', '#stres', '#wellbeing', '#adaptivestudio'];
+---
+
+<Layout
+  title="Instagram Carousel — Adaptive Studio"
+  description="Preview Instagram carousel slides based on the Adaptive Studio website."
+  lang="cs"
+>
+  <StudioModal lang="cs" />
+  <Nav lang="cs" />
+
+  <main class="px-6 sm:px-10 lg:px-20 pt-32 pb-24 bg-zinc-50">
+    <section class="mb-14">
+      <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">INSTAGRAM PREVIEW</p>
+      <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900 mb-5">
+        Carousel 01
+      </h1>
+      <p class="text-zinc-500 text-sm leading-relaxed max-w-2xl">
+        První carousel postavený přímo z obsahu webu. Poměr slidů je 4:5, takže sedí na Instagram feed. Vizuální jazyk vychází z webu: Space Grotesk, Inter, sage akcent a klidné světlé plochy.
+      </p>
+    </section>
+
+    <section class="grid gap-10 xl:grid-cols-2">
+      {slides.map((slide) => (
+        <article class="reveal">
+          <div class="ig-slide" data-theme={slide.theme}>
+            {slide.image && (
+              <div class="ig-image-wrap">
+                <img src={slide.image} alt={slide.imageAlt} class="ig-image" />
+                <div class="ig-image-overlay"></div>
+              </div>
+            )}
+
+            <div class="ig-content">
+              <div class="ig-topline">
+                <p class="ig-number">{slide.number}</p>
+                <p class="ig-eyebrow">{slide.eyebrow}</p>
+              </div>
+
+              <div class="ig-copy">
+                <h2 class="ig-title">{slide.title}</h2>
+                {slide.body && <p class="ig-body">{slide.body}</p>}
+                {slide.bullets && (
+                  <div class="ig-bullets">
+                    {slide.bullets.map((bullet) => (
+                      <span class="ig-bullet">{bullet}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div class="ig-mark">
+                <span class="ig-line"></span>
+                <span class="ig-brand">Adaptive Studio</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </section>
+
+    <section class="mt-16 grid gap-6 lg:grid-cols-[1fr_auto] items-start reveal">
+      <div class="border border-zinc-200 bg-white p-8">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-5">CAPTION</p>
+        <p class="text-zinc-700 text-base leading-relaxed whitespace-pre-line max-w-3xl">
+          {caption}
+        </p>
+      </div>
+      <div class="border border-zinc-200 bg-white p-8 lg:min-w-[18rem]">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-5">HASHTAGS</p>
+        <div class="flex flex-wrap gap-2">
+          {hashtags.map((tag) => (
+            <span class="ig-hashtag">{tag}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang="cs" />
+</Layout>
+
+<style>
+  .ig-slide {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border: 1px solid #e4e4e7;
+    background: #ffffff;
+    box-shadow: 0 24px 60px rgba(24, 24, 27, 0.08);
+  }
+
+  .ig-slide[data-theme='text-light'],
+  .ig-slide[data-theme='text-accent'] {
+    background: #f7f8f7;
+  }
+
+  .ig-slide[data-theme='quote'],
+  .ig-slide[data-theme='closing'] {
+    background: #111110;
+  }
+
+  .ig-image-wrap {
+    position: absolute;
+    inset: 0;
+  }
+
+  .ig-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .ig-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(17,17,16,0.08) 0%, rgba(17,17,16,0.62) 100%);
+  }
+
+  .ig-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 3rem;
+  }
+
+  .ig-topline {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .ig-number {
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: clamp(3.5rem, 7vw, 5.5rem);
+    line-height: 0.9;
+    font-weight: 700;
+    color: #e4e4e7;
+  }
+
+  .ig-eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: #6b8f71;
+    font-weight: 600;
+    text-align: right;
+  }
+
+  .ig-copy {
+    max-width: 29rem;
+    padding-left: 2.7rem;
+  }
+
+  .ig-title {
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: clamp(2.9rem, 6vw, 4.8rem);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+    color: #18181b;
+    white-space: pre-line;
+    margin: 0 0 1.25rem;
+  }
+
+  .ig-body {
+    font-size: 1.18rem;
+    line-height: 1.55;
+    color: #71717a;
+    white-space: pre-line;
+    max-width: 26rem;
+    margin: 0;
+  }
+
+  .ig-bullets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    max-width: 26rem;
+  }
+
+  .ig-bullet {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.1rem;
+    border: 1px solid #d4d4d8;
+    background: rgba(255,255,255,0.84);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: #18181b;
+  }
+
+  .ig-hashtag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid #d4d4d8;
+    background: #f7f8f7;
+    font-size: 0.86rem;
+    color: #52525b;
+    font-weight: 500;
+  }
+
+  .ig-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .ig-line {
+    width: 2.5rem;
+    height: 1px;
+    background: #6b8f71;
+  }
+
+  .ig-brand {
+    font-size: 0.82rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #71717a;
+    font-weight: 600;
+  }
+
+  .ig-slide[data-theme='image-hero'] .ig-title,
+  .ig-slide[data-theme='quote'] .ig-title,
+  .ig-slide[data-theme='closing'] .ig-title,
+  .ig-slide[data-theme='split'] .ig-title {
+    color: #ffffff;
+  }
+
+  .ig-slide[data-theme='image-hero'] .ig-body,
+  .ig-slide[data-theme='quote'] .ig-body,
+  .ig-slide[data-theme='closing'] .ig-body,
+  .ig-slide[data-theme='split'] .ig-body {
+    color: rgba(255,255,255,0.82);
+  }
+
+  .ig-slide[data-theme='quote'] .ig-number,
+  .ig-slide[data-theme='closing'] .ig-number {
+    color: rgba(255,255,255,0.14);
+  }
+
+  .ig-slide[data-theme='quote'] .ig-brand,
+  .ig-slide[data-theme='closing'] .ig-brand {
+    color: rgba(255,255,255,0.68);
+  }
+
+  .ig-slide[data-theme='text-accent'] .ig-content {
+    background:
+      radial-gradient(circle at top right, rgba(107,143,113,0.12), transparent 28%);
+  }
+
+  .ig-slide[data-theme='text-light'] .ig-content {
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0.95));
+  }
+
+  .ig-slide[data-theme='split'] .ig-image-wrap {
+    inset: auto 0 0 0;
+    height: 42%;
+  }
+
+  .ig-slide[data-theme='split'] .ig-image-overlay {
+    background: linear-gradient(180deg, rgba(17,17,16,0) 0%, rgba(17,17,16,0.76) 100%);
+  }
+
+  .ig-slide[data-theme='split'] .ig-content {
+    justify-content: flex-start;
+    background: linear-gradient(180deg, #f7f8f7 0%, #f7f8f7 58%, transparent 58%);
+  }
+
+  .ig-slide[data-theme='split'] .ig-copy {
+    margin-top: 2.5rem;
+  }
+
+  .ig-slide[data-theme='split'] .ig-mark {
+    margin-top: auto;
+  }
+
+  .ig-slide[data-theme='split'] .ig-number {
+    color: #d4d4d8;
+  }
+
+  .ig-slide[data-theme='split'] .ig-title {
+    color: #18181b;
+    max-width: 22rem;
+  }
+
+  .ig-slide[data-theme='split'] .ig-body {
+    color: #71717a;
+    max-width: 22rem;
+  }
+
+  .ig-slide[data-theme='image-bottom'] .ig-image-wrap {
+    inset: auto 0 0 0;
+    height: 44%;
+  }
+
+  .ig-slide[data-theme='image-bottom'] .ig-image-overlay {
+    background: linear-gradient(180deg, rgba(17,17,16,0) 0%, rgba(17,17,16,0.18) 100%);
+  }
+
+  .ig-slide[data-theme='image-bottom'] .ig-content {
+    justify-content: flex-start;
+    background: linear-gradient(180deg, #ffffff 0%, #ffffff 60%, transparent 60%);
+  }
+
+  .ig-slide[data-theme='image-bottom'] .ig-copy {
+    margin-top: 0.75rem;
+  }
+
+  .ig-slide[data-theme='image-bottom'] .ig-mark {
+    margin-top: auto;
+  }
+
+  .ig-slide[data-theme='image-bottom'] .ig-bullets {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .ig-content {
+      padding: 2rem;
+    }
+
+    .ig-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.26em;
+    }
+
+    .ig-title {
+      font-size: clamp(2.6rem, 11vw, 3.6rem);
+    }
+
+    .ig-body {
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    .ig-bullet {
+      font-size: 0.98rem;
+    }
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    },
+    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
+</script>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <defs>
+    <linearGradient id="heroOverlay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(17,17,16,0.08)" />
+      <stop offset="100%" stop-color="rgba(17,17,16,0.62)" />
+    </linearGradient>
+    <linearGradient id="darkOverlay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(17,17,16,0.08)" />
+      <stop offset="100%" stop-color="rgba(17,17,16,0.62)" />
+    </linearGradient>
+    <linearGradient id="splitOverlay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(17,17,16,0)" />
+      <stop offset="100%" stop-color="rgba(17,17,16,0.76)" />
+    </linearGradient>
+    <linearGradient id="bottomOverlay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(17,17,16,0)" />
+      <stop offset="100%" stop-color="rgba(17,17,16,0.18)" />
+    </linearGradient>
+    <style>
+  .bg-light { fill: #f7f8f7; }
+  .bg-white { fill: #ffffff; }
+  .bg-dark { fill: #111110; }
+  .num-light { fill: #e4e4e7; }
+  .num-dark { fill: rgba(255,255,255,0.14); }
+  .eyebrow { font-family: 'Inter', system-ui, sans-serif; font-size: 18px; font-weight: 600; letter-spacing: 0.35em; fill: #6b8f71; text-transform: uppercase; }
+  .brand { font-family: 'Inter', system-ui, sans-serif; font-size: 18px; font-weight: 600; letter-spacing: 0.28em; fill: #71717a; text-transform: uppercase; }
+  .brand-dark { fill: rgba(255,255,255,0.68); }
+  .num { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 92px; font-weight: 700; }
+  .title-light { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 82px; font-weight: 700; letter-spacing: -0.05em; fill: #18181b; }
+  .title-dark { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 82px; font-weight: 700; letter-spacing: -0.05em; fill: #ffffff; }
+  .body-light { font-family: 'Inter', system-ui, sans-serif; font-size: 34px; fill: #71717a; }
+  .body-dark { font-family: 'Inter', system-ui, sans-serif; font-size: 34px; fill: rgba(255,255,255,0.82); }
+  .bullet { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 32px; font-weight: 600; fill: #18181b; }
+</style>
+  </defs>
+  <rect width="1080" height="1350" class="bg-light" />
+  
+  
+    <text x="86" y="122" class="num num-light"><tspan x="86" dy="0">02</tspan></text>
+    <text x="994" y="108" text-anchor="end" class="eyebrow">PROBLÉM</text>
+  
+  <text x="170" y="492" class="title-light"><tspan x="170" dy="0">Výkon bez regenerace</tspan><tspan x="170" dy="86">nevydrží.</tspan></text>
+  <text x="170" y="760" class="body-light"><tspan x="170" dy="0">Tělo zvládne stres.</tspan><tspan x="170" dy="54">Problém je, když se neumí</tspan><tspan x="170" dy="54">vrátit zpět do klidu.</tspan></text>
+  
+    <line x1="86" y1="1248" x2="136" y2="1248" stroke="#6b8f71" stroke-width="2" />
+    <text x="160" y="1255" class="brand">Adaptive Studio</text>
+  
+</svg>
