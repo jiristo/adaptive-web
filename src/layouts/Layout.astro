@@ -5,18 +5,26 @@ interface Props {
   title: string;
   description?: string;
   lang?: string;
+  canonicalPath?: string;
+  noindex?: boolean;
 }
 
 const {
   title,
   description = 'Adaptive Studio — Wellbeing studio zaměřené na regulaci autonomního nervového systému.',
   lang = 'cs',
+  canonicalPath,
+  noindex = false,
 } = Astro.props;
 
 const siteUrl = 'https://adaptivestudio.cz';
-const pageUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const pagePath = canonicalPath ?? Astro.url.pathname;
+const pageUrl = new URL(pagePath, siteUrl).toString();
 const previewImage = new URL('/images/athlete-relax-mindfulness.webp', siteUrl).toString();
 const locale = lang === 'en' ? 'en_US' : 'cs_CZ';
+const csPath = pagePath.startsWith('/en/') ? pagePath.slice(3) || '/' : pagePath;
+const enPath = pagePath.startsWith('/en/') ? pagePath : `/en${pagePath === '/' ? '/' : pagePath}`;
+const robotsContent = noindex ? 'noindex,follow' : 'index,follow';
 ---
 
 <!doctype html>
@@ -27,6 +35,11 @@ const locale = lang === 'en' ? 'en_US' : 'cs_CZ';
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <meta name="robots" content={robotsContent} />
+    <link rel="canonical" href={pageUrl} />
+    <link rel="alternate" hreflang="cs" href={new URL(csPath, siteUrl).toString()} />
+    <link rel="alternate" hreflang="en" href={new URL(enPath, siteUrl).toString()} />
+    <link rel="alternate" hreflang="x-default" href={new URL(csPath, siteUrl).toString()} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Adaptive Studio Zlín" />
     <meta property="og:locale" content={locale} />

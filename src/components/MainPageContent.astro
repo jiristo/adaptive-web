@@ -1,0 +1,58 @@
+---
+import Nav from './Nav.astro';
+import Footer from './Footer.astro';
+import Hero from './sections/Hero.astro';
+import Problem from './sections/Problem.astro';
+import HowItWorks from './sections/HowItWorks.astro';
+import WhatYouExperience from './sections/WhatYouExperience.astro';
+import Services from './sections/Services.astro';
+import About from './sections/About.astro';
+import SpaceSearch from './sections/SpaceSearch.astro';
+import BookingCTA from './sections/BookingCTA.astro';
+import StudioModal from './StudioModal.astro';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  homePath: string;
+  otherLangHomePath: string;
+}
+
+const { lang, homePath, otherLangHomePath } = Astro.props;
+---
+
+<StudioModal lang={lang} />
+<Nav lang={lang} homePath={homePath} otherLangHomePath={otherLangHomePath} />
+<main>
+  <Hero lang={lang} />
+  <Problem lang={lang} />
+  <HowItWorks lang={lang} />
+  <WhatYouExperience lang={lang} bookingHref={`${homePath}#booking`} />
+  <Services lang={lang} />
+  <About lang={lang} />
+  <SpaceSearch lang={lang} />
+  <BookingCTA lang={lang} />
+</main>
+<Footer lang={lang} />
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    },
+    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
+</script>

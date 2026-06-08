@@ -1,11 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ComingSoon from '../components/ComingSoon.astro';
+import MainPageContent from '../components/MainPageContent.astro';
 import { useTranslations } from '../i18n/ui';
 
 const t = useTranslations('cs');
 ---
 
-<Layout title={t('title')} description={t('metaDescription')} lang="cs">
-  <ComingSoon lang="cs" />
+<Layout title={t('mainTitle')} description={t('mainDescription')} lang="cs">
+  <MainPageContent lang="cs" homePath="/" otherLangHomePath="/en/" />
 </Layout>
