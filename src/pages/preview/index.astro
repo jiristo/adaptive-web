@@ -1,57 +1,17 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Nav from '../../components/Nav.astro';
-import Footer from '../../components/Footer.astro';
-import Hero from '../../components/sections/Hero.astro';
-import Problem from '../../components/sections/Problem.astro';
-import HowItWorks from '../../components/sections/HowItWorks.astro';
-import WhatYouExperience from '../../components/sections/WhatYouExperience.astro';
-import Services from '../../components/sections/Services.astro';
-import About from '../../components/sections/About.astro';
-import SpaceSearch from '../../components/sections/SpaceSearch.astro';
-import BookingCTA from '../../components/sections/BookingCTA.astro';
-import StudioModal from '../../components/StudioModal.astro';
+import MainPageContent from '../../components/MainPageContent.astro';
 import { useTranslations } from '../../i18n/ui';
 
 const t = useTranslations('cs');
 ---
 
-<Layout title={t('mainTitle')} description={t('mainDescription')} lang="cs">
-  <StudioModal lang="cs" />
-  <Nav lang="cs" />
-  <main>
-    <Hero lang="cs" />
-    <Problem lang="cs" />
-    <HowItWorks lang="cs" />
-    <WhatYouExperience lang="cs" />
-    <Services lang="cs" />
-    <About lang="cs" />
-    <SpaceSearch lang="cs" />
-    <BookingCTA lang="cs" />
-  </main>
-  <Footer lang="cs" />
+<Layout
+  title={t('mainTitle')}
+  description={t('mainDescription')}
+  lang="cs"
+  canonicalPath="/"
+  noindex={true}
+>
+  <MainPageContent lang="cs" homePath="/preview/" otherLangHomePath="/en/preview/" />
 </Layout>
-
-<script>
-  // Scroll-triggered reveal animations
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    },
-    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
-  );
-
-  document.querySelectorAll('.reveal').forEach((el) => {
-    // Elements already in view on load should be visible immediately
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight) {
-      el.classList.add('visible');
-    } else {
-      observer.observe(el);
-    }
-  });
-</script>

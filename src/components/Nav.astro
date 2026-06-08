@@ -3,14 +3,16 @@ import { useTranslations, type Lang } from '../i18n/ui';
 
 interface Props {
   lang: Lang;
+  homePath?: string;
+  otherLangHomePath?: string;
 }
 
-const { lang } = Astro.props;
+const { lang, homePath, otherLangHomePath } = Astro.props;
 const t = useTranslations(lang);
 const currentFlag = lang === 'cs' ? '🇨🇿' : '🇺🇸';
 const otherFlag = lang === 'cs' ? '🇺🇸' : '🇨🇿';
-const otherLangHref = lang === 'cs' ? '/en/preview/' : '/preview/';
-const basePath = lang === 'cs' ? '/preview/' : '/en/preview/';
+const otherLangHref = otherLangHomePath ?? (lang === 'cs' ? '/en/preview/' : '/preview/');
+const basePath = homePath ?? (lang === 'cs' ? '/preview/' : '/en/preview/');
 // TODO: Replace with actual provider URLs
 const CALENDLY_URL = 'https://calendly.com/jiri-adaptivestudio/30min';
 const RESERVANTO_URL = lang === 'cs' ? '/preview/rezervace/' : '/en/preview/rezervace/';
@@ -39,7 +41,7 @@ const spaceSearchHref = `${basePath}#space-search`;
 
     <!-- Logo -->
     <a
-      href={lang === 'cs' ? '/preview/' : '/en/preview/'}
+      href={basePath}
       class="font-heading font-semibold text-sm tracking-[0.2em] uppercase text-zinc-900 hover:text-zinc-600 transition-colors"
     >
       Adaptive Studio
@@ -78,10 +80,16 @@ const spaceSearchHref = `${basePath}#space-search`;
             >
               {t('navAppCortisol')}
             </a>
+            <a
+              href={t('appSummerHref')}
+              class="block px-4 py-3 text-sm text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900 transition-colors border-t border-zinc-100"
+            >
+              {t('navAppSummer')}
+            </a>
           </div>
         </div>
       </div>
-      <a href={`${basePath}o-nas/`} class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
+      <a href={t('navAboutHref')} class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
         {t('navAbout')}
       </a>
     </div>
@@ -145,9 +153,10 @@ const spaceSearchHref = `${basePath}#space-search`;
       </button>
       <div id="mobile-apps-menu" class="hidden pl-4 border-l border-zinc-200">
         <a href={t('appCortisolHref')} class="text-sm text-zinc-700 mobile-nav-link block py-1.5">{t('navAppCortisol')}</a>
+        <a href={t('appSummerHref')} class="text-sm text-zinc-700 mobile-nav-link block py-1.5">{t('navAppSummer')}</a>
       </div>
     </div>
-    <a href={`${basePath}o-nas/`} class="text-sm text-zinc-700 mobile-nav-link">{t('navAbout')}</a>
+    <a href={t('navAboutHref')} class="text-sm text-zinc-700 mobile-nav-link">{t('navAbout')}</a>
     <a
       href={CALENDLY_URL}
       class="mt-2 inline-flex px-5 py-3 text-xs font-semibold tracking-[0.12em] uppercase bg-zinc-900 text-white text-center justify-center mobile-nav-link"

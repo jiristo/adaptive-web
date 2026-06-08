@@ -3,9 +3,10 @@ import type { Lang } from '../../i18n/ui';
 
 interface Props {
   lang: Lang;
+  bookingHref?: string;
 }
 
-const { lang } = Astro.props;
+const { lang, bookingHref } = Astro.props;
 
 const cs = {
   heading: 'Co konkrétně u nás zažijete.',
@@ -80,6 +81,7 @@ const en = {
 };
 
 const content = lang === 'cs' ? cs : en;
+const ctaHref = bookingHref ?? content.ctaHref;
 const paddings = ['lg:pr-8', 'lg:px-8', 'lg:px-8', 'lg:pl-8'];
 const delays = ['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3', 'reveal-delay-4'];
 ---
@@ -119,7 +121,7 @@ const delays = ['reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3', 'reveal-de
         </div>
 
         <a
-          href={content.ctaHref}
+          href={ctaHref}
           class="inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-zinc-500 hover:text-white transition-colors duration-200"
         >
           {content.ctaLabel} <span aria-hidden="true">→</span>
