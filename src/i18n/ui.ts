@@ -27,9 +27,9 @@ export const ui = {
     previewHref: '/preview/',
 
     // Main page meta
-    mainTitle: 'Adaptive Studio — Studio dlouhověkosti · Zlín',
+    mainTitle: 'Adaptive Studio | Regenerace, dech a práce s nervovým systémem ve Zlíně',
     mainDescription:
-      'Adaptive Studio kombinuje fyzický trénink, dechové techniky a ověřené postupy pro dlouhověkost. Naučíme tě lépe pracovat s nervovým systémem — pro silnější tělo, klidnější mysl a vyšší odolnost.',
+      'Adaptive Studio ve Zlíně nabízí regeneraci, dechové techniky a práci s nervovým systémem pro lepší zvládání stresu, vyšší odolnost a klidnější výkon.',
 
     // Nav
     navHome: 'Domů',
@@ -210,9 +210,9 @@ export const ui = {
     previewHref: '/en/preview/',
 
     // Main page meta
-    mainTitle: 'Adaptive Studio — Longevity Studio · Zlin',
+    mainTitle: 'Adaptive Studio | Recovery, breathwork and nervous system training in Zlin',
     mainDescription:
-      'Adaptive Studio combines physical training, breathwork and proven longevity practices. We teach you to work with your nervous system more effectively — for a stronger body, a calmer mind and greater resilience.',
+      'Adaptive Studio in Zlin offers recovery, breathwork and nervous system training to help you manage stress better, build resilience and perform with more calm.',
 
     // Nav
     navHome: 'Home',
