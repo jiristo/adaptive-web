@@ -1,0 +1,755 @@
+---
+import { type Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const copy = lang === 'cs'
+  ? {
+      heroTag: 'NÁSTROJ · LÉTO',
+      heroTitle: 'Jak moc vás\nléto přetěžuje?',
+      heroLead: 'A jestli tělo ještě zvládá regenerovat.',
+      heroBody: 'Horko, horší spánek, alkohol, dehydratace a pohyb ve špatný čas. Tento nástroj ukáže, kdy se letní zátěž mění v přetížení nervového systému.',
+      heroPrimary: 'Zjistit dnešní zátěž',
+      heroSecondary: 'Proč na tom záleží',
+      introTag: 'CO SE V LÉTĚ DĚJE',
+      introTitle: 'Tělo nemusí být přetížené jen stresem.',
+      introCards: [
+        { stat: '32 °C', tag: 'TEPLO', title: 'Horko samo o sobě něco stojí', body: 'Když tělo celý den chladí samo sebe, roste spotřeba energie, zhoršuje se soustředění a večer bývá těžší opravdu vypnout.' },
+        { stat: '1 noc', tag: 'SPÁNEK', title: 'Špatná noc se v létě rychle násobí', body: 'Přehřátý pokoj, pozdní světlo a alkohol zvyšují pravděpodobnost, že se ráno probudíte unavení a méně odolní vůči další zátěži.' },
+        { stat: '18:00', tag: 'TIMING', title: 'Rozhoduje i to, kdy zatěžujete', body: 'Stejný trénink nebo dlouhý pobyt na slunci má jiný dopad dopoledne než večer. Letní únava je často problém načasování.' },
+      ],
+      toolTag: 'INTERAKTIVNÍ NÁSTROJ',
+      toolTitle: 'Sestavte svůj letní den.',
+      toolBody: 'Nastavte základní stav a přidejte to, co se dnes stalo. Křivka ukáže, jestli tělo ještě zvládá držet výkon, nebo už potřebuje stáhnout zátěž a vrátit se do klidu.',
+      baselineTitle: 'Výchozí stav',
+      controls: {
+        sleep: 'Spánek minulá noc',
+        hydration: 'Hydratace během dne',
+        heat: 'Teplota / pocit horka',
+        alcohol: 'Alkohol včera večer',
+        training: 'Pohyb a zátěž dnes',
+      },
+      options: {
+        sleep: ['Dobrá — 7–9 h', 'Průměrná — 6–7 h', 'Slabá — pod 6 h', 'Přerušovaná a neklidná'],
+        hydration: ['Dobrá — průběžně piju', 'Spíš průměrná', 'Nízká — piju málo', 'Velmi nízká — sucho, bolest hlavy'],
+        heat: ['Mírné léto / stín', 'Teplý den', 'Horký den', 'Extrémní horko / dusno'],
+        alcohol: ['Žádný', '1–2 drinky', 'Více drinků', 'Těžký večer'],
+        training: ['Klidný den', 'Lehký pohyb', 'Trénink / dlouhá chůze', 'Náročný výkon v horku'],
+      },
+      eventsTitle: 'Události dne',
+      eventHelp: 'Vyberte událost, zadejte hodinu, stiskněte +',
+      noEvents: 'Zatím žádné události. Přidejte co se dnes stalo.',
+      eventGroups: {
+        stress: '☀ Letní zátěž',
+        relief: '❄ Ochlazení',
+        other: '○ Ostatní',
+      },
+      metrics: {
+        now: 'Aktuální zatížení',
+        peak: 'Denní maximum',
+        evening: 'Večer 20:00',
+        phase: 'Fáze dne',
+      },
+      gaugeTitle: 'Míra letního přetížení — aktuální hodina',
+      zones: { low: 'Lehké', optimal: 'V normě', high: 'Přetížené', critical: 'Na hraně' },
+      chartAria: 'Denní křivka letního přetížení',
+      time: 'čas:',
+      eveningTitle: 'Regenerace večer (20:00)',
+      eveningIdeal: 'Ideál pro zklidnění systému: 20–35 bodů',
+      eveningValueLabel: 'Vaše odhadovaná zátěž',
+      eveningIdealLabel: 'Večerní cíl',
+      disclaimer: '⚠ Edukativní model, nikoliv lékařský test. Ukazuje pravděpodobnou míru přetížení nervového systému v létě, ne klinickou diagnózu.',
+      servicesTag: 'JAK S TÍM PRACOVAT',
+      servicesTitle: 'V létě často neřešíte jen únavu.',
+      servicesBody: 'Často řešíte přehřátý systém, který už neumí přepnout. Ve studiu pracujeme s dechem, chladem, světlem, pohybem a timingem zátěže tak, aby se tělo vrátilo do klidu i výkonu.',
+      serviceCards: [
+        { tag: 'Ochladit', title: 'Kryo a chlad', body: 'Když se tělo přehřívá a večer se neumí stáhnout, chlad vrací ostřejší hranici mezi aktivací a regenerací.' },
+        { tag: 'Zklidnit', title: 'Dech a nervový systém', body: 'Nejde jen o fyzické ochlazení. Potřebujete i signál bezpečí, aby tělo přestalo držet napětí a mohlo vypnout.' },
+        { tag: 'Načasovat', title: 'Pohyb a regenerace', body: 'Stejná aktivita může v létě pomoci nebo uškodit. Rozhoduje čas, intenzita i to, co předcházelo.' },
+      ],
+      ctaTag: 'PRVNÍ KROK',
+      ctaTitle: 'Chcete vědět, co vaše tělo v létě opravdu vyčerpává?',
+      ctaBody: 'Prvním krokem je krátký rozhovor. Podíváme se, jestli řešíte horko, spánek, přetížený nervový systém, nebo špatně načasovanou zátěž.',
+      ctaNote: 'Bez závazku.',
+      ctaButton: 'Zarezervovat konzultaci',
+      currentMessages: {
+        low: 'Zatížení je nízké. Tělo má prostor držet výkon i regeneraci.',
+        optimal: 'Zatížení je v rozumném pásmu. Hlídal bych hlavně hydrataci, světlo a večerní zklidnění.',
+        high: 'Tělo je přetížené. Pokud teď nepřijde ochlazení a zklidnění, večer i spánek budou slabší.',
+        critical: 'Systém je na hraně. Tady už nejde jen o únavu, ale o zhoršenou schopnost obnovy a vyšší šanci večerního pádu.',
+      },
+      phaseTips: [
+        'Noční minimum. Pokud je zátěž i teď vysoko, tělo se přes noc neobnovuje naplno.',
+        'Ráno by systém měl nabírat energii bez přehřátí. Sledujte, jestli vstáváte svěží, nebo už unavení.',
+        'Dopolední výkonnostní okno. Pokud je skóre vysoko už teď, horko a spánek se kumulují rychleji než čekáte.',
+        'Nejvyšší teplotní tlak dne. Tady se často láme rozdíl mezi normální únavou a skutečným přetížením.',
+        'Večer by zátěž měla klesat. Pokud neklesá, bývá problém v hydrataci, alkoholu, pozdním pohybu nebo přehřátém prostředí.',
+      ],
+      interventions: {
+        highTitle: 'Přetížení je vysoké — stáhnout zátěž',
+        highSub: 'Teď dává smysl ochlazení, hydratace a snížení aktivity.',
+        criticalTitle: 'Systém je na hraně — priorita je obnova',
+        criticalSub: 'Dál už nepřidávat výkon. Tělo potřebuje bezpečí, chlad a návrat do klidu.',
+      },
+      interventionTags: {
+        cool: 'Chlad / stín',
+        water: 'Hydratace + minerály',
+        breath: 'Dechová práce',
+        rest: 'Lehnout / nohy nahoru',
+        redlight: 'Večerní zklidnění',
+        consult: 'Konzultace — Adaptive Studio',
+      },
+      form: {
+        emailPlaceholder: 'váš@email.cz',
+        success: '✓ Výborně — ozveme se vám do 24 hodin.',
+        note: 'Bez spamu. Pouze jeden kontakt od nás.',
+      },
+    }
+  : {
+      heroTag: 'TOOL · SUMMER',
+      heroTitle: 'How much is\nsummer overloading you?',
+      heroLead: 'And whether your body can still recover well.',
+      heroBody: 'Heat, poor sleep, alcohol, dehydration, and training at the wrong time. This tool shows when summer strain starts becoming nervous-system overload.',
+      heroPrimary: 'Check today’s load',
+      heroSecondary: 'Why it matters',
+      introTag: 'WHAT HAPPENS IN SUMMER',
+      introTitle: 'The body is not overloaded by stress alone.',
+      introCards: [
+        { stat: '32 °C', tag: 'HEAT', title: 'Heat itself has a cost', body: 'When the body spends the whole day cooling itself, energy drops, focus worsens, and it becomes harder to truly switch off in the evening.' },
+        { stat: '1 night', tag: 'SLEEP', title: 'One poor summer night compounds fast', body: 'An overheated room, late light exposure, and alcohol increase the odds that you wake up tired and less resilient to the rest of the day.' },
+        { stat: '18:00', tag: 'TIMING', title: 'Timing matters too', body: 'The same training session or long sun exposure hits differently in the morning than in the evening. Summer fatigue is often a timing problem.' },
+      ],
+      toolTag: 'INTERACTIVE TOOL',
+      toolTitle: 'Build your summer day.',
+      toolBody: 'Set your baseline and add what happened today. The curve shows whether the body can still hold performance or whether it needs to cool down and return to calm.',
+      baselineTitle: 'Baseline state',
+      controls: {
+        sleep: 'Sleep last night',
+        hydration: 'Hydration during the day',
+        heat: 'Temperature / heat intensity',
+        alcohol: 'Alcohol last night',
+        training: 'Movement and load today',
+      },
+      options: {
+        sleep: ['Good, 7–9 h', 'Average, 6–7 h', 'Weak, under 6 h', 'Broken and restless'],
+        hydration: ['Good, drinking steadily', 'Somewhat average', 'Low, not drinking enough', 'Very low, dry mouth or headache'],
+        heat: ['Mild summer / shade', 'Warm day', 'Hot day', 'Extreme heat / humidity'],
+        alcohol: ['None', '1–2 drinks', 'Several drinks', 'Heavy night'],
+        training: ['Calm day', 'Light movement', 'Training / long walk', 'Hard effort in the heat'],
+      },
+      eventsTitle: 'Events during the day',
+      eventHelp: 'Choose an event, enter the hour, then press +',
+      noEvents: 'No events yet. Add what happened today.',
+      eventGroups: {
+        stress: '☀ Summer strain',
+        relief: '❄ Cooling',
+        other: '○ Other',
+      },
+      metrics: {
+        now: 'Current load',
+        peak: 'Daily peak',
+        evening: 'Evening 20:00',
+        phase: 'Phase of the day',
+      },
+      gaugeTitle: 'Summer overload level — current hour',
+      zones: { low: 'Light', optimal: 'In range', high: 'Overloaded', critical: 'At the edge' },
+      chartAria: 'Daily summer overload curve',
+      time: 'time:',
+      eveningTitle: 'Evening recovery (20:00)',
+      eveningIdeal: 'Ideal for downshifting: 20–35 points',
+      eveningValueLabel: 'Your estimated load',
+      eveningIdealLabel: 'Evening target',
+      disclaimer: '⚠ Educational model, not a medical test. It estimates likely summer strain on the nervous system, not a clinical diagnosis.',
+      servicesTag: 'HOW TO WORK WITH IT',
+      servicesTitle: 'In summer, people are rarely dealing with fatigue alone.',
+      servicesBody: 'They are often dealing with an overheated system that no longer knows how to switch off. In the studio we work with breath, cold, light, movement, and timing so the body can return to calm and performance.',
+      serviceCards: [
+        { tag: 'Cool down', title: 'Cryo and cold', body: 'When the body overheats and cannot settle in the evening, cold helps restore a clearer boundary between activation and recovery.' },
+        { tag: 'Downshift', title: 'Breath and nervous system', body: 'Physical cooling is not enough on its own. The body also needs a signal of safety so it can stop holding tension.' },
+        { tag: 'Time it better', title: 'Movement and recovery', body: 'The same activity can help or hurt in summer. Timing, intensity, and what came before all matter.' },
+      ],
+      ctaTag: 'FIRST STEP',
+      ctaTitle: 'Want to know what is actually draining your body in summer?',
+      ctaBody: 'The first step is a short conversation. We look at whether the issue is heat, sleep, nervous-system overload, or badly timed physical load.',
+      ctaNote: 'No commitment.',
+      ctaButton: 'Book a consultation',
+      currentMessages: {
+        low: 'Load is low. The body has room for both performance and recovery.',
+        optimal: 'Load is within a reasonable range. I would mainly watch hydration, light exposure, and how you downshift in the evening.',
+        high: 'The body is overloaded. Without cooling and downregulation now, both the evening and sleep will probably be weaker.',
+        critical: 'The system is at the edge. This is no longer just fatigue. Recovery capacity is already compromised.',
+      },
+      phaseTips: [
+        'Night minimum. If load is still high here, the body is not fully restoring overnight.',
+        'Morning should build energy without overheating. Watch whether you wake up fresh or already tired.',
+        'Late morning performance window. If the score is already high now, heat and poor sleep are accumulating faster than expected.',
+        'The highest thermal pressure of the day. This is often where the line between normal fatigue and actual overload gets crossed.',
+        'Load should drop in the evening. If it does not, hydration, alcohol, late training, or an overheated environment are often part of the problem.',
+      ],
+      interventions: {
+        highTitle: 'Load is high — reduce the strain',
+        highSub: 'Cooling, hydration, and lowering activity make sense now.',
+        criticalTitle: 'System at the edge — recovery comes first',
+        criticalSub: 'Do not keep pushing. The body needs safety, cold, and a return to calm.',
+      },
+      interventionTags: {
+        cool: 'Cold / shade',
+        water: 'Hydration + minerals',
+        breath: 'Breathwork',
+        rest: 'Lie down / elevate legs',
+        redlight: 'Evening downshift',
+        consult: 'Consultation — Adaptive Studio',
+      },
+      form: {
+        emailPlaceholder: 'your@email.com',
+        success: '✓ Great — we will get back to you within 24 hours.',
+        note: 'No spam. One contact from us only.',
+      },
+    };
+---
+
+<main>
+  <section class="min-h-screen flex flex-col justify-center px-6 sm:px-10 lg:px-20 py-24">
+    <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-10">{copy.heroTag}</p>
+    <h1 class="font-heading font-bold leading-[0.9] tracking-tight text-zinc-900 mb-10 reveal"
+        style="font-size: clamp(3rem, 9vw, 8rem)">
+      {copy.heroTitle}
+    </h1>
+    <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-xl reveal reveal-delay-1">
+      {copy.heroLead}
+    </p>
+    <p class="text-sm text-zinc-400 leading-relaxed max-w-lg mt-4 reveal reveal-delay-2">
+      {copy.heroBody}
+    </p>
+    <div class="mt-12 flex flex-wrap gap-4 reveal reveal-delay-3">
+      <a href="#tool" class="inline-flex items-center justify-center px-10 py-4 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200">
+        {copy.heroPrimary}
+      </a>
+      <a href="#what" class="inline-flex items-center justify-center px-10 py-4 border border-zinc-300 text-zinc-700 text-xs font-semibold tracking-[0.2em] uppercase hover:border-zinc-900 transition-colors duration-200">
+        {copy.heroSecondary}
+      </a>
+    </div>
+  </section>
+
+  <section id="what" class="border-t border-zinc-100 px-6 sm:px-10 lg:px-20 py-24">
+    <div class="mb-16 reveal">
+      <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">{copy.introTag}</p>
+      <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+        {copy.introTitle}
+      </h2>
+    </div>
+    <div class="grid md:grid-cols-3 md:divide-x divide-zinc-200 gap-16 md:gap-0">
+      {copy.introCards.map((card, index) => (
+        <div class={`flex flex-col ${index === 0 ? 'md:pr-12' : index === 1 ? 'md:px-12' : 'md:pl-12'} reveal ${index === 0 ? 'reveal-delay-1' : index === 1 ? 'reveal-delay-2' : 'reveal-delay-3'}`}>
+          <p class="font-heading font-bold text-zinc-100 leading-none mb-8 select-none"
+             style="font-size: clamp(5rem, 10vw, 9rem)">{card.stat}</p>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">{card.tag}</p>
+          <p class="font-heading text-lg font-bold text-zinc-900 mb-3">{card.title}</p>
+          <p class="text-zinc-500 text-sm leading-relaxed">{card.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="tool" class="bg-[#111110] px-6 sm:px-10 lg:px-20 py-24">
+    <div class="mb-12 reveal">
+      <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">{copy.toolTag}</p>
+      <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-white">
+        {copy.toolTitle}
+      </h2>
+      <p class="text-zinc-400 text-sm mt-4 max-w-lg">
+        {copy.toolBody}
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-[300px_1fr] gap-6 items-start">
+      <div class="flex flex-col gap-4">
+        <div class="border border-zinc-700 bg-zinc-900 p-5">
+          <p class="text-[9px] tracking-[0.2em] uppercase text-zinc-300 font-semibold mb-4 pb-3 border-b border-zinc-700">{copy.baselineTitle}</p>
+          <div class="space-y-4">
+            <div>
+              <label class="text-[9px] tracking-[0.12em] uppercase text-zinc-500 block mb-2">{copy.controls.sleep}</label>
+              <select class="s-select" id="sleep">
+                <option value="0">{copy.options.sleep[0]}</option>
+                <option value="1" selected>{copy.options.sleep[1]}</option>
+                <option value="2">{copy.options.sleep[2]}</option>
+                <option value="3">{copy.options.sleep[3]}</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-[9px] tracking-[0.12em] uppercase text-zinc-500 block mb-2">{copy.controls.hydration}</label>
+              <select class="s-select" id="hydration">
+                <option value="0">{copy.options.hydration[0]}</option>
+                <option value="1" selected>{copy.options.hydration[1]}</option>
+                <option value="2">{copy.options.hydration[2]}</option>
+                <option value="3">{copy.options.hydration[3]}</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-[9px] tracking-[0.12em] uppercase text-zinc-500 block mb-2">{copy.controls.heat}</label>
+              <select class="s-select" id="heat">
+                <option value="0">{copy.options.heat[0]}</option>
+                <option value="1" selected>{copy.options.heat[1]}</option>
+                <option value="2">{copy.options.heat[2]}</option>
+                <option value="3">{copy.options.heat[3]}</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-[9px] tracking-[0.12em] uppercase text-zinc-500 block mb-2">{copy.controls.alcohol}</label>
+              <select class="s-select" id="alcohol">
+                <option value="0" selected>{copy.options.alcohol[0]}</option>
+                <option value="1">{copy.options.alcohol[1]}</option>
+                <option value="2">{copy.options.alcohol[2]}</option>
+                <option value="3">{copy.options.alcohol[3]}</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-[9px] tracking-[0.12em] uppercase text-zinc-500 block mb-2">{copy.controls.training}</label>
+              <select class="s-select" id="training">
+                <option value="0">{copy.options.training[0]}</option>
+                <option value="1" selected>{copy.options.training[1]}</option>
+                <option value="2">{copy.options.training[2]}</option>
+                <option value="3">{copy.options.training[3]}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="border border-zinc-700 bg-zinc-900 p-5">
+          <p class="text-[9px] tracking-[0.2em] uppercase text-zinc-300 font-semibold mb-4 pb-3 border-b border-zinc-700">{copy.eventsTitle}</p>
+          <div class="grid grid-cols-[1fr_64px_36px] gap-1.5 mb-3">
+            <select class="s-select text-[11px]" id="event-type-select"></select>
+            <input type="number" class="s-select s-hour-input text-center text-[11px]" id="event-hour-input" min="0" max="23" value="13" title="Hour (0–23)">
+            <button onclick="addSummerEventFromUI()"
+              class="bg-white text-zinc-900 text-lg font-bold hover:bg-sage hover:text-white transition-colors duration-150 flex items-center justify-center">+</button>
+          </div>
+          <p class="text-[10px] text-zinc-400 mb-3">{copy.eventHelp}</p>
+          <div id="summer-events-list">
+            <p class="text-[11px] text-zinc-600 leading-relaxed py-2">{copy.noEvents}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="border border-zinc-800 p-6">
+        <div class="grid grid-cols-4 gap-px bg-zinc-800 border border-zinc-800 mb-5">
+          <div class="bg-[#111110] px-3 py-3">
+            <div class="font-heading text-lg font-bold text-white mb-1" id="m-now">—</div>
+            <div class="text-[10px] text-zinc-500">{copy.metrics.now}</div>
+          </div>
+          <div class="bg-[#111110] px-3 py-3">
+            <div class="font-heading text-lg font-bold text-white mb-1" id="m-peak">—</div>
+            <div class="text-[10px] text-zinc-500">{copy.metrics.peak}</div>
+          </div>
+          <div class="bg-[#111110] px-3 py-3">
+            <div class="font-heading text-lg font-bold text-white mb-1" id="m-evening">—</div>
+            <div class="text-[10px] text-zinc-500">{copy.metrics.evening}</div>
+          </div>
+          <div class="bg-[#111110] px-3 py-3">
+            <div class="font-heading text-[11px] font-bold text-white mb-1 leading-tight" id="m-phase">—</div>
+            <div class="text-[10px] text-zinc-500">{copy.metrics.phase}</div>
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <p class="text-[9px] tracking-[0.15em] uppercase text-zinc-500 mb-3">{copy.gaugeTitle}</p>
+          <div class="relative h-2.5 rounded-full overflow-visible mb-2"
+               style="background: linear-gradient(to right, #2a7d4f 0%, #2a7d4f 25%, #185FA5 25%, #185FA5 50%, #B8962E 50%, #B8962E 75%, #C4603A 75%, #C4603A 100%);">
+            <div id="gauge-marker" class="absolute top-[-4px] w-[18px] h-[18px] rounded-full bg-white border-[2.5px] border-zinc-900 -translate-x-1/2 shadow-md z-10 transition-all duration-500" style="left:35%;"></div>
+          </div>
+          <div class="flex justify-between text-[9px] uppercase tracking-wide mt-2">
+            <span style="color:#2a7d4f;" class="font-semibold">{copy.zones.low}</span>
+            <span style="color:#185FA5;">{copy.zones.optimal}</span>
+            <span style="color:#B8962E;" class="font-semibold">{copy.zones.high}</span>
+            <span style="color:#C4603A;" class="font-semibold">{copy.zones.critical}</span>
+          </div>
+        </div>
+
+        <div class="relative h-[200px] mb-3">
+          <canvas id="summerChart" role="img" aria-label={copy.chartAria}></canvas>
+        </div>
+
+        <div class="flex items-center gap-3 pt-3 border-t border-zinc-800">
+          <span class="text-[11px] text-zinc-500 whitespace-nowrap">{copy.time}</span>
+          <input type="range" min="0" max="23" value="13" id="hour-slider" step="1" class="s-slider flex-1">
+          <span class="text-sm font-semibold text-white min-w-[40px]" id="hour-out">13:00</span>
+        </div>
+
+        <div id="phase-tip" class="mt-3 p-3 bg-zinc-900 border-l-2 border-sage text-[12px] text-zinc-400 leading-relaxed"></div>
+
+        <div class="mt-4 border border-zinc-800">
+          <div class="flex items-center gap-3 px-4 py-3 bg-zinc-900 border-b border-zinc-800">
+            <span class="text-base">🌙</span>
+            <div>
+              <div class="text-[11px] font-semibold text-white">{copy.eveningTitle}</div>
+              <div class="text-[10px] text-zinc-500">{copy.eveningIdeal}</div>
+            </div>
+          </div>
+          <div class="px-4 py-3">
+            <div class="flex justify-between items-end mb-2">
+              <div>
+                <div class="text-[9px] uppercase tracking-widest text-zinc-600 mb-1">{copy.eveningValueLabel}</div>
+                <div id="evening-val" class="font-heading text-2xl font-bold" style="color:#C4603A;">—</div>
+              </div>
+              <div class="text-right">
+                <div class="text-sm font-semibold" style="color:#2a7d4f;">20–35</div>
+                <div class="text-[9px] uppercase tracking-widest text-zinc-600">{copy.eveningIdealLabel}</div>
+              </div>
+            </div>
+            <div class="relative h-1.5 bg-zinc-800 rounded-full mb-2 overflow-visible">
+              <div id="evening-bar" class="h-full rounded-full transition-all duration-500" style="width:0%;background:#C4603A;"></div>
+              <div class="absolute top-[-3px] w-[2px] h-[12px] rounded-sm" style="left:28%;background:#2a7d4f;"></div>
+            </div>
+            <div id="evening-msg" class="text-[11px] text-zinc-500 leading-relaxed pt-2 border-t border-zinc-800">—</div>
+          </div>
+        </div>
+
+        <div id="intervention-panel" class="mt-4 border border-zinc-700" style="display:none;">
+          <div id="intv-header" class="flex items-center gap-3 px-4 py-3">
+            <div id="intv-icon" class="w-6 h-6 rounded-full flex items-center justify-center text-[11px] text-white font-bold flex-shrink-0" style="background:#C4603A;">!</div>
+            <div>
+              <strong id="intv-title" class="block text-[12px] font-semibold"></strong>
+              <span id="intv-sub" class="text-[11px] text-zinc-500"></span>
+            </div>
+          </div>
+          <div id="intv-tags" class="px-4 pb-3 flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-[10px] text-zinc-600 mt-6 leading-relaxed">{copy.disclaimer}</p>
+  </section>
+
+  <section class="px-6 sm:px-10 lg:px-20 py-24">
+    <div class="mb-16 reveal">
+      <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">{copy.servicesTag}</p>
+      <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+        {copy.servicesTitle}
+      </h2>
+      <p class="text-zinc-400 text-sm mt-4 max-w-lg">{copy.servicesBody}</p>
+    </div>
+    <div class="grid md:grid-cols-3 md:divide-x divide-zinc-200 gap-16 md:gap-0">
+      {copy.serviceCards.map((card, index) => (
+        <div class={`flex flex-col ${index === 0 ? 'md:pr-12' : index === 1 ? 'md:px-12' : 'md:pl-12'} reveal ${index === 0 ? 'reveal-delay-1' : index === 1 ? 'reveal-delay-2' : 'reveal-delay-3'}`}>
+          <p class="text-[10px] tracking-[0.35em] uppercase font-semibold text-sage mb-4">{card.tag}</p>
+          <p class="font-heading text-xl font-bold text-zinc-900 mb-3">{card.title}</p>
+          <p class="text-zinc-500 text-sm leading-relaxed">{card.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="min-h-[60vh] flex flex-col items-center justify-center px-6 text-center py-24">
+    <div class="reveal">
+      <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-8">{copy.ctaTag}</p>
+      <h2 class="font-heading font-bold leading-tight tracking-tight text-zinc-900 mb-8"
+          style="font-size: clamp(2.5rem, 7vw, 5rem)">
+        {copy.ctaTitle}
+      </h2>
+      <p class="text-zinc-500 text-sm leading-relaxed mb-3 max-w-sm mx-auto">
+        {copy.ctaBody}
+      </p>
+      <p class="text-zinc-400 text-xs mb-10">{copy.ctaNote}</p>
+      <form
+        name={lang === 'cs' ? 'letni-pretizeni-lead' : 'summer-overload-lead'}
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="flex flex-col sm:flex-row gap-0 max-w-md mx-auto mb-4"
+        id="lead-form"
+      >
+        <input type="hidden" name="form-name" value={lang === 'cs' ? 'letni-pretizeni-lead' : 'summer-overload-lead'} />
+        <input type="hidden" name="bot-field" />
+        <input type="hidden" name="summer-load-now" id="f-load-now" />
+        <input type="hidden" name="summer-load-evening" id="f-load-evening" />
+        <input type="hidden" name="summer-events" id="f-events" />
+        <input
+          type="email"
+          name="email"
+          placeholder={copy.form.emailPlaceholder}
+          required
+          class="flex-1 px-6 py-4 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900"
+        />
+        <button type="submit"
+          class="px-8 py-4 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200 whitespace-nowrap">
+          {copy.ctaButton}
+        </button>
+      </form>
+      <p class="text-zinc-400 text-xs">{copy.form.note}</p>
+      <p id="submit-msg" class="text-sage text-sm mt-4" style="display:none;">{copy.form.success}</p>
+    </div>
+  </section>
+</main>
+
+<style>
+  .s-select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #52525b;
+    background: #27272a;
+    color: #f4f4f5;
+    -webkit-text-fill-color: #f4f4f5;
+    font-size: 12px;
+    cursor: pointer;
+    appearance: none;
+    color-scheme: dark;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23a1a1aa'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+  .s-select:focus { outline: 1px solid #5C7A5E; }
+  .s-select option, .s-select optgroup { color: #f4f4f5; background: #27272a; }
+  .s-hour-input { min-width: 64px; padding-left: 6px; padding-right: 6px; background-image: none; }
+  .s-slider { -webkit-appearance: none; height: 3px; background: #3f3f46; border-radius: 2px; cursor: pointer; }
+  .s-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%; background: #5C7A5E; cursor: pointer; }
+  .s-tag {
+    display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; font-size: 11px; font-weight: 500; border: 1px solid #3f3f46; color: #a1a1aa;
+  }
+  .s-tag-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .s-event-row { display: flex; align-items: center; gap: 6px; padding: 5px 8px; border: 1px solid #52525b; background: #27272a; margin-bottom: 4px; }
+  .s-event-bar { width: 3px; height: 20px; border-radius: 1px; flex-shrink: 0; }
+  .s-event-label { flex: 1; font-size: 11px; color: #f4f4f5; -webkit-text-fill-color: #f4f4f5; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .s-event-del { width: 20px; height: 20px; border: none; background: none; color: #71717a; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: color 0.1s; }
+  .s-event-del:hover { color: #ef4444; }
+  .s-event-hour { width: 36px; padding: 3px 4px; border: 1px solid #52525b; background: #27272a; color: #f4f4f5; font-size: 11px; text-align: center; -moz-appearance: textfield; caret-color: #f4f4f5; -webkit-text-fill-color: #f4f4f5; color-scheme: dark; }
+  .s-event-hour:focus, .s-event-hour:hover, .s-select:hover, .s-select:focus { color: #f4f4f5; -webkit-text-fill-color: #f4f4f5; }
+  .s-event-hour::-webkit-inner-spin-button { -webkit-appearance: none; }
+</style>
+
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+<script is:inline define:vars={{ copy, langCode: lang }}>
+const BASE_CURVE = [18,16,14,12,12,16,24,32,40,48,56,64,70,74,76,72,66,58,48,38,30,24,20,18];
+const PHASES = langCode === 'cs'
+  ? ["Noční obnova","Noční obnova","Noční obnova","Noční obnova","Brzké ráno","Ráno","Nástup dne","Dopoledne","Dopoledne","Teplý blok","Polední tlak","Polední tlak","Vrchol dne","Vrchol dne","Vrchol dne","Odpoledne","Odpoledne","Pozdní odpoledne","Večer","Večer","Zklidnění","Zklidnění","Noční pokles","Noční pokles"]
+  : ["Night recovery","Night recovery","Night recovery","Night recovery","Early morning","Morning","Start of the day","Late morning","Late morning","Warm block","Midday pressure","Midday pressure","Peak day heat","Peak day heat","Peak day heat","Afternoon","Afternoon","Late afternoon","Evening","Evening","Downshift","Downshift","Night decline","Night decline"];
+const labels24 = Array.from({length:24},(_,i)=>`${String(i).padStart(2,'0')}:00`);
+const EVENT_TYPES = langCode === 'cs' ? [
+  { group:'stress', value:'sun', label:'Polední slunce', icon:'☀', delta:+14, rise:0.2, decay:2.8, type:'stress' },
+  { group:'stress', value:'commute', label:'Rozpálené auto / MHD', icon:'🚗', delta:+9, rise:0.3, decay:1.8, type:'stress' },
+  { group:'stress', value:'workoutheat', label:'Trénink v horku', icon:'🏋', delta:+18, rise:0.5, decay:3.0, type:'stress' },
+  { group:'stress', value:'dehydration', label:'Málo vody', icon:'💧', delta:+12, rise:0.6, decay:4.0, type:'stress' },
+  { group:'stress', value:'badmeal', label:'Těžké jídlo / únava', icon:'🍔', delta:+7, rise:0.8, decay:2.5, type:'stress' },
+  { group:'relief', value:'shade', label:'Stín / chladná místnost', icon:'🌿', delta:-8, rise:0.3, decay:2.4, type:'relief' },
+  { group:'relief', value:'coldshower', label:'Studená sprcha', icon:'🚿', delta:-7, rise:0.2, decay:1.2, type:'relief' },
+  { group:'relief', value:'minerals', label:'Voda + minerály', icon:'🧂', delta:-6, rise:0.4, decay:2.5, type:'relief' },
+  { group:'relief', value:'breath', label:'Dechová práce', icon:'💬', delta:-5, rise:0.3, decay:1.8, type:'relief' },
+  { group:'relief', value:'nap', label:'Krátký odpočinek', icon:'😴', delta:-9, rise:0.3, decay:2.0, type:'relief' },
+  { group:'other', value:'alcoholpm', label:'Alkohol večer', icon:'🍷', delta:+10, rise:1.5, decay:4.5, type:'neutral' },
+  { group:'other', value:'screens', label:'Obrazovky večer', icon:'📱', delta:+5, rise:0.4, decay:3.5, type:'neutral' },
+] : [
+  { group:'stress', value:'sun', label:'Midday sun', icon:'☀', delta:+14, rise:0.2, decay:2.8, type:'stress' },
+  { group:'stress', value:'commute', label:'Hot car / transport', icon:'🚗', delta:+9, rise:0.3, decay:1.8, type:'stress' },
+  { group:'stress', value:'workoutheat', label:'Workout in heat', icon:'🏋', delta:+18, rise:0.5, decay:3.0, type:'stress' },
+  { group:'stress', value:'dehydration', label:'Not enough water', icon:'💧', delta:+12, rise:0.6, decay:4.0, type:'stress' },
+  { group:'stress', value:'badmeal', label:'Heavy meal / slump', icon:'🍔', delta:+7, rise:0.8, decay:2.5, type:'stress' },
+  { group:'relief', value:'shade', label:'Shade / cool room', icon:'🌿', delta:-8, rise:0.3, decay:2.4, type:'relief' },
+  { group:'relief', value:'coldshower', label:'Cold shower', icon:'🚿', delta:-7, rise:0.2, decay:1.2, type:'relief' },
+  { group:'relief', value:'minerals', label:'Water + minerals', icon:'🧂', delta:-6, rise:0.4, decay:2.5, type:'relief' },
+  { group:'relief', value:'breath', label:'Breathwork', icon:'💬', delta:-5, rise:0.3, decay:1.8, type:'relief' },
+  { group:'relief', value:'nap', label:'Short rest', icon:'😴', delta:-9, rise:0.3, decay:2.0, type:'relief' },
+  { group:'other', value:'alcoholpm', label:'Alcohol in evening', icon:'🍷', delta:+10, rise:1.5, decay:4.5, type:'neutral' },
+  { group:'other', value:'screens', label:'Screens at night', icon:'📱', delta:+5, rise:0.4, decay:3.5, type:'neutral' },
+];
+const TYPE_COLOR = { stress:'#C4603A', relief:'#5C7A5E', neutral:'#B8962E' };
+const ZONE_COLORS = { low:'#2a7d4f', optimal:'#185FA5', high:'#B8962E', critical:'#C4603A' };
+
+let summerEvents = [], eventIdCounter = 0, currentHour = 13, lastCurve = BASE_CURVE.slice();
+
+function fillEventOptions() {
+  const select=document.getElementById('event-type-select');
+  const grouped = {
+    stress: copy.eventGroups.stress,
+    relief: copy.eventGroups.relief,
+    other: copy.eventGroups.other,
+  };
+  select.innerHTML = Object.entries(grouped).map(([key,label]) => {
+    const options = EVENT_TYPES.filter(e=>e.group===key).map(e=>`<option value="${e.value}">${e.icon} ${e.label}</option>`).join('');
+    return `<optgroup label="${label}">${options}</optgroup>`;
+  }).join('');
+}
+function getBaseCurve(){
+  const sleep = +document.getElementById('sleep').value;
+  const hydration = +document.getElementById('hydration').value;
+  const heat = +document.getElementById('heat').value;
+  const alcohol = +document.getElementById('alcohol').value;
+  const training = +document.getElementById('training').value;
+  const nightPenalty = sleep*5 + alcohol*4;
+  const hydrationPenalty = hydration*4;
+  const heatPenalty = heat*6;
+  const trainingPenalty = training*5;
+  return BASE_CURVE.map((b,h)=>{
+    let val=b + heatPenalty + hydrationPenalty*0.7;
+    if(h <= 8) val += nightPenalty;
+    if(h >= 10 && h <= 18) val += hydrationPenalty + heatPenalty*0.8 + trainingPenalty*0.4;
+    if(h >= 18) val += alcohol*2 + trainingPenalty*0.5;
+    return Math.min(100, Math.max(5, Math.round(val)));
+  });
+}
+function computeCurve() {
+  const base=getBaseCurve();
+  const delta=new Array(24).fill(0);
+  summerEvents.forEach(ev=>{
+    const def=EVENT_TYPES.find(t=>t.value===ev.typeValue);
+    if(!def)return;
+    const peakH=ev.hour+def.rise;
+    for(let h=0;h<24;h++){
+      if(h<ev.hour)continue;
+      let c=h<=peakH?def.delta*((h-ev.hour)/Math.max(def.rise,0.01)):def.delta*Math.exp(-(h-peakH)*Math.LN2/def.decay);
+      delta[h]+=c;
+    }
+  });
+  return base.map((b,i)=>Math.min(100, Math.max(0, Math.round(b+delta[i]))));
+}
+function getZone(v){
+  if(v < 25)return'low';
+  if(v < 50)return'optimal';
+  if(v < 75)return'high';
+  return'critical';
+}
+function valToGaugePct(v){ return Math.min(100, Math.max(0, v)); }
+function getTipIdx(h){ if(h<5)return 0; if(h<8)return 1; if(h<11)return 2; if(h<17)return 3; return 4; }
+function getEveningMessage(v){
+  if(v <= 22)return copy.currentMessages.low;
+  if(v <= 35)return copy.currentMessages.optimal;
+  if(v <= 55)return copy.currentMessages.high;
+  return copy.currentMessages.critical;
+}
+
+let summerChart;
+function buildChart(curve) {
+  if (typeof Chart === 'undefined') {
+    const canvas = document.getElementById('summerChart');
+    const fallback = document.createElement('div');
+    fallback.className = 'h-full flex items-center justify-center border border-zinc-800 bg-zinc-900 text-zinc-500 text-sm text-center px-6';
+    fallback.textContent = langCode === 'cs'
+      ? 'Graf se nepodařilo načíst. Ostatní výpočet nástroje funguje dál.'
+      : 'The chart failed to load. The rest of the tool still works.';
+    canvas.replaceWith(fallback);
+    return;
+  }
+  summerChart=new Chart(document.getElementById('summerChart'),{
+    type:'line',
+    data:{labels:labels24,datasets:[
+      {label:'Summer load',data:curve,borderColor:'#5C7A5E',backgroundColor:'rgba(92,122,94,0.12)',borderWidth:2.5,fill:true,tension:0.4,pointRadius:0,pointHoverRadius:4,order:2},
+      {label:'Comfort',data:Array(24).fill(35),borderColor:'rgba(42,125,79,0.4)',borderWidth:1,borderDash:[3,3],pointRadius:0,fill:false,order:4},
+      {label:'Overload',data:Array(24).fill(60),borderColor:'rgba(184,150,46,0.5)',borderWidth:1.5,borderDash:[4,3],pointRadius:0,fill:false,order:3},
+      {label:'Critical',data:Array(24).fill(80),borderColor:'rgba(196,96,58,0.6)',borderWidth:1.5,borderDash:[4,3],pointRadius:0,fill:false,order:3},
+      {label:'Now',data:Array(24).fill(null),borderColor:'rgba(196,96,58,0.7)',borderWidth:2,borderDash:[5,4],pointRadius:0,fill:false,order:1},
+      {label:'Events',data:Array(24).fill(null),borderColor:'transparent',backgroundColor:'transparent',pointRadius:Array(24).fill(0),fill:false,order:0}
+    ]},
+    options:{
+      responsive:true,maintainAspectRatio:false,animation:{duration:350},
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=> c.datasetIndex===0 ? `${c.parsed.y.toFixed(0)} / 100` : null}}},
+      scales:{
+        x:{ticks:{maxTicksLimit:8,color:'#71717a',font:{size:10},autoSkip:true},grid:{color:'rgba(255,255,255,0.04)'}},
+        y:{min:0,max:100,ticks:{color:'#71717a',font:{size:10},callback:v=>v},grid:{color:'rgba(255,255,255,0.04)'}}
+      }
+    }
+  });
+}
+function updateNowLine(h){ if(!summerChart) return; const d=Array(24).fill(null);d[h]=100;summerChart.data.datasets[4].data=d;}
+function updateEventDots(curve){
+  if(!summerChart) return;
+  const r=Array(24).fill(0),bg=Array(24).fill('transparent'),bc=Array(24).fill('transparent');
+  summerEvents.forEach(ev=>{const def=EVENT_TYPES.find(t=>t.value===ev.typeValue);if(!def)return;r[ev.hour]=Math.max(r[ev.hour],7);bg[ev.hour]=TYPE_COLOR[def.type];bc[ev.hour]='white';});
+  const dotData=Array(24).fill(null).map((_,i)=>r[i]>0?curve[i]:null);
+  const ds=summerChart.data.datasets[5];
+  ds.data=dotData; ds.pointRadius=r; ds.pointBackgroundColor=bg; ds.pointBorderColor=bc; ds.pointBorderWidth=Array(24).fill(2); ds.pointHoverRadius=r.map(x=>x+2);
+}
+function updateEvening(curve){
+  const val=curve[20];
+  const el=document.getElementById('evening-val'),bar=document.getElementById('evening-bar'),msg=document.getElementById('evening-msg');
+  let color='#C4603A';
+  if(val <= 22)color='#5C7A5E'; else if(val <= 35)color='#185FA5'; else if(val <= 55)color='#B8962E';
+  el.textContent=`${val} / 100`; el.style.color=color;
+  bar.style.width=Math.min(100,val)+'%'; bar.style.background=color;
+  msg.textContent=getEveningMessage(val);
+}
+function updateAll(){
+  const curve=computeCurve(); lastCurve=curve;
+  if (summerChart) {
+    summerChart.data.datasets[0].data=curve;
+    updateNowLine(currentHour); updateEventDots(curve); summerChart.update();
+  }
+  const val=curve[currentHour], zone=getZone(val), col=ZONE_COLORS[zone], lbl=copy.zones[zone];
+  document.getElementById('m-now').innerHTML=`${val} <span style="font-size:9px;padding:1px 6px;background:${col}25;color:${col};font-family:sans-serif;letter-spacing:0.06em;text-transform:uppercase;">${lbl}</span>`;
+  document.getElementById('m-peak').textContent=Math.max(...curve).toFixed(0);
+  document.getElementById('m-evening').textContent=curve[20].toFixed(0);
+  document.getElementById('m-phase').textContent=PHASES[currentHour];
+  document.getElementById('phase-tip').textContent=copy.phaseTips[getTipIdx(currentHour)];
+  document.getElementById('gauge-marker').style.left=valToGaugePct(val)+'%';
+  updateEvening(curve);
+  const panel=document.getElementById('intervention-panel');
+  if(zone==='low' || zone==='optimal'){ panel.style.display='none'; return; }
+  panel.style.display='block';
+  const hdr=document.getElementById('intv-header'),icon=document.getElementById('intv-icon'),title=document.getElementById('intv-title'),sub=document.getElementById('intv-sub'),tags=document.getElementById('intv-tags');
+  const isCritical = zone==='critical';
+  hdr.style.background=isCritical ? 'rgba(196,96,58,0.12)' : 'rgba(184,150,46,0.12)';
+  icon.style.background=isCritical ? '#C4603A' : '#B8962E';
+  title.style.color=isCritical ? '#C4603A' : '#B8962E';
+  title.textContent = isCritical ? copy.interventions.criticalTitle : copy.interventions.highTitle;
+  sub.textContent = isCritical ? copy.interventions.criticalSub : copy.interventions.highSub;
+  const items = [
+    {label:copy.interventionTags.cool,dot:'#5C7A5E'},
+    {label:copy.interventionTags.water,dot:'#185FA5'},
+    {label:copy.interventionTags.breath,dot:'#5C7A5E'},
+    {label:copy.interventionTags.rest,dot:'#B8962E'},
+    ...(isCritical ? [{label:copy.interventionTags.consult,dot:'#C4603A'}] : [{label:copy.interventionTags.redlight,dot:'#B8962E'}])
+  ];
+  tags.innerHTML=items.map(i=>`<span class="s-tag"><span class="s-tag-dot" style="background:${i.dot}"></span>${i.label}</span>`).join('');
+}
+
+window.addSummerEventFromUI=function(){
+  const typeValue=document.getElementById('event-type-select').value;
+  const hour=Math.min(23,Math.max(0,+document.getElementById('event-hour-input').value));
+  summerEvents.push({id:++eventIdCounter,hour,typeValue});renderEvents();updateAll();
+};
+window.removeSummerEvent=function(id){summerEvents=summerEvents.filter(e=>e.id!==id);renderEvents();updateAll();};
+window.updateSummerEventHour=function(id,val){const ev=summerEvents.find(e=>e.id===id); if(ev){ev.hour=Math.min(23,Math.max(0,+val)); updateAll();}};
+function renderEvents(){
+  const list=document.getElementById('summer-events-list');
+  if(summerEvents.length===0){list.innerHTML=`<p class="text-[11px] text-zinc-400 leading-relaxed py-2">${copy.noEvents}</p>`;return;}
+  list.innerHTML=summerEvents.map(ev=>{
+    const def=EVENT_TYPES.find(t=>t.value===ev.typeValue);
+    const col=def?TYPE_COLOR[def.type]:'#888';
+    const sign=def&&def.delta>0?'+':'';
+    return `<div class="s-event-row">
+      <div class="s-event-bar" style="background:${col};"></div>
+      <input type="number" min="0" max="23" value="${ev.hour}" class="s-event-hour" title="Event hour" onchange="updateSummerEventHour(${ev.id},this.value)" style="border-color:${col}60;color:#f4f4f5;-webkit-text-fill-color:#f4f4f5;">
+      <span class="s-event-label"><span style="color:#f4f4f5;-webkit-text-fill-color:#f4f4f5;">${def?def.icon+' '+def.label:'—'}</span> <span style="color:${col};font-size:10px;">${sign}${def?def.delta:0}</span></span>
+      <button class="s-event-del" onclick="removeSummerEvent(${ev.id})">×</button>
+    </div>`;
+  }).join('');
+}
+
+['sleep','hydration','heat','alcohol','training'].forEach(id=>document.getElementById(id).addEventListener('change',updateAll));
+document.getElementById('hour-slider').addEventListener('input',function(){
+  currentHour=+this.value; document.getElementById('hour-out').textContent=String(currentHour).padStart(2,'0')+':00'; updateAll();
+});
+document.getElementById('lead-form').addEventListener('submit',function(){
+  document.getElementById('f-load-now').value=lastCurve[currentHour];
+  document.getElementById('f-load-evening').value=lastCurve[20];
+  document.getElementById('f-events').value=JSON.stringify(summerEvents.map(e=>({type:e.typeValue,hour:e.hour})));
+});
+
+fillEventOptions();
+buildChart(computeCurve());
+updateNowLine(currentHour);
+renderEvents();
+updateAll();
+</script>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => { entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); },
+    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+  );
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) { el.classList.add('visible'); } else { observer.observe(el); }
+  });
+</script>

@@ -3,6 +3,76 @@ import Layout from '../../../../layouts/Layout.astro';
 import Nav from '../../../../components/Nav.astro';
 import Footer from '../../../../components/Footer.astro';
 import StudioModal from '../../../../components/StudioModal.astro';
+
+const cortisolModel = [
+  {
+    title: 'HIIT / HIT',
+    effect: 'Kortizol akutně nahoru',
+    level: '+++',
+    timing: 'Nejlépe ráno nebo brzy odpoledne, když jste vyspaní a nejdete už do další velké zátěže.',
+    upside: 'Zvyšuje mobilizaci energie, výkon a adaptaci na zátěž.',
+    risk: 'Pozdě večer nebo v období přetížení může držet aktivaci příliš dlouho a rozbít nástup regenerace.',
+  },
+  {
+    title: 'Běh',
+    effect: 'Záleží na intenzitě',
+    level: '+ až ++',
+    timing: 'Lehký běh nebo zóna 2 pomáhá rytmu, těžký tempový běh se chová spíš jako další stresor.',
+    upside: 'V rozumné intenzitě podporuje cirkadiánní rytmus, náladu a postupný pokles napětí.',
+    risk: 'Dlouhý nebo tvrdý běh večer může zvýšit aktivaci podobně jako HIIT.',
+  },
+  {
+    title: 'Jóga',
+    effect: 'Kortizol stahuje dolů',
+    level: '-',
+    timing: 'Výborná po mentální zátěži, po tréninku a večer jako přechod do klidové části dne.',
+    upside: 'Pomáhá přepnout z výkonu do regenerace a zvyšuje toleranci k zátěži bez další stimulace.',
+    risk: 'Jako jediný nástroj nenahradí ranní aktivaci ani kondiční trénink.',
+  },
+  {
+    title: 'Meditace',
+    effect: 'Nejrychlejší brzda',
+    level: '--',
+    timing: 'Krátce po stresoru, před spaním nebo kdykoli, kdy je hlava rychlejší než tělo.',
+    upside: 'Snižuje psychologickou zátěž a pomáhá vrátit nervový systém do parasympatiku.',
+    risk: 'Když je člověk extrémně rozjetý, bývá účinnější začít krátkou chůzí nebo dechem a meditaci přidat až potom.',
+  },
+];
+
+const correctionProtocol = [
+  {
+    title: 'Ráno kortizol netlumte, ale usměrněte.',
+    body: 'Do 30 minut po probuzení světlo, pohyb a ideálně žádný chaos. Ranní peak má pomoci otevřít den, ne být potlačený pozdním spaním a okamžitým stresem.',
+  },
+  {
+    title: 'HIIT patří do dne, ne do noci.',
+    body: 'Zařaďte ho jen tehdy, když máte dobrou noc za sebou a stihnete po něm i návrat dolů. Večer je to často biologicky drahá energie.',
+  },
+  {
+    title: 'Běh používejte podle cíle.',
+    body: 'Lehký běh je nástroj pro rytmus a vyčištění hlavy. Tvrdý běh je další stimul. Pokud už jste přetížení, nepřidávejte další vrstvu aktivace.',
+  },
+  {
+    title: 'Po každé aktivaci musí přijít brzda.',
+    body: 'Po mentálním stresu, tréninku nebo konfliktu zařaďte 5 až 15 minut dechové práce, chůze, jógy nebo meditace. Tělo se musí naučit návrat, ne jen výkon.',
+  },
+  {
+    title: 'Večer chraňte nízký kortizol.',
+    body: 'Poslední část dne má být bez tvrdého tréninku, kofeinu a digitálního přestimulování. Večerní jóga, dech a meditace pomáhají připravit prostor pro hluboký spánek.',
+  },
+  {
+    title: 'Když večer zvednete kortizol, další ráno bývá horší.',
+    body: 'Praktičtější než slogan „večer vysoko = ráno nízko“ je toto: opakovaně vysoký večerní kortizol často zhorší usnutí, zkrátí hluboký spánek a rozbije ranní start. Ranní peak pak může být slabší, opožděný nebo celkově méně funkční.',
+  },
+];
+
+const videoOutline = [
+  'Kortizol není nepřítel. Je to časovač energie.',
+  'HIIT a tvrdý běh kortizol zvedají. Jóga a meditace ho pomáhají stáhnout.',
+  'Stejná aktivita není stejně dobrá ráno a večer. O výsledku rozhoduje timing.',
+  'Večer potřebujete nízký kortizol, jinak kazíte usnutí, hluboký spánek i další den.',
+  'Cílem není mít málo kortizolu pořád. Cílem je mít ho vysoko, když potřebujete výkon, a nízko, když potřebujete regeneraci.',
+];
 ---
 
 <Layout
@@ -91,6 +161,68 @@ import StudioModal from '../../../../components/StudioModal.astro';
           <p class="font-heading text-lg font-bold text-zinc-900 mb-3">Obnova trvá dny, ne hodiny</p>
           <p class="text-zinc-500 text-sm leading-relaxed">
             Po intenzivním stresu se kortizolová osa plně neobnoví za pár hodin spánku. Správná regenerace je načasovaný proces — a přesně to trénujeme.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODEL PRO VIDEO -->
+    <section class="border-t border-zinc-100 px-6 sm:px-10 lg:px-20 py-24 bg-zinc-50/60">
+      <div class="mb-16 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">MODEL PRO POCHOPENÍ</p>
+        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+          Co přesně dělá HIIT,<br>běh, jóga a meditace.
+        </h2>
+        <p class="text-zinc-500 text-base sm:text-lg leading-relaxed max-w-3xl mt-6">
+          Jednoduchý model je tento: některé aktivity kortizol krátkodobě zvedají, jiné pomáhají návratu dolů. Problém není samotný růst. Problém je, když tělo zůstane v aktivaci příliš dlouho a nedostane se večer nízko.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        {cortisolModel.map((item, index) => (
+          <article
+            class="border border-zinc-200 bg-white p-6 reveal"
+            style={`transition-delay:${index * 60}ms`}
+          >
+            <div class="flex items-start justify-between gap-4 mb-5">
+              <div>
+                <p class="text-[10px] tracking-[0.22em] uppercase text-sage mb-2">Aktivita</p>
+                <h3 class="font-heading text-2xl font-bold tracking-tight text-zinc-900">{item.title}</h3>
+              </div>
+              <div class="text-right">
+                <div class="text-[10px] tracking-[0.2em] uppercase text-zinc-400">Efekt</div>
+                <div class="font-heading text-2xl font-bold text-zinc-900">{item.level}</div>
+              </div>
+            </div>
+            <p class="text-sm font-semibold text-zinc-900 mb-4">{item.effect}</p>
+            <div class="space-y-4 text-sm text-zinc-500 leading-relaxed">
+              <p><strong class="text-zinc-700">Kdy dává smysl:</strong> {item.timing}</p>
+              <p><strong class="text-zinc-700">Přínos:</strong> {item.upside}</p>
+              <p><strong class="text-zinc-700">Riziko:</strong> {item.risk}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="mt-16 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-start">
+        <div class="reveal">
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-5">Hlavní myšlenka</p>
+          <blockquote class="border-l-2 border-sage pl-6">
+            <p class="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 leading-tight mb-4">
+              Nejdůležitější otázka není „co je zdravé“, ale „co dělá moje tělo právě teď“.
+            </p>
+            <p class="text-zinc-500 text-base leading-relaxed">
+              HIIT může být skvělý nástroj pro výkon. Meditace může být skvělý nástroj pro návrat. Když je ale prohodíte ve špatnou část dne, dostanete opačný výsledek.
+            </p>
+          </blockquote>
+        </div>
+        <div class="border border-zinc-200 bg-white p-6 reveal reveal-delay-1">
+          <p class="text-[10px] tracking-[0.22em] uppercase text-sage mb-4">Formulace do videa</p>
+          <p class="text-zinc-900 font-semibold leading-relaxed mb-3">
+            Čím častěji držím kortizol vysoko večer, tím spíš si rozbiju spánek a zploštím kvalitní ranní start.
+          </p>
+          <p class="text-sm text-zinc-500 leading-relaxed">
+            Je přesnější říct „ranní peak bude často slabší nebo méně funkční“ než absolutně tvrdit, že bude vždy nižší. Přesně to chceme návštěvníkovi vysvětlit.
           </p>
         </div>
       </div>
@@ -307,6 +439,54 @@ import StudioModal from '../../../../components/StudioModal.astro';
       </div>
 
       <p class="text-[10px] text-zinc-600 mt-6 leading-relaxed">⚠ Edukativní model, nikoliv lékařský test. Hodnoty jsou orientační a vychází z cirkadiánní fyziologie. Pro diagnostiku HPA osy je nutný klinický test.</p>
+    </section>
+
+    <!-- PROTOKOL A VIDEO -->
+    <section class="border-t border-zinc-100 px-6 sm:px-10 lg:px-20 py-24">
+      <div class="grid gap-16 xl:grid-cols-[1.05fr_0.95fr] items-start">
+        <div class="reveal">
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">KOREKČNÍ PROTOKOL</p>
+          <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900 mb-8">
+            Jak korigovat hladinu kortizolu<br>během dne.
+          </h2>
+          <div class="space-y-6">
+            {correctionProtocol.map((step, index) => (
+              <article class="border-t border-zinc-200 pt-5" style={`transition-delay:${index * 50}ms`}>
+                <p class="text-[10px] tracking-[0.22em] uppercase text-sage mb-2">Krok {String(index + 1).padStart(2, '0')}</p>
+                <h3 class="font-heading text-2xl font-bold tracking-tight text-zinc-900 mb-3">{step.title}</h3>
+                <p class="text-zinc-500 text-base leading-relaxed">{step.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <div class="border border-zinc-200 bg-zinc-50 p-8 mb-8">
+            <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-5">Osnova videa</p>
+            <h3 class="font-heading text-3xl font-bold tracking-tight text-zinc-900 mb-6">
+              Edukativní video v pěti větách.
+            </h3>
+            <div class="space-y-4">
+              {videoOutline.map((line, index) => (
+                <div class="flex items-start gap-4">
+                  <span class="font-heading text-2xl font-bold text-zinc-300 leading-none">{index + 1}</span>
+                  <p class="text-zinc-600 text-base leading-relaxed">{line}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="border border-zinc-200 bg-white p-8">
+            <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-5">Doporučený závěr</p>
+            <p class="font-heading text-2xl font-bold tracking-tight text-zinc-900 leading-tight mb-4">
+              Ráno kortizol potřebujete. Večer ho potřebujete umět vypnout.
+            </p>
+            <p class="text-zinc-500 text-base leading-relaxed">
+              To je celý princip. Výkon není problém. Problém je aktivace bez návratu. Proto má každý den obsahovat jak stimul, tak vědomé zklidnění.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- INTERVENCE — světlá -->

@@ -1,0 +1,175 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import Nav from '../../../../components/Nav.astro';
+import Footer from '../../../../components/Footer.astro';
+import StudioModal from '../../../../components/StudioModal.astro';
+
+const categories = [
+  {
+    name: 'Recovery',
+    blurb: 'A calmer system, faster renewal, and stronger evenings.',
+  },
+  {
+    name: 'Breath and regulation',
+    blurb: 'Digital protocols for reducing internal tension on demand.',
+  },
+  {
+    name: 'Performance and resilience',
+    blurb: 'Tools for energy, focus, and adaptation without noise.',
+  },
+];
+
+const products = [
+  {
+    category: 'Recovery',
+    name: 'Red Light Session',
+    price: 'CZK 690',
+    description: 'A 25-minute red light session to support recovery, calmer evenings, and better sleep.',
+    accent: 'Evening reset',
+  },
+  {
+    category: 'Recovery',
+    name: 'Cryo Recovery',
+    price: 'CZK 790',
+    description: 'A short cold recovery session to reduce fatigue and help the body bounce back faster.',
+    accent: 'Post-training',
+  },
+  {
+    category: 'Breath and regulation',
+    name: 'Breath Reset Audio Pack',
+    price: 'CZK 490',
+    description: 'A set of guided breathwork audio tracks for calming the system throughout the day.',
+    accent: 'Digital product',
+  },
+  {
+    category: 'Performance and resilience',
+    name: 'Morning Activation Protocol',
+    price: 'CZK 590',
+    description: 'A short morning protocol to build energy and focus without unnecessary overload.',
+    accent: 'Morning start',
+  },
+  {
+    category: 'Performance and resilience',
+    name: 'Adaptive Starter Bundle',
+    price: 'CZK 1,490',
+    description: 'Two studio visits paired with a digital protocol for an easy first step into Adaptive Studio.',
+    accent: 'Signature pick',
+  },
+];
+---
+
+<Layout
+  title="Shop — Adaptive Studio"
+  description="A small Adaptive Studio shop powered by Stripe Payment Links is coming soon."
+  lang="en"
+  canonicalPath="/en/preview/eshop/"
+  noindex={true}
+>
+  <StudioModal lang="en" />
+  <Nav lang="en" />
+
+  <main class="bg-[radial-gradient(circle_at_top,_rgba(107,143,113,0.18),_transparent_32%),linear-gradient(180deg,_#f7f4ee_0%,_#ffffff_30%,_#fbfaf7_100%)]">
+    <section class="px-6 sm:px-10 lg:px-20 pt-32 pb-18">
+      <div class="max-w-6xl grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+        <div>
+          <p class="text-[10px] tracking-[0.35em] uppercase text-sage mb-6">Adaptive Studio Shop</p>
+        <h1
+          class="font-heading font-bold tracking-tight text-zinc-900 leading-[0.9] mb-8"
+          style="font-size: clamp(3.5rem, 10vw, 7rem)"
+        >
+          Curated care
+          <br />
+          for the nervous system.
+        </h1>
+          <p class="max-w-2xl text-lg sm:text-xl text-zinc-600 leading-relaxed mb-10">
+            A small premium shop powered by Stripe Payment Links. A tightly curated selection of products and sessions designed to support recovery, regulation, and sustainable performance.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/en/preview/kontakt/"
+              class="inline-flex items-center justify-center px-6 py-3 text-xs font-semibold tracking-[0.14em] uppercase bg-zinc-900 text-white hover:bg-zinc-700 transition-colors"
+            >
+              Request priority access
+            </a>
+            <a
+              href="/en/preview/"
+              class="inline-flex items-center justify-center px-6 py-3 text-xs font-semibold tracking-[0.14em] uppercase border border-zinc-900/20 bg-white/70 text-zinc-900 hover:bg-zinc-900 hover:text-white transition-colors"
+            >
+              Back to homepage
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -inset-4 bg-[radial-gradient(circle,_rgba(107,143,113,0.18),_transparent_70%)] blur-2xl"></div>
+          <div class="relative overflow-hidden border border-[#d7cfbf] bg-[#f4efe4] p-6 sm:p-8 shadow-[0_24px_80px_rgba(24,24,27,0.10)]">
+            <p class="text-[10px] tracking-[0.3em] uppercase text-zinc-500 mb-4">Selected format</p>
+            <div class="space-y-5">
+              <div class="flex items-end justify-between gap-6 border-b border-zinc-900/10 pb-5">
+                <div>
+                  <p class="text-sm uppercase tracking-[0.18em] text-sage mb-2">Adaptive Starter Bundle</p>
+                  <p class="font-heading text-3xl font-bold tracking-tight text-zinc-900">Start without friction</p>
+                </div>
+                <p class="text-xl font-semibold text-zinc-900">CZK 1,490</p>
+              </div>
+              <p class="text-sm leading-relaxed text-zinc-600">
+                Built as the easiest first step into Adaptive Studio. A clean combination of in-person support and digital guidance that previews how the shop will feel once live.
+              </p>
+              <div class="grid grid-cols-2 gap-3 text-xs uppercase tracking-[0.18em] text-zinc-500">
+                <span class="border border-zinc-900/10 px-3 py-3 bg-white/70">2 visits</span>
+                <span class="border border-zinc-900/10 px-3 py-3 bg-white/70">1 digital protocol</span>
+                <span class="border border-zinc-900/10 px-3 py-3 bg-white/70">fast checkout</span>
+                <span class="border border-zinc-900/10 px-3 py-3 bg-white/70">Stripe Payment Links</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 sm:px-10 lg:px-20 pb-12">
+      <div class="max-w-6xl">
+        <div class="grid gap-4 md:grid-cols-3">
+          {categories.map((category) => (
+            <div class="border border-zinc-200/80 bg-white/80 backdrop-blur-sm p-5 shadow-[0_12px_40px_rgba(24,24,27,0.04)]">
+              <p class="text-[10px] tracking-[0.26em] uppercase text-sage mb-3">Category</p>
+              <h2 class="font-heading text-2xl font-bold tracking-tight text-zinc-900 mb-2">{category.name}</h2>
+              <p class="text-sm leading-relaxed text-zinc-500">{category.blurb}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 sm:px-10 lg:px-20 pb-24">
+      <div class="max-w-6xl grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {products.map((product) => (
+          <article class="group relative overflow-hidden border border-zinc-200/80 bg-[linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(247,244,238,0.92))] p-6 sm:p-7 flex flex-col min-h-[320px] shadow-[0_16px_48px_rgba(24,24,27,0.06)] transition-transform duration-300 hover:-translate-y-1">
+            <div class="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(107,143,113,0.7),transparent)]"></div>
+            <div class="flex items-start justify-between gap-4 mb-8">
+              <div>
+                <p class="text-[10px] tracking-[0.28em] uppercase text-sage mb-3">{product.category}</p>
+                <h2 class="font-heading text-2xl font-bold tracking-tight text-zinc-900">{product.name}</h2>
+              </div>
+              <span class="shrink-0 border border-zinc-900/10 bg-white/80 px-3 py-2 text-[10px] font-semibold tracking-[0.18em] uppercase text-zinc-500">
+                {product.accent}
+              </span>
+            </div>
+            <p class="text-sm leading-relaxed text-zinc-600 mb-8 flex-1">{product.description}</p>
+            <div class="pt-5 border-t border-zinc-900/8 flex items-center justify-between gap-4">
+              <span class="text-xl font-semibold text-zinc-900">{product.price}</span>
+              <a
+                href="/en/preview/kontakt/"
+                class="inline-flex items-center justify-center px-4 py-2 text-[11px] font-semibold tracking-[0.14em] uppercase bg-zinc-900 text-white hover:bg-zinc-700 transition-colors"
+              >
+                Reserve access
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <Footer lang="en" />
+</Layout>
