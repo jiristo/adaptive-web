@@ -9,13 +9,17 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 const photos = [
-  { img: null, alt: 'Vstup do studia' },
-  { img: null, alt: 'Tréninkový prostor' },
-  { img: null, alt: 'Kryokomora' },
-  { img: null, alt: 'Zázemí' },
-  { img: null, alt: 'Regenerační zóna' },
-  { img: null, alt: 'Detail vybavení' },
+  { img: '/images/kapka-resort-exterier.jpg', alt: 'Kapka Resort' },
+  { img: '/images/kapka-kryokomora.jpg', alt: t('studioFeatureKryoTitle') },
+  { img: '/images/kapka-fitness.jpg', alt: t('studioFeatureFitnessTitle') },
+  { img: '/images/kapka-wellness.jpg', alt: t('studioFeatureWellnessTitle') },
 ];
+
+const features = [
+  { titleKey: 'studioFeatureKryoTitle', bodyKey: 'studioFeatureKryoBody' },
+  { titleKey: 'studioFeatureFitnessTitle', bodyKey: 'studioFeatureFitnessBody' },
+  { titleKey: 'studioFeatureWellnessTitle', bodyKey: 'studioFeatureWellnessBody' },
+] as const;
 ---
 
 <div
@@ -41,23 +45,42 @@ const photos = [
     </button>
   </div>
 
+  <!-- Location -->
+  <div class="px-6 sm:px-10 lg:px-20 pt-10 border-b border-zinc-800 pb-10">
+    <p class="text-[10px] tracking-[0.35em] uppercase text-sage mb-4">{t('studioLocationTag')}</p>
+    <h3 class="font-heading text-2xl sm:text-3xl font-bold text-white tracking-tight mb-5">
+      {t('studioLocationHeading')}
+    </h3>
+    <p class="text-zinc-300 text-sm sm:text-base leading-relaxed max-w-2xl mb-8">
+      {t('studioLocationBody')}
+    </p>
+
+    <div class="grid sm:grid-cols-3 gap-6 mb-8 max-w-4xl">
+      {features.map((f) => (
+        <div>
+          <p class="text-sm font-semibold text-white mb-2">{t(f.titleKey)}</p>
+          <p class="text-zinc-400 text-xs leading-relaxed">{t(f.bodyKey)}</p>
+        </div>
+      ))}
+    </div>
+
+    <a
+      href="https://www.kapkaresort.cz/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-white hover:text-sage transition-colors duration-200 font-semibold"
+    >
+      {t('studioLocationLinkText')}
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+
   <!-- Photo grid -->
   <div class="flex-1 overflow-y-auto px-6 sm:px-10 lg:px-20 py-10">
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
       {photos.map((p) => (
         <div class="relative aspect-[4/3] overflow-hidden bg-zinc-900">
-          {p.img
-            ? <img src={p.img} alt={p.alt} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-            : (
-              <>
-                <div class="absolute top-0 left-0 w-6 h-6 border-t border-l border-sage opacity-40"></div>
-                <div class="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-sage opacity-40"></div>
-                <div class="absolute inset-0 flex items-center justify-center">
-                  <p class="text-[9px] tracking-[0.3em] text-zinc-600 uppercase">{p.alt}</p>
-                </div>
-              </>
-            )
-          }
+          <img src={p.img} alt={p.alt} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
         </div>
       ))}
     </div>

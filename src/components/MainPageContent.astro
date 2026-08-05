@@ -7,7 +7,6 @@ import HowItWorks from './sections/HowItWorks.astro';
 import WhatYouExperience from './sections/WhatYouExperience.astro';
 import Services from './sections/Services.astro';
 import About from './sections/About.astro';
-import SpaceSearch from './sections/SpaceSearch.astro';
 import BookingCTA from './sections/BookingCTA.astro';
 import StudioModal from './StudioModal.astro';
 import type { Lang } from '../i18n/ui';
@@ -30,7 +29,6 @@ const { lang, homePath, otherLangHomePath } = Astro.props;
   <WhatYouExperience lang={lang} bookingHref={`${homePath}#booking`} />
   <Services lang={lang} />
   <About lang={lang} />
-  <SpaceSearch lang={lang} />
   <BookingCTA lang={lang} />
 </main>
 <Footer lang={lang} />

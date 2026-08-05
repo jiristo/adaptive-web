@@ -16,7 +16,6 @@ const basePath = homePath ?? (lang === 'cs' ? '/preview/' : '/en/preview/');
 // TODO: Replace with actual provider URLs
 const CALENDLY_URL = 'https://calendly.com/jiri-adaptivestudio/30min';
 const RESERVANTO_URL = lang === 'cs' ? '/preview/rezervace/' : '/en/preview/rezervace/';
-const spaceSearchHref = `${basePath}#space-search`;
 ---
 
 <nav
@@ -24,17 +23,10 @@ const spaceSearchHref = `${basePath}#space-search`;
   id="main-nav"
 >
   <div class="border-b border-zinc-800 bg-zinc-900 text-white">
-    <div class="px-6 sm:px-10 lg:px-20 py-3 sm:py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-5">
-      <p class="text-[11px] sm:text-[12px] tracking-[0.18em] uppercase text-zinc-200 font-medium">
+    <div class="px-6 sm:px-10 lg:px-20 py-3 sm:py-4 flex items-center justify-center">
+      <p class="text-[11px] sm:text-[12px] tracking-[0.18em] uppercase text-zinc-200 font-medium text-center">
         {t('navSpaceBanner')}
       </p>
-      <a
-        href={spaceSearchHref}
-        class="inline-flex items-center gap-2 text-[11px] sm:text-[12px] tracking-[0.2em] uppercase text-white hover:text-sage transition-colors duration-200 whitespace-nowrap font-semibold"
-      >
-        {t('navSpaceBannerCta')}
-        <span aria-hidden="true">→</span>
-      </a>
     </div>
   </div>
   <div class="px-6 sm:px-10 lg:px-20 flex items-center justify-between h-16">

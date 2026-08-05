@@ -48,10 +48,22 @@ export const ui = {
     navAboutHref: '/preview/o-nas/',
     navBook: 'Konzultace',
     navReservation: 'Rezervace',
-    navSpaceBanner: 'Adaptive Studio právě hledá prostor pro svůj první domov ve Zlíně.',
-    navSpaceBannerCta: 'Máte tip?',
-    navSpaceBannerSubject: 'Tip na prostor pro Adaptive Studio',
+    navSpaceBanner: 'Adaptive Studio našlo svůj domov — program bude dostupný v Kapka Resortu na Vsetíně u Zlína.',
     studioClose: 'Zavřít',
+    studioLocationTag: 'KDE NÁS NAJDETE',
+    studioLocationHeading: 'Kapka Resort — Vsetín u Zlína',
+    studioLocationBody:
+      'Kapka Resort je moderní volnočasový resort uprostřed beskydské přírody na Vsetíně. Adaptive Studio a jeho program tam provozujeme, protože zázemí Kapky nabízí přesně to, co pro naši práci s tělem a nervovým systémem potřebujeme.',
+    studioFeatureKryoTitle: 'Kryokomora',
+    studioFeatureKryoBody:
+      'Jedna z nejmodernějších kryokomor na Moravě — chladová terapie jako klíčová součást tréninku odolnosti a regenerace nervového systému.',
+    studioFeatureFitnessTitle: 'Fitness zóna',
+    studioFeatureFitnessBody:
+      'Kardio, posilovací i jógová část pro pohybovou práci a silový trénink v rámci programu.',
+    studioFeatureWellnessTitle: 'Wellness',
+    studioFeatureWellnessBody:
+      'Saunový svět, venkovní studený i teplý bazének a privátní wellness pro hlubokou regeneraci a práci s teplem.',
+    studioLocationLinkText: 'Web Kapka Resortu',
     howApproachLink: 'Více o našem přístupu',
     approachHref: '/preview/sluzby/',
 
@@ -134,43 +146,6 @@ export const ui = {
     aboutStoryLabel: 'Celý příběh',
     aboutStoryHref: '/preview/pribeh/',
 
-    // Space search
-    spaceTag: 'HLEDÁME PROSTOR',
-    spaceH2a: 'Hledáme domov',
-    spaceH2b: 'pro první Adaptive Studio.',
-    spaceIntro:
-      'Adaptive Studio už vzniká jako služba, přístup i komunita. Teď hledáme první stálý prostor, kde se může naplno propojit regenerace, dech, pohyb a nervous system training.',
-    spaceCard1Tag: 'Co hledáme',
-    spaceCard1Title: 'Klidný, funkční prostor',
-    spaceCard1Body:
-      'Místo pro individuální práci, malé skupiny a promyšlenou regeneraci. Nemusí být hotové. Důležitější je potenciál a atmosféra.',
-    spaceCard2Tag: 'Kde hledáme',
-    spaceCard2Title: 'Zlín a blízké okolí',
-    spaceCard2Body:
-      'Ideálně dostupná lokalita s možností vytvořit intimnější studio, ne anonymní provoz. Zajímá nás samostatný prostor i chytré partnerství.',
-    spaceCard3Tag: 'Pro koho je to relevantní',
-    spaceCard3Title: 'Majitelé, partneři, tipaři',
-    spaceCard3Body:
-      'Pokud víte o vhodném prostoru, hledáte nájemce nebo chcete propojit Adaptive Studio s existujícím konceptem, dává to smysl probrat.',
-    spaceAsideTag: 'VÍTE O NĚM?',
-    spaceAsideTitle: 'Máte tip na prostor?',
-    spaceAsideBody:
-      'Pošlete mi adresu, odkaz, fotky nebo jen krátkou zprávu. Když bude prostor dávat smysl pro první Adaptive Studio, navážu.',
-    spacePrimaryCta: 'Poslat tip na prostor',
-    spaceSecondaryCta: 'Zobrazit kontakt',
-    spaceMailSubject: 'Tip na prostor pro Adaptive Studio',
-    spaceFootnote: 'Stačí krátký e-mail nebo přeposlání nabídky na',
-    spaceFormName: 'Formulář pro tip na prostor',
-    spaceFieldName: 'Jméno',
-    spaceFieldEmail: 'E-mail',
-    spaceFieldLink: 'Odkaz nebo adresa prostoru',
-    spaceFieldMessage: 'Krátká poznámka',
-    spaceFieldNamePlaceholder: 'Vaše jméno',
-    spaceFieldEmailPlaceholder: 'vas@email.cz',
-    spaceFieldLinkPlaceholder: 'adresa, odkaz na inzerát nebo lokalita',
-    spaceFieldMessagePlaceholder: 'Co je na prostoru zajímavé, rozloha, stav, kontakt...',
-    spaceFormNote: 'Stačí stručný tip. Ozvu se jen pokud bude prostor dávat smysl.',
-
     // Booking CTA
     ctaTag: 'PRVNÍ KROK',
     ctaH2: 'Chceš se naučit lépe zvládat stres a regeneraci?',
@@ -231,10 +206,22 @@ export const ui = {
     navAboutHref: '/en/preview/o-nas/',
     navBook: 'Consultation',
     navReservation: 'Book',
-    navSpaceBanner: 'Adaptive Studio is looking for a space for its first home in Zlin.',
-    navSpaceBannerCta: 'Have a lead?',
-    navSpaceBannerSubject: 'Space lead for Adaptive Studio',
+    navSpaceBanner: 'Adaptive Studio has found its home — our program will be available at Kapka Resort in Vsetín, near Zlín.',
     studioClose: 'Close',
+    studioLocationTag: 'WHERE TO FIND US',
+    studioLocationHeading: 'Kapka Resort — Vsetín, near Zlín',
+    studioLocationBody:
+      'Kapka Resort is a modern leisure resort set in the Beskydy mountains, in Vsetín. We run Adaptive Studio and its program there because Kapka’s facilities offer exactly what we need for our work with the body and the nervous system.',
+    studioFeatureKryoTitle: 'Cryo chamber',
+    studioFeatureKryoBody:
+      'One of the most advanced cryo chambers in Moravia — cold therapy as a core part of resilience training and nervous system recovery.',
+    studioFeatureFitnessTitle: 'Fitness zone',
+    studioFeatureFitnessBody:
+      'Cardio, strength, and yoga areas for movement work and strength training within the program.',
+    studioFeatureWellnessTitle: 'Wellness',
+    studioFeatureWellnessBody:
+      'A sauna world, outdoor hot and cold pools, and private wellness for deep recovery and heat work.',
+    studioLocationLinkText: 'Kapka Resort website',
     howApproachLink: 'More about our approach',
     approachHref: '/en/preview/sluzby/',
 
@@ -316,43 +303,6 @@ export const ui = {
     aboutCredentials: 'Fitness trainer · Polyvagal theory · AI & data science',
     aboutStoryLabel: 'Full story',
     aboutStoryHref: '/en/preview/pribeh/',
-
-    // Space search
-    spaceTag: 'LOOKING FOR A SPACE',
-    spaceH2a: 'We are looking for a home',
-    spaceH2b: 'for the first Adaptive Studio.',
-    spaceIntro:
-      'Adaptive Studio already exists as a service, an approach, and a growing community. Now we are looking for the first permanent space where recovery, breath, movement, and nervous system training can fully come together.',
-    spaceCard1Tag: 'What we are looking for',
-    spaceCard1Title: 'A calm, functional space',
-    spaceCard1Body:
-      'A place for one-to-one work, small groups, and thoughtful recovery. It does not need to be finished. Potential and atmosphere matter more.',
-    spaceCard2Tag: 'Where we are looking',
-    spaceCard2Title: 'Zlin and nearby area',
-    spaceCard2Body:
-      'Ideally an accessible location with room for a more intimate studio, not an anonymous operation. We are open to an independent space or a smart partnership.',
-    spaceCard3Tag: 'Who this is relevant for',
-    spaceCard3Title: 'Owners, partners, connectors',
-    spaceCard3Body:
-      'If you know about a suitable space, are looking for a tenant, or want to connect Adaptive Studio with an existing concept, it is worth discussing.',
-    spaceAsideTag: 'KNOW A PLACE?',
-    spaceAsideTitle: 'Do you have a lead?',
-    spaceAsideBody:
-      'Send me an address, a link, photos, or just a short message. If the space fits the vision for the first Adaptive Studio, I will follow up.',
-    spacePrimaryCta: 'Send a space lead',
-    spaceSecondaryCta: 'View contact',
-    spaceMailSubject: 'Space lead for Adaptive Studio',
-    spaceFootnote: 'A short email or a forwarded listing is enough at',
-    spaceFormName: 'Space lead form',
-    spaceFieldName: 'Name',
-    spaceFieldEmail: 'Email',
-    spaceFieldLink: 'Link or address',
-    spaceFieldMessage: 'Short note',
-    spaceFieldNamePlaceholder: 'Your name',
-    spaceFieldEmailPlaceholder: 'your@email.com',
-    spaceFieldLinkPlaceholder: 'address, listing link, or location',
-    spaceFieldMessagePlaceholder: 'Why this space could fit, size, condition, contact details...',
-    spaceFormNote: 'A short lead is enough. I will only follow up if the space looks relevant.',
 
     // Booking CTA
     ctaTag: 'FIRST STEP',
