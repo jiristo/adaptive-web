@@ -1,0 +1,414 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import Nav from '../../../../components/Nav.astro';
+import Footer from '../../../../components/Footer.astro';
+import StudioModal from '../../../../components/StudioModal.astro';
+
+const CALENDLY_URL = 'https://calendly.com/jiri-adaptivestudio/30min';
+
+const comparisonRows = [
+  {
+    tag: 'K',
+    label: 'Stress adaptation',
+    values: ['✓', '—', '✓', '—', '✓', '✓'],
+  },
+  {
+    tag: 'D',
+    label: 'Handle stress whenever it disrupts how your body functions',
+    values: ['✓', '✓', '✓', '✓', '~', '—'],
+  },
+  {
+    tag: 'M',
+    label: 'Conscious work with exhaustion',
+    values: ['✓', '✓', '✓', '✓', '—', '—'],
+  },
+  {
+    tag: 'M',
+    label: 'Conscious activation–recovery',
+    values: ['✓', '✓', '~', '✓', '—', '—'],
+  },
+  {
+    tag: 'T',
+    label: 'Releases tension in the body',
+    values: ['✓', '✓', '✓', '~', '✓', '—'],
+  },
+  {
+    tag: 'S',
+    label: 'Reduces inflammation and fatigue',
+    values: ['✓', '—', '—', '—', '—', '~'],
+  },
+] as const;
+
+const comparisonColumns = ['Adaptive program', 'Yoga', 'Psychotherapy', 'Gym', 'Wellbeing care', 'Wellness'];
+---
+
+<Layout
+  title="8-Week Program — Adaptive Studio × Kapka Resort"
+  description="An 8-week program for consciously managing stress and nervous system recovery. Once a week, 90 minutes, at Kapka Resort. Cryo chamber, isometric training and red light in a single session."
+  lang="en"
+>
+  <StudioModal lang="en" />
+  <Nav lang="en" />
+
+  <main>
+
+    <!-- Hero -->
+    <section class="flex flex-col justify-center px-6 sm:px-10 lg:px-20 py-24 pt-36">
+      <div class="max-w-4xl reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">8-WEEK PROGRAM · KAPKA RESORT</p>
+        <h1 class="font-heading font-bold leading-[0.95] tracking-tight text-zinc-900 mb-8"
+            style="font-size: clamp(2.75rem, 8vw, 6rem)">
+          End the exhaustion and weekend shutdowns.
+        </h1>
+        <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-2xl mb-10">
+          Learn to consciously switch between performance and recovery — with immediate relief already during the sessions, and measurable progress.
+        </p>
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="#signup"
+             class="inline-flex items-center justify-center px-10 py-4 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200">
+            Reserve your spot
+          </a>
+          <p class="text-zinc-400 text-xs tracking-[0.1em] uppercase">Your commitment: once a week, 90 minutes, for 8 weeks</p>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1 mt-16">
+        <div class="grid sm:grid-cols-2 gap-3 md:gap-4 max-w-5xl">
+          <div class="relative aspect-[4/3] overflow-hidden bg-zinc-100">
+            <img src="/images/athlete-relax-mindfulness.webp" alt="A man relaxing on the grass with headphones on" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="relative aspect-[4/3] overflow-hidden bg-zinc-100">
+            <img src="/images/relaxed-woman-work.webp" alt="A woman taking a moment of calm at her desk" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who it's for -->
+    <section class="px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100 bg-zinc-50/70">
+      <div class="max-w-3xl reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">WHO IT'S FOR</p>
+        <p class="text-2xl sm:text-3xl text-zinc-900 font-heading font-semibold leading-snug">
+          For the overloaded and burned out, managers under performance pressure, and anyone for whom rest has stopped working — waking up tired, a body stuck in tension, weekend "shutdowns".
+        </p>
+      </div>
+
+      <div class="mt-14 reveal reveal-delay-1">
+        <p class="text-[10px] tracking-[0.35em] uppercase text-zinc-400 mb-4">Everything is included</p>
+        <div class="flex flex-wrap gap-2">
+          {['Regulation sessions', 'Cryo chamber', 'Wellness', 'Educational materials', 'Consultation'].map((item) => (
+            <span class="px-4 py-2 border border-zinc-200 bg-white text-sm font-medium text-zinc-900">{item}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Three phases -->
+    <section class="px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100">
+      <div class="mb-16 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">HOW THE PROGRAM WORKS</p>
+        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+          Three phases in every session.
+        </h2>
+        <p class="text-zinc-500 text-sm mt-4 max-w-2xl leading-relaxed">
+          Every session and every block of the 8-week program is built on these three phases.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 md:divide-x divide-zinc-200 gap-16 md:gap-0">
+        <div class="md:pr-8 reveal reveal-delay-1">
+          <p class="font-heading font-bold text-zinc-200 leading-none mb-8 select-none" style="font-size: clamp(4rem, 8vw, 6rem)">01</p>
+          <h3 class="font-heading text-xl font-bold text-zinc-900 tracking-tight mb-4">Activation</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed mb-8 max-w-xs">
+            Techniques that teach body and mind to consciously activate — breath, cold, and targeted stimulation matched to the state you arrive in.
+          </p>
+          <div class="relative aspect-[4/3] overflow-hidden bg-zinc-100">
+            <img src="/images/kapka-kryokomora.jpg" alt="Cryo chamber" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <p class="text-[10px] tracking-[0.3em] uppercase text-zinc-400 mt-4">Cryo chamber</p>
+        </div>
+        <div class="md:px-8 reveal reveal-delay-2">
+          <p class="font-heading font-bold text-zinc-200 leading-none mb-8 select-none" style="font-size: clamp(4rem, 8vw, 6rem)">02</p>
+          <h3 class="font-heading text-xl font-bold text-zinc-900 tracking-tight mb-4">Training</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed mb-8 max-w-xs">
+            Isometric strength training that doesn't overload an already-stressed nervous system. Muscle contractions help the body flush out stress and tension.
+          </p>
+          <div class="relative aspect-[4/3] overflow-hidden bg-zinc-100">
+            <img src="/images/isometric-pull.jpg" alt="Isometric training" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <p class="text-[10px] tracking-[0.3em] uppercase text-zinc-400 mt-4">Isometric training</p>
+        </div>
+        <div class="md:pl-8 reveal reveal-delay-3">
+          <p class="font-heading font-bold text-zinc-200 leading-none mb-8 select-none" style="font-size: clamp(4rem, 8vw, 6rem)">03</p>
+          <h3 class="font-heading text-xl font-bold text-zinc-900 tracking-tight mb-4">Recovery</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed mb-8 max-w-xs">
+            We bring the body back to a state where it can genuinely recover — with the help of the cryo chamber, red light, and guided calming. You feel relief already during the session.
+          </p>
+          <div class="relative aspect-[4/3] overflow-hidden bg-zinc-100">
+            <img src="/images/red-light-therapy.webp" alt="Red light" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <p class="text-[10px] tracking-[0.3em] uppercase text-zinc-400 mt-4">Red light</p>
+        </div>
+      </div>
+
+      <p class="text-zinc-400 text-xs mt-16 pt-8 border-t border-zinc-100">
+        <span class="text-sage font-semibold tracking-[0.1em] uppercase">Program principle</span> — The phases are adapted to the goal of each individual block.
+      </p>
+    </section>
+
+    <!-- Program structure -->
+    <section class="border-t border-zinc-100">
+      <div class="px-6 sm:px-10 lg:px-20 py-24">
+        <div class="mb-16 reveal">
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">PROGRAM STRUCTURE</p>
+          <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+            Eight weeks. Four blocks.
+          </h2>
+          <p class="text-zinc-500 text-sm mt-4 max-w-2xl leading-relaxed">
+            Each block works with activation, training, and recovery differently — according to its goal. We measure your progress, so you can see your capacity change.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-0 lg:divide-x divide-zinc-200">
+          <div class="lg:pr-8 reveal reveal-delay-1">
+            <p class="text-[10px] tracking-[0.3em] uppercase text-zinc-400 mb-3">Week 1–2</p>
+            <h3 class="font-heading text-lg font-bold text-zinc-900 mb-3">Awareness and body sensing</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Recognize the first signs of activation and catch the reaction before it grows into overload.</p>
+          </div>
+          <div class="lg:px-8 reveal reveal-delay-2">
+            <p class="text-[10px] tracking-[0.3em] uppercase text-zinc-400 mb-3">Week 3–4</p>
+            <h3 class="font-heading text-lg font-bold text-zinc-900 mb-3">Stabilization and return to calm</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Return to a more stable state through attention, breath, and body work.</p>
+          </div>
+          <div class="lg:px-8 reveal reveal-delay-3">
+            <p class="text-[10px] tracking-[0.3em] uppercase text-zinc-400 mb-3">Week 5–6</p>
+            <h3 class="font-heading text-lg font-bold text-zinc-900 mb-3">Load modulation</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Gradually dose the load, recognize your own capacity, and train the return to recovery.</p>
+          </div>
+          <div class="lg:pl-8 reveal reveal-delay-4">
+            <p class="text-[10px] tracking-[0.3em] uppercase text-zinc-400 mb-3">Week 7–8</p>
+            <h3 class="font-heading text-lg font-bold text-zinc-900 mb-3">Integration into everyday life</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Use these skills at work, in sport, with family, and in everyday decisions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Practicalities bar -->
+      <div class="bg-zinc-900 text-white px-6 sm:px-10 lg:px-20 py-8">
+        <div class="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
+          <p class="text-[10px] tracking-[0.3em] uppercase text-sage shrink-0">Practical details</p>
+          <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm text-zinc-200">
+            <span>Once a week</span>
+            <span>90 minutes</span>
+            <span>Kapka Resort</span>
+            <span>groups of max. 8</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100 bg-zinc-50/70">
+      <div class="mb-14 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">COMPARISON</p>
+        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+          What you get only here.
+        </h2>
+      </div>
+
+      <div class="overflow-x-auto reveal reveal-delay-1">
+        <table class="w-full min-w-[760px] border-collapse text-sm">
+          <thead>
+            <tr>
+              <th class="text-left font-normal p-4"></th>
+              {comparisonColumns.map((col, i) => (
+                <th class={`p-4 text-xs font-semibold tracking-[0.1em] uppercase ${i === 0 ? 'bg-zinc-900 text-white' : 'text-zinc-500'}`}>
+                  {col}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {comparisonRows.map((row) => (
+              <tr class="border-t border-zinc-200">
+                <td class="p-4 text-zinc-700 whitespace-nowrap sm:whitespace-normal">
+                  <span class="inline-flex items-center justify-center w-5 h-5 border border-zinc-300 text-[10px] font-semibold text-zinc-500 mr-2 align-middle">{row.tag}</span>
+                  {row.label}
+                </td>
+                {row.values.map((v, i) => (
+                  <td class={`p-4 text-center ${i === 0 ? 'bg-zinc-100 font-semibold text-sage' : 'text-zinc-400'}`}>{v}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-8 text-xs text-zinc-400 reveal reveal-delay-2">
+        ✓ yes &nbsp;&nbsp; ~ partially &nbsp;&nbsp; — no
+      </div>
+      <div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-xs text-zinc-400 reveal reveal-delay-2">
+        <span class="font-semibold text-zinc-600 tracking-[0.1em] uppercase">Method map</span>
+        <span>K — Cryo chamber</span>
+        <span>S — Red light</span>
+        <span>T — Strength training</span>
+        <span>D — Breathwork</span>
+        <span>M — Mindfulness</span>
+      </div>
+    </section>
+
+    <!-- What you get + founder -->
+    <section class="px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <div class="reveal">
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">WHAT YOU'LL TAKE AWAY</p>
+          <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900 mb-10">
+            You'll learn what wellness can't teach you.
+          </h2>
+          <div class="space-y-0">
+            <div class="border-t border-zinc-200 py-6">
+              <p class="text-xs text-sage font-semibold mb-2">01</p>
+              <h3 class="font-heading text-lg font-bold text-zinc-900 mb-2">Immediate relief</h3>
+              <p class="text-zinc-500 text-sm leading-relaxed">You'll feel calm and released tension already during the first sessions.</p>
+            </div>
+            <div class="border-t border-zinc-200 py-6">
+              <p class="text-xs text-sage font-semibold mb-2">02</p>
+              <h3 class="font-heading text-lg font-bold text-zinc-900 mb-2">A transferable skill</h3>
+              <p class="text-zinc-500 text-sm leading-relaxed">Conscious switching between activation and recovery — at work, in sport, and at home.</p>
+            </div>
+            <div class="border-t border-b border-zinc-200 py-6">
+              <p class="text-xs text-sage font-semibold mb-2">03</p>
+              <h3 class="font-heading text-lg font-bold text-zinc-900 mb-2">Measurable progress</h3>
+              <p class="text-zinc-500 text-sm leading-relaxed">We track your nervous system's state over time, so you can see your progress in the data.</p>
+            </div>
+          </div>
+          <a href="#signup"
+             class="mt-10 inline-flex items-center justify-center px-10 py-4 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200">
+            Reserve your spot in the program
+          </a>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <div class="relative w-full max-w-sm aspect-[4/5] overflow-hidden bg-zinc-100 mb-8">
+            <img src="/images/jiri-sto.webp" alt="Jiří J. Stodůlka" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <p class="font-heading text-2xl sm:text-3xl font-bold text-zinc-900 tracking-tight mb-6">"It wasn't theory. It was necessity."</p>
+          <p class="text-zinc-500 text-sm leading-relaxed mb-6 max-w-md">
+            I went through burnout and health problems myself — I pieced the way back together over years. The program is built on what actually worked.
+          </p>
+          <p class="font-heading font-semibold text-zinc-900">Jiří J. Stodůlka</p>
+          <p class="text-zinc-400 text-xs tracking-[0.1em] uppercase">Founder, Adaptive Studio</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signup form -->
+    <section id="signup" class="px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100 bg-zinc-50/70">
+      <div class="max-w-xl mx-auto reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6 text-center">Reserve your spot</p>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 mb-4 text-center">
+          I'm interested in the 8-week program.
+        </h2>
+        <p class="text-zinc-500 text-sm leading-relaxed mb-10 text-center">
+          Leave us your contact details and we'll follow up with available dates and next steps.
+        </p>
+
+        <form
+          name="program-8-week"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="space-y-4"
+        >
+          <input type="hidden" name="form-name" value="program-8-week" />
+          <input type="hidden" name="bot-field" />
+          <div>
+            <label class="block text-[10px] tracking-[0.18em] uppercase text-zinc-400 mb-2">Name</label>
+            <input
+              type="text"
+              name="name"
+              required
+              placeholder="Your name"
+              class="w-full px-4 py-3 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 bg-white"
+            />
+          </div>
+          <div>
+            <label class="block text-[10px] tracking-[0.18em] uppercase text-zinc-400 mb-2">Email</label>
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="your@email.com"
+              class="w-full px-4 py-3 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 bg-white"
+            />
+          </div>
+          <div>
+            <label class="block text-[10px] tracking-[0.18em] uppercase text-zinc-400 mb-2">Phone</label>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="+420 xxx xxx xxx"
+              class="w-full px-4 py-3 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 bg-white"
+            />
+          </div>
+          <div>
+            <label class="block text-[10px] tracking-[0.18em] uppercase text-zinc-400 mb-2">Message (optional)</label>
+            <textarea
+              name="message"
+              rows="3"
+              placeholder="What you'd expect from the program, or a preferred start date"
+              class="w-full px-4 py-3 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 resize-y bg-white"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full inline-flex items-center justify-center px-8 py-4 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200"
+          >
+            I'm interested in the program
+          </button>
+        </form>
+        <p class="text-zinc-400 text-xs text-center mt-6">adaptivestudio.cz · jiri@adaptivestudio.com · 736 445 942</p>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="min-h-[60vh] flex flex-col items-center justify-center px-6 text-center py-24 border-t border-zinc-100">
+      <div class="reveal">
+        <h2 class="font-heading font-bold leading-tight tracking-tight text-zinc-900 mb-8"
+            style="font-size: clamp(2.5rem, 7vw, 5rem)">
+          Want to learn more?
+        </h2>
+        <p class="text-zinc-500 text-sm leading-relaxed mb-3 max-w-sm mx-auto">
+          Book a short call — we'll walk through the program and whether it's the right fit for you.
+        </p>
+        <a href={CALENDLY_URL}
+           class="inline-flex items-center justify-center px-12 py-5 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200 mt-8">
+          Book a call
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer lang="en" />
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    },
+    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
+</script>

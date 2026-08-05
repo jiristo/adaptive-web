@@ -36,7 +36,10 @@ export const ui = {
     navHowItWorks: 'Jak to funguje',
     navApproach: 'Služby',
     navServices: 'Služby',
+    navProgram: 'Program',
+    programHref: '/preview/program/',
     navStudio: 'Studio',
+    navBannerStudioCta: 'O studiu',
     navApps: 'Nástroje',
     navAppCortisol: 'Kortizol',
     navAppSummer: 'Letní přetížení',
@@ -64,6 +67,7 @@ export const ui = {
     studioFeatureWellnessBody:
       'Saunový svět, venkovní studený i teplý bazének a privátní wellness pro hlubokou regeneraci a práci s teplem.',
     studioLocationLinkText: 'Web Kapka Resortu',
+    studioProgramLinkText: 'Osmitýdenní program',
     howApproachLink: 'Více o našem přístupu',
     approachHref: '/preview/sluzby/',
 
@@ -92,15 +96,18 @@ export const ui = {
     phase1Num: '01',
     phase1Title: 'AKTIVACE',
     phase1Body:
-      'Nejdřív zjistíme, v jakém stavu přicházíš a co je potřeba podpořit. Podle toho volíme vstup do lekce nebo návštěvy: dech, chlad, zklidnění nebo jemnou aktivaci.',
+      'Techniky, které učí tělo i mysl vědomě se aktivovat — dech, chlad a cílená stimulace podle stavu, ve kterém přicházíte.',
+    phase1Caption: 'Kryokomora',
     phase2Num: '02',
     phase2Title: 'TRÉNINK',
     phase2Body:
-      'Pak přichází cílená práce s tělem. Někdy formou vedeného pohybu a tréninku, jindy skrze konkrétní regenerační nástroj. Cíl je stejný: zvýšit odolnost, sílu nebo schopnost obnovy bez zbytečného přetížení.',
+      'Izometrický silový trénink, který nezatěžuje přetíženou nervovou soustavu. Svalové kontrakce pomáhají tělu odplavit stres a napětí.',
+    phase2Caption: 'Izometrický trénink',
     phase3Num: '03',
     phase3Title: 'REGENERACE',
     phase3Body:
-      'Na závěr tělo vracíme do stavu, ve kterém umí skutečně regenerovat. Právě tady se učíš nejen zvládat zátěž, ale i přepnout zpět do klidu, který dlouhodobý výkon drží pohromadě.',
+      'Tělo vracíme do stavu, kdy umí skutečně regenerovat — s pomocí kryokomory, červeného světla a řízeného zklidnění. Úlevu cítíte už během lekce.',
+    phase3Caption: 'Červené světlo',
 
     // Why it works
     whyTag: 'VĚDA ZA METODOU',
@@ -194,7 +201,10 @@ export const ui = {
     navHowItWorks: 'How it works',
     navApproach: 'Services',
     navServices: 'Services',
+    navProgram: 'Program',
+    programHref: '/en/preview/program/',
     navStudio: 'Studio',
+    navBannerStudioCta: 'About the studio',
     navApps: 'Tools',
     navAppCortisol: 'Cortisol',
     navAppSummer: 'Summer overload',
@@ -222,6 +232,7 @@ export const ui = {
     studioFeatureWellnessBody:
       'A sauna world, outdoor hot and cold pools, and private wellness for deep recovery and heat work.',
     studioLocationLinkText: 'Kapka Resort website',
+    studioProgramLinkText: '8-Week Program',
     howApproachLink: 'More about our approach',
     approachHref: '/en/preview/sluzby/',
 
@@ -250,15 +261,18 @@ export const ui = {
     phase1Num: '01',
     phase1Title: 'ACTIVATION',
     phase1Body:
-      'We start by understanding the state you arrive in and what needs support. From there we choose the right entry point: breathwork, cold, downregulation or gentle activation.',
+      'Techniques that teach body and mind to consciously activate — breath, cold, and targeted stimulation matched to the state you arrive in.',
+    phase1Caption: 'Cryo chamber',
     phase2Num: '02',
     phase2Title: 'TRAINING',
     phase2Body:
-      'Then comes targeted work with the body. Sometimes through guided movement and training, sometimes through a specific recovery tool. The goal is the same: build resilience, strength or recovery capacity without unnecessary overload.',
+      'Isometric strength training that doesn\'t overload an already-stressed nervous system. Muscle contractions help the body flush out stress and tension.',
+    phase2Caption: 'Isometric training',
     phase3Num: '03',
     phase3Title: 'RECOVERY',
     phase3Body:
-      'At the end, we bring the body back into a state where it can truly recover. This is where you learn not only to handle stress, but also to shift back into the calm that makes long-term performance sustainable.',
+      'We bring the body back to a state where it can genuinely recover — with the help of the cryo chamber, red light, and guided calming. You feel relief already during the session.',
+    phase3Caption: 'Red light',
 
     // Why it works
     whyTag: 'THE SCIENCE',

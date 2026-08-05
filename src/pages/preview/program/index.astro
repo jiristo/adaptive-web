@@ -1,0 +1,414 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import StudioModal from '../../../components/StudioModal.astro';
+
+const CALENDLY_URL = 'https://calendly.com/jiri-adaptivestudio/30min';
+
+const comparisonRows = [
+  {
+    tag: 'K',
+    label: 'Adaptace na stres',
+    values: ['✓', '—', '✓', '—', '✓', '✓'],
+  },
+  {
+    tag: 'D',
+    label: 'Zvládnete stres kdykoli narušuje fungování těla',
+    values: ['✓', '✓', '✓', '✓', '~', '—'],
+  },
+  {
+    tag: 'M',
+    label: 'Vědomá práce s vyčerpáním',
+    values: ['✓', '✓', '✓', '✓', '—', '—'],
+  },
+  {
+    tag: 'M',
+    label: 'Vědomá aktivace-regenerace',
+    values: ['✓', '✓', '~', '✓', '—', '—'],
+  },
+  {
+    tag: 'T',
+    label: 'Uvolňuje napětí v těle',
+    values: ['✓', '✓', '✓', '~', '✓', '—'],
+  },
+  {
+    tag: 'S',
+    label: 'Odstranění zánětu a únavy',
+    values: ['✓', '—', '—', '—', '—', '~'],
+  },
+] as const;
+
+const comparisonColumns = ['Adaptive program', 'Jóga', 'Psychoterapie', 'Posilovna', 'Wellbeing péče', 'Wellness'];
+---
+
+<Layout
+  title="Osmitýdenní program — Adaptive Studio × Kapka Resort"
+  description="Osmitýdenní program pro vědomé zvládání stresu a regeneraci nervového systému. 1× týdně, 90 minut, v Kapka Resortu. Kryokomora, izometrický trénink a červené světlo v jedné lekci."
+  lang="cs"
+>
+  <StudioModal lang="cs" />
+  <Nav lang="cs" />
+
+  <main>
+
+    <!-- Hero -->
+    <section class="flex flex-col justify-center px-6 sm:px-10 lg:px-20 py-24 pt-36">
+      <div class="max-w-4xl reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">OSMITÝDENNÍ PROGRAM · KAPKA RESORT</p>
+        <h1 class="font-heading font-bold leading-[0.95] tracking-tight text-zinc-900 mb-8"
+            style="font-size: clamp(2.75rem, 8vw, 6rem)">
+          Konec vyčerpání a víkendových shutdownů.
+        </h1>
+        <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-2xl mb-10">
+          Naučíte se vědomě přepínat mezi výkonem a regenerací — s okamžitou úlevou už během lekcí a měřitelným postupem.
+        </p>
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="#signup"
+             class="inline-flex items-center justify-center px-10 py-4 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200">
+            Rezervujte si místo
+          </a>
+          <p class="text-zinc-400 text-xs tracking-[0.1em] uppercase">Váš závazek: 1× týdně, 90 minut, po dobu 8 týdnů</p>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1 mt-16">
+        <div class="grid sm:grid-cols-2 gap-3 md:gap-4 max-w-5xl">
+          <div class="relative aspect-[4/3] overflow-hidden bg-zinc-100">
+            <img src="/images/athlete-relax-mindfulness.webp" alt="Muž relaxuje na trávě se sluchátky" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="relative aspect-[4/3] overflow-hidden bg-zinc-100">
+            <img src="/images/relaxed-woman-work.webp" alt="Žena si dopřává klid u pracovního stolu" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pro koho -->
+    <section class="px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100 bg-zinc-50/70">
+      <div class="max-w-3xl reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">PRO KOHO</p>
+        <p class="text-2xl sm:text-3xl text-zinc-900 font-heading font-semibold leading-snug">
+          Pro přetížené a vyhořelé, manažery pod tlakem výkonu a všechny, komu odpočinek přestal fungovat — únava od probuzení, tělo v trvalé tenzi, víkendový „shutdown".
+        </p>
+      </div>
+
+      <div class="mt-14 reveal reveal-delay-1">
+        <p class="text-[10px] tracking-[0.35em] uppercase text-zinc-400 mb-4">V programu je vše</p>
+        <div class="flex flex-wrap gap-2">
+          {['Lekce regulace', 'Kryokomora', 'Wellness', 'Edukační materiály', 'Konzultace'].map((item) => (
+            <span class="px-4 py-2 border border-zinc-200 bg-white text-sm font-medium text-zinc-900">{item}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Tři fáze -->
+    <section class="px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100">
+      <div class="mb-16 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">JAK PROGRAM PROBÍHÁ</p>
+        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+          Tři fáze pro každou lekci.
+        </h2>
+        <p class="text-zinc-500 text-sm mt-4 max-w-2xl leading-relaxed">
+          Na těchto třech fázích stojí každá lekce i každý blok osmitýdenního programu.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 md:divide-x divide-zinc-200 gap-16 md:gap-0">
+        <div class="md:pr-8 reveal reveal-delay-1">
+          <p class="font-heading font-bold text-zinc-200 leading-none mb-8 select-none" style="font-size: clamp(4rem, 8vw, 6rem)">01</p>
+          <h3 class="font-heading text-xl font-bold text-zinc-900 tracking-tight mb-4">Aktivace</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed mb-8 max-w-xs">
+            Techniky, které učí tělo i mysl vědomě se aktivovat — dech, chlad a cílená stimulace podle stavu, ve kterém přicházíte.
+          </p>
+          <div class="relative aspect-[4/3] overflow-hidden bg-zinc-100">
+            <img src="/images/kapka-kryokomora.jpg" alt="Kryokomora" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <p class="text-[10px] tracking-[0.3em] uppercase text-zinc-400 mt-4">Kryokomora</p>
+        </div>
+        <div class="md:px-8 reveal reveal-delay-2">
+          <p class="font-heading font-bold text-zinc-200 leading-none mb-8 select-none" style="font-size: clamp(4rem, 8vw, 6rem)">02</p>
+          <h3 class="font-heading text-xl font-bold text-zinc-900 tracking-tight mb-4">Trénink</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed mb-8 max-w-xs">
+            Izometrický silový trénink, který nezatěžuje přetíženou nervovou soustavu. Svalové kontrakce pomáhají tělu odplavit stres a napětí.
+          </p>
+          <div class="relative aspect-[4/3] overflow-hidden bg-zinc-100">
+            <img src="/images/isometric-pull.jpg" alt="Izometrický trénink" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <p class="text-[10px] tracking-[0.3em] uppercase text-zinc-400 mt-4">Izometrický trénink</p>
+        </div>
+        <div class="md:pl-8 reveal reveal-delay-3">
+          <p class="font-heading font-bold text-zinc-200 leading-none mb-8 select-none" style="font-size: clamp(4rem, 8vw, 6rem)">03</p>
+          <h3 class="font-heading text-xl font-bold text-zinc-900 tracking-tight mb-4">Regenerace</h3>
+          <p class="text-zinc-500 text-sm leading-relaxed mb-8 max-w-xs">
+            Tělo vracíme do stavu, kdy umí skutečně regenerovat — s pomocí kryokomory, červeného světla a řízeného zklidnění. Úlevu cítíte už během lekce.
+          </p>
+          <div class="relative aspect-[4/3] overflow-hidden bg-zinc-100">
+            <img src="/images/red-light-therapy.webp" alt="Červené světlo" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <p class="text-[10px] tracking-[0.3em] uppercase text-zinc-400 mt-4">Červené světlo</p>
+        </div>
+      </div>
+
+      <p class="text-zinc-400 text-xs mt-16 pt-8 border-t border-zinc-100">
+        <span class="text-sage font-semibold tracking-[0.1em] uppercase">Princip programu</span> — Fáze jsou přizpůsobeny pro cíl každého jednotlivého bloku.
+      </p>
+    </section>
+
+    <!-- Struktura programu -->
+    <section class="border-t border-zinc-100">
+      <div class="px-6 sm:px-10 lg:px-20 py-24">
+        <div class="mb-16 reveal">
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">STRUKTURA PROGRAMU</p>
+          <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+            Osm týdnů. Čtyři bloky.
+          </h2>
+          <p class="text-zinc-500 text-sm mt-4 max-w-2xl leading-relaxed">
+            Každý blok pracuje s aktivací, tréninkem a regenerací jinak — podle svého cíle. Postup měříme, takže vidíte, jak se vaše kapacita mění.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-0 lg:divide-x divide-zinc-200">
+          <div class="lg:pr-8 reveal reveal-delay-1">
+            <p class="text-[10px] tracking-[0.3em] uppercase text-zinc-400 mb-3">Týden 1–2</p>
+            <h3 class="font-heading text-lg font-bold text-zinc-900 mb-3">Pozornost a vnímání těla</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Rozpoznat první signály aktivace a zachytit reakci dřív, než přeroste v přetížení.</p>
+          </div>
+          <div class="lg:px-8 reveal reveal-delay-2">
+            <p class="text-[10px] tracking-[0.3em] uppercase text-zinc-400 mb-3">Týden 3–4</p>
+            <h3 class="font-heading text-lg font-bold text-zinc-900 mb-3">Stabilizace a návrat do klidu</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Návrat do stabilnějšího stavu pomocí pozornosti, dechu a práce s tělem.</p>
+          </div>
+          <div class="lg:px-8 reveal reveal-delay-3">
+            <p class="text-[10px] tracking-[0.3em] uppercase text-zinc-400 mb-3">Týden 5–6</p>
+            <h3 class="font-heading text-lg font-bold text-zinc-900 mb-3">Modulace zátěže</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Postupně dávkovat zátěž, rozpoznat vlastní kapacitu a trénovat návrat k regeneraci.</p>
+          </div>
+          <div class="lg:pl-8 reveal reveal-delay-4">
+            <p class="text-[10px] tracking-[0.3em] uppercase text-zinc-400 mb-3">Týden 7–8</p>
+            <h3 class="font-heading text-lg font-bold text-zinc-900 mb-3">Integrace do běžného života</h3>
+            <p class="text-zinc-500 text-sm leading-relaxed">Použít dovednosti v práci, sportu, rodině i každodenním rozhodování.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Practicalities bar -->
+      <div class="bg-zinc-900 text-white px-6 sm:px-10 lg:px-20 py-8">
+        <div class="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
+          <p class="text-[10px] tracking-[0.3em] uppercase text-sage shrink-0">Prakticky</p>
+          <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm text-zinc-200">
+            <span>1× týdně</span>
+            <span>90 minut</span>
+            <span>Kapka Resort</span>
+            <span>skupina max 8 osob</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Srovnání -->
+    <section class="px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100 bg-zinc-50/70">
+      <div class="mb-14 reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">SROVNÁNÍ</p>
+        <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+          Co dostanete jen tady.
+        </h2>
+      </div>
+
+      <div class="overflow-x-auto reveal reveal-delay-1">
+        <table class="w-full min-w-[760px] border-collapse text-sm">
+          <thead>
+            <tr>
+              <th class="text-left font-normal p-4"></th>
+              {comparisonColumns.map((col, i) => (
+                <th class={`p-4 text-xs font-semibold tracking-[0.1em] uppercase ${i === 0 ? 'bg-zinc-900 text-white' : 'text-zinc-500'}`}>
+                  {col}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {comparisonRows.map((row) => (
+              <tr class="border-t border-zinc-200">
+                <td class="p-4 text-zinc-700 whitespace-nowrap sm:whitespace-normal">
+                  <span class="inline-flex items-center justify-center w-5 h-5 border border-zinc-300 text-[10px] font-semibold text-zinc-500 mr-2 align-middle">{row.tag}</span>
+                  {row.label}
+                </td>
+                {row.values.map((v, i) => (
+                  <td class={`p-4 text-center ${i === 0 ? 'bg-zinc-100 font-semibold text-sage' : 'text-zinc-400'}`}>{v}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-8 text-xs text-zinc-400 reveal reveal-delay-2">
+        ✓ ano &nbsp;&nbsp; ~ částečně &nbsp;&nbsp; — ne
+      </div>
+      <div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-xs text-zinc-400 reveal reveal-delay-2">
+        <span class="font-semibold text-zinc-600 tracking-[0.1em] uppercase">Mapa metod</span>
+        <span>K — Kryokomora</span>
+        <span>S — Červené světlo</span>
+        <span>T — Silový trénink</span>
+        <span>D — Dechové praktiky</span>
+        <span>M — Mindfulness</span>
+      </div>
+    </section>
+
+    <!-- Co si odnesete + founder -->
+    <section class="px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <div class="reveal">
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">CO SI ODNESETE</p>
+          <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900 mb-10">
+            Naučíte se, co wellness neumí.
+          </h2>
+          <div class="space-y-0">
+            <div class="border-t border-zinc-200 py-6">
+              <p class="text-xs text-sage font-semibold mb-2">01</p>
+              <h3 class="font-heading text-lg font-bold text-zinc-900 mb-2">Okamžitá úleva</h3>
+              <p class="text-zinc-500 text-sm leading-relaxed">Zklidnění a uvolnění tenze pocítíte už během prvních lekcí.</p>
+            </div>
+            <div class="border-t border-zinc-200 py-6">
+              <p class="text-xs text-sage font-semibold mb-2">02</p>
+              <h3 class="font-heading text-lg font-bold text-zinc-900 mb-2">Přenositelná dovednost</h3>
+              <p class="text-zinc-500 text-sm leading-relaxed">Vědomé přepínání mezi aktivací a regenerací — v práci, ve sportu i doma.</p>
+            </div>
+            <div class="border-t border-b border-zinc-200 py-6">
+              <p class="text-xs text-sage font-semibold mb-2">03</p>
+              <h3 class="font-heading text-lg font-bold text-zinc-900 mb-2">Měřitelný postup</h3>
+              <p class="text-zinc-500 text-sm leading-relaxed">Stav nervové soustavy průběžně sledujeme, takže pokrok vidíte v datech.</p>
+            </div>
+          </div>
+          <a href="#signup"
+             class="mt-10 inline-flex items-center justify-center px-10 py-4 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200">
+            Rezervujte si místo v programu
+          </a>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <div class="relative w-full max-w-sm aspect-[4/5] overflow-hidden bg-zinc-100 mb-8">
+            <img src="/images/jiri-sto.webp" alt="Jiří J. Stodůlka" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <p class="font-heading text-2xl sm:text-3xl font-bold text-zinc-900 tracking-tight mb-6">„Nebyla to teorie. Byla to nutnost."</p>
+          <p class="text-zinc-500 text-sm leading-relaxed mb-6 max-w-md">
+            Vyhořením a zdravotními problémy jsem si prošel sám — cestu zpátky skládal roky. Program stojí na tom, co skutečně fungovalo.
+          </p>
+          <p class="font-heading font-semibold text-zinc-900">Jiří J. Stodůlka</p>
+          <p class="text-zinc-400 text-xs tracking-[0.1em] uppercase">Zakladatel, Adaptive Studio</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signup form -->
+    <section id="signup" class="px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100 bg-zinc-50/70">
+      <div class="max-w-xl mx-auto reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6 text-center">Rezervace místa</p>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 mb-4 text-center">
+          Mám zájem o osmitýdenní program.
+        </h2>
+        <p class="text-zinc-500 text-sm leading-relaxed mb-10 text-center">
+          Necháte nám kontakt a ozveme se s dostupnými termíny a dalšími kroky.
+        </p>
+
+        <form
+          name="program-8-tydny"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="space-y-4"
+        >
+          <input type="hidden" name="form-name" value="program-8-tydny" />
+          <input type="hidden" name="bot-field" />
+          <div>
+            <label class="block text-[10px] tracking-[0.18em] uppercase text-zinc-400 mb-2">Jméno</label>
+            <input
+              type="text"
+              name="name"
+              required
+              placeholder="Vaše jméno"
+              class="w-full px-4 py-3 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 bg-white"
+            />
+          </div>
+          <div>
+            <label class="block text-[10px] tracking-[0.18em] uppercase text-zinc-400 mb-2">E-mail</label>
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="vas@email.cz"
+              class="w-full px-4 py-3 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 bg-white"
+            />
+          </div>
+          <div>
+            <label class="block text-[10px] tracking-[0.18em] uppercase text-zinc-400 mb-2">Telefon</label>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="+420 xxx xxx xxx"
+              class="w-full px-4 py-3 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 bg-white"
+            />
+          </div>
+          <div>
+            <label class="block text-[10px] tracking-[0.18em] uppercase text-zinc-400 mb-2">Zpráva (nepovinné)</label>
+            <textarea
+              name="message"
+              rows="3"
+              placeholder="Co byste od programu čekali, případně preferovaný termín"
+              class="w-full px-4 py-3 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 resize-y bg-white"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full inline-flex items-center justify-center px-8 py-4 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200"
+          >
+            Mám zájem o program
+          </button>
+        </form>
+        <p class="text-zinc-400 text-xs text-center mt-6">adaptivestudio.cz · jiri@adaptivestudio.com · 736 445 942</p>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="min-h-[60vh] flex flex-col items-center justify-center px-6 text-center py-24 border-t border-zinc-100">
+      <div class="reveal">
+        <h2 class="font-heading font-bold leading-tight tracking-tight text-zinc-900 mb-8"
+            style="font-size: clamp(2.5rem, 7vw, 5rem)">
+          Chcete se dozvědět víc?
+        </h2>
+        <p class="text-zinc-500 text-sm leading-relaxed mb-3 max-w-sm mx-auto">
+          Domluvte si krátký hovor, probereme program i to, jestli dává smysl právě pro vás.
+        </p>
+        <a href={CALENDLY_URL}
+           class="inline-flex items-center justify-center px-12 py-5 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200 mt-8">
+          Zarezervovat hovor
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer lang="cs" />
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    },
+    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
+</script>

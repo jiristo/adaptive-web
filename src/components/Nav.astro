@@ -23,10 +23,17 @@ const RESERVANTO_URL = lang === 'cs' ? '/preview/rezervace/' : '/en/preview/reze
   id="main-nav"
 >
   <div class="border-b border-zinc-800 bg-zinc-900 text-white">
-    <div class="px-6 sm:px-10 lg:px-20 py-3 sm:py-4 flex items-center justify-center">
+    <div class="px-6 sm:px-10 lg:px-20 py-3 sm:py-4 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-2 sm:gap-5">
       <p class="text-[11px] sm:text-[12px] tracking-[0.18em] uppercase text-zinc-200 font-medium text-center">
         {t('navSpaceBanner')}
       </p>
+      <button
+        data-studio-open
+        class="inline-flex items-center justify-center gap-2 text-[11px] sm:text-[12px] tracking-[0.2em] uppercase text-white hover:text-sage transition-colors duration-200 whitespace-nowrap font-semibold cursor-pointer"
+      >
+        {t('navBannerStudioCta')}
+        <span aria-hidden="true">→</span>
+      </button>
     </div>
   </div>
   <div class="px-6 sm:px-10 lg:px-20 flex items-center justify-between h-16">
@@ -52,6 +59,9 @@ const RESERVANTO_URL = lang === 'cs' ? '/preview/rezervace/' : '/en/preview/reze
       </button>
       <a href={t('approachHref')} class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
         {t('navApproach')}
+      </a>
+      <a href={t('programHref')} class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
+        {t('navProgram')}
       </a>
       <a href={t('longevityHref')} class="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
         {t('navLongevity')}
@@ -133,6 +143,7 @@ const RESERVANTO_URL = lang === 'cs' ? '/preview/rezervace/' : '/en/preview/reze
     <a href={`${basePath}#how-it-works`} class="text-sm text-zinc-700 mobile-nav-link">{t('navHowItWorks')}</a>
     <button data-studio-open class="text-sm text-zinc-700 mobile-nav-link text-left cursor-pointer">{t('navStudio')}</button>
     <a href={t('approachHref')} class="text-sm text-zinc-700 mobile-nav-link">{t('navApproach')}</a>
+    <a href={t('programHref')} class="text-sm text-zinc-700 mobile-nav-link">{t('navProgram')}</a>
     <a href={t('longevityHref')} class="text-sm text-zinc-700 mobile-nav-link">{t('navLongevity')}</a>
     <div class="flex flex-col gap-3">
       <button

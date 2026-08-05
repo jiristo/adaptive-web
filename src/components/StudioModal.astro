@@ -64,15 +64,24 @@ const features = [
       ))}
     </div>
 
-    <a
-      href="https://www.kapkaresort.cz/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-white hover:text-sage transition-colors duration-200 font-semibold"
-    >
-      {t('studioLocationLinkText')}
-      <span aria-hidden="true">→</span>
-    </a>
+    <div class="flex flex-wrap items-center gap-x-8 gap-y-3">
+      <a
+        href="https://www.kapkaresort.cz/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-white hover:text-sage transition-colors duration-200 font-semibold"
+      >
+        {t('studioLocationLinkText')}
+        <span aria-hidden="true">→</span>
+      </a>
+      <a
+        href={t('programHref')}
+        class="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-sage hover:text-white transition-colors duration-200 font-semibold"
+      >
+        {t('studioProgramLinkText')}
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
   </div>
 
   <!-- Photo grid -->
