@@ -25,8 +25,8 @@ const pages = [
   '/en/preview/aplikace/kortizol/',
   '/preview/aplikace/kortizol/10-pravidel/',
   '/en/preview/aplikace/kortizol/10-rules/',
-  '/preview/aplikace/letni-pretizeni/',
-  '/en/preview/aplikace/summer-overload/',
+  '/preview/program/',
+  '/en/preview/program/',
 ];
 
 export function GET() {
