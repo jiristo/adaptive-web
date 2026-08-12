@@ -1,0 +1,425 @@
+---
+import {
+  Activity,
+  ArrowRight,
+  BatteryLow,
+  Brain,
+  Check,
+  ClipboardCopy,
+  Footprints,
+  ListChecks,
+  Pause,
+  Play,
+  RotateCcw,
+  ShieldCheck,
+  Wind,
+} from '@lucide/astro';
+import Layout from '../../../../layouts/Layout.astro';
+import Nav from '../../../../components/Nav.astro';
+import Footer from '../../../../components/Footer.astro';
+import StudioModal from '../../../../components/StudioModal.astro';
+---
+
+<Layout
+  title="Regulace zátěže — Adaptive Studio"
+  description="Krátká svépomocná pomůcka, která vám pomůže snížit zahlcení a vybrat jeden zvládnutelný další krok."
+  lang="cs"
+  enableChat={false}
+>
+  <StudioModal lang="cs" />
+  <Nav lang="cs" otherLangHomePath="/en/preview/" />
+
+  <main>
+    <section class="min-h-[88vh] flex flex-col justify-center px-6 sm:px-10 lg:px-20 pt-44 pb-24">
+      <div class="max-w-5xl">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-[#4f7257] mb-8">NÁSTROJ · REGULACE ZÁTĚŽE</p>
+        <h1 class="font-heading font-bold leading-[0.92] tracking-tight text-zinc-900 mb-8" style="font-size: clamp(3.2rem, 9vw, 8rem)">
+          Méně zahlcení.<br />Jeden další krok.
+        </h1>
+        <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-2xl">
+          Tři minuty pro chvíli, kdy je toho příliš. Bez hodnocení, účtu a ukládání odpovědí.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-5">
+          <a href="#kompas" class="inline-flex min-h-12 items-center justify-center gap-3 bg-zinc-900 px-8 py-4 text-xs font-semibold tracking-[0.18em] uppercase text-white hover:bg-zinc-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sage">
+            Začít
+            <ArrowRight size={17} aria-hidden="true" />
+          </a>
+          <span class="inline-flex items-center gap-2 text-sm text-zinc-500">
+            <ShieldCheck size={18} class="text-[#4f7257]" aria-hidden="true" />
+            Odpovědi zůstávají pouze ve vašem prohlížeči
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section id="kompas" class="scroll-mt-24 bg-[#111110] px-6 sm:px-10 lg:px-20 py-20 sm:py-28">
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-10 flex items-end justify-between gap-6">
+          <div>
+            <p id="step-label" class="text-[10px] tracking-[0.35em] uppercase text-sage mb-4">KROK 1 ZE 3</p>
+            <h2 id="step-heading" tabindex="-1" class="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-white focus:outline-none">Co právě potřebuje pozornost?</h2>
+          </div>
+          <p class="hidden sm:block text-sm text-zinc-400">Přibližně 3 minuty</p>
+        </div>
+
+        <div class="mb-10 h-px bg-zinc-800" aria-hidden="true">
+          <div id="progress-bar" class="h-px bg-sage transition-[width] duration-300 motion-reduce:transition-none" style="width: 33.333%"></div>
+        </div>
+
+        <div id="tool-status" class="sr-only" aria-live="polite"></div>
+
+        <section id="step-one" aria-labelledby="step-heading">
+          <form id="check-in-form" novalidate>
+            <fieldset class="mb-10">
+              <legend class="mb-5 text-sm font-medium text-zinc-200">Jak silná je vaše zátěž právě teď?</legend>
+              <div class="flex items-center gap-4">
+                <span class="text-xs text-zinc-400">nízká</span>
+                <input id="load-before" name="loadBefore" type="range" min="0" max="10" value="5" class="load-slider flex-1" aria-label="Síla zátěže před zastavením" aria-describedby="load-before-scale" />
+                <output id="load-before-output" for="load-before" class="flex h-12 w-12 shrink-0 items-center justify-center border border-zinc-600 font-heading text-xl font-bold text-white">5</output>
+              </div>
+              <p id="load-before-scale" class="mt-3 text-xs text-zinc-400">0 znamená žádnou zátěž, 10 nejvyšší zátěž, jakou si právě dokážete představit.</p>
+            </fieldset>
+
+            <fieldset>
+              <legend class="mb-5 text-sm font-medium text-zinc-200">Co nejlépe vystihuje tuto chvíli?</legend>
+              <div id="need-options" class="grid gap-3 sm:grid-cols-2">
+                <label class="need-card">
+                  <input class="peer sr-only" type="radio" name="need" value="tension" required />
+                  <span class="need-card-inner">
+                    <Activity size={25} aria-hidden="true" />
+                    <span><strong>Tělo je v napětí</strong><small>Stažená ramena, čelist nebo neklid</small></span>
+                    <Check class="need-check" size={20} aria-hidden="true" />
+                  </span>
+                </label>
+                <label class="need-card">
+                  <input class="peer sr-only" type="radio" name="need" value="thoughts" required />
+                  <span class="need-card-inner">
+                    <Brain size={25} aria-hidden="true" />
+                    <span><strong>Hlava se nezastaví</strong><small>Myšlenky přeskakují a nejde se soustředit</small></span>
+                    <Check class="need-check" size={20} aria-hidden="true" />
+                  </span>
+                </label>
+                <label class="need-card">
+                  <input class="peer sr-only" type="radio" name="need" value="exhausted" required />
+                  <span class="need-card-inner">
+                    <BatteryLow size={25} aria-hidden="true" />
+                    <span><strong>Dochází mi kapacita</strong><small>I malé úkoly působí příliš náročně</small></span>
+                    <Check class="need-check" size={20} aria-hidden="true" />
+                  </span>
+                </label>
+                <label class="need-card">
+                  <input class="peer sr-only" type="radio" name="need" value="priorities" required />
+                  <span class="need-card-inner">
+                    <ListChecks size={25} aria-hidden="true" />
+                    <span><strong>Nevím, co řešit první</strong><small>Příliš mnoho otevřených úkolů</small></span>
+                    <Check class="need-check" size={20} aria-hidden="true" />
+                  </span>
+                </label>
+              </div>
+              <p id="need-error" class="mt-4 hidden text-sm text-[#e7a88d]" role="alert">Vyberte jednu možnost, která je vám nyní nejbližší.</p>
+            </fieldset>
+
+            <button type="submit" class="tool-primary mt-10">
+              Připravit krátkou techniku
+              <ArrowRight size={17} aria-hidden="true" />
+            </button>
+          </form>
+        </section>
+
+        <section id="step-two" class="hidden" aria-labelledby="protocol-title">
+          <div class="grid gap-8 lg:grid-cols-[1fr_320px]">
+            <div class="border border-zinc-700 bg-zinc-900 p-6 sm:p-9">
+              <div class="mb-8 flex items-start gap-4">
+                <div class="flex h-12 w-12 shrink-0 items-center justify-center bg-sage text-white">
+                  <Wind id="protocol-icon" size={24} aria-hidden="true" />
+                </div>
+                <div>
+                  <p id="protocol-eyebrow" class="text-[10px] tracking-[0.28em] uppercase text-sage mb-2"></p>
+                  <h3 id="protocol-title" class="font-heading text-3xl font-bold text-white"></h3>
+                </div>
+              </div>
+              <ol id="protocol-steps" class="space-y-5"></ol>
+              <p id="protocol-safety" class="mt-7 hidden border-l-2 border-zinc-600 pl-4 text-xs leading-relaxed text-zinc-400"></p>
+            </div>
+
+            <aside class="flex flex-col justify-between border border-zinc-700 p-6 sm:p-8">
+              <div>
+                <p class="text-[10px] tracking-[0.28em] uppercase text-zinc-400 mb-3">ČAS PRO SEBE</p>
+                <p id="timer" class="font-heading text-6xl font-bold tracking-tight text-white" aria-live="off">1:30</p>
+                <p class="mt-3 text-sm leading-relaxed text-zinc-400">Časovač je pouze opora. Techniku můžete ukončit kdykoli.</p>
+              </div>
+              <div class="mt-8 grid grid-cols-2 gap-3">
+                <button id="timer-toggle" type="button" class="tool-secondary">
+                  <Play id="play-icon" size={17} aria-hidden="true" />
+                  <Pause id="pause-icon" class="hidden" size={17} aria-hidden="true" />
+                  <span id="timer-label">Spustit</span>
+                </button>
+                <button id="timer-reset" type="button" class="tool-secondary" aria-label="Vrátit časovač na začátek">
+                  <RotateCcw size={17} aria-hidden="true" />
+                  Znovu
+                </button>
+              </div>
+            </aside>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <button id="protocol-done" type="button" class="tool-primary">
+              Pokračovat k plánu
+              <ArrowRight size={17} aria-hidden="true" />
+            </button>
+            <button id="back-to-check-in" type="button" class="tool-link">Změnit odpověď</button>
+          </div>
+        </section>
+
+        <section id="step-three" class="hidden" aria-labelledby="plan-heading">
+          <form id="plan-form" novalidate class="max-w-3xl">
+            <fieldset>
+              <legend id="plan-heading" class="font-heading text-3xl font-bold text-white mb-2">Jaký je nejmenší užitečný krok na příštích 10 minut?</legend>
+              <p class="mb-6 text-sm text-zinc-400">Vyberte pouze jeden. Cílem není dohnat vše, ale obnovit směr.</p>
+              <div class="grid gap-3 sm:grid-cols-2">
+                <label class="action-card"><input class="peer sr-only" type="radio" name="action" value="finish" required /><span>Dokončím jednu konkrétní věc</span></label>
+                <label class="action-card"><input class="peer sr-only" type="radio" name="action" value="postpone" required /><span>Něco vědomě odložím</span></label>
+                <label class="action-card"><input class="peer sr-only" type="radio" name="action" value="ask" required /><span>Požádám o pomoc nebo úkol předám</span></label>
+                <label class="action-card"><input class="peer sr-only" type="radio" name="action" value="pause" required /><span>Dám si krátkou pauzu</span></label>
+              </div>
+              <p id="action-error" class="mt-4 hidden text-sm text-[#e7a88d]" role="alert">Vyberte jeden další krok.</p>
+            </fieldset>
+
+            <div class="mt-8">
+              <label for="action-detail" class="mb-3 block text-sm font-medium text-zinc-200">Upřesnění pro sebe <span class="font-normal text-zinc-400">(nepovinné)</span></label>
+              <input id="action-detail" name="actionDetail" maxlength="120" autocomplete="off" placeholder="Například: Odpovím na jeden důležitý e-mail" class="w-full min-h-12 border border-zinc-700 bg-zinc-900 px-4 py-3 text-base text-white placeholder:text-zinc-600 focus:border-sage focus:outline-none" />
+            </div>
+
+            <fieldset class="mt-8">
+              <legend class="mb-5 text-sm font-medium text-zinc-200">Jak silná je vaše zátěž nyní?</legend>
+              <div class="flex items-center gap-4">
+                <span class="text-xs text-zinc-400">nízká</span>
+                <input id="load-after" name="loadAfter" type="range" min="0" max="10" value="5" class="load-slider flex-1" aria-label="Síla zátěže po zastavení" aria-describedby="load-after-scale" />
+                <output id="load-after-output" for="load-after" class="flex h-12 w-12 shrink-0 items-center justify-center border border-zinc-600 font-heading text-xl font-bold text-white">5</output>
+              </div>
+              <p id="load-after-scale" class="mt-3 text-xs text-zinc-400">Neexistuje správný výsledek. Změna není podmínkou, aby zastavení mělo smysl.</p>
+            </fieldset>
+
+            <button type="submit" class="tool-primary mt-10">
+              Vytvořit můj plán
+              <Check size={17} aria-hidden="true" />
+            </button>
+          </form>
+        </section>
+
+        <section id="result" class="hidden" aria-labelledby="result-heading">
+          <div class="grid gap-8 lg:grid-cols-[1fr_320px]">
+            <div class="border border-zinc-700 bg-zinc-900 p-6 sm:p-9">
+              <p class="text-[10px] tracking-[0.3em] uppercase text-sage mb-4">VÁŠ PLÁN</p>
+              <h3 id="result-heading" class="font-heading text-4xl font-bold text-white">Teď stačí jeden krok.</h3>
+              <p id="result-change" class="mt-5 max-w-2xl text-zinc-400 leading-relaxed"></p>
+              <div class="mt-8 grid gap-px bg-zinc-700 sm:grid-cols-2">
+                <div class="bg-[#111110] p-5"><p class="text-[10px] tracking-[0.22em] uppercase text-zinc-400">PŘED ZASTAVENÍM</p><p id="result-before" class="mt-2 font-heading text-3xl font-bold text-white"></p></div>
+                <div class="bg-[#111110] p-5"><p class="text-[10px] tracking-[0.22em] uppercase text-zinc-400">NYNÍ</p><p id="result-after" class="mt-2 font-heading text-3xl font-bold text-white"></p></div>
+              </div>
+              <div class="mt-8 border-l-2 border-sage pl-5">
+                <p class="text-[10px] tracking-[0.22em] uppercase text-zinc-400">DALŠÍ KROK</p>
+                <p id="result-action" class="mt-2 font-heading text-2xl font-bold text-white"></p>
+                <p id="result-detail" class="mt-2 hidden text-zinc-400"></p>
+              </div>
+            </div>
+            <aside class="border border-zinc-700 p-6 sm:p-8">
+              <Footprints class="text-sage" size={28} aria-hidden="true" />
+              <p class="mt-5 font-heading text-xl font-bold text-white">Plán zůstává u vás.</p>
+              <p class="mt-3 text-sm leading-relaxed text-zinc-400">Nic jsme neuložili ani neodeslali. Pokud si jej chcete ponechat, zkopírujte jej před zavřením stránky.</p>
+              <button id="copy-plan" type="button" class="tool-secondary mt-7 w-full">
+                <ClipboardCopy size={17} aria-hidden="true" />
+                <span id="copy-label">Kopírovat plán</span>
+              </button>
+            </aside>
+          </div>
+          <button id="start-over" type="button" class="tool-primary mt-8">
+            <RotateCcw size={17} aria-hidden="true" />
+            Začít znovu
+          </button>
+        </section>
+      </div>
+    </section>
+
+    <section class="px-6 sm:px-10 lg:px-20 py-20 sm:py-24">
+      <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1fr]">
+        <div>
+          <p class="text-[10px] tracking-[0.35em] uppercase text-[#4f7257] mb-5">PROČ TO MŮŽE POMOCI</p>
+          <h2 class="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900">Nejdřív obnovit volbu. Potom výkon.</h2>
+        </div>
+        <div class="space-y-5 text-sm leading-relaxed text-zinc-500">
+          <p>Krátké ukotvení, jemná práce s dechem a zmenšení dalšího kroku mohou vytvořit prostor mezi tlakem a automatickou reakcí.</p>
+          <p>Nástroj vychází z principů praktického zvládání stresu popsaných Světovou zdravotnickou organizací. Neslibuje léčbu ani „reset nervového systému“.</p>
+          <a href="https://www.who.int/publications/i/item/9789240003927" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 font-medium text-zinc-900 underline decoration-zinc-300 underline-offset-4 hover:decoration-sage">
+            Zdroj: WHO — Doing What Matters in Times of Stress
+            <ArrowRight size={15} aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-t border-zinc-200 bg-zinc-50 px-6 sm:px-10 lg:px-20 py-14">
+      <div class="mx-auto max-w-6xl text-sm leading-relaxed text-zinc-600">
+        <p class="font-medium text-zinc-900">Důležité informace</p>
+        <p class="mt-2 max-w-3xl">Regulace zátěže je krátká svépomocná pomůcka. Nejde o zdravotní službu, diagnostiku ani léčbu a nenahrazuje odbornou péči.</p>
+        <p class="mt-3 max-w-3xl">Pokud jste v bezprostředním ohrožení nebo máte pocit, že byste si mohl/a ublížit, volejte <a class="font-semibold text-zinc-900 underline underline-offset-2" href="tel:155">155</a> nebo <a class="font-semibold text-zinc-900 underline underline-offset-2" href="tel:112">112</a>. Pro okamžitou psychickou podporu můžete zdarma a nonstop volat Linku první psychické pomoci <a class="font-semibold text-zinc-900 underline underline-offset-2" href="tel:116123">116 123</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang="cs" />
+
+  <script>
+    import { buildPlan, formatTime, protocols } from '../../../../lib/load-regulation.js';
+
+    const state = { before: 5, after: 5, need: '', action: '', protocolDuration: 90, remaining: 90, timerId: null, plan: null };
+    const $ = (id) => document.getElementById(id);
+    const steps = [$('step-one'), $('step-two'), $('step-three'), $('result')];
+    const stepLabels = ['KROK 1 ZE 3', 'KROK 2 ZE 3', 'KROK 3 ZE 3', 'HOTOVO'];
+    const stepHeadings = ['Co právě potřebuje pozornost?', 'Krátké zastavení', 'Jeden další krok', 'Váš plán pro tuto chvíli'];
+
+    function showStep(index) {
+      steps.forEach((step, stepIndex) => step?.classList.toggle('hidden', stepIndex !== index));
+      $('step-label').textContent = stepLabels[index];
+      $('step-heading').textContent = stepHeadings[index];
+      $('progress-bar').style.width = `${Math.min(100, (index + 1) * 33.333)}%`;
+      $('tool-status').textContent = `${stepLabels[index]}. ${stepHeadings[index]}`;
+      $('kompas').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+      $('step-heading').focus({ preventScroll: true });
+    }
+
+    function stopTimer() {
+      if (state.timerId !== null) window.clearInterval(state.timerId);
+      state.timerId = null;
+      $('play-icon').classList.remove('hidden');
+      $('pause-icon').classList.add('hidden');
+      $('timer-label').textContent = state.remaining === 0 ? 'Hotovo' : 'Spustit';
+    }
+
+    function renderTimer() { $('timer').textContent = formatTime(state.remaining); }
+
+    function resetTimer() {
+      stopTimer();
+      state.remaining = state.protocolDuration;
+      renderTimer();
+    }
+
+    function renderProtocol() {
+      const protocol = protocols[state.need];
+      state.protocolDuration = protocol.duration;
+      $('protocol-eyebrow').textContent = protocol.eyebrow;
+      $('protocol-title').textContent = protocol.title;
+      $('protocol-steps').innerHTML = protocol.steps.map((step, index) => `<li class="flex gap-4"><span class="font-heading text-sm font-bold text-sage">0${index + 1}</span><span class="text-zinc-300 leading-relaxed">${step}</span></li>`).join('');
+      const safety = $('protocol-safety');
+      safety.textContent = protocol.safety ?? '';
+      safety.classList.toggle('hidden', !protocol.safety);
+      resetTimer();
+    }
+
+    $('load-before').addEventListener('input', (event) => { state.before = Number(event.target.value); $('load-before-output').textContent = String(state.before); });
+    $('load-after').addEventListener('input', (event) => { state.after = Number(event.target.value); $('load-after-output').textContent = String(state.after); });
+
+    $('check-in-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const selected = new FormData(event.currentTarget).get('need');
+      if (!selected) {
+        $('need-error').classList.remove('hidden');
+        $('need-options').querySelector('input')?.focus();
+        return;
+      }
+      $('need-error').classList.add('hidden');
+      state.need = String(selected);
+      state.after = state.before;
+      $('load-after').value = String(state.after);
+      $('load-after-output').textContent = String(state.after);
+      renderProtocol();
+      showStep(1);
+    });
+
+    $('timer-toggle').addEventListener('click', () => {
+      if (state.remaining === 0) resetTimer();
+      if (state.timerId !== null) { stopTimer(); return; }
+      $('play-icon').classList.add('hidden');
+      $('pause-icon').classList.remove('hidden');
+      $('timer-label').textContent = 'Pozastavit';
+      state.timerId = window.setInterval(() => {
+        state.remaining -= 1;
+        renderTimer();
+        if (state.remaining <= 0) { stopTimer(); $('tool-status').textContent = 'Čas techniky uplynul. Pokračujte, až budete připraveni.'; }
+      }, 1000);
+    });
+    $('timer-reset').addEventListener('click', resetTimer);
+    $('protocol-done').addEventListener('click', () => { stopTimer(); showStep(2); });
+    $('back-to-check-in').addEventListener('click', () => { stopTimer(); showStep(0); });
+
+    $('plan-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const action = data.get('action');
+      if (!action) {
+        $('action-error').classList.remove('hidden');
+        event.currentTarget.querySelector('input[name="action"]')?.focus();
+        return;
+      }
+      $('action-error').classList.add('hidden');
+      state.action = String(action);
+      state.plan = buildPlan({ before: state.before, after: state.after, action: state.action, detail: data.get('actionDetail') });
+      $('result-before').textContent = `${state.plan.before} / 10`;
+      $('result-after').textContent = `${state.plan.after} / 10`;
+      $('result-change').textContent = state.plan.change;
+      $('result-action').textContent = state.plan.actionLabel;
+      $('result-detail').textContent = state.plan.detail;
+      $('result-detail').classList.toggle('hidden', !state.plan.detail);
+      showStep(3);
+    });
+
+    $('copy-plan').addEventListener('click', async () => {
+      if (!state.plan) return;
+      const detail = state.plan.detail ? `: ${state.plan.detail}` : '';
+      const text = `Můj plán — Regulace zátěže\nZátěž před: ${state.plan.before}/10\nZátěž nyní: ${state.plan.after}/10\nDalší krok: ${state.plan.actionLabel}${detail}`;
+      try {
+        await navigator.clipboard.writeText(text);
+        $('copy-label').textContent = 'Zkopírováno';
+        $('tool-status').textContent = 'Plán byl zkopírován do schránky.';
+      } catch {
+        $('copy-label').textContent = 'Kopírování se nezdařilo';
+      }
+    });
+
+    $('start-over').addEventListener('click', () => {
+      stopTimer();
+      $('check-in-form').reset();
+      $('plan-form').reset();
+      Object.assign(state, { before: 5, after: 5, need: '', action: '', remaining: 90, plan: null });
+      $('load-before-output').textContent = '5';
+      $('load-after-output').textContent = '5';
+      $('copy-label').textContent = 'Kopírovat plán';
+      showStep(0);
+    });
+  </script>
+</Layout>
+
+<style>
+  .tool-primary, .tool-secondary, .tool-link { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: .75rem; font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; transition: background-color .2s, border-color .2s, color .2s; }
+  .tool-primary { background: white; color: #18181b; padding: .9rem 1.5rem; }
+  .tool-primary:hover { background: #4f7257; color: white; }
+  .tool-secondary { border: 1px solid #52525b; color: #e4e4e7; padding: .75rem 1rem; }
+  .tool-secondary:hover { border-color: #6b8f71; color: white; }
+  .tool-link { color: #a1a1aa; padding: .75rem 1rem; }
+  .tool-link:hover { color: white; }
+  .tool-primary:focus-visible, .tool-secondary:focus-visible, .tool-link:focus-visible { outline: 2px solid #6b8f71; outline-offset: 4px; }
+  .need-card, .action-card { cursor: pointer; }
+  .need-card-inner { min-height: 92px; display: grid; grid-template-columns: 28px 1fr 20px; align-items: center; gap: 1rem; border: 1px solid #3f3f46; padding: 1.1rem; color: #a1a1aa; transition: border-color .2s, background-color .2s, color .2s; }
+  .need-card-inner strong { display: block; color: #f4f4f5; font-size: .95rem; margin-bottom: .25rem; }
+  .need-card-inner small { display: block; color: #a1a1aa; font-size: .75rem; line-height: 1.5; }
+  .need-check { opacity: 0; color: #6b8f71; }
+  .need-card:hover .need-card-inner { border-color: #71717a; }
+  .need-card input:checked + .need-card-inner { border-color: #6b8f71; background: rgba(107,143,113,.1); color: #8fb398; }
+  .need-card input:checked + .need-card-inner .need-check { opacity: 1; }
+  .need-card input:focus-visible + .need-card-inner, .action-card input:focus-visible + span { outline: 2px solid #6b8f71; outline-offset: 3px; }
+  .action-card > span { min-height: 64px; display: flex; align-items: center; border: 1px solid #3f3f46; padding: 1rem; color: #d4d4d8; font-size: .875rem; line-height: 1.4; transition: border-color .2s, background-color .2s; }
+  .action-card:hover > span { border-color: #71717a; }
+  .action-card input:checked + span { border-color: #6b8f71; background: rgba(107,143,113,.1); color: white; }
+  .load-slider { accent-color: #6b8f71; min-height: 44px; cursor: pointer; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+</style>

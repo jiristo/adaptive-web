@@ -9,8 +9,8 @@ interface Props {
 
 const { lang, homePath, otherLangHomePath } = Astro.props;
 const t = useTranslations(lang);
-const currentFlag = lang === 'cs' ? '🇨🇿' : '🇺🇸';
-const otherFlag = lang === 'cs' ? '🇺🇸' : '🇨🇿';
+const currentLangLabel = lang === 'cs' ? 'CS' : 'EN';
+const otherLangLabel = lang === 'cs' ? 'EN' : 'CS';
 const otherLangHref = otherLangHomePath ?? (lang === 'cs' ? '/en/preview/' : '/preview/');
 const basePath = homePath ?? (lang === 'cs' ? '/preview/' : '/en/preview/');
 // TODO: Replace with actual provider URLs
@@ -82,6 +82,12 @@ const RESERVANTO_URL = lang === 'cs' ? '/preview/rezervace/' : '/en/preview/reze
             >
               {t('navAppCortisol')}
             </a>
+            <a
+              href={t('appLoadRegulationHref')}
+              class="block border-t border-zinc-100 px-4 py-3 text-sm text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900 transition-colors"
+            >
+              {t('navAppLoadRegulation')}
+            </a>
           </div>
         </div>
       </div>
@@ -107,10 +113,10 @@ const RESERVANTO_URL = lang === 'cs' ? '/preview/rezervace/' : '/en/preview/reze
 
       <!-- Lang switcher -->
       <div class="flex items-center gap-2">
-        <span class="text-lg leading-none" aria-label={lang === 'cs' ? 'Čeština' : 'English'}>{currentFlag}</span>
+        <span class="text-[11px] font-semibold tracking-[0.12em] leading-none" aria-label={lang === 'cs' ? 'Čeština' : 'English'}>{currentLangLabel}</span>
         <span class="text-zinc-300 text-xs" aria-hidden="true">|</span>
-        <a href={otherLangHref} class="text-lg leading-none opacity-40 hover:opacity-100 transition-opacity" aria-label={lang === 'cs' ? 'Switch to English' : 'Přepnout do češtiny'}>
-          {otherFlag}
+        <a href={otherLangHref} class="text-[11px] font-semibold tracking-[0.12em] leading-none opacity-40 hover:opacity-100 transition-opacity" aria-label={lang === 'cs' ? 'Switch to English' : 'Přepnout do češtiny'}>
+          {otherLangLabel}
         </a>
       </div>
 
@@ -150,6 +156,7 @@ const RESERVANTO_URL = lang === 'cs' ? '/preview/rezervace/' : '/en/preview/reze
       </button>
       <div id="mobile-apps-menu" class="hidden pl-4 border-l border-zinc-200">
         <a href={t('appCortisolHref')} class="text-sm text-zinc-700 mobile-nav-link block py-1.5">{t('navAppCortisol')}</a>
+        <a href={t('appLoadRegulationHref')} class="text-sm text-zinc-700 mobile-nav-link block py-1.5">{t('navAppLoadRegulation')}</a>
       </div>
     </div>
     <a href={t('navAboutHref')} class="text-sm text-zinc-700 mobile-nav-link">{t('navAbout')}</a>

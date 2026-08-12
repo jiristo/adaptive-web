@@ -7,6 +7,7 @@ interface Props {
   lang?: string;
   canonicalPath?: string;
   noindex?: boolean;
+  enableChat?: boolean;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   lang = 'cs',
   canonicalPath,
   noindex = false,
+  enableChat = true,
 } = Astro.props;
 
 const siteUrl = 'https://adaptivestudio.cz';
@@ -59,18 +61,19 @@ const robotsContent = noindex ? 'noindex,follow' : 'index,follow';
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap"
       rel="stylesheet"
     />
-    <!-- Tawk.to Live Chat -->
-    <script is:inline type="text/javascript">
-      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-      (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/6a10558fa2766b1c36e94fc9/1jp7sse71';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-      })();
-    </script>
+    {enableChat && (
+      <script is:inline type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+          var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+          s1.async=true;
+          s1.src='https://embed.tawk.to/6a10558fa2766b1c36e94fc9/1jp7sse71';
+          s1.charset='UTF-8';
+          s1.setAttribute('crossorigin','*');
+          s0.parentNode.insertBefore(s1,s0);
+        })();
+      </script>
+    )}
   </head>
   <body class="h-full bg-white text-zinc-900 font-sans">
     <slot />

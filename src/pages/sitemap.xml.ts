@@ -23,6 +23,7 @@ const pages = [
   '/en/preview/somaticka-praxe/',
   '/preview/aplikace/kortizol/',
   '/en/preview/aplikace/kortizol/',
+  '/preview/aplikace/regulace-zateze/',
   '/preview/aplikace/kortizol/10-pravidel/',
   '/en/preview/aplikace/kortizol/10-rules/',
   '/preview/program/',
