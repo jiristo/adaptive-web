@@ -1,0 +1,503 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import StudioModal from '../../../components/StudioModal.astro';
+
+const MAX_PARTICIPANTS = 8;
+const participantIndexes = Array.from({ length: MAX_PARTICIPANTS }, (_, i) => i + 1);
+
+const schedule = [
+  {
+    day: 'PÁTEK',
+    title: 'Rewind',
+    items: [
+      { name: 'Příjezd', desc: 'Ubytování bez check-in stresu. Vybalíš a je to.' },
+      { name: 'Večeře', desc: 'Pořádné jídlo, ne quinoa salát pro Instagram.' },
+      { name: 'TV OFF', desc: 'Telefon do krabice. Poslední sbohem notifikacím.' },
+      { name: 'Literární večer', desc: 'Čtení nahlas u lampy, jak když jsi byl malej a Netflix neexistoval.' },
+    ],
+  },
+  {
+    day: 'SOBOTA',
+    title: 'No Signal',
+    items: [
+      { name: 'Cryo Reset', desc: 'Budíček, co fakt funguje. Žádná káva to nedožene.' },
+      { name: 'Walkman Walk', desc: 'Procházka do lesa se sluchátky a kazetou, ne s podcastem o produktivitě.' },
+      { name: 'Offline Time', desc: 'Volno. Fakt volno. Bez plánu, co s ním dělat.' },
+      { name: 'Reset', desc: 'Pauza mezi programem, kdy se nic neděje — a to je přesně ten bod.' },
+      { name: 'Sauna Club 1999', desc: 'Horko, historky a humor, co by dneska nikdo nedal na sítě.' },
+      { name: 'Body Reset', desc: 'Práce s tělem bez svíček a manter. Prostě se hejbe.' },
+      { name: 'Life Before WiFi', desc: 'Karty, deskovky, kecy do půlnoci — jak se žilo, než všichni koukali do displeje.' },
+    ],
+  },
+  {
+    day: 'NEDĚLE',
+    title: 'Slow Sunday',
+    items: [
+      { name: 'Ranní pohyb', desc: 'Protáhnout to, co bolí po včerejší sauně.' },
+      { name: 'Offline Workshop', desc: 'Jak si tohle vzít domů a nezabít to hned v pondělí.' },
+    ],
+  },
+] as const;
+---
+
+<Layout
+  title="Meditace v šusťákovce — OFFLINE 1999 | Kapka Resort"
+  description="OFFLINE 1999 — víkendový retreat Adaptive Studio v Kapka Resortu, 7.–9. listopadu 2026. Sauna, kryo, hákis a kazety místo svíček a krystalů. Bez Wi-Fi, bez gurua, bez keců."
+  lang="cs"
+>
+  <StudioModal lang="cs" />
+  <Nav lang="cs" />
+
+  <main>
+
+    <!-- Hero -->
+    <section class="flex flex-col justify-center px-6 sm:px-10 lg:px-20 py-24 pt-36">
+      <div class="max-w-4xl reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">OFFLINE 1999 · KAPKA RESORT · 7.–9. LISTOPADU 2026</p>
+        <h1 class="font-heading font-bold leading-[0.95] tracking-tight text-zinc-900 mb-8"
+            style="font-size: clamp(2.75rem, 8vw, 6rem)">
+          Meditace v šusťákovce.
+        </h1>
+        <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-2xl mb-10">
+          Kašli na healing. Možná jen potřebuješ na chvíli vypnout Wi-Fi, oblíct šusťákovku a jít ven.
+        </p>
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="#signup"
+             class="inline-flex items-center justify-center px-10 py-4 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200">
+            Přihlásit se na retreat
+          </a>
+          <p class="text-zinc-400 text-xs tracking-[0.1em] uppercase">OFFLINE 1999 · 7.–9. listopadu 2026 · Kapka Resort</p>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1 mt-16">
+        <div class="grid sm:grid-cols-2 gap-3 md:gap-4 max-w-5xl">
+          <div class="relative aspect-[4/3] overflow-hidden bg-zinc-100">
+            <img src="/images/90s-retreat-billboard.webp" alt="Billboard OFFLINE 1999 a cedule Meditace v Šusťákovce před Kapka Resortem" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="relative aspect-[4/3] overflow-hidden bg-zinc-100">
+            <img src="/images/90s-retreat-famillyfrost.webp" alt="Retro párty u zmrzlinářského auta s cedulí Dopaminový detox" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manifesto -->
+    <section class="border-t border-zinc-100 bg-zinc-50/70">
+      <div class="px-6 sm:px-10 lg:px-20 py-24">
+        <div class="max-w-3xl reveal">
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">O CO JDE</p>
+          <p class="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold text-zinc-900 leading-snug">
+            Meditace v šusťákovce.<br />
+            Sauna jak z hotelu z roku 1997.<br />
+            Hákis. Kazety. Kryo.<br />
+            A večer humor, za který by dneska někdo určitě napsal stížnost.
+          </p>
+          <p class="mt-6 text-xl sm:text-2xl font-heading font-semibold text-sage">
+            Konečně retreat, který se nebere tak vážně.
+          </p>
+        </div>
+
+        <div class="mt-16 grid md:grid-cols-2 gap-10 items-center reveal reveal-delay-1">
+          <div class="relative aspect-[4/3] overflow-hidden bg-zinc-100 order-2 md:order-1">
+            <img src="/images/90s-retreat-meditace.webp" alt="Skupina v teplákových soupravách při meditaci u kazeťáku" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="space-y-6 order-1 md:order-2">
+            <p class="text-zinc-500 text-base leading-relaxed border-l-2 border-zinc-200 pl-6">
+              Tvůj terapeut říká medituj. My říkáme: dej si saunu, zahraj hákys a večer si dej pivo a trochu nekorektního humoru.
+            </p>
+            <p class="text-zinc-500 text-base leading-relaxed border-l-2 border-zinc-200 pl-6">
+              Digitální detox, ale bez svíček, tibetských mís a člověka, co ti říká, ať dýcháš do pánve. Vracíme se do roku 1999.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Není / Je -->
+    <section class="px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100">
+      <div class="grid md:grid-cols-4 gap-10 lg:gap-10">
+        <div class="relative aspect-[3/4] overflow-hidden bg-zinc-100 reveal order-3 md:order-1">
+          <img src="/images/90s-retreat-terry.webp" alt="Retro portrét v duchu devadesátek" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="reveal order-1 md:order-2">
+          <p class="text-[10px] tracking-[0.4em] uppercase text-zinc-400 mb-6">TOHLE NENÍ</p>
+          <ul class="space-y-4">
+            {[
+              'Žádná psychedelická ceremonie.',
+              'Žádné krystaly v prdeli.',
+              'Žádný guru, co ti vysvětlí, proč tě bolí levé rameno kvůli traumatu z minulého života.',
+            ].map((line) => (
+              <li class="flex gap-3 text-zinc-500 text-base leading-relaxed">
+                <span class="text-zinc-300 font-semibold" aria-hidden="true">✕</span>
+                <span>{line}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="reveal reveal-delay-1 order-2 md:order-3">
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">TOHLE JO</p>
+          <ul class="space-y-4">
+            {['Sauna.', 'Pohyb.', 'Příroda.', 'Dobrý žrádlo.', 'Pár lidí, se kterýma se dá normálně kecat.'].map((line) => (
+              <li class="flex gap-3 text-zinc-900 text-base font-medium leading-relaxed">
+                <span class="text-sage font-semibold" aria-hidden="true">✓</span>
+                <span>{line}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="relative aspect-[3/4] overflow-hidden bg-zinc-100 reveal reveal-delay-2 order-4">
+          <img src="/images/90s-retreat-jiri.webp" alt="Retro portrét zakladatele Jiřího v duchu devadesátek" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Harmonogram -->
+    <section class="border-t border-zinc-100 bg-zinc-50/70">
+      <div class="px-6 sm:px-10 lg:px-20 py-24">
+        <div class="mb-16 grid md:grid-cols-2 gap-10 items-end reveal">
+          <div>
+            <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">HARMONOGRAM</p>
+            <h2 class="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
+              Tři dny. Žádný signál.
+            </h2>
+          </div>
+          <div class="relative aspect-[16/9] overflow-hidden bg-zinc-100">
+            <img src="/images/90s-retreat-sauna.webp" alt="Sauna Club 1999 — švihání metličkou v sauně" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 md:divide-x divide-zinc-200 gap-12 md:gap-0">
+          {schedule.map((d, idx) => (
+            <div class={`reveal reveal-delay-${idx + 1} ${idx === 0 ? 'md:pr-8' : idx === schedule.length - 1 ? 'md:pl-8' : 'md:px-8'}`}>
+              <p class="text-[10px] tracking-[0.3em] uppercase text-zinc-400 mb-3">{d.day}</p>
+              <h3 class="font-heading text-xl font-bold text-zinc-900 tracking-tight mb-5">{d.title}</h3>
+              <ul class="space-y-5">
+                {d.items.map((item) => (
+                  <li>
+                    <p class="text-sm font-semibold text-zinc-900 tracking-tight mb-1">{item.name}</p>
+                    <p class="text-zinc-500 text-sm leading-relaxed">{item.desc}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Stat bar -->
+      <div class="bg-zinc-900 text-white px-6 sm:px-10 lg:px-20 py-8">
+        <p class="text-center font-heading text-sm sm:text-base font-semibold tracking-[0.25em] uppercase text-white">
+          3 DNY <span class="text-sage">·</span> 0 NOTIFIKACÍ <span class="text-sage">·</span> 100 % OFFLINE
+        </p>
+      </div>
+    </section>
+
+    <!-- Prakticky -->
+    <section class="border-t border-zinc-100">
+      <div class="px-6 sm:px-10 lg:px-20 py-24 reveal">
+        <p class="text-[10px] tracking-[0.35em] uppercase text-zinc-400 mb-4">V retreatu je vše</p>
+        <div class="flex flex-wrap gap-2">
+          {['Cryo Reset', 'Walkman Walk', 'Sauna Club 1999', 'Hákis', 'Kazety', 'Offline Workshop'].map((item) => (
+            <span class="px-4 py-2 border border-zinc-200 bg-white text-sm font-medium text-zinc-900">{item}</span>
+          ))}
+        </div>
+      </div>
+
+      <div class="bg-zinc-900 text-white px-6 sm:px-10 lg:px-20 py-8">
+        <div class="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
+          <p class="text-[10px] tracking-[0.3em] uppercase text-sage shrink-0">Prakticky</p>
+          <div class="flex flex-wrap gap-x-8 gap-y-3 text-sm text-zinc-200">
+            <span>7.–9. listopadu 2026</span>
+            <span>Kapka Resort</span>
+            <span>omezená kapacita</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cena -->
+    <section class="px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100 bg-zinc-50/70">
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-20 items-center reveal">
+        <div class="relative aspect-[4/3] overflow-hidden bg-zinc-100 order-2 md:order-1">
+          <img src="/images/90s-retreat-room.webp" alt="Dvoulůžkový pokoj v Kapka Resortu" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+
+        <div class="order-1 md:order-2">
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">Cena</p>
+          <p class="font-heading font-bold text-zinc-900 tracking-tight mb-2"
+             style="font-size: clamp(3rem, 6vw, 4.5rem)">
+            7 490 Kč
+          </p>
+          <p class="text-zinc-400 text-xs tracking-[0.15em] uppercase mb-10">za osobu</p>
+
+          <div class="border-t border-zinc-200 pt-8">
+            <p class="text-[10px] tracking-[0.3em] uppercase text-zinc-400 mb-5">Cena obsahuje</p>
+            <ul class="space-y-3">
+              {[
+                '2 noci na dvoulůžkovém pokoji se snídaní',
+                'Wellness se saunou',
+                'Kryokomoru',
+                '90s retreat program (meditace, literární večer, workshop, body work)',
+              ].map((item) => (
+                <li class="flex gap-3 text-zinc-700 text-sm sm:text-base leading-relaxed">
+                  <span class="text-sage font-semibold" aria-hidden="true">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partneři -->
+    <section class="px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100">
+      <div class="max-w-2xl mx-auto text-center reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">KDO ZA TÍM STOJÍ</p>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 mb-4">
+          Tři parťáci, jeden retreat.
+        </h2>
+        <p class="text-zinc-500 text-sm leading-relaxed max-w-xl mx-auto">
+          OFFLINE 1999 spolu dělají Adaptive Studio, Being Well Brno a Kapka Resort.
+        </p>
+      </div>
+
+      <div class="mt-16 grid sm:grid-cols-3 gap-12 max-w-4xl mx-auto items-center reveal reveal-delay-1">
+        <div class="flex flex-col items-center text-center gap-3">
+          <p class="font-heading font-semibold text-xl tracking-[0.1em] uppercase text-zinc-900">Adaptive Studio</p>
+          <p class="text-zinc-400 text-xs tracking-[0.1em] uppercase">Program a regenerace</p>
+        </div>
+
+        <a
+          href="https://www.instagram.com/beingwellbrno/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex flex-col items-center text-center gap-3 group"
+        >
+          <img src="/images/logo-being-well.jpg" alt="Being Well Brno" class="h-20 w-auto object-contain" loading="lazy" />
+          <span class="text-zinc-400 text-xs tracking-[0.1em] uppercase group-hover:text-zinc-900 transition-colors">@beingwellbrno →</span>
+        </a>
+
+        <div class="flex flex-col items-center text-center gap-3">
+          <div class="bg-zinc-900 px-6 py-4 inline-block">
+            <img src="/images/kapka-resort-logo-white-transparent.png" alt="Kapka Resort" class="h-7 w-auto object-contain" loading="lazy" />
+          </div>
+          <p class="text-zinc-400 text-xs tracking-[0.1em] uppercase">Místo konání</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signup form -->
+    <section id="signup" class="px-6 sm:px-10 lg:px-20 py-24 border-t border-zinc-100">
+      <div class="max-w-xl mx-auto reveal">
+        <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6 text-center">Přihláška</p>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 mb-4 text-center">
+          Chci na OFFLINE 1999.
+        </h2>
+        <p class="text-zinc-500 text-sm leading-relaxed mb-10 text-center">
+          Přihlaš sebe i partu, se kterou jedeš. Stačí běžné jméno, ne to, co sis dal na dechovém semináři. Telefon a e-mail stačí vyplnit jednou za celou partu.
+        </p>
+
+        <div id="form-wrapper">
+          <form
+            id="retreat-form"
+            name="retreat-90s"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="space-y-4"
+          >
+            <input type="hidden" name="form-name" value="retreat-90s" />
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="pocet_ucastniku" id="pocet-ucastniku" value="1" />
+
+            <div id="participants" class="space-y-6">
+              {participantIndexes.map((i) => (
+                <div class="participant-block space-y-3" data-index={i} hidden={i > 1}>
+                  <p class="text-[10px] tracking-[0.3em] uppercase text-zinc-400">Účastník {i}</p>
+                  <div class="grid sm:grid-cols-2 gap-4">
+                    <input
+                      type="text"
+                      name={`participant_${i}_jmeno`}
+                      placeholder="Jméno"
+                      required={i === 1}
+                      disabled={i > 1}
+                      class="participant-field w-full px-4 py-3 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 bg-white"
+                    />
+                    <input
+                      type="text"
+                      name={`participant_${i}_prijmeni`}
+                      placeholder="Příjmení"
+                      required={i === 1}
+                      disabled={i > 1}
+                      class="participant-field w-full px-4 py-3 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 bg-white"
+                    />
+                  </div>
+                  <input
+                    type="number"
+                    name={`participant_${i}_rok_narozeni`}
+                    placeholder="Rok narození"
+                    min="1920"
+                    max="2026"
+                    required={i === 1}
+                    disabled={i > 1}
+                    class="participant-field w-full sm:w-1/2 px-4 py-3 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 bg-white"
+                  />
+                </div>
+              ))}
+            </div>
+
+            <div class="flex items-center justify-between border-t border-b border-zinc-200 py-4">
+              <p class="text-[10px] tracking-[0.2em] uppercase text-zinc-400">Počet účastníků</p>
+              <div class="flex items-center gap-4">
+                <button
+                  type="button"
+                  id="remove-participant"
+                  aria-label="Odebrat účastníka"
+                  disabled
+                  class="w-9 h-9 flex items-center justify-center border border-zinc-300 text-zinc-500 hover:border-zinc-900 hover:text-zinc-900 disabled:opacity-30 disabled:hover:border-zinc-300 disabled:hover:text-zinc-500 transition-colors"
+                >&minus;</button>
+                <span id="participant-count" class="text-sm font-semibold text-zinc-900 w-4 text-center">1</span>
+                <button
+                  type="button"
+                  id="add-participant"
+                  aria-label="Přidat účastníka"
+                  class="w-9 h-9 flex items-center justify-center border border-zinc-300 text-zinc-500 hover:border-zinc-900 hover:text-zinc-900 disabled:opacity-30 disabled:hover:border-zinc-300 disabled:hover:text-zinc-500 transition-colors"
+                >+</button>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-[10px] tracking-[0.18em] uppercase text-zinc-400 mb-2">Telefon</label>
+              <input
+                type="tel"
+                name="telefon"
+                required
+                placeholder="+420 xxx xxx xxx"
+                class="w-full px-4 py-3 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 bg-white"
+              />
+            </div>
+            <div>
+              <label class="block text-[10px] tracking-[0.18em] uppercase text-zinc-400 mb-2">E-mail</label>
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="vas@email.cz"
+                class="w-full px-4 py-3 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 bg-white"
+              />
+            </div>
+            <div>
+              <label class="block text-[10px] tracking-[0.18em] uppercase text-zinc-400 mb-2">Poznámka (nepovinné)</label>
+              <textarea
+                name="poznamka"
+                rows="3"
+                placeholder="Alergie, stravovací omezení nebo cokoliv, co bychom měli vědět"
+                class="w-full px-4 py-3 border border-zinc-300 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-zinc-900 resize-y bg-white"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full inline-flex items-center justify-center px-8 py-4 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200"
+            >
+              Odeslat přihlášku
+            </button>
+          </form>
+        </div>
+        <p class="text-zinc-400 text-xs text-center mt-6">adaptivestudio.cz · jiri@adaptivestudio.com · 736 445 942</p>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer lang="cs" />
+</Layout>
+
+<script define:vars={{ maxParticipants: MAX_PARTICIPANTS }}>
+  const form = document.getElementById('retreat-form');
+  const wrapper = document.getElementById('form-wrapper');
+  const countLabel = document.getElementById('participant-count');
+  const countHidden = document.getElementById('pocet-ucastniku');
+  const addBtn = document.getElementById('add-participant');
+  const removeBtn = document.getElementById('remove-participant');
+
+  let count = 1;
+
+  function blockFor(i) {
+    return document.querySelector(`.participant-block[data-index="${i}"]`);
+  }
+
+  function setBlockActive(i, active) {
+    const block = blockFor(i);
+    if (!block) return;
+    block.hidden = !active;
+    block.querySelectorAll('.participant-field').forEach((field) => {
+      field.disabled = !active;
+      field.required = active;
+      if (!active) field.value = '';
+    });
+  }
+
+  function render() {
+    countLabel.textContent = String(count);
+    countHidden.value = String(count);
+    removeBtn.disabled = count <= 1;
+    addBtn.disabled = count >= maxParticipants;
+  }
+
+  addBtn.addEventListener('click', () => {
+    if (count >= maxParticipants) return;
+    count += 1;
+    setBlockActive(count, true);
+    render();
+  });
+
+  removeBtn.addEventListener('click', () => {
+    if (count <= 1) return;
+    setBlockActive(count, false);
+    count -= 1;
+    render();
+  });
+
+  render();
+
+  if (form && wrapper) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      try {
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(data).toString(),
+        });
+        wrapper.innerHTML = `
+          <p class="text-sm text-zinc-500 leading-relaxed text-center">Díky za přihlášku! Ozveme se s potvrzením a dalšími detaily.</p>
+        `;
+      } catch {
+        form.submit();
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    },
+    { threshold: 0.05, rootMargin: '0px 0px -5% 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
+</script>

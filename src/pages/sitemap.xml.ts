@@ -27,6 +27,7 @@ const pages = [
   '/en/preview/aplikace/kortizol/10-rules/',
   '/preview/program/',
   '/en/preview/program/',
+  '/preview/90s-retreat/',
 ];
 
 export function GET() {
