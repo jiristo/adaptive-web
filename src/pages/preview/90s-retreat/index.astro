@@ -45,8 +45,8 @@ const schedule = [
 ---
 
 <Layout
-  title="Meditace v šusťákovce — OFFLINE 1999 | Kapka Resort"
-  description="OFFLINE 1999 — víkendový retreat Adaptive Studio v Kapka Resortu, 7.–9. listopadu 2026. Sauna, kryo, hákis a kazety místo svíček a krystalů. Bez Wi-Fi, bez gurua, bez keců."
+  title="OFFLINE 1999 — digitální detox v Kapka Resortu | Meditace v šusťákovce"
+  description="Víkend pro lidi, kteří už jsou unavení z toho být pořád online. 3 dny, 0 notifikací — wellness, kryo, příroda a dobré jídlo v Kapka Resortu, 7.–9. listopadu 2026. Early bird 6 990 Kč do 10. října."
   lang="cs"
 >
   <StudioModal lang="cs" />
@@ -58,19 +58,25 @@ const schedule = [
     <section class="flex flex-col justify-center px-6 sm:px-10 lg:px-20 py-24 pt-36">
       <div class="max-w-4xl reveal">
         <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">OFFLINE 1999 · KAPKA RESORT · 7.–9. LISTOPADU 2026</p>
-        <h1 class="font-heading font-bold leading-[0.95] tracking-tight text-zinc-900 mb-8"
-            style="font-size: clamp(2.75rem, 8vw, 6rem)">
-          Meditace v šusťákovce.
+        <h1 class="font-heading font-bold leading-[0.95] tracking-tight text-zinc-900 mb-6"
+            style="font-size: clamp(2.5rem, 7vw, 5rem)">
+          Víkend pro lidi, kteří už jsou unavení z toho být pořád online.
         </h1>
-        <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-2xl mb-10">
-          Víkend bez notifikací. Sauna, kryo, hákis, kazety a lidi, se kterými chceš zůstat déle.
+        <p class="font-heading text-xl sm:text-2xl font-semibold text-sage mb-8">
+          Digitální detox, který nevypadá jako retreat.
+        </p>
+        <p class="text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-2xl mb-4">
+          3 dny. 0 notifikací. Wellness, kryo, příroda, dobré jídlo a návrat do doby, kdy jsme nemuseli být pořád k dispozici.
+        </p>
+        <p class="text-zinc-400 text-sm tracking-[0.02em] mb-10">
+          A až potom: kazety, hákis, walkman, šusťákovky, devadesátky.
         </p>
         <div class="flex flex-wrap items-center gap-6">
           <a href="#signup"
              class="inline-flex items-center justify-center px-10 py-4 bg-zinc-900 text-white text-xs font-semibold tracking-[0.2em] uppercase hover:bg-zinc-700 transition-colors duration-200">
             Chci zažít OFFLINE 1999
           </a>
-          <p class="text-zinc-400 text-xs tracking-[0.1em] uppercase">OFFLINE 1999 · 7.–9. listopadu 2026 · Kapka Resort</p>
+          <p class="text-zinc-400 text-xs tracking-[0.1em] uppercase">Early bird 6 990 Kč <span id="earlybird-countdown">do 10. října</span> · pak 7 490 Kč</p>
         </div>
       </div>
 
@@ -84,19 +90,28 @@ const schedule = [
           </div>
         </div>
       </div>
+
+      <!-- Quick facts -->
+      <div class="reveal reveal-delay-2 mt-12 bg-zinc-900 text-white px-6 sm:px-8 py-6 max-w-3xl">
+        <p class="font-heading text-base sm:text-lg font-semibold tracking-tight mb-2">
+          7.–9. listopadu · Kapka Resort · 2 noci · od 6 990 Kč
+        </p>
+        <p class="text-zinc-300 text-sm leading-relaxed">
+          Ubytování + snídaně + wellness + kryo + kompletní program.
+        </p>
+      </div>
     </section>
 
-    <!-- Manifesto -->
+    <!-- Pro koho -->
     <section class="border-t border-zinc-100 bg-zinc-50/70">
       <div class="px-6 sm:px-10 lg:px-20 py-24">
         <div class="max-w-3xl reveal">
-          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">O CO JDE</p>
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">PRO KOHO TO JE</p>
           <p class="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold text-zinc-900 leading-snug">
-            Sauna. Hákis. Kazety. Kryo.<br />
-            Tři dny mimo signál a mimo běžný svět.
+            Pamatuješ si víkend, kdy ti nikdo nenapsal?
           </p>
-          <p class="mt-6 text-xl sm:text-2xl font-heading font-semibold text-sage">
-            Zážitek, který jen tak nezažiješ.
+          <p class="mt-6 text-lg sm:text-xl text-zinc-500 leading-relaxed max-w-2xl">
+            Jsi pořád online, hlava přehlcená, pořád něco řešíš — a víkend, kdy po tobě nikdo nic nechtěl, je už strašně dávno. Přesně proto je OFFLINE 1999.
           </p>
         </div>
 
@@ -106,10 +121,10 @@ const schedule = [
           </div>
           <div class="space-y-10 order-1 md:order-2">
             <p class="font-heading text-xl sm:text-2xl md:text-3xl font-semibold text-zinc-900 leading-snug border-l-2 border-sage pl-6">
-              Retreat, kde traumata a přetížení řeší návrat do devadesátek.
+              Proto jsme reset zabalili do devadesátek — kazety, hákis, walkman, sauna. Ne jako vtip, ale jako způsob, jak se na tři dny fakt odpojit.
             </p>
             <p class="font-heading text-xl sm:text-2xl md:text-3xl font-semibold text-zinc-900 leading-snug border-l-2 border-sage pl-6">
-              Retreat, kde nebudeš předstírat, že tě nabíjí hodinu čučet na šišku a hudrat óhm.
+              Meditace v šusťákovce. Žádné předstírání, že tě nabíjí hodinu čučet na šišku a hudrat óhm.
             </p>
           </div>
         </div>
@@ -227,7 +242,8 @@ const schedule = [
         </div>
 
         <div class="order-1 md:order-2">
-          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-6">Early bird ticket · do 10. října 2026</p>
+          <p class="text-[10px] tracking-[0.4em] uppercase text-sage mb-2">Early bird ticket</p>
+          <p id="earlybird-urgency" class="text-xs font-semibold text-zinc-900 mb-6">do 10. října 2026</p>
           <p class="font-heading font-bold text-zinc-900 tracking-tight mb-2"
              style="font-size: clamp(3rem, 6vw, 4.5rem)">
             6 990 Kč
@@ -262,7 +278,7 @@ const schedule = [
           Tři parťáci, jeden retreat.
         </h2>
         <p class="text-zinc-500 text-sm leading-relaxed max-w-xl mx-auto">
-          OFFLINE 1999 spolu dělají Adaptive Studio, Being Well Brno a Kapka Resort.
+          OFFLINE 1999 spolu dělají Adaptive Studio, Being Well Brno a Kapka Resort — tři zavedená jména, ne jen nápad na kampaň.
         </p>
       </div>
 
@@ -418,6 +434,19 @@ const schedule = [
 </Layout>
 
 <script define:vars={{ maxParticipants: MAX_PARTICIPANTS }}>
+  const earlybirdDeadline = new Date('2026-10-10T23:59:59+02:00');
+  const daysLeft = Math.ceil((earlybirdDeadline - new Date()) / 86400000);
+  const countdownEl = document.getElementById('earlybird-countdown');
+  const urgencyEl = document.getElementById('earlybird-urgency');
+  if (daysLeft > 0) {
+    const label = daysLeft === 1 ? 'poslední den' : `posledních ${daysLeft} ${daysLeft < 5 ? 'dny' : 'dní'}`;
+    if (countdownEl) countdownEl.textContent = label;
+    if (urgencyEl) urgencyEl.textContent = `${label.charAt(0).toUpperCase()}${label.slice(1)} · do 10. října 2026`;
+  } else {
+    if (countdownEl) countdownEl.textContent = 'skončil';
+    if (urgencyEl) urgencyEl.textContent = 'Skončil';
+  }
+
   const form = document.getElementById('retreat-form');
   const wrapper = document.getElementById('form-wrapper');
   const countLabel = document.getElementById('participant-count');
